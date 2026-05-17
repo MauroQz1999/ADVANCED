@@ -2020,7 +2020,7 @@
         <div class="contenedor-tops">
 
             <div class="columna-top">
-                <h3>Marcas Top</h3>
+                <h3>Top Marcas</h3>
                 <div class="grupo-botones-top">
                     <a href="#" class="btn-top-item">Toyota <span class="rank">#1</span></a>
                     <a href="#" class="btn-top-item">Nissan <span class="rank">#2</span></a>
@@ -2074,7 +2074,7 @@
         <div class="contenedor-mega">
             <div class="tabs-navegacion">
                 <button class="tab-btn active" onclick="cambiarPestaña(event, 'tab-subastas')">
-                    Mas Vendidos <span class="tab-badge">Live</span>
+                    Más Vendidos <span class="tab-badge">Live</span>
                 </button>
                 <button class="tab-btn" onclick="cambiarPestaña(event, 'tab-proposito')">
                     Explorar por Tipo
