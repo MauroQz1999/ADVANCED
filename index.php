@@ -11,12 +11,6 @@ $dbname = "railway";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-if ($conn->connect_error) {
-    die("<h3 style='color:red; padding:20px;'>Error de Conexión a la Base de Datos: " . $conn->connect_error . "</h3>");
-}
-
-$conn->set_charset("utf8");
-
 $sql = "SELECT 
             a.id,
             a.modelo_id,
@@ -55,63 +49,10 @@ $sql = "SELECT
         LEFT JOIN auto_opciones ao ON a.id = ao.auto_id      
         LEFT JOIN opciones opc ON ao.opcion_id = opc.id      
         GROUP BY a.id";
+            $result = $conn->query($sql);
 
-$result = $conn->query($sql);
-
-if (!$result) {
-    die("<div style='background:#fff5f5; color:#c53030; border:1px solid #feb2b2; padding:25px; margin:20px; font-family:sans-serif; border-radius:8px;'>
-            <h2>❌ Error en la Consulta SQL</h2>
-            <p>MySQL dice: <strong>" . $conn->error . "</strong></p>
-            <p>Por favor, revisa que los nombres de las columnas en tu tabla <code>autos</code> coincidan exactamente con el código.</p>
-         </div>");
-}
-
-$mysql_rows_count = $result->num_rows;
-$autos = [];
-
-if ($mysql_rows_count > 0) {
-    while ($fila = $result->fetch_assoc()) {
-        $fotos_array = $fila['galeria_fotos'] ? explode(',', $fila['galeria_fotos']) : [];
-        $opciones_array = $fila['lista_opciones'] ? explode(',', $fila['lista_opciones']) : [];
-
-        $autos[] = [
-            "id" => (int)$fila['id'],
-            "modelo_id" => (int)$fila['modelo_id'],
-            "marca" => $fila['marca'],
-            "marca_logo" => $fila['marca_logo'],
-            "modelo" => $fila['modelo'],
-            "first_registration" => $fila['first_registration'],
-            "rango" => $fila['rango'],
-            "engine_type" => $fila['engine_type'],
-            "transmission" => $fila['transmission'],
-            "fuel" => $fila['fuel'],
-            "capacity" => (int)$fila['capacity'],
-            "color" => $fila['color'],
-            "chassis_no" => $fila['chassis_no'],
-            "manufacture_date" => $fila['manufacture_date'],
-            "type_code" => $fila['type_code'],
-            "displacement" => (int)$fila['displacement'],
-            "turbo" => $fila['turbo'],
-            "drive" => $fila['drive'],
-            "steering_wheel" => $fila['steering_wheel'],
-            "mileage" => (int)$fila['mileage'],
-            "vehicle_type" => $fila['vehicle_type'],
-            "precio" => (int)$fila['precio'],
-            "estado" => $fila['estado'],
-            "driver_airbag" => (int)$fila['driver_airbag'],
-            "passenger_airbag" => (int)$fila['passenger_airbag'],
-            "destacado" => (int)$fila['destacado'],
-            "stock" => (int)$fila['stock'],
-            "img" => $fila['portada'],
-            "imagenes" => $fotos_array,
-            "options" => $opciones_array
-        ];
-    }
-}
-
-$json_autos = json_encode($autos);
-
-$conn->close();
+if ($result->num_rows > 0) {
+while ($row = $result->fetch_assoc()) {
 ?>
 
 <!DOCTYPE html>
