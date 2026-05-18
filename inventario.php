@@ -3,9 +3,9 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-$servername = "ballast.proxy.rlwy.net:41960"; 
-$username = "root";                           
-$password = "TU_CONTRASENA_DE_RAILWAY";      
+$servername = "mysql.railway.internal"; 
+$username = "root";               
+$password = "XGdcltEeQVjbsOjfHJmqpWnmQZqUqrOq";
 $dbname = "railway";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
