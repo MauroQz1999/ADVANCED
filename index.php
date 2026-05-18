@@ -253,6 +253,43 @@
             cursor: pointer;
         }
 
+        .carrusel_destacados1 {
+            width: 75%;
+            margin: auto;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            gap: 30px;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            padding-bottom: 15px;
+            scrollbar-width: none;
+        }
+
+        .carrusel_destacados1::-webkit-scrollbar {
+            display: none;
+        }
+
+        .carta_normal1 {
+            width: 320px;
+            flex-shrink: 0;
+            background-color: #ffffff;
+            margin-top: 10px;
+            margin-bottom: 5px;
+            border: 1px solid rgba(13, 52, 70, 0.12);
+            border-radius: 16px;
+            overflow: hidden;
+            box-sizing: border-box;
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s ease, border-color 0.3s ease;
+        }
+
+        .carta_normal1:hover {
+            transform: translateY(-6px);
+            border-color: rgba(13, 52, 70, 0.3);
+            box-shadow: 0 20px 45px rgba(13, 52, 70, 0.08);
+            cursor: pointer;
+        }
+
         .contenedor_img {
             position: relative;
             height: 250px;
@@ -268,6 +305,10 @@
         }
 
         .carta_normal:hover .car-img {
+            transform: scale(1.08);
+        }
+
+        .carta_normal1:hover .car-img {
             transform: scale(1.08);
         }
 
@@ -290,6 +331,10 @@
         }
 
         .carta_normal:hover .specs-overlay {
+            opacity: 1;
+        }
+
+        .carta_normal1:hover .specs-overlay {
             opacity: 1;
         }
 
@@ -340,6 +385,10 @@
         }
 
         .carta_normal:hover .indicator {
+            width: 100%;
+        }
+
+        .carta_normal1:hover .indicator {
             width: 100%;
         }
 
@@ -1416,8 +1465,8 @@
     <div class="sub-titulo">
         <h1>Modelos Recomendados</h1>
     </div>
-    <div class="carrusel_destacados">
-        <div class="carta_normal">
+    <div class="carrusel_destacados1">
+        <div class="carta_normal1">
             <div class="contenedor_img">
                 <img class="car-img" src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=800" alt="Car">
 
@@ -1452,7 +1501,7 @@
                 <div class="indicator"></div>
             </div>
         </div>
-        <div class="carta_normal">
+        <div class="carta_normal1">
             <div class="contenedor_img">
                 <img class="car-img" src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=800" alt="Car">
 
@@ -1487,7 +1536,7 @@
                 <div class="indicator"></div>
             </div>
         </div>
-        <div class="carta_normal">
+        <div class="carta_normal1">
             <div class="contenedor_img">
                 <img class="car-img" src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=800" alt="Car">
 
@@ -1522,7 +1571,7 @@
                 <div class="indicator"></div>
             </div>
         </div>
-        <div class="carta_normal">
+        <div class="carta_normal1">
             <div class="contenedor_img">
                 <img class="car-img" src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=800" alt="Car">
 
@@ -2039,6 +2088,79 @@
                 }
             }
         };
+
+        // --- 2. CARRUSEL DE AUTOS (MOVIMIENTO POR PASOS - TU CÓDIGO) ---
+        const carruselAutos = document.querySelector('.carrusel_destacados');
+
+        if (carruselAutos) {
+            const itemsAutos = carruselAutos.querySelectorAll('.carta_normal');
+
+            if (carruselAutos.scrollWidth > carruselAutos.offsetWidth) {
+
+                itemsAutos.forEach(item => {
+                    const clon = item.cloneNode(true);
+                    carruselAutos.appendChild(clon);
+                });
+
+                let scrollPos = 0;
+                const velocidad = 0.4;
+
+                carruselAutos.style.scrollBehavior = 'auto';
+
+                function animarContinuo() {
+                    scrollPos += velocidad;
+
+                    if (scrollPos >= carruselAutos.scrollWidth / 2) {
+                        scrollPos = 0;
+                    }
+
+                    carruselAutos.scrollLeft = scrollPos;
+                    requestAnimationFrame(animarContinuo);
+                }
+
+                animarContinuo();
+            } else {
+                carruselAutos.style.justifyContent = 'center';
+                carruselAutos.style.overflowX = 'hidden';
+            }
+        }
+
+        // --- 3. CARRUSEL DE AUTOS (MOVIMIENTO POR PASOS - TU CÓDIGO) ---
+        const carruselAutos1 = document.querySelector('.carrusel_destacados1');
+
+        if (carruselAutos1) {
+            const itemsAutos = carruselAutos1.querySelectorAll('.carta_normal1');
+
+            if (carruselAutos1.scrollWidth > carruselAutos1.offsetWidth) {
+
+                itemsAutos.forEach(item => {
+                    const clon = item.cloneNode(true);
+                    carruselAutos1.appendChild(clon);
+                });
+
+                let scrollPos = 0;
+                const velocidad = 0.4;
+
+                carruselAutos1.style.scrollBehavior = 'auto';
+
+                function animarContinuo() {
+                    scrollPos += velocidad;
+
+                    if (scrollPos >= carruselAutos1.scrollWidth / 2) {
+                        scrollPos = 0;
+                    }
+
+                    carruselAutos1.scrollLeft = scrollPos;
+                    requestAnimationFrame(animarContinuo);
+                }
+
+                animarContinuo();
+            } else {
+                carruselAutos1.style.justifyContent = 'center';
+                carruselAutos1.style.overflowX = 'hidden';
+            }
+        }
+
     </script>
 </body>
 
