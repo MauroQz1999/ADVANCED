@@ -1332,7 +1332,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
         ?>
-                <div class="carta_logo" onclick="window.location.href='inventario.php?id=<?php echo $row['id']; ?>'">
+                <div class="carta_logo" onclick="window.location.href='inventario.php?id=<?php echo $row['nombre']; ?>'">
                     <img src="<?php echo htmlspecialchars($row['logo']); ?>" alt="Car">
                 </div>
         <?php

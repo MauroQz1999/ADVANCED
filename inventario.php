@@ -3,8 +3,8 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-$servername = "mysql.railway.internal"; 
-$username = "root";               
+$servername = "mysql.railway.internal";
+$username = "root";
 $password = "XGdcltEeQVjbsOjfHJmqpWnmQZqUqrOq";
 $dbname = "railway";
 
@@ -510,6 +510,13 @@ $conn->close();
         ];
 
         function init() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const marcaUrl = urlParams.get('marca');
+
+            if (marcaUrl) {
+                activeFilters["marca"] = marcaUrl;
+            }
+
             updateUI();
         }
 
