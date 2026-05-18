@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="styles.css">
 
     <style>
-
         .hero-banner {
             width: 100%;
             padding: 30px 0;
@@ -1227,7 +1226,7 @@
 </head>
 
 <body>
-    
+
     <?php include 'topbar.php'; ?>
 
     <section class="hero-banner">
@@ -1990,6 +1989,47 @@
             // Animamos el cambio de texto del resultado
             document.getElementById('monto-flete').innerText = `$${totalEstimado.toLocaleString('en-US')}.00 USD`;
         }
+
+
+        /* -------------------------------------------------------------------------------------------------------- */
+
+        window.onload = function() {
+
+            // --- 1. CARRUSEL DE LOGOS (MOVIMIENTO CONTINUO) ---
+            const sliderMarcas = document.querySelector('.carrusel_logos');
+
+            if (sliderMarcas) {
+                const itemsMarcas = sliderMarcas.querySelectorAll('.carta_logo');
+
+                if (sliderMarcas.scrollWidth > sliderMarcas.offsetWidth) {
+
+                    itemsMarcas.forEach(item => {
+                        const clon = item.cloneNode(true);
+                        sliderMarcas.appendChild(clon);
+                    });
+
+                    let scrollPos = 0;
+                    const velocidad = 0.8;
+
+                    sliderMarcas.style.scrollBehavior = 'auto';
+
+                    function animarContinuo() {
+                        scrollPos += velocidad;
+
+                        if (scrollPos >= sliderMarcas.scrollWidth / 2) {
+                            scrollPos = 0;
+                        }
+
+                        sliderMarcas.scrollLeft = scrollPos;
+                        requestAnimationFrame(animarContinuo);
+                    }
+
+                    animarContinuo();
+                } else {
+                    sliderMarcas.style.justifyContent = 'center';
+                }
+            }
+        };
     </script>
 </body>
 
