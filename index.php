@@ -1388,36 +1388,36 @@ $conn = new mysqli($servername, $username, $password, $dbname);
         ?>
                 <div class="carta_normal" onclick="window.location.href='datos.php?id=${id}'">
                     <div class="contenedor_img">
-                        <img class="car-img" src="${img}" alt="Car">
+                        <img class="car-img" src="<?php echo htmlspecialchars($row['img']); ?>" alt="Car">
 
                         <div class="specs-overlay">
                             <div class="spec-item">
                                 <span class="spec-label">Precio</span>
-                                <span>$${Number(precio).toLocaleString()}</span>
+                                <span><?php echo htmlspecialchars($row['precio']); ?></span>
                             </div>
                             <div class="spec-item">
                                 <span class="spec-label">Año</span>
-                                <span>${first_registration}</span>
+                                <span><?php echo htmlspecialchars($row['first_registration']); ?></span>
                             </div>
                             <div class="spec-item">
                                 <span class="spec-label">Transmision</span>
-                                <span>${transmission}</span>
+                                <span><?php echo htmlspecialchars($row['transmission']); ?></span>
                             </div>
                             <div class="spec-item">
                                 <span class="spec-label">Motor</span>
-                                <span>${engine_type}</span>
+                                <span><?php echo htmlspecialchars($row['engine_type']); ?></span>
                             </div>
                             <div class="spec-item">
                                 <span class="spec-label">Status</span>
-                                <span>${estado}</span>
+                                <span><?php echo htmlspecialchars($row['estado']); ?></span>
                             </div>
                             <button style="margin-top: 0px; background: #000; color: #fff; border: none; padding: 12px; cursor: pointer; font-family: 'Outfit'; font-weight: 600; letter-spacing: 2px;">VER DETALLES</button>
                         </div>
 
                     </div>
                     <div class="info-car">
-                        <div class="info_fabricante">${marca}</div>
-                        <h2 class="info_modelo">${modelo}</h2>
+                        <div class="info_fabricante"><?php echo htmlspecialchars($row['marca']); ?></div>
+                        <h2 class="info_modelo"><?php echo htmlspecialchars($row['modelo']); ?></h2>
                         <div class="indicator"></div>
                     </div>
                 </div>
