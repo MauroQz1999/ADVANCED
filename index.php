@@ -1325,52 +1325,15 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 
     <section class="carrusel_logos">
         <?php
-        $sql = "SELECT 
-                    a.id,
-                    a.modelo_id,
-                    mar.nombre AS marca,
-                    mar.logo AS marca_logo, 
-                    md.nombre AS modelo,
-                    a.first_registration,
-                    a.rango,
-                    a.engine_type,
-                    a.transmission,
-                    a.fuel,
-                    a.capacity,
-                    a.color,
-                    a.chassis_no,
-                    a.manufacture_date,
-                    a.type_code,
-                    a.displacement,
-                    a.turbo,
-                    a.drive,
-                    a.steering_wheel,
-                    a.mileage,
-                    a.vehicle_type,
-                    a.precio,          
-                    a.estado,          
-                    a.driver_airbag,
-                    a.passenger_airbag,
-                    a.destacado,
-                    a.stock,
-                    a.img AS portada, 
-                    GROUP_CONCAT(DISTINCT img.ruta_img) AS galeria_fotos,
-                    GROUP_CONCAT(DISTINCT opc.nombre) AS lista_opciones
-                FROM autos a
-                LEFT JOIN modelos md ON a.modelo_id = md.id
-                LEFT JOIN marcas mar ON md.marca_id = mar.id
-                LEFT JOIN auto_imagenes img ON a.id = img.auto_id
-                LEFT JOIN auto_opciones ao ON a.id = ao.auto_id      
-                LEFT JOIN opciones opc ON ao.opcion_id = opc.id      
-                WHERE a.destacado = 1
-                GROUP BY a.id";
+        $sql = "SELECT * 
+                FROM marcas";
         $result = $conn->query($sql);
 
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
         ?>
-                <div class="carta_logo">
-                    <img src="<?php echo htmlspecialchars($row['portada']); ?>" alt="Car">
+                <div class="carta_logo" onclick="window.location.href='datos.php?id=<?php echo $row['id']; ?>'">
+                    <img src="<?php echo htmlspecialchars($row['logo']); ?>" alt="Car">
                 </div>
         <?php
             }
