@@ -517,7 +517,7 @@
                     <img src="./logo.png" alt="Logo Advance Sound Center">
                 </div>
                 <div class="logo-titulo">
-                    <h1>ADVANCED SOUND CENTER</h1>
+                    <h1>ADVANCED SOUTH CENTER</h1>
                     <h2>JAPANE USED CAR EXPORTER</h2>
                 </div>
             </a>
