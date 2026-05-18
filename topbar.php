@@ -504,8 +504,8 @@
         <div class="cont-mintopbar">
             <ul class="mini-links">
                 <li><a href="#">Countries</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Services</a></li>
+                <li><a href="servicios.php">Services</a></li>
+                <li><a href="servicios.php">Services</a></li>
                 <li><a href="#">About Us</a></li>
             </ul>
         </div>
@@ -523,9 +523,9 @@
             </a>
             <div class="cont-central" id="menuCentral">
                 <ul class="menu-principal">
-                    <li><a href="#">Catalog</a></li>
-                    <li><a href="#">Catalog</a></li>
-                    <li><a href="#">Catalog</a></li>
+                    <li><a href="inventario.php">Catalog</a></li>
+                    <li><a href="inventario.php">Catalog</a></li>
+                    <li><a href="inventario.php">Catalog</a></li>
                 </ul>
             </div>
             <div class="cont-derecho">
