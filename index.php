@@ -1324,16 +1324,60 @@ $conn = new mysqli($servername, $username, $password, $dbname);
     </section>
 
     <section class="carrusel_logos">
-        <div class="carta_logo"><img src="img/toyota.png" alt="Toyota"></div>
-        <div class="carta_logo"><img src="img/nissan.png" alt="Nissan"></div>
-        <div class="carta_logo"><img src="img/Volkswagen.png" alt="VW"></div>
-        <div class="carta_logo"><img src="img/bmw.png" alt="BMW"></div>
-        <div class="carta_logo"><img src="img/mitsubishi.png" alt="Mitsubishi"></div>
-        <div class="carta_logo"><img src="img/honda.png" alt="Honda"></div>
-        <div class="carta_logo"><img src="img/Suzuki.png" alt="Suzuki"></div>
-        <div class="carta_logo"><img src="img/Mercedes.png" alt="Mercedes"></div>
-        <div class="carta_logo"><img src="img/ford.png" alt="Toyota"></div>
-        <div class="carta_logo"><img src="img/chevrolet.png" alt="Nissan"></div>
+        <?php
+        $sql = "SELECT 
+                    a.id,
+                    a.modelo_id,
+                    mar.nombre AS marca,
+                    mar.logo AS marca_logo, 
+                    md.nombre AS modelo,
+                    a.first_registration,
+                    a.rango,
+                    a.engine_type,
+                    a.transmission,
+                    a.fuel,
+                    a.capacity,
+                    a.color,
+                    a.chassis_no,
+                    a.manufacture_date,
+                    a.type_code,
+                    a.displacement,
+                    a.turbo,
+                    a.drive,
+                    a.steering_wheel,
+                    a.mileage,
+                    a.vehicle_type,
+                    a.precio,          
+                    a.estado,          
+                    a.driver_airbag,
+                    a.passenger_airbag,
+                    a.destacado,
+                    a.stock,
+                    a.img AS portada, 
+                    GROUP_CONCAT(DISTINCT img.ruta_img) AS galeria_fotos,
+                    GROUP_CONCAT(DISTINCT opc.nombre) AS lista_opciones
+                FROM autos a
+                LEFT JOIN modelos md ON a.modelo_id = md.id
+                LEFT JOIN marcas mar ON md.marca_id = mar.id
+                LEFT JOIN auto_imagenes img ON a.id = img.auto_id
+                LEFT JOIN auto_opciones ao ON a.id = ao.auto_id      
+                LEFT JOIN opciones opc ON ao.opcion_id = opc.id      
+                WHERE a.destacado = 1
+                GROUP BY a.id";
+        $result = $conn->query($sql);
+
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+        ?>
+                <div class="carta_logo">
+                    <img src="<?php echo htmlspecialchars($row['portada']); ?>" alt="Car">
+                </div>
+        <?php
+            }
+        } else {
+            echo "<p>No hay vehículos disponibles en este momento.</p>";
+        }
+        ?>
     </section>
 
     <div class="sub-titulo">
