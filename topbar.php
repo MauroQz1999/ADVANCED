@@ -321,185 +321,180 @@
 
         @media (max-width: 992px) {
 
-            @media (max-width: 992px) {
-
-                html,
-                body {
-                    position: relative;
-                    overflow-x: hidden !important;
-                    /* Elimina la barra gris lateral permanentemente */
-                    width: 100% !important;
-                    max-width: 100% !important;
-                    min-height: 100vh;
-                    display: block !important;
-                    /* Cambiamos a block para evitar estiramientos elásticos del flex */
-                }
-
-                /* Fuerza a que las barras ocupen su tamaño real sin heredar flexión extra */
-                .min-topbar,
-                .topbar {
-                    display: flex !important;
-                    flex-shrink: 0;
-                }
-
-                .min-topbar {
-                    position: sticky;
-                    top: 0;
-                    z-index: 2001;
-                    width: 100%;
-                    height: 40px;
-                    max-width: 100%;
-                }
-
-                .cont-mintopbar {
-                    width: 100%;
-                    padding: 0 10px;
-                }
-
-                .mini-links {
-                    gap: 15px !important;
-                    width: 100%;
-                    justify-content: center;
-                    padding: 0;
-                }
-
-                .mini-links a {
-                    font-size: 0.75rem !important;
-                    white-space: nowrap;
-                }
-
-                .topbar {
-                    position: sticky;
-                    top: 40px !important;
-                    padding: 0 12px;
-                    height: 70px;
-                    width: 100%;
-                    max-width: 100%;
-                }
-
-                .cont-topbar {
-                    justify-content: space-between;
-                    width: 100%;
-                }
-
-                .cont-izquierdo {
-                    width: auto !important;
-                    padding-left: 0 !important;
-                    gap: 6px !important;
-                }
-
-                .logo {
-                    height: 38px !important;
-                    width: 38px !important;
-                }
-
-                .logo-titulo h1 {
-                    font-size: 0.8rem !important;
-                }
-
-                .logo-titulo h2 {
-                    font-size: 0.52rem !important;
-                }
-
-                .cont-central {
-                    position: fixed !important;
-                    top: 68px;
-                    right: -100%;
-                    visibility: hidden;
-                    width: 270px;
-                    height: calc(100vh - 110px);
-                    background-color: rgba(255, 255, 255, 0.98) !important;
-                    backdrop-filter: blur(20px);
-                    -webkit-backdrop-filter: blur(20px);
-                    box-shadow: -10px 10px 30px rgba(0, 0, 0, 0.1);
-                    flex-direction: column !important;
-                    justify-content: flex-start !important;
-                    align-items: flex-start !important;
-                    padding: 30px 25px 40px 25px !important;
-                    transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.4s !important;
-                    z-index: 2999 !important;
-                    overflow-y: auto;
-                }
-
-                .cont-central.activo {
-                    right: 0 !important;
-                    visibility: visible !important;
-                }
-
-                .menu-principal {
-                    flex-direction: column !important;
-                    gap: 20px !important;
-                    width: 100% !important;
-                }
-
-                .menu-principal a {
-                    font-size: 1.15rem !important;
-                    width: 100% !important;
-                    display: block;
-                    padding: 8px 0;
-                    border-bottom: 1px solid #f1f5f9;
-                }
-
-                .cont-derecho {
-                    display: flex !important;
-                    width: auto !important;
-                    align-items: center !important;
-                    justify-content: flex-end !important;
-                    gap: 8px !important;
-                    padding-right: 0 !important;
-                    margin-left: auto;
-                }
-
-                .btn-contacto {
-                    padding: 8px 12px !important;
-                    font-size: 0.8rem !important;
-                    border-radius: 6px !important;
-                    white-space: nowrap;
-                }
-
-                .selector-idioma {
-                    font-size: 0.8rem !important;
-                }
-
-                .lista-redes {
-                    right: 0 !important;
-                    left: auto !important;
-                    width: 150px !important;
-                }
-
-                .btn-hamburguesa {
-                    display: flex !important;
-                    flex-direction: column;
-                    justify-content: space-between;
-                    width: 22px;
-                    height: 16px;
-                    background: none;
-                    border: none;
-                    cursor: pointer;
-                    z-index: 3000;
-                    padding: 0 !important;
-                }
-
-                .btn-hamburguesa span {
-                    width: 100%;
-                    height: 3px;
-                    background-color: #0d3446;
-                    border-radius: 2px;
-                    transition: all 0.3s ease;
-                }
-
-                .btn-hamburguesa.activo span:nth-child(1) {
-                    transform: translateY(6px) rotate(45deg);
-                }
-
-                .btn-hamburguesa.activo span:nth-child(2) {
-                    opacity: 0;
-                }
-
-                .btn-hamburguesa.activo span:nth-child(3) {
-                    transform: translateY(-7px) rotate(-45deg);
-                }
+            html,
+            body {
+                position: relative;
+                overflow-x: hidden !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                min-height: 100vh;
+                display: block !important;
             }
+
+            .min-topbar,
+            .topbar {
+                display: flex !important;
+                flex-shrink: 0;
+            }
+
+            .min-topbar {
+                position: sticky;
+                top: 0;
+                z-index: 2001;
+                width: 100%;
+                height: 40px;
+                max-width: 100%;
+            }
+
+            .cont-mintopbar {
+                width: 100%;
+                padding: 0 10px;
+            }
+
+            .mini-links {
+                gap: 15px !important;
+                width: 100%;
+                justify-content: center;
+                padding: 0;
+            }
+
+            .mini-links a {
+                font-size: 0.75rem !important;
+                white-space: nowrap;
+            }
+
+            .topbar {
+                position: sticky;
+                top: 40px !important;
+                padding: 0 12px;
+                height: 70px;
+                width: 100%;
+                max-width: 100%;
+            }
+
+            .cont-topbar {
+                justify-content: space-between;
+                width: 100%;
+            }
+
+            .cont-izquierdo {
+                width: auto !important;
+                padding-left: 0 !important;
+                gap: 6px !important;
+            }
+
+            .logo {
+                height: 38px !important;
+                width: 38px !important;
+            }
+
+            .logo-titulo h1 {
+                font-size: 0.8rem !important;
+            }
+
+            .logo-titulo h2 {
+                font-size: 0.52rem !important;
+            }
+
+            .cont-central {
+                position: fixed !important;
+                top: 68px;
+                right: -100%;
+                visibility: hidden;
+                width: 270px;
+                height: calc(100vh - 110px);
+                background-color: rgba(255, 255, 255, 0.98) !important;
+                backdrop-filter: blur(20px);
+                -webkit-backdrop-filter: blur(20px);
+                box-shadow: -10px 10px 30px rgba(0, 0, 0, 0.1);
+                flex-direction: column !important;
+                justify-content: flex-start !important;
+                align-items: flex-start !important;
+                padding: 30px 25px 40px 25px !important;
+                transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.4s !important;
+                z-index: 2999 !important;
+                overflow-y: auto;
+            }
+
+            .cont-central.activo {
+                right: 0 !important;
+                visibility: visible !important;
+            }
+
+            .menu-principal {
+                flex-direction: column !important;
+                gap: 20px !important;
+                width: 100% !important;
+            }
+
+            .menu-principal a {
+                font-size: 1.15rem !important;
+                width: 100% !important;
+                display: block;
+                padding: 8px 0;
+                border-bottom: 1px solid #f1f5f9;
+            }
+
+            .cont-derecho {
+                display: flex !important;
+                width: auto !important;
+                align-items: center !important;
+                justify-content: flex-end !important;
+                gap: 8px !important;
+                padding-right: 0 !important;
+                margin-left: auto;
+            }
+
+            .btn-contacto {
+                padding: 8px 12px !important;
+                font-size: 0.8rem !important;
+                border-radius: 6px !important;
+                white-space: nowrap;
+            }
+
+            .selector-idioma {
+                font-size: 0.8rem !important;
+            }
+
+            .lista-redes {
+                right: 0 !important;
+                left: auto !important;
+                width: 150px !important;
+            }
+
+            .btn-hamburguesa {
+                display: flex !important;
+                flex-direction: column;
+                justify-content: space-between;
+                width: 22px;
+                height: 16px;
+                background: none;
+                border: none;
+                cursor: pointer;
+                z-index: 3000;
+                padding: 0 !important;
+            }
+
+            .btn-hamburguesa span {
+                width: 100%;
+                height: 3px;
+                background-color: #0d3446;
+                border-radius: 2px;
+                transition: all 0.3s ease;
+            }
+
+            .btn-hamburguesa.activo span:nth-child(1) {
+                transform: translateY(6px) rotate(45deg);
+            }
+
+            .btn-hamburguesa.activo span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .btn-hamburguesa.activo span:nth-child(3) {
+                transform: translateY(-7px) rotate(-45deg);
+            }
+        }
     </style>
 
 </head>
