@@ -1386,38 +1386,38 @@ $conn = new mysqli($servername, $username, $password, $dbname);
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
         ?>
-                <div class="carta_normal" onclick="window.location.href='datos.php?id=${car.id}'">
+                <div class="carta_normal" onclick="window.location.href='datos.php?id=${id}'">
                     <div class="contenedor_img">
-                        <img class="car-img" src="${car.img}" alt="Car">
+                        <img class="car-img" src="${img}" alt="Car">
 
                         <div class="specs-overlay">
                             <div class="spec-item">
                                 <span class="spec-label">Precio</span>
-                                <span>$${Number(car.precio).toLocaleString()}</span>
+                                <span>$${Number(precio).toLocaleString()}</span>
                             </div>
                             <div class="spec-item">
                                 <span class="spec-label">Año</span>
-                                <span>${car.first_registration}</span>
+                                <span>${first_registration}</span>
                             </div>
                             <div class="spec-item">
                                 <span class="spec-label">Transmision</span>
-                                <span>${car.transmission}</span>
+                                <span>${transmission}</span>
                             </div>
                             <div class="spec-item">
                                 <span class="spec-label">Motor</span>
-                                <span>${car.engine_type}</span>
+                                <span>${engine_type}</span>
                             </div>
                             <div class="spec-item">
                                 <span class="spec-label">Status</span>
-                                <span>${car.estado}</span>
+                                <span>${estado}</span>
                             </div>
                             <button style="margin-top: 0px; background: #000; color: #fff; border: none; padding: 12px; cursor: pointer; font-family: 'Outfit'; font-weight: 600; letter-spacing: 2px;">VER DETALLES</button>
                         </div>
 
                     </div>
                     <div class="info-car">
-                        <div class="info_fabricante">${car.marca}</div>
-                        <h2 class="info_modelo">${car.modelo}</h2>
+                        <div class="info_fabricante">${marca}</div>
+                        <h2 class="info_modelo">${modelo}</h2>
                         <div class="indicator"></div>
                     </div>
                 </div>
