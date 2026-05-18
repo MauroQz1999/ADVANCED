@@ -483,7 +483,7 @@ if (!$auto) {
     <div class="contenedor">
         <div class="izquierda">
             <div class="img">
-                <img class="car-img" src="${portada}" alt="Car">
+                <img class="car-img" src="uploads/<?php echo htmlspecialchars($auto['portada']); ?>" alt="Car">
             </div>
             <div class="carrusel">
             </div>
