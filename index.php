@@ -1379,7 +1379,8 @@ $conn = new mysqli($servername, $username, $password, $dbname);
                 LEFT JOIN auto_imagenes img ON a.id = img.auto_id
                 LEFT JOIN auto_opciones ao ON a.id = ao.auto_id      
                 LEFT JOIN opciones opc ON ao.opcion_id = opc.id      
-                GROUP BY a.id WHERE destacado = 1";
+                WHERE a.destacado = 1
+                GROUP BY a.id";
         $result = $conn->query($sql);
 
         if ($result->num_rows > 0) {
