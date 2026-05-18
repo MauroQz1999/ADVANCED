@@ -1388,7 +1388,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
         ?>
                 <div class="carta_normal" onclick="window.location.href='datos.php?id=${id}'">
                     <div class="contenedor_img">
-                        <img class="car-img" src="<?php echo htmlspecialchars($row['img']); ?>" alt="Car">
+                        <img class="car-img" src="<?php echo htmlspecialchars($row['portada']); ?>" alt="Car">
 
                         <div class="specs-overlay">
                             <div class="spec-item">
