@@ -221,15 +221,24 @@
             margin: auto;
             display: flex;
             flex-direction: row;
-            justify-content: center;
+            justify-content: flex-start;
             gap: 30px;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            padding-bottom: 15px;
+            scrollbar-width: none;
+        }
+
+        .carrusel_destacados::-webkit-scrollbar {
+            display: none;
         }
 
         .carta_normal {
             width: 320px;
+            flex-shrink: 0;
             background-color: #ffffff;
             margin-top: 10px;
-            margin-bottom: 20px;
+            margin-bottom: 5px;
             border: 1px solid rgba(13, 52, 70, 0.12);
             border-radius: 16px;
             overflow: hidden;
