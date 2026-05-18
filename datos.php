@@ -55,6 +55,7 @@ $sql = "SELECT
                 LEFT JOIN auto_imagenes img ON a.id = img.auto_id
                 LEFT JOIN auto_opciones ao ON a.id = ao.auto_id      
                 LEFT JOIN opciones opc ON ao.opcion_id = opc.id
+                WHERE a.id = $id
                 GROUP BY a.id";
 
 $result = $conn->query($sql);
@@ -71,14 +72,6 @@ if (!$auto) {
     exit;
 }
 
-// NOTA: Aquí asumo que tienes una tabla de fotos relacionada o una lista separada por comas.
-// Si no las tienes en la DB aún, puedes usar este array de ejemplo para probar el diseño:
-$fotos_ejemplo = [
-    "https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=1200",
-    "https://images.unsplash.com/photo-1583121274602-3e2820c69888?w=1200",
-    "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=1200",
-    "https://images.unsplash.com/photo-1502877338535-766e1452684a?w=1200"
-];
 ?>
 
 <!DOCTYPE html>
