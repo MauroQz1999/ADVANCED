@@ -1,195 +1,116 @@
 <?php
 
-/**
- * INVENTARIO AURA - VERSIÓN SIN VARIABLES ROOT
- * Para conectar: $autos = $tu_consulta_pdo->fetchAll(PDO::FETCH_ASSOC);
- */
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
-$autos = [
-    [
-        "id" => 1,
-        "marca" => "Aura",
-        "modelo" => "E-Vision GT",
-        "año" => "2025",
-        "combustible" => "Eléctrico",
-        "transmision" => "Automática",
-        "traccion" => "AWD",
-        "color" => "Blanco",
-        "puertas" => "4",
-        "categoria" => "Deportivo",
-        "precio" => "120000",
-        "estado" => "Nuevo",
-        "motor" => "Dual Motor",
-        "asientos" => "4",
-        "origen" => "Alemania",
-        "garantia" => "5 años",
-        "entrega" => "Inmediata",
-        "img" => "https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=600"
-    ],
-    [
-        "id" => 2,
-        "marca" => "Porsche",
-        "modelo" => "Taycan S",
-        "año" => "2025",
-        "combustible" => "Eléctrico",
-        "transmision" => "Automática",
-        "traccion" => "AWD",
-        "color" => "Gris",
-        "puertas" => "4",
-        "categoria" => "Sedán",
-        "precio" => "185000",
-        "estado" => "Nuevo",
-        "motor" => "800V",
-        "asientos" => "4",
-        "origen" => "Alemania",
-        "garantia" => "4 años",
-        "entrega" => "7 días",
-        "img" => "https://images.unsplash.com/photo-1614162692292-7ac56d7fd761?q=80&w=600"
-    ],
-    [
-        "id" => 3,
-        "marca" => "Toyota",
-        "modelo" => "Land Cruiser",
-        "año" => "2024",
-        "combustible" => "Diésel",
-        "transmision" => "Automática",
-        "traccion" => "4WD",
-        "color" => "Verde",
-        "puertas" => "5",
-        "categoria" => "SUV",
-        "precio" => "95000",
-        "estado" => "Nuevo",
-        "motor" => "V6 Turbo",
-        "asientos" => "7",
-        "origen" => "Japón",
-        "garantia" => "3 años",
-        "entrega" => "Inmediata",
-        "img" => "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?q=80&w=600"
-    ],
+$servername = "ballast.proxy.rlwy.net:41960"; 
+$username = "root";                           
+$password = "TU_CONTRASENA_DE_RAILWAY";      
+$dbname = "railway";
 
-    [
-        "id" => 4,
-        "marca" => "Aura",
-        "modelo" => "E-Vision GT",
-        "año" => "2025",
-        "combustible" => "Eléctrico",
-        "transmision" => "Automática",
-        "traccion" => "AWD",
-        "color" => "Blanco",
-        "puertas" => "4",
-        "categoria" => "Deportivo",
-        "precio" => "120000",
-        "estado" => "Nuevo",
-        "motor" => "Dual Motor",
-        "asientos" => "4",
-        "origen" => "Alemania",
-        "garantia" => "5 años",
-        "entrega" => "Inmediata",
-        "img" => "https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=600"
-    ],
-    [
-        "id" => 6,
-        "marca" => "Porsche",
-        "modelo" => "Taycan S",
-        "año" => "2025",
-        "combustible" => "Eléctrico",
-        "transmision" => "Automática",
-        "traccion" => "AWD",
-        "color" => "Gris",
-        "puertas" => "4",
-        "categoria" => "Sedán",
-        "precio" => "185000",
-        "estado" => "Nuevo",
-        "motor" => "800V",
-        "asientos" => "4",
-        "origen" => "Alemania",
-        "garantia" => "4 años",
-        "entrega" => "7 días",
-        "img" => "https://images.unsplash.com/photo-1614162692292-7ac56d7fd761?q=80&w=600"
-    ],
-    [
-        "id" => 7,
-        "marca" => "Toyota",
-        "modelo" => "Land Cruiser",
-        "año" => "2024",
-        "combustible" => "Diésel",
-        "transmision" => "Automática",
-        "traccion" => "4WD",
-        "color" => "Verde",
-        "puertas" => "5",
-        "categoria" => "SUV",
-        "precio" => "95000",
-        "estado" => "Nuevo",
-        "motor" => "V6 Turbo",
-        "asientos" => "7",
-        "origen" => "Japón",
-        "garantia" => "3 años",
-        "entrega" => "Inmediata",
-        "img" => "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?q=80&w=600"
-    ],
-    [
-        "id" => 8,
-        "marca" => "Aura",
-        "modelo" => "E-Vision GT",
-        "año" => "2025",
-        "combustible" => "Eléctrico",
-        "transmision" => "Automática",
-        "traccion" => "AWD",
-        "color" => "Blanco",
-        "puertas" => "4",
-        "categoria" => "Deportivo",
-        "precio" => "120000",
-        "estado" => "Nuevo",
-        "motor" => "Dual Motor",
-        "asientos" => "4",
-        "origen" => "Alemania",
-        "garantia" => "5 años",
-        "entrega" => "Inmediata",
-        "img" => "https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=600"
-    ],
-    [
-        "id" => 9,
-        "marca" => "Porsche",
-        "modelo" => "Taycan S",
-        "año" => "2025",
-        "combustible" => "Eléctrico",
-        "transmision" => "Automática",
-        "traccion" => "AWD",
-        "color" => "Gris",
-        "puertas" => "4",
-        "categoria" => "Sedán",
-        "precio" => "185000",
-        "estado" => "Nuevo",
-        "motor" => "800V",
-        "asientos" => "4",
-        "origen" => "Alemania",
-        "garantia" => "4 años",
-        "entrega" => "7 días",
-        "img" => "https://images.unsplash.com/photo-1614162692292-7ac56d7fd761?q=80&w=600"
-    ],
-    [
-        "id" => 10,
-        "marca" => "Toyota",
-        "modelo" => "Land Cruiser",
-        "año" => "2024",
-        "combustible" => "Diésel",
-        "transmision" => "Automática",
-        "traccion" => "4WD",
-        "color" => "Verde",
-        "puertas" => "5",
-        "categoria" => "SUV",
-        "precio" => "95000",
-        "estado" => "Nuevo",
-        "motor" => "V6 Turbo",
-        "asientos" => "7",
-        "origen" => "Japón",
-        "garantia" => "3 años",
-        "entrega" => "Inmediata",
-        "img" => "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?q=80&w=600"
-    ]
-]; // Tu base de datos alimentará este array
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+if ($conn->connect_error) {
+    die("<h3 style='color:red; padding:20px;'>Error de Conexión a la Base de Datos: " . $conn->connect_error . "</h3>");
+}
+
+$conn->set_charset("utf8");
+
+$sql = "SELECT 
+            a.id,
+            a.modelo_id,
+            mar.nombre AS marca,
+            mar.logo AS marca_logo, 
+            md.nombre AS modelo,
+            a.first_registration,
+            a.rango,
+            a.engine_type,
+            a.transmission,
+            a.fuel,
+            a.capacity,
+            a.color,
+            a.chassis_no,
+            a.manufacture_date,
+            a.type_code,
+            a.displacement,
+            a.turbo,
+            a.drive,
+            a.steering_wheel,
+            a.mileage,
+            a.vehicle_type,
+            a.precio,          
+            a.estado,          
+            a.driver_airbag,
+            a.passenger_airbag,
+            a.destacado,
+            a.stock,
+            a.img AS portada, 
+            GROUP_CONCAT(DISTINCT img.ruta_img) AS galeria_fotos,
+            GROUP_CONCAT(DISTINCT opc.nombre) AS lista_opciones
+        FROM autos a
+        LEFT JOIN modelos md ON a.modelo_id = md.id
+        LEFT JOIN marcas mar ON md.marca_id = mar.id
+        LEFT JOIN auto_imagenes img ON a.id = img.auto_id
+        LEFT JOIN auto_opciones ao ON a.id = ao.auto_id      
+        LEFT JOIN opciones opc ON ao.opcion_id = opc.id      
+        GROUP BY a.id";
+
+$result = $conn->query($sql);
+
+if (!$result) {
+    die("<div style='background:#fff5f5; color:#c53030; border:1px solid #feb2b2; padding:25px; margin:20px; font-family:sans-serif; border-radius:8px;'>
+            <h2>❌ Error en la Consulta SQL</h2>
+            <p>MySQL dice: <strong>" . $conn->error . "</strong></p>
+            <p>Por favor, revisa que los nombres de las columnas en tu tabla <code>autos</code> coincidan exactamente con el código.</p>
+         </div>");
+}
+
+$mysql_rows_count = $result->num_rows;
+$autos = [];
+
+if ($mysql_rows_count > 0) {
+    while ($fila = $result->fetch_assoc()) {
+        $fotos_array = $fila['galeria_fotos'] ? explode(',', $fila['galeria_fotos']) : [];
+        $opciones_array = $fila['lista_opciones'] ? explode(',', $fila['lista_opciones']) : [];
+
+        $autos[] = [
+            "id" => (int)$fila['id'],
+            "modelo_id" => (int)$fila['modelo_id'],
+            "marca" => $fila['marca'],
+            "marca_logo" => $fila['marca_logo'],
+            "modelo" => $fila['modelo'],
+            "first_registration" => $fila['first_registration'],
+            "rango" => $fila['rango'],
+            "engine_type" => $fila['engine_type'],
+            "transmission" => $fila['transmission'],
+            "fuel" => $fila['fuel'],
+            "capacity" => (int)$fila['capacity'],
+            "color" => $fila['color'],
+            "chassis_no" => $fila['chassis_no'],
+            "manufacture_date" => $fila['manufacture_date'],
+            "type_code" => $fila['type_code'],
+            "displacement" => (int)$fila['displacement'],
+            "turbo" => $fila['turbo'],
+            "drive" => $fila['drive'],
+            "steering_wheel" => $fila['steering_wheel'],
+            "mileage" => (int)$fila['mileage'],
+            "vehicle_type" => $fila['vehicle_type'],
+            "precio" => (int)$fila['precio'],
+            "estado" => $fila['estado'],
+            "driver_airbag" => (int)$fila['driver_airbag'],
+            "passenger_airbag" => (int)$fila['passenger_airbag'],
+            "destacado" => (int)$fila['destacado'],
+            "stock" => (int)$fila['stock'],
+            "img" => $fila['portada'],
+            "imagenes" => $fotos_array,
+            "options" => $opciones_array
+        ];
+    }
+}
 
 $json_autos = json_encode($autos);
+
+$conn->close();
 ?>
 
 <!DOCTYPE html>
@@ -551,28 +472,6 @@ $json_autos = json_encode($autos);
                 margin-top: 15px;
                 /* Reduce el espacio muerto en móvil */
             }
-
-            /* Ajusta el espacio del catálogo */
-            .catalog-area {
-                width: 100%;
-                padding: 20px 15px;
-            }
-
-            .grid {
-                /* Fuerza a que en celulares las tarjetas ocupen un espacio más cómodo */
-                grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-                gap: 20px;
-            }
-
-            .carta_normal {
-                max-width: 100%;
-                /* Permite que la tarjeta use el ancho completo de la columna en el celular */
-            }
-
-            .contenedor_img {
-                height: 200px;
-                /* Reduce un poco la altura de la imagen en móviles para no comerse toda la pantalla */
-            }
         }
     </style>
 </head>
@@ -589,7 +488,6 @@ $json_autos = json_encode($autos);
         <div class="center">
             <aside class="sidebar" id="sidebar">
                 <div class="sidebar-title">Parámetros de Búsqueda</div>
-                <!-- Los selectores de filtro se inyectan aquí con JS -->
                 <button class="reset-btn" onclick="resetFilters()">LIMPIAR TODO</button>
             </aside>
         </div>
@@ -604,12 +502,11 @@ $json_autos = json_encode($autos);
         const allCars = <?php echo $json_autos; ?>;
         let activeFilters = {};
 
-        // Mantenemos las 16 características para el filtrado inteligente
         const filterKeys = [
-            "marca", "modelo", "año", "combustible",
-            "transmision", "traccion", "color", "puertas",
-            "categoria", "estado", "motor", "asientos",
-            "origen", "garantia", "entrega", "id"
+            "marca", "modelo", "first_registration", "rango", "engine_type", "transmission",
+            "fuel", "capacity", "color", "chassis_no",
+            "manufacture_date", "type_code", "displacement", "turbo",
+            "drive", "steering_wheel", "mileage", "vehicle_type"
         ];
 
         function init() {
@@ -626,12 +523,10 @@ $json_autos = json_encode($autos);
             const searchText = document.getElementById('generalSearch').value.toLowerCase();
 
             return allCars.filter(car => {
-                // Validación de Selectores
                 for (let key in activeFilters) {
                     if (activeFilters[key] && String(car[key]) !== activeFilters[key]) return false;
                 }
 
-                // Validación de Buscador de Texto
                 const valuesString = Object.values(car).join(" ").toLowerCase();
                 return valuesString.includes(searchText);
             });
@@ -641,14 +536,12 @@ $json_autos = json_encode($autos);
             const sidebar = document.getElementById('sidebar');
             const resetButton = sidebar.querySelector('.reset-btn');
 
-            // Limpiamos los grupos existentes
             document.querySelectorAll('.filter-group').forEach(el => el.remove());
 
             filterKeys.forEach(key => {
                 const group = document.createElement('div');
                 group.className = 'filter-group';
 
-                // Lógica inteligente: solo opciones que existen en el set actual
                 const options = [...new Set(data.map(car => car[key]))].sort();
 
                 let html = `<label>${key.replace('_', ' ')}</label>`;
@@ -683,9 +576,9 @@ $json_autos = json_encode($autos);
             }
 
             grid.innerHTML = cars.map(car => `
-                <div class="carta_normal">
+                <div class="carta_normal" onclick="window.location.href='datos.php?id=${car.id}'">
                     <div class="contenedor_img">
-                        <img class="car-img" src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=800" alt="Car">
+                        <img class="car-img" src="${car.img}" alt="Car">
 
                         <div class="specs-overlay">
                             <div class="spec-item">
@@ -694,15 +587,15 @@ $json_autos = json_encode($autos);
                             </div>
                             <div class="spec-item">
                                 <span class="spec-label">Año</span>
-                                <span>${car.año}</span>
+                                <span>${car.first_registration}</span>
                             </div>
                             <div class="spec-item">
                                 <span class="spec-label">Transmision</span>
-                                <span>${car.transmision}</span>
+                                <span>${car.transmission}</span>
                             </div>
                             <div class="spec-item">
                                 <span class="spec-label">Motor</span>
-                                <span>${car.motor}</span>
+                                <span>${car.engine_type}</span>
                             </div>
                             <div class="spec-item">
                                 <span class="spec-label">Status</span>

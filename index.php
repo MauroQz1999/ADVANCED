@@ -1,3 +1,119 @@
+
+<?php
+
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+$servername = "ballast.proxy.rlwy.net:41960"; 
+$username = "root";                           
+$password = "TU_CONTRASENA_DE_RAILWAY";      
+$dbname = "railway";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+if ($conn->connect_error) {
+    die("<h3 style='color:red; padding:20px;'>Error de Conexión a la Base de Datos: " . $conn->connect_error . "</h3>");
+}
+
+$conn->set_charset("utf8");
+
+$sql = "SELECT 
+            a.id,
+            a.modelo_id,
+            mar.nombre AS marca,
+            mar.logo AS marca_logo, 
+            md.nombre AS modelo,
+            a.first_registration,
+            a.rango,
+            a.engine_type,
+            a.transmission,
+            a.fuel,
+            a.capacity,
+            a.color,
+            a.chassis_no,
+            a.manufacture_date,
+            a.type_code,
+            a.displacement,
+            a.turbo,
+            a.drive,
+            a.steering_wheel,
+            a.mileage,
+            a.vehicle_type,
+            a.precio,          
+            a.estado,          
+            a.driver_airbag,
+            a.passenger_airbag,
+            a.destacado,
+            a.stock,
+            a.img AS portada, 
+            GROUP_CONCAT(DISTINCT img.ruta_img) AS galeria_fotos,
+            GROUP_CONCAT(DISTINCT opc.nombre) AS lista_opciones
+        FROM autos a
+        LEFT JOIN modelos md ON a.modelo_id = md.id
+        LEFT JOIN marcas mar ON md.marca_id = mar.id
+        LEFT JOIN auto_imagenes img ON a.id = img.auto_id
+        LEFT JOIN auto_opciones ao ON a.id = ao.auto_id      
+        LEFT JOIN opciones opc ON ao.opcion_id = opc.id      
+        GROUP BY a.id";
+
+$result = $conn->query($sql);
+
+if (!$result) {
+    die("<div style='background:#fff5f5; color:#c53030; border:1px solid #feb2b2; padding:25px; margin:20px; font-family:sans-serif; border-radius:8px;'>
+            <h2>❌ Error en la Consulta SQL</h2>
+            <p>MySQL dice: <strong>" . $conn->error . "</strong></p>
+            <p>Por favor, revisa que los nombres de las columnas en tu tabla <code>autos</code> coincidan exactamente con el código.</p>
+         </div>");
+}
+
+$mysql_rows_count = $result->num_rows;
+$autos = [];
+
+if ($mysql_rows_count > 0) {
+    while ($fila = $result->fetch_assoc()) {
+        $fotos_array = $fila['galeria_fotos'] ? explode(',', $fila['galeria_fotos']) : [];
+        $opciones_array = $fila['lista_opciones'] ? explode(',', $fila['lista_opciones']) : [];
+
+        $autos[] = [
+            "id" => (int)$fila['id'],
+            "modelo_id" => (int)$fila['modelo_id'],
+            "marca" => $fila['marca'],
+            "marca_logo" => $fila['marca_logo'],
+            "modelo" => $fila['modelo'],
+            "first_registration" => $fila['first_registration'],
+            "rango" => $fila['rango'],
+            "engine_type" => $fila['engine_type'],
+            "transmission" => $fila['transmission'],
+            "fuel" => $fila['fuel'],
+            "capacity" => (int)$fila['capacity'],
+            "color" => $fila['color'],
+            "chassis_no" => $fila['chassis_no'],
+            "manufacture_date" => $fila['manufacture_date'],
+            "type_code" => $fila['type_code'],
+            "displacement" => (int)$fila['displacement'],
+            "turbo" => $fila['turbo'],
+            "drive" => $fila['drive'],
+            "steering_wheel" => $fila['steering_wheel'],
+            "mileage" => (int)$fila['mileage'],
+            "vehicle_type" => $fila['vehicle_type'],
+            "precio" => (int)$fila['precio'],
+            "estado" => $fila['estado'],
+            "driver_airbag" => (int)$fila['driver_airbag'],
+            "passenger_airbag" => (int)$fila['passenger_airbag'],
+            "destacado" => (int)$fila['destacado'],
+            "stock" => (int)$fila['stock'],
+            "img" => $fila['portada'],
+            "imagenes" => $fotos_array,
+            "options" => $opciones_array
+        ];
+    }
+}
+
+$json_autos = json_encode($autos);
+
+$conn->close();
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -1326,143 +1442,38 @@
         <h1>Modelos Destacados</h1>
     </div>
     <div class="carrusel_destacados">
-        <div class="carta_normal">
+        <div class="carta_normal" onclick="window.location.href='datos.php?id=<?php echo $row['id']; ?>'">
             <div class="contenedor_img">
-                <img class="car-img" src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=800" alt="Car">
+                <img class="car-img" src="${car.img}" alt="Car">
 
                 <div class="specs-overlay">
                     <div class="spec-item">
                         <span class="spec-label">Precio</span>
-                        <span>10000</span>
+                        <span>$${Number(car.precio).toLocaleString()}</span>
                     </div>
                     <div class="spec-item">
-                        <span class="spec-label">Tracción</span>
-                        <span>AWD</span>
+                        <span class="spec-label">Año</span>
+                        <span>${car.first_registration}</span>
                     </div>
                     <div class="spec-item">
-                        <span class="spec-label">Autonomía</span>
-                        <span>520 km</span>
+                        <span class="spec-label">Transmision</span>
+                        <span>${car.transmission}</span>
                     </div>
                     <div class="spec-item">
-                        <span class="spec-label">Autonomía</span>
-                        <span>520 km</span>
+                        <span class="spec-label">Motor</span>
+                        <span>${car.engine_type}</span>
                     </div>
                     <div class="spec-item">
-                        <span class="spec-label">Autonomía</span>
-                        <span>520 km</span>
+                        <span class="spec-label">Status</span>
+                        <span>${car.estado}</span>
                     </div>
-                    <button onclick="window.location.href='datos.php?id='" style="margin-top: 0px; background: #000; color: #fff; border: none; padding: 12px; cursor: pointer; font-family: 'Outfit'; font-weight: 600; letter-spacing: 2px;">VER DETALLES</button>
+                    <button style="margin-top: 0px; background: #000; color: #fff; border: none; padding: 12px; cursor: pointer; font-family: 'Outfit'; font-weight: 600; letter-spacing: 2px;">VER DETALLES</button>
                 </div>
 
             </div>
             <div class="info-car">
-                <div class="info_fabricante">PORSCHE</div>
-                <h2 class="info_modelo">CARRERA GT</h2>
-                <div class="indicator"></div>
-            </div>
-        </div>
-        <div class="carta_normal">
-            <div class="contenedor_img">
-                <img class="car-img" src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=800" alt="Car">
-
-                <div class="specs-overlay">
-                    <div class="spec-item">
-                        <span class="spec-label">Precio</span>
-                        <span>10000</span>
-                    </div>
-                    <div class="spec-item">
-                        <span class="spec-label">Tracción</span>
-                        <span>AWD</span>
-                    </div>
-                    <div class="spec-item">
-                        <span class="spec-label">Autonomía</span>
-                        <span>520 km</span>
-                    </div>
-                    <div class="spec-item">
-                        <span class="spec-label">Autonomía</span>
-                        <span>520 km</span>
-                    </div>
-                    <div class="spec-item">
-                        <span class="spec-label">Autonomía</span>
-                        <span>520 km</span>
-                    </div>
-                    <button onclick="window.location.href='datos.php?id='" style="margin-top: 0px; background: #000; color: #fff; border: none; padding: 12px; cursor: pointer; font-family: 'Outfit'; font-weight: 600; letter-spacing: 2px;">VER DETALLES</button>
-                </div>
-
-            </div>
-            <div class="info-car">
-                <div class="info_fabricante">PORSCHE</div>
-                <h2 class="info_modelo">CARRERA GT</h2>
-                <div class="indicator"></div>
-            </div>
-        </div>
-        <div class="carta_normal">
-            <div class="contenedor_img">
-                <img class="car-img" src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=800" alt="Car">
-
-                <div class="specs-overlay">
-                    <div class="spec-item">
-                        <span class="spec-label">Precio</span>
-                        <span>10000</span>
-                    </div>
-                    <div class="spec-item">
-                        <span class="spec-label">Tracción</span>
-                        <span>AWD</span>
-                    </div>
-                    <div class="spec-item">
-                        <span class="spec-label">Autonomía</span>
-                        <span>520 km</span>
-                    </div>
-                    <div class="spec-item">
-                        <span class="spec-label">Autonomía</span>
-                        <span>520 km</span>
-                    </div>
-                    <div class="spec-item">
-                        <span class="spec-label">Autonomía</span>
-                        <span>520 km</span>
-                    </div>
-                    <button onclick="window.location.href='datos.php?id='" style="margin-top: 0px; background: #000; color: #fff; border: none; padding: 12px; cursor: pointer; font-family: 'Outfit'; font-weight: 600; letter-spacing: 2px;">VER DETALLES</button>
-                </div>
-
-            </div>
-            <div class="info-car">
-                <div class="info_fabricante">PORSCHE</div>
-                <h2 class="info_modelo">CARRERA GT</h2>
-                <div class="indicator"></div>
-            </div>
-        </div>
-        <div class="carta_normal">
-            <div class="contenedor_img">
-                <img class="car-img" src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=800" alt="Car">
-
-                <div class="specs-overlay">
-                    <div class="spec-item">
-                        <span class="spec-label">Precio</span>
-                        <span>10000</span>
-                    </div>
-                    <div class="spec-item">
-                        <span class="spec-label">Tracción</span>
-                        <span>AWD</span>
-                    </div>
-                    <div class="spec-item">
-                        <span class="spec-label">Autonomía</span>
-                        <span>520 km</span>
-                    </div>
-                    <div class="spec-item">
-                        <span class="spec-label">Autonomía</span>
-                        <span>520 km</span>
-                    </div>
-                    <div class="spec-item">
-                        <span class="spec-label">Autonomía</span>
-                        <span>520 km</span>
-                    </div>
-                    <button onclick="window.location.href='datos.php?id='" style="margin-top: 0px; background: #000; color: #fff; border: none; padding: 12px; cursor: pointer; font-family: 'Outfit'; font-weight: 600; letter-spacing: 2px;">VER DETALLES</button>
-                </div>
-
-            </div>
-            <div class="info-car">
-                <div class="info_fabricante">PORSCHE</div>
-                <h2 class="info_modelo">CARRERA GT</h2>
+                <div class="info_fabricante">${car.marca}</div>
+                <h2 class="info_modelo">${car.modelo}</h2>
                 <div class="indicator"></div>
             </div>
         </div>
@@ -1472,143 +1483,38 @@
         <h1>Modelos Recomendados</h1>
     </div>
     <div class="carrusel_destacados1">
-        <div class="carta_normal1">
+        <div class="carta_normal1" onclick="window.location.href='datos.php?id=<?php echo $row['id']; ?>'">
             <div class="contenedor_img">
-                <img class="car-img" src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=800" alt="Car">
+                <img class="car-img" src="${car.img}" alt="Car">
 
                 <div class="specs-overlay">
                     <div class="spec-item">
                         <span class="spec-label">Precio</span>
-                        <span>10000</span>
+                        <span>$${Number(car.precio).toLocaleString()}</span>
                     </div>
                     <div class="spec-item">
-                        <span class="spec-label">Tracción</span>
-                        <span>AWD</span>
+                        <span class="spec-label">Año</span>
+                        <span>${car.first_registration}</span>
                     </div>
                     <div class="spec-item">
-                        <span class="spec-label">Autonomía</span>
-                        <span>520 km</span>
+                        <span class="spec-label">Transmision</span>
+                        <span>${car.transmission}</span>
                     </div>
                     <div class="spec-item">
-                        <span class="spec-label">Autonomía</span>
-                        <span>520 km</span>
+                        <span class="spec-label">Motor</span>
+                        <span>${car.engine_type}</span>
                     </div>
                     <div class="spec-item">
-                        <span class="spec-label">Autonomía</span>
-                        <span>520 km</span>
+                        <span class="spec-label">Status</span>
+                        <span>${car.estado}</span>
                     </div>
-                    <button onclick="window.location.href='datos.php?id='" style="margin-top: 0px; background: #000; color: #fff; border: none; padding: 12px; cursor: pointer; font-family: 'Outfit'; font-weight: 600; letter-spacing: 2px;">VER DETALLES</button>
+                    <button style="margin-top: 0px; background: #000; color: #fff; border: none; padding: 12px; cursor: pointer; font-family: 'Outfit'; font-weight: 600; letter-spacing: 2px;">VER DETALLES</button>
                 </div>
 
             </div>
             <div class="info-car">
-                <div class="info_fabricante">PORSCHE</div>
-                <h2 class="info_modelo">CARRERA GT</h2>
-                <div class="indicator"></div>
-            </div>
-        </div>
-        <div class="carta_normal1">
-            <div class="contenedor_img">
-                <img class="car-img" src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=800" alt="Car">
-
-                <div class="specs-overlay">
-                    <div class="spec-item">
-                        <span class="spec-label">Precio</span>
-                        <span>10000</span>
-                    </div>
-                    <div class="spec-item">
-                        <span class="spec-label">Tracción</span>
-                        <span>AWD</span>
-                    </div>
-                    <div class="spec-item">
-                        <span class="spec-label">Autonomía</span>
-                        <span>520 km</span>
-                    </div>
-                    <div class="spec-item">
-                        <span class="spec-label">Autonomía</span>
-                        <span>520 km</span>
-                    </div>
-                    <div class="spec-item">
-                        <span class="spec-label">Autonomía</span>
-                        <span>520 km</span>
-                    </div>
-                    <button onclick="window.location.href='datos.php?id='" style="margin-top: 0px; background: #000; color: #fff; border: none; padding: 12px; cursor: pointer; font-family: 'Outfit'; font-weight: 600; letter-spacing: 2px;">VER DETALLES</button>
-                </div>
-
-            </div>
-            <div class="info-car">
-                <div class="info_fabricante">PORSCHE</div>
-                <h2 class="info_modelo">CARRERA GT</h2>
-                <div class="indicator"></div>
-            </div>
-        </div>
-        <div class="carta_normal1">
-            <div class="contenedor_img">
-                <img class="car-img" src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=800" alt="Car">
-
-                <div class="specs-overlay">
-                    <div class="spec-item">
-                        <span class="spec-label">Precio</span>
-                        <span>10000</span>
-                    </div>
-                    <div class="spec-item">
-                        <span class="spec-label">Tracción</span>
-                        <span>AWD</span>
-                    </div>
-                    <div class="spec-item">
-                        <span class="spec-label">Autonomía</span>
-                        <span>520 km</span>
-                    </div>
-                    <div class="spec-item">
-                        <span class="spec-label">Autonomía</span>
-                        <span>520 km</span>
-                    </div>
-                    <div class="spec-item">
-                        <span class="spec-label">Autonomía</span>
-                        <span>520 km</span>
-                    </div>
-                    <button onclick="window.location.href='datos.php?id='" style="margin-top: 0px; background: #000; color: #fff; border: none; padding: 12px; cursor: pointer; font-family: 'Outfit'; font-weight: 600; letter-spacing: 2px;">VER DETALLES</button>
-                </div>
-
-            </div>
-            <div class="info-car">
-                <div class="info_fabricante">PORSCHE</div>
-                <h2 class="info_modelo">CARRERA GT</h2>
-                <div class="indicator"></div>
-            </div>
-        </div>
-        <div class="carta_normal1">
-            <div class="contenedor_img">
-                <img class="car-img" src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=800" alt="Car">
-
-                <div class="specs-overlay">
-                    <div class="spec-item">
-                        <span class="spec-label">Precio</span>
-                        <span>10000</span>
-                    </div>
-                    <div class="spec-item">
-                        <span class="spec-label">Tracción</span>
-                        <span>AWD</span>
-                    </div>
-                    <div class="spec-item">
-                        <span class="spec-label">Autonomía</span>
-                        <span>520 km</span>
-                    </div>
-                    <div class="spec-item">
-                        <span class="spec-label">Autonomía</span>
-                        <span>520 km</span>
-                    </div>
-                    <div class="spec-item">
-                        <span class="spec-label">Autonomía</span>
-                        <span>520 km</span>
-                    </div>
-                    <button onclick="window.location.href='datos.php?id='" style="margin-top: 0px; background: #000; color: #fff; border: none; padding: 12px; cursor: pointer; font-family: 'Outfit'; font-weight: 600; letter-spacing: 2px;">VER DETALLES</button>
-                </div>
-
-            </div>
-            <div class="info-car">
-                <div class="info_fabricante">PORSCHE</div>
-                <h2 class="info_modelo">CARRERA GT</h2>
+                <div class="info_fabricante">${car.marca}</div>
+                <h2 class="info_modelo">${car.modelo}</h2>
                 <div class="indicator"></div>
             </div>
         </div>
