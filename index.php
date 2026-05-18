@@ -1441,8 +1441,92 @@ $conn->close();
         <h1>Modelos Destacados</h1>
     </div>
 
-    <div class="carrusel_destacados" id="catalogGrid">
+    <div class="carrusel_destacados">
+        <?php
+        $sql = "SELECT 
+                    a.id,
+                    a.modelo_id,
+                    mar.nombre AS marca,
+                    mar.logo AS marca_logo, 
+                    md.nombre AS modelo,
+                    a.first_registration,
+                    a.rango,
+                    a.engine_type,
+                    a.transmission,
+                    a.fuel,
+                    a.capacity,
+                    a.color,
+                    a.chassis_no,
+                    a.manufacture_date,
+                    a.type_code,
+                    a.displacement,
+                    a.turbo,
+                    a.drive,
+                    a.steering_wheel,
+                    a.mileage,
+                    a.vehicle_type,
+                    a.precio,          
+                    a.estado,          
+                    a.driver_airbag,
+                    a.passenger_airbag,
+                    a.destacado,
+                    a.stock,
+                    a.img AS portada, 
+                    GROUP_CONCAT(DISTINCT img.ruta_img) AS galeria_fotos,
+                    GROUP_CONCAT(DISTINCT opc.nombre) AS lista_opciones
+                FROM autos a
+                LEFT JOIN modelos md ON a.modelo_id = md.id
+                LEFT JOIN marcas mar ON md.marca_id = mar.id
+                LEFT JOIN auto_imagenes img ON a.id = img.auto_id
+                LEFT JOIN auto_opciones ao ON a.id = ao.auto_id      
+                LEFT JOIN opciones opc ON ao.opcion_id = opc.id      
+                GROUP BY a.id WHERE destacado = 1";
+        $result = $conn->query($sql);
 
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+        ?>
+                <div class="carta_normal" onclick="window.location.href='datos.php?id=${car.id}'">
+                    <div class="contenedor_img">
+                        <img class="car-img" src="${car.img}" alt="Car">
+
+                        <div class="specs-overlay">
+                            <div class="spec-item">
+                                <span class="spec-label">Precio</span>
+                                <span>$${Number(car.precio).toLocaleString()}</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Año</span>
+                                <span>${car.first_registration}</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Transmision</span>
+                                <span>${car.transmission}</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Motor</span>
+                                <span>${car.engine_type}</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Status</span>
+                                <span>${car.estado}</span>
+                            </div>
+                            <button style="margin-top: 0px; background: #000; color: #fff; border: none; padding: 12px; cursor: pointer; font-family: 'Outfit'; font-weight: 600; letter-spacing: 2px;">VER DETALLES</button>
+                        </div>
+
+                    </div>
+                    <div class="info-car">
+                        <div class="info_fabricante">${car.marca}</div>
+                        <h2 class="info_modelo">${car.modelo}</h2>
+                        <div class="indicator"></div>
+                    </div>
+                </div>
+        <?php
+            }
+        } else {
+            echo "<p>No hay vehículos disponibles en este momento.</p>";
+        }
+        ?>
     </div>
 
     <div class="sub-titulo">
@@ -1450,7 +1534,7 @@ $conn->close();
     </div>
 
     <div class="carrusel_destacados1">
-        <div class="carta_normal1" onclick="window.location.href='datos.php?id=${car.id}'">
+        <div class="carta_normal1">
             <div class="contenedor_img">
                 <img class="car-img" src="${car.img}" alt="Car">
 
@@ -2041,84 +2125,6 @@ $conn->close();
         }
 
         /*-----*/
-        const allCars = <?php echo $json_autos; ?>;
-
-        function init() {
-            updateUI();
-        }
-
-        function updateUI() {
-            const carsToRender = getFilteredData();
-            renderCars(carsToRender);
-        }
-
-        // Procesa los datos generales o evalúa la barra de búsqueda general
-        function getFilteredData() {
-            const searchText = document.getElementById('generalSearch').value.toLowerCase();
-
-            // Si la barra de búsqueda está vacía, devuelve todos los autos directamente
-            if (!searchText) return allCars;
-
-            // Si el usuario escribe, busca coincidencias en cualquier campo del auto
-            return allCars.filter(car => {
-                const valuesString = Object.values(car).join(" ").toLowerCase();
-                return valuesString.includes(searchText);
-            });
-        }
-
-        // Dibuja las tarjetas físicas en tu cuadrícula HTML
-        function renderCars(cars) {
-            const grid = document.getElementById('catalogGrid');
-
-            if (cars.length === 0) {
-                grid.innerHTML = `<div class="no-results">NO SE ENCONTRARON COINCIDENCIAS</div>`;
-                return;
-            }
-
-            grid.innerHTML = cars.map(car => `
-        <div class="carta_normal" onclick="window.location.href='datos.php?id=${car.id}'">
-            <div class="contenedor_img">
-                <img class="car-img" src="${car.img}" alt="Car">
-
-                <div class="specs-overlay">
-                    <div class="spec-item">
-                        <span class="spec-label">Precio</span>
-                        <span>$${Number(car.precio).toLocaleString()}</span>
-                    </div>
-                    <div class="spec-item">
-                        <span class="spec-label">Año</span>
-                        <span>${car.first_registration}</span>
-                    </div>
-                    <div class="spec-item">
-                        <span class="spec-label">Transmision</span>
-                        <span>${car.transmission}</span>
-                    </div>
-                    <div class="spec-item">
-                        <span class="spec-label">Motor</span>
-                        <span>${car.engine_type}</span>
-                    </div>
-                    <div class="spec-item">
-                        <span class="spec-label">Status</span>
-                        <span>${car.estado}</span>
-                    </div>
-                    <button style="margin-top: 0px; background: #000; color: #fff; border: none; padding: 12px; cursor: pointer; font-family: 'Outfit'; font-weight: 600; letter-spacing: 2px;">VER DETALLES</button>
-                </div>
-
-            </div>
-            <div class="info-car">
-                <div class="info_fabricante">${car.marca}</div>
-                <h2 class="info_modelo">${car.modelo}</h2>
-                <div class="indicator"></div>
-            </div>
-        </div>
-    `).join('');
-        }
-
-        // Escucha en tiempo real si el usuario escribe en el input general
-        document.getElementById('generalSearch').addEventListener('input', updateUI);
-
-        // Arranca la carga inicial al abrir la página
-        init();
     </script>
 
 </body>
