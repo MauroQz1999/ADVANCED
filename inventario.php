@@ -201,18 +201,36 @@ $json_autos = json_encode($autos);
     <title>Advanced South Central</title>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;600;800&family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: #f1f5f9;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
 
         /* -------------------------------------------------------------------------------------------------------------- */
 
         /* BARRA DE BÚSQUEDA GENERAL */
         .search-bar {
+            width: 100%;
+            max-width: 100%;
             height: 60px;
             border-bottom: 1px solid #e8e8e8;
             background: #fcfcfc;
+            display: flex;
+            justify-content: center;
         }
 
         #generalSearch {
             width: 100%;
+            max-width: 1440px;
             height: 100%;
             border: none;
             padding: 0 40px;
@@ -225,19 +243,20 @@ $json_autos = json_encode($autos);
         /* CONTENEDOR DE LA APLICACIÓN */
         .app-container {
             display: flex;
+            width: 100%;
+            max-width: 100%;
             height: calc(100vh - 130px);
         }
 
         .center {
             display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            height: 100%;
         }
 
-        /* SIDEBAR DE FILTROS (Doble Columna) */
         .sidebar {
             width: 380px;
+            min-width: 380px;
+            height: 100%;
             border-right: 1px solid #e8e8e8;
             padding: 25px;
             display: grid;
@@ -280,6 +299,8 @@ $json_autos = json_encode($autos);
             font-size: 0.75rem;
             outline: none;
             cursor: pointer;
+            width: 100%;
+            /* Asegura que rellene su columna */
         }
 
         select:focus {
@@ -288,7 +309,8 @@ $json_autos = json_encode($autos);
 
         .reset-btn {
             grid-column: 1 / -1;
-            margin-top: 60px;
+            margin-top: 30px;
+            /* Reducido de 60px para que no quede tan abajo */
             padding: 12px;
             background: #000000;
             color: #ffffff;
@@ -307,65 +329,118 @@ $json_autos = json_encode($autos);
         /* ÁREA DEL CATÁLOGO */
         .catalog-area {
             flex: 1;
-            padding: 40px;
             overflow-y: auto;
-            background: #f9f9f9;
+            width: 100%;
+            padding: 40px;
         }
 
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            /* Cambiamos el comportamiento para que se adapte mejor sin estirar en exceso */
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 25px;
+            width: 100%;
+            max-width: 1440px;
+            margin: 0 auto;
         }
 
         .carta_normal {
-            width: 80%;
-            margin-top: 10px;
-            margin-bottom: 10px;
-            margin-left: 5px;
-            border: 2px solid rgba(0, 0, 0, 0.08);
-            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            width: 100%;
+            max-width: 340px;
+            /* Al limitar el ancho máximo, no se deformarán en pantallas medianas */
+            margin: 0 auto;
+            /* Centra la tarjeta dentro de su celda de la rejilla */
+            background-color: #ffffff;
+            margin-bottom: 5px;
+            border: 1px solid rgba(13, 52, 70, 0.12);
+            border-radius: 16px;
+            overflow: hidden;
+            box-sizing: border-box;
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s ease, border-color 0.3s ease;
         }
 
         .carta_normal:hover {
-            transform: translateY(-5px);
-            border: 2px solid rgba(0, 0, 0, 0.3);
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.08);
+            transform: translateY(-6px);
+            border-color: rgba(13, 52, 70, 0.3);
+            box-shadow: 0 20px 45px rgba(13, 52, 70, 0.08);
+            cursor: pointer;
+        }
+
+        /* Puedes eliminar o conservar .carrusel_destacados1 y .carta_normal1 si no los usas en el HTML */
+        .carrusel_destacados1 {
+            width: 75%;
+            margin: auto;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            gap: 30px;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            padding-bottom: 15px;
+            scrollbar-width: none;
+        }
+
+        .carrusel_destacados1::-webkit-scrollbar {
+            display: none;
+        }
+
+        .carta_normal1 {
+            width: 320px;
+            flex-shrink: 0;
+            background-color: #ffffff;
+            margin-top: 10px;
+            margin-bottom: 5px;
+            border: 1px solid rgba(13, 52, 70, 0.12);
+            border-radius: 16px;
+            overflow: hidden;
+            box-sizing: border-box;
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s ease, border-color 0.3s ease;
+        }
+
+        .carta_normal1:hover {
+            transform: translateY(-6px);
+            border-color: rgba(13, 52, 70, 0.3);
+            box-shadow: 0 20px 45px rgba(13, 52, 70, 0.08);
             cursor: pointer;
         }
 
         .contenedor_img {
             position: relative;
-            height: 230px;
+            height: 250px;
             overflow: hidden;
+            background-color: #f4f6f9;
         }
 
         .car-img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        .carrusel_destacados:hover .car-img {
-            transform: scale(1.1);
+        .carta_normal:hover .car-img {
+            transform: scale(1.08);
         }
 
-        /* --- OVERLAY SPECS --- */
+        .carta_normal1:hover .car-img {
+            transform: scale(1.08);
+        }
+
         .specs-overlay {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(255, 255, 255, 0.98);
+            background: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(4px);
             display: flex;
             flex-direction: column;
             justify-content: center;
-            padding: 40px;
+            padding: 30px;
             box-sizing: border-box;
             opacity: 0;
-            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: opacity 0.4s ease;
             z-index: 10;
         }
 
@@ -373,52 +448,131 @@ $json_autos = json_encode($autos);
             opacity: 1;
         }
 
+        .carta_normal1:hover .specs-overlay {
+            opacity: 1;
+        }
+
         .spec-item {
             display: flex;
             justify-content: space-between;
-            margin-top: 5px;
-            margin-bottom: 5px;
-            border-bottom: 1px solid #eee;
-            padding-bottom: 5px;
+            margin-top: 6px;
+            margin-bottom: 6px;
+            border-bottom: 1px solid #f1f5f9;
+            padding-bottom: 6px;
         }
 
         .spec-label {
-            font-size: 0.65rem;
+            font-size: 0.7rem;
             text-transform: uppercase;
             letter-spacing: 1px;
-            color: #888;
+            color: #64748b;
+            font-weight: 600;
         }
 
-        /* --- INFO SECTION --- */
         .info-car {
-            padding: 10px 10px;
+            padding: 20px;
+            background: #ffffff;
         }
 
         .info_fabricante {
-            font-size: 0.65rem;
+            font-size: 0.7rem;
             font-weight: 700;
-            letter-spacing: 4px;
-            color: #888;
+            letter-spacing: 3px;
+            color: #e58a13;
             text-transform: uppercase;
         }
 
         .info_modelo {
-            font-size: 1.5rem;
-            font-weight: 300;
-            margin: 5px 0 0;
-            color: #000000;
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin: 4px 0 0;
+            color: #00334e;
         }
 
         .indicator {
-            width: 20px;
-            height: 2px;
-            background: #ff3e3e;
-            margin-top: 10px;
-            transition: width 0.4s ease;
+            width: 25px;
+            height: 3px;
+            background: #e58a13;
+            margin-top: 15px;
+            border-radius: 2px;
+            transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .carta_normal:hover .indicator {
             width: 100%;
+        }
+
+        .carta_normal1:hover .indicator {
+            width: 100%;
+        }
+
+        .no-results {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 40px;
+            font-family: 'Space Grotesk', sans-serif;
+            color: #999;
+            letter-spacing: 2px;
+        }
+
+        /* VERSIONES PARA CELULAR Y PANTALLAS MEDIANAS / PEQUEÑAS */
+        @media (max-width: 992px) {
+
+            /* Cambia la estructura principal a vertical */
+            .app-container {
+                flex-direction: column;
+                height: auto;
+                /* Permite que la pantalla haga scroll hacia abajo naturalmente */
+            }
+
+            .center {
+                flex-direction: column;
+                height: auto;
+            }
+
+            /* Adapta la barra lateral de filtros en la parte superior */
+            .sidebar {
+                width: 100%;
+                min-width: 100%;
+                height: auto;
+                border-right: none;
+                border-bottom: 1px solid #e8e8e8;
+                padding: 20px;
+                grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+                /* Los selectores se acomodan en rejilla pequeña */
+            }
+
+            .sidebar-title {
+                grid-column: 1 / -1;
+            }
+
+            .reset-btn {
+                grid-column: 1 / -1;
+                margin-top: 15px;
+                /* Reduce el espacio muerto en móvil */
+            }
+
+            /* Ajusta el espacio del catálogo */
+            .catalog-area {
+                width: 100%;
+                padding: 20px 15px;
+            }
+
+            .grid {
+                /* Fuerza a que en celulares las tarjetas ocupen un espacio más cómodo */
+                grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+                gap: 20px;
+            }
+
+            .carta_normal {
+                max-width: 100%;
+                /* Permite que la tarjeta use el ancho completo de la columna en el celular */
+            }
+
+            .contenedor_img {
+                height: 200px;
+                /* Reduce un poco la altura de la imagen en móviles para no comerse toda la pantalla */
+            }
         }
     </style>
 </head>
