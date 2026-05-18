@@ -294,19 +294,185 @@ $fotos_ejemplo = [
             color: #1a1a1a;
         }
 
+        /* -------------------------------------------------------------------------------------------------------------- */
+
         .carrusel_destacados {
-            width: 100%;
-            min-height: 40dvh;
+            width: 75%;
+            margin: auto;
             display: flex;
             flex-direction: row;
-            border: 1px solid #f0f0f0;
+            justify-content: flex-start;
+            gap: 30px;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            padding-bottom: 15px;
+            scrollbar-width: none;
         }
 
-        .carta_auto {
-            margin: 15px;
-            width: 18%;
-            border: 1px solid #f0f0f0;
+        .carrusel_destacados::-webkit-scrollbar {
+            display: none;
         }
+
+        .carta_normal {
+            width: 320px;
+            flex-shrink: 0;
+            background-color: #ffffff;
+            margin-top: 10px;
+            margin-bottom: 5px;
+            border: 1px solid rgba(13, 52, 70, 0.12);
+            border-radius: 16px;
+            overflow: hidden;
+            box-sizing: border-box;
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s ease, border-color 0.3s ease;
+        }
+
+        .carta_normal:hover {
+            transform: translateY(-6px);
+            border-color: rgba(13, 52, 70, 0.3);
+            box-shadow: 0 20px 45px rgba(13, 52, 70, 0.08);
+            cursor: pointer;
+        }
+
+        .carrusel_destacados1 {
+            width: 75%;
+            margin: auto;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            gap: 30px;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            padding-bottom: 15px;
+            scrollbar-width: none;
+        }
+
+        .carrusel_destacados1::-webkit-scrollbar {
+            display: none;
+        }
+
+        .carta_normal1 {
+            width: 320px;
+            flex-shrink: 0;
+            background-color: #ffffff;
+            margin-top: 10px;
+            margin-bottom: 5px;
+            border: 1px solid rgba(13, 52, 70, 0.12);
+            border-radius: 16px;
+            overflow: hidden;
+            box-sizing: border-box;
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s ease, border-color 0.3s ease;
+        }
+
+        .carta_normal1:hover {
+            transform: translateY(-6px);
+            border-color: rgba(13, 52, 70, 0.3);
+            box-shadow: 0 20px 45px rgba(13, 52, 70, 0.08);
+            cursor: pointer;
+        }
+
+        .contenedor_img {
+            position: relative;
+            height: 250px;
+            overflow: hidden;
+            background-color: #f4f6f9;
+        }
+
+        .car-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .carta_normal:hover .car-img {
+            transform: scale(1.08);
+        }
+
+        .carta_normal1:hover .car-img {
+            transform: scale(1.08);
+        }
+
+        .specs-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(4px);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 30px;
+            box-sizing: border-box;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: 10;
+        }
+
+        .carta_normal:hover .specs-overlay {
+            opacity: 1;
+        }
+
+        .carta_normal1:hover .specs-overlay {
+            opacity: 1;
+        }
+
+        .spec-item {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 6px;
+            margin-bottom: 6px;
+            border-bottom: 1px solid #f1f5f9;
+            padding-bottom: 6px;
+        }
+
+        .spec-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #64748b;
+            font-weight: 600;
+        }
+
+        .info-car {
+            padding: 20px;
+            background: #ffffff;
+        }
+
+        .info_fabricante {
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            color: #e58a13;
+            text-transform: uppercase;
+        }
+
+        .info_modelo {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin: 4px 0 0;
+            color: #00334e;
+        }
+
+        .indicator {
+            width: 25px;
+            height: 3px;
+            background: #e58a13;
+            margin-top: 15px;
+            border-radius: 2px;
+            transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .carta_normal:hover .indicator {
+            width: 100%;
+        }
+
+        .carta_normal1:hover .indicator {
+            width: 100%;
+        }
+
+        /* -------------------------------------------------------------------------------------------------------------- */
 
         .final {
             width: 100%;
@@ -442,9 +608,139 @@ $fotos_ejemplo = [
         <h2>GENERAL CHARACTERISTICS</h2>
     </div>
     <div class="carrusel_destacados">
-        <div class="carta_auto"></div>
+
+        <?php
+
+        $v_type = $conn->real_escape_string($auto['vehicle_type']);
+
+        $sql = "SELECT 
+                    a.id,
+                    a.modelo_id,
+                    mar.nombre AS marca,
+                    mar.logo AS marca_logo, 
+                    md.nombre AS modelo,
+                    a.first_registration,
+                    a.rango,
+                    a.engine_type,
+                    a.transmission,
+                    a.fuel,
+                    a.capacity,
+                    a.color,
+                    a.chassis_no,
+                    a.manufacture_date,
+                    a.type_code,
+                    a.displacement,
+                    a.turbo,
+                    a.drive,
+                    a.steering_wheel,
+                    a.mileage,
+                    a.vehicle_type,
+                    a.precio,          
+                    a.estado,          
+                    a.driver_airbag,
+                    a.passenger_airbag,
+                    a.destacado,
+                    a.stock,
+                    a.img AS portada, 
+                    GROUP_CONCAT(DISTINCT img.ruta_img) AS galeria_fotos,
+                    GROUP_CONCAT(DISTINCT opc.nombre) AS lista_opciones
+                FROM autos a
+                LEFT JOIN modelos md ON a.modelo_id = md.id
+                LEFT JOIN marcas mar ON md.marca_id = mar.id
+                LEFT JOIN auto_imagenes img ON a.id = img.auto_id
+                LEFT JOIN auto_opciones ao ON a.id = ao.auto_id      
+                LEFT JOIN opciones opc ON ao.opcion_id = opc.id      
+                WHERE a.vehicle_type = '$v_type' AND a.id != $id
+                GROUP BY a.id";
+        $result = $conn->query($sql);
+
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+        ?>
+                <div class="carta_normal" onclick="window.location.href='datos.php?id=${id}'">
+                    <div class="contenedor_img">
+                        <img class="car-img" src="<?php echo htmlspecialchars($row['portada']); ?>" alt="Car">
+
+                        <div class="specs-overlay">
+                            <div class="spec-item">
+                                <span class="spec-label">Precio</span>
+                                <span><?php echo htmlspecialchars($row['precio']); ?></span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Año</span>
+                                <span><?php echo htmlspecialchars($row['first_registration']); ?></span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Transmision</span>
+                                <span><?php echo htmlspecialchars($row['transmission']); ?></span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Motor</span>
+                                <span><?php echo htmlspecialchars($row['engine_type']); ?></span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Status</span>
+                                <span><?php echo htmlspecialchars($row['estado']); ?></span>
+                            </div>
+                            <button style="margin-top: 0px; background: #000; color: #fff; border: none; padding: 12px; cursor: pointer; font-family: 'Outfit'; font-weight: 600; letter-spacing: 2px;">VER DETALLES</button>
+                        </div>
+
+                    </div>
+                    <div class="info-car">
+                        <div class="info_fabricante"><?php echo htmlspecialchars($row['marca']); ?></div>
+                        <h2 class="info_modelo"><?php echo htmlspecialchars($row['modelo']); ?></h2>
+                        <div class="indicator"></div>
+                    </div>
+                </div>
+        <?php
+            }
+        } else {
+            echo "<p>No hay vehículos disponibles en este momento.</p>";
+        }
+        ?>
     </div>
     <div class="final"></div>
+
+    <script>
+        window.onload = function() {
+
+            // --- 1. CARRUSEL DE AUTOS (MOVIMIENTO POR PASOS - TU CÓDIGO) ---
+            const carruselAutos = document.querySelector('.carrusel_destacados');
+
+            if (carruselAutos) {
+                const itemsAutos = carruselAutos.querySelectorAll('.carta_normal');
+
+                if (carruselAutos.scrollWidth > carruselAutos.offsetWidth) {
+
+                    itemsAutos.forEach(item => {
+                        const clon = item.cloneNode(true);
+                        carruselAutos.appendChild(clon);
+                    });
+
+                    let scrollPos = 0;
+                    const velocidad = 0.4;
+
+                    carruselAutos.style.scrollBehavior = 'auto';
+
+                    function animarContinuo() {
+                        scrollPos += velocidad;
+
+                        if (scrollPos >= carruselAutos.scrollWidth / 2) {
+                            scrollPos = 0;
+                        }
+
+                        carruselAutos.scrollLeft = scrollPos;
+                        requestAnimationFrame(animarContinuo);
+                    }
+
+                    animarContinuo();
+                } else {
+                    carruselAutos.style.justifyContent = 'center';
+                    carruselAutos.style.overflowX = 'hidden';
+                }
+            }
+        }
+    </script>
 </body>
 
 </html>
