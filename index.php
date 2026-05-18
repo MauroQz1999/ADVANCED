@@ -152,7 +152,7 @@
             margin: 10px auto;
             border-top: 1px solid rgba(13, 52, 70, 0.15);
             border-bottom: 1px solid rgba(13, 52, 70, 0.15);
-            height: 10vh;
+            height: 90px;
             display: flex;
             flex-direction: row;
             align-items: center;
@@ -163,8 +163,8 @@
         }
 
         .carta_logo {
-            width: 110px;
-            height: 8vh;
+            width: 100px;
+            height: 60px;
             margin-right: 40px;
             display: flex;
             align-items: center;
@@ -177,8 +177,8 @@
         }
 
         .carta_logo img {
-            width: 100%;
-            height: 100%;
+            max-width: 100%;
+            max-height: 100%;
             object-fit: contain;
             object-position: center;
             display: block;
