@@ -667,6 +667,7 @@
             border: 1px solid rgba(13, 52, 70, 0.08);
             border-radius: 12px;
             display: flex;
+            align-items: stretch;
             overflow: hidden;
             height: 140px;
             transition: all 0.3s;
@@ -679,7 +680,9 @@
         }
 
         .mini-img {
-            width: 40%;
+            flex: 0 0 50%;
+            max-width: 160px;
+            min-width: 110px;
             position: relative;
             height: 100%;
         }
@@ -688,6 +691,8 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+            object-position: center;
+            display: block;
         }
 
         .badge-subasta {
@@ -1012,14 +1017,15 @@
         }
 
         .texpilar {
-            width: 60%;
-            min-height: 30dvh;
+            flex: 1;
+            min-width: 280px;
+            max-width: 400px;
+            padding: 30px 25px;
             background: rgba(255, 255, 255, 0.08);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             border: 1px solid rgba(255, 255, 255, 0.15);
             border-radius: 16px;
-            padding: 25px;
             box-sizing: border-box;
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
             transition: transform 0.4s ease, border-color 0.4s ease, background-color 0.4s ease;
@@ -2160,7 +2166,6 @@
                 carruselAutos1.style.overflowX = 'hidden';
             }
         }
-
     </script>
 </body>
 
