@@ -8,20 +8,6 @@
     <link rel="stylesheet" href="styles.css">
 
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            background: #f1f5f9;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
         /* -------------------------------------------------------------------------------------------------------------- */
 
         .contenedor-titulo-nosotros {
@@ -242,6 +228,12 @@
         }
     </style>
 
+</head>
+
+<body>
+
+    <?php include 'topbar.php'; ?>
+
     <div class="contenedor-titulo-nosotros">
         <h1 class="nosotros-titulo-principal">OUR SERVICE</h1>
         <div class="nosotros-linea-decorativa"></div>
@@ -375,11 +367,11 @@
         <p>*Some of the ports or locations are not available, please contact us for detail.</p>
     </div>
 
-</head>
+    </head>
 
-<body>
-    <script>
-    </script>
-</body>
+    <body>
+        <script>
+        </script>
+    </body>
 
 </html>

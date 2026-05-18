@@ -1351,7 +1351,7 @@
                         <span class="spec-label">Autonomía</span>
                         <span>520 km</span>
                     </div>
-                    <button style="margin-top: 0px; background: #000; color: #fff; border: none; padding: 12px; cursor: pointer; font-family: 'Outfit'; font-weight: 600; letter-spacing: 2px;">VER DETALLES</button>
+                    <button onclick="window.location.href='datos.php?id='" style="margin-top: 0px; background: #000; color: #fff; border: none; padding: 12px; cursor: pointer; font-family: 'Outfit'; font-weight: 600; letter-spacing: 2px;">VER DETALLES</button>
                 </div>
 
             </div>
@@ -1386,7 +1386,7 @@
                         <span class="spec-label">Autonomía</span>
                         <span>520 km</span>
                     </div>
-                    <button style="margin-top: 0px; background: #000; color: #fff; border: none; padding: 12px; cursor: pointer; font-family: 'Outfit'; font-weight: 600; letter-spacing: 2px;">VER DETALLES</button>
+                    <button onclick="window.location.href='datos.php?id='" style="margin-top: 0px; background: #000; color: #fff; border: none; padding: 12px; cursor: pointer; font-family: 'Outfit'; font-weight: 600; letter-spacing: 2px;">VER DETALLES</button>
                 </div>
 
             </div>
@@ -1421,7 +1421,7 @@
                         <span class="spec-label">Autonomía</span>
                         <span>520 km</span>
                     </div>
-                    <button style="margin-top: 0px; background: #000; color: #fff; border: none; padding: 12px; cursor: pointer; font-family: 'Outfit'; font-weight: 600; letter-spacing: 2px;">VER DETALLES</button>
+                    <button onclick="window.location.href='datos.php?id='" style="margin-top: 0px; background: #000; color: #fff; border: none; padding: 12px; cursor: pointer; font-family: 'Outfit'; font-weight: 600; letter-spacing: 2px;">VER DETALLES</button>
                 </div>
 
             </div>
@@ -1456,7 +1456,7 @@
                         <span class="spec-label">Autonomía</span>
                         <span>520 km</span>
                     </div>
-                    <button style="margin-top: 0px; background: #000; color: #fff; border: none; padding: 12px; cursor: pointer; font-family: 'Outfit'; font-weight: 600; letter-spacing: 2px;">VER DETALLES</button>
+                    <button onclick="window.location.href='datos.php?id='" style="margin-top: 0px; background: #000; color: #fff; border: none; padding: 12px; cursor: pointer; font-family: 'Outfit'; font-weight: 600; letter-spacing: 2px;">VER DETALLES</button>
                 </div>
 
             </div>
@@ -1497,7 +1497,7 @@
                         <span class="spec-label">Autonomía</span>
                         <span>520 km</span>
                     </div>
-                    <button style="margin-top: 0px; background: #000; color: #fff; border: none; padding: 12px; cursor: pointer; font-family: 'Outfit'; font-weight: 600; letter-spacing: 2px;">VER DETALLES</button>
+                    <button onclick="window.location.href='datos.php?id='" style="margin-top: 0px; background: #000; color: #fff; border: none; padding: 12px; cursor: pointer; font-family: 'Outfit'; font-weight: 600; letter-spacing: 2px;">VER DETALLES</button>
                 </div>
 
             </div>
@@ -1532,7 +1532,7 @@
                         <span class="spec-label">Autonomía</span>
                         <span>520 km</span>
                     </div>
-                    <button style="margin-top: 0px; background: #000; color: #fff; border: none; padding: 12px; cursor: pointer; font-family: 'Outfit'; font-weight: 600; letter-spacing: 2px;">VER DETALLES</button>
+                    <button onclick="window.location.href='datos.php?id='" style="margin-top: 0px; background: #000; color: #fff; border: none; padding: 12px; cursor: pointer; font-family: 'Outfit'; font-weight: 600; letter-spacing: 2px;">VER DETALLES</button>
                 </div>
 
             </div>
@@ -1567,7 +1567,7 @@
                         <span class="spec-label">Autonomía</span>
                         <span>520 km</span>
                     </div>
-                    <button style="margin-top: 0px; background: #000; color: #fff; border: none; padding: 12px; cursor: pointer; font-family: 'Outfit'; font-weight: 600; letter-spacing: 2px;">VER DETALLES</button>
+                    <button onclick="window.location.href='datos.php?id='" style="margin-top: 0px; background: #000; color: #fff; border: none; padding: 12px; cursor: pointer; font-family: 'Outfit'; font-weight: 600; letter-spacing: 2px;">VER DETALLES</button>
                 </div>
 
             </div>
@@ -1602,7 +1602,7 @@
                         <span class="spec-label">Autonomía</span>
                         <span>520 km</span>
                     </div>
-                    <button style="margin-top: 0px; background: #000; color: #fff; border: none; padding: 12px; cursor: pointer; font-family: 'Outfit'; font-weight: 600; letter-spacing: 2px;">VER DETALLES</button>
+                    <button onclick="window.location.href='datos.php?id='" style="margin-top: 0px; background: #000; color: #fff; border: none; padding: 12px; cursor: pointer; font-family: 'Outfit'; font-weight: 600; letter-spacing: 2px;">VER DETALLES</button>
                 </div>
 
             </div>
