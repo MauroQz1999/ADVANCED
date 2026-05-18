@@ -541,7 +541,7 @@ if (!$auto) {
                 </div>
                 <div>
                     <h2>Manufacture date</h2>
-                    <a><?php echo htmlspecialchars($auto['manufacture_date']); ?></a>
+                    <a><?php echo htmlspecialchars($auto['manufacture_date'] ?? ''); ?></a>
                 </div>
                 <div>
                     <h2>Type</h2>
