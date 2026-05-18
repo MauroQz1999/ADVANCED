@@ -1441,42 +1441,8 @@ $conn->close();
         <h1>Modelos Destacados</h1>
     </div>
 
-    <div class="carrusel_destacados">
-        <div class="carta_normal" onclick="window.location.href='datos.php?id=${car.id}'">
-            <div class="contenedor_img">
-                <img class="car-img" src="${car.img}" alt="Car">
+    <div class="carrusel_destacados" id="catalogGrid">
 
-                <div class="specs-overlay">
-                    <div class="spec-item">
-                        <span class="spec-label">Precio</span>
-                        <span>$${Number(car.precio).toLocaleString()}</span>
-                    </div>
-                    <div class="spec-item">
-                        <span class="spec-label">Año</span>
-                        <span>${car.first_registration}</span>
-                    </div>
-                    <div class="spec-item">
-                        <span class="spec-label">Transmision</span>
-                        <span>${car.transmission}</span>
-                    </div>
-                    <div class="spec-item">
-                        <span class="spec-label">Motor</span>
-                        <span>${car.engine_type}</span>
-                    </div>
-                    <div class="spec-item">
-                        <span class="spec-label">Status</span>
-                        <span>${car.estado}</span>
-                    </div>
-                    <button style="margin-top: 0px; background: #000; color: #fff; border: none; padding: 12px; cursor: pointer; font-family: 'Outfit'; font-weight: 600; letter-spacing: 2px;">VER DETALLES</button>
-                </div>
-
-            </div>
-            <div class="info-car">
-                <div class="info_fabricante">${car.marca}</div>
-                <h2 class="info_modelo">${car.modelo}</h2>
-                <div class="indicator"></div>
-            </div>
-        </div>
     </div>
 
     <div class="sub-titulo">
@@ -2073,8 +2039,88 @@ $conn->close();
                 carruselAutos1.style.overflowX = 'hidden';
             }
         }
+
+        /*-----*/
+        const allCars = <?php echo $json_autos; ?>;
+
+        function init() {
+            updateUI();
+        }
+
+        function updateUI() {
+            const carsToRender = getFilteredData();
+            renderCars(carsToRender);
+        }
+
+        // Procesa los datos generales o evalúa la barra de búsqueda general
+        function getFilteredData() {
+            const searchText = document.getElementById('generalSearch').value.toLowerCase();
+
+            // Si la barra de búsqueda está vacía, devuelve todos los autos directamente
+            if (!searchText) return allCars;
+
+            // Si el usuario escribe, busca coincidencias en cualquier campo del auto
+            return allCars.filter(car => {
+                const valuesString = Object.values(car).join(" ").toLowerCase();
+                return valuesString.includes(searchText);
+            });
+        }
+
+        // Dibuja las tarjetas físicas en tu cuadrícula HTML
+        function renderCars(cars) {
+            const grid = document.getElementById('catalogGrid');
+
+            if (cars.length === 0) {
+                grid.innerHTML = `<div class="no-results">NO SE ENCONTRARON COINCIDENCIAS</div>`;
+                return;
+            }
+
+            grid.innerHTML = cars.map(car => `
+        <div class="carta_normal" onclick="window.location.href='datos.php?id=${car.id}'">
+            <div class="contenedor_img">
+                <img class="car-img" src="${car.img}" alt="Car">
+
+                <div class="specs-overlay">
+                    <div class="spec-item">
+                        <span class="spec-label">Precio</span>
+                        <span>$${Number(car.precio).toLocaleString()}</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Año</span>
+                        <span>${car.first_registration}</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Transmision</span>
+                        <span>${car.transmission}</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Motor</span>
+                        <span>${car.engine_type}</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Status</span>
+                        <span>${car.estado}</span>
+                    </div>
+                    <button style="margin-top: 0px; background: #000; color: #fff; border: none; padding: 12px; cursor: pointer; font-family: 'Outfit'; font-weight: 600; letter-spacing: 2px;">VER DETALLES</button>
+                </div>
+
+            </div>
+            <div class="info-car">
+                <div class="info_fabricante">${car.marca}</div>
+                <h2 class="info_modelo">${car.modelo}</h2>
+                <div class="indicator"></div>
+            </div>
+        </div>
+    `).join('');
+        }
+
+        // Escucha en tiempo real si el usuario escribe en el input general
+        document.getElementById('generalSearch').addEventListener('input', updateUI);
+
+        // Arranca la carga inicial al abrir la página
+        init();
     </script>
-    
+
 </body>
 
 </html>
