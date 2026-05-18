@@ -483,6 +483,7 @@ if (!$auto) {
     <div class="contenedor">
         <div class="izquierda">
             <div class="img">
+                <img class="car-img" src="${portada}" alt="Car">
             </div>
             <div class="carrusel">
             </div>
