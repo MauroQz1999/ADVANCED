@@ -1386,7 +1386,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
         ?>
-                <div class="carta_normal" onclick="window.location.href='datos.php?id=${id}'">
+                <div class="carta_normal" onclick="window.location.href='datos.php?id=<?php echo $row['id']; ?>'">
                     <div class="contenedor_img">
                         <img class="car-img" src="<?php echo htmlspecialchars($row['portada']); ?>" alt="Car">
 
@@ -1479,7 +1479,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
         ?>
-                <div class="carta_normal1" onclick="window.location.href='datos.php?id=${id}'">
+                <div class="carta_normal1" onclick="window.location.href='datos.php?id=<?php echo $row['id']; ?>'">
                     <div class="contenedor_img">
                         <img class="car-img" src="<?php echo htmlspecialchars($row['portada']); ?>" alt="Car">
 
