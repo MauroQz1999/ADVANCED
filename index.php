@@ -1768,10 +1768,9 @@ $conn = new mysqli($servername, $username, $password, $dbname);
             <div class="tabs-contenido">
                 <div id="tab-subastas" class="tab-panel active">
                     <div class="grid-mosaico">
-                        <div class="mini-carta-auto">
 
-                            <?php
-                            $sql = "SELECT 
+                        <?php
+                        $sql = "SELECT 
                                     a.id,
                                     a.modelo_id,
                                     mar.nombre AS marca,
@@ -1812,14 +1811,15 @@ $conn = new mysqli($servername, $username, $password, $dbname);
                                 INNER JOIN registro_vistas v ON a.modelo_id = v.modelo_id
                                 GROUP BY a.id
                                 ORDER BY total_vistas DESC
-                                LIMIT 5";
-                            $result = $conn->query($sql);
+                                LIMIT 6";
+                        $result = $conn->query($sql);
 
-                            if ($result->num_rows > 0) {
-                                while ($row = $result->fetch_assoc()) {
-                            ?>
+                        if ($result->num_rows > 0) {
+                            while ($row = $result->fetch_assoc()) {
+                        ?>
 
-                                    <div class="mini-img" onclick="window.location.href='datos.php?id=<?php echo $row['id']; ?>'">
+                                <div class="mini-carta-auto" onclick="window.location.href='datos.php?id=<?php echo $row['id']; ?>'">
+                                    <div class="mini-img">
                                         <img class="ban-img" src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=800" alt="Car">
                                         <span class="badge-subasta">USS Tokyo</span>
                                     </div>
@@ -1829,15 +1829,15 @@ $conn = new mysqli($servername, $username, $password, $dbname);
                                         <p>2002 • 84,000 km • Manual</p>
                                         <a href="#" class="btn-mini-detalles">Detalles</a>
                                     </div>
+                                </div>
 
-                            <?php
-                                }
-                            } else {
-                                echo "<p>No hay vehículos disponibles en este momento.</p>";
+                        <?php
                             }
-                            ?>
+                        } else {
+                            echo "<p>No hay vehículos disponibles en este momento.</p>";
+                        }
+                        ?>
 
-                        </div>
                     </div>
                 </div>
                 <div id="tab-proposito" class="tab-panel">
