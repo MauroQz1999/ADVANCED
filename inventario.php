@@ -248,193 +248,211 @@ $conn->close();
         }
 
         /* ÁREA DEL CATÁLOGO */
-        .catalog-area {
-            flex: 1;
-            overflow-y: auto;
-            width: 100%;
-            padding: 40px;
-        }
+        /* ========================================================
+   CONTENEDOR GENERAL DEL CATÁLOGO (Área derecha)
+   ======================================================== */
+.catalog-area {
+    flex: 1;
+    overflow-y: auto;
+    width: 100%;
+    /* Padding fluido: más pequeño en pantallas chicas para ganar espacio */
+    padding: clamp(15px, 3vw, 40px); 
+    box-sizing: border-box;
+}
 
-        .grid {
-            display: grid;
-            /* Cambiamos el comportamiento para que se adapte mejor sin estirar en exceso */
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 25px;
-            width: 100%;
-            max-width: 1440px;
-            margin: 0 auto;
-        }
+/* ========================================================
+   REJILLA AUTO-RESPONSIVA (La clave del ajuste automático)
+   ======================================================== */
+.grid {
+    display: grid;
+    /* auto-fit + minmax elástico hace que las columnas se reacomoden solas sin romper nada */
+    grid-template-columns: repeat(auto-fit, minmax(clamp(250px, 20vw, 300px), 1fr));
+    gap: clamp(15px, 2vw, 25px);
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
 
-        .carta_normal {
-            width: 100%;
-            max-width: 340px;
-            /* Al limitar el ancho máximo, no se deformarán en pantallas medianas */
-            margin: 0 auto;
-            /* Centra la tarjeta dentro de su celda de la rejilla */
-            background-color: #ffffff;
-            margin-bottom: 5px;
-            border: 1px solid rgba(13, 52, 70, 0.12);
-            border-radius: 16px;
-            overflow: hidden;
-            box-sizing: border-box;
-            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s ease, border-color 0.3s ease;
-        }
+        /* ========================================================
+   TARJETA DEL CATÁLOGO (Fluida y contenida)
+   ======================================================== */
+.carta_normal {
+    width: 100%;
+    /* Evita que la tarjeta se agigante en pantallas donde hay pocas celdas */
+    max-width: 340px; 
+    margin: 0 auto; 
+    background-color: #ffffff;
+    margin-bottom: 5px;
+    border: 1px solid rgba(13, 52, 70, 0.12);
+    border-radius: 16px;
+    overflow: hidden;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s ease, border-color 0.3s ease;
+}
 
-        .carta_normal:hover {
-            transform: translateY(-6px);
-            border-color: rgba(13, 52, 70, 0.3);
-            box-shadow: 0 20px 45px rgba(13, 52, 70, 0.08);
-            cursor: pointer;
-        }
+.carta_normal:hover {
+    transform: translateY(-6px);
+    border-color: rgba(13, 52, 70, 0.3);
+    box-shadow: 0 20px 45px rgba(13, 52, 70, 0.08);
+    cursor: pointer;
+}
 
-        /* Puedes eliminar o conservar .carrusel_destacados1 y .carta_normal1 si no los usas en el HTML */
-        .carrusel_destacados1 {
-            width: 75%;
-            margin: auto;
-            display: flex;
-            flex-direction: row;
-            justify-content: flex-start;
-            gap: 30px;
-            overflow-x: auto;
-            scroll-behavior: smooth;
-            padding-bottom: 15px;
-            scrollbar-width: none;
-        }
+/* Contenedor de la foto elástico */
+.contenedor_img {
+    position: relative;
+    /* La altura se adapta al ancho de la celda de forma armónica */
+    height: clamp(180px, 16vw, 250px); 
+    overflow: hidden;
+    background-color: #f4f6f9;
+    width: 100%;
+}
 
-        .carrusel_destacados1::-webkit-scrollbar {
-            display: none;
-        }
+.car-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
 
-        .carta_normal1 {
-            width: 320px;
-            flex-shrink: 0;
-            background-color: #ffffff;
-            margin-top: 10px;
-            margin-bottom: 5px;
-            border: 1px solid rgba(13, 52, 70, 0.12);
-            border-radius: 16px;
-            overflow: hidden;
-            box-sizing: border-box;
-            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s ease, border-color 0.3s ease;
-        }
+.carta_normal:hover .car-img {
+    transform: scale(1.08);
+}
 
-        .carta_normal1:hover {
-            transform: translateY(-6px);
-            border-color: rgba(13, 52, 70, 0.3);
-            box-shadow: 0 20px 45px rgba(13, 52, 70, 0.08);
-            cursor: pointer;
-        }
+/* ========================================================
+   OVERLAY DE ESPECIFICACIONES PROTEGIDO (No se deforma)
+   ======================================================== */
+.specs-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(4px);
+    
+    /* Distribución vertical limpia */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    padding: clamp(12px, 2.5vw, 22px);
+    box-sizing: border-box;
+    
+    opacity: 0;
+    pointer-events: none; /* Evita clics fantasmas en móvil */
+    transition: opacity 0.3s ease;
+    z-index: 10;
+}
 
-        .contenedor_img {
-            position: relative;
-            height: 250px;
-            overflow: hidden;
-            background-color: #f4f6f9;
-        }
+.carta_normal:hover .specs-overlay {
+    opacity: 1;
+    pointer-events: auto;
+}
 
-        .car-img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-        }
+.spec-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #f1f5f9;
+    padding-bottom: 5px;
+    margin: 0;
+    width: 100%;
+}
 
-        .carta_normal:hover .car-img {
-            transform: scale(1.08);
-        }
+.spec-label {
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #64748b;
+    font-weight: 600;
+    flex-shrink: 0;
+}
 
-        .carta_normal1:hover .car-img {
-            transform: scale(1.08);
-        }
+/* Valores de los datos (Año, Motor, etc.) protegidos contra desborde */
+.spec-item > span:last-child {
+    font-size: clamp(0.7rem, 0.8vw, 0.8rem);
+    color: #0d3446;
+    font-weight: 600;
+    text-align: right;
+    max-width: 65%;
+    /* Corta textos muy largos (como motores complejos) con puntos suspensivos (...) */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
 
-        .specs-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(255, 255, 255, 0.96);
-            backdrop-filter: blur(4px);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding: 30px;
-            box-sizing: border-box;
-            opacity: 0;
-            transition: opacity 0.4s ease;
-            z-index: 10;
-        }
+/* ========================================================
+   BOTÓN NEGRO DE DETALLES FIJADO ABAJO
+   ======================================================== */
+.specs-overlay .boton-negro,
+.specs-overlay div[style*="background: black"],
+.specs-overlay a[style*="background: black"],
+.specs-overlay [class*="limpiar"] { /* Por si reutilizaste la clase del botón limpiar */
+    width: 100%;
+    height: clamp(32px, 3.5vw, 38px);
+    background-color: #000000 !important;
+    color: #ffffff !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    letter-spacing: 1.5px;
+    font-weight: 700;
+    border-radius: 6px;
+    text-decoration: none;
+    margin-top: auto; /* Anclado magnético al fondo del overlay */
+    box-sizing: border-box;
+    cursor: pointer;
+}
 
-        .carta_normal:hover .specs-overlay {
-            opacity: 1;
-        }
+/* ========================================================
+   INFORMACIÓN DE LA PARTE INFERIOR DE LA TARJETA
+   ======================================================== */
+.info-car {
+    padding: clamp(15px, 2vw, 20px);
+    background: #ffffff;
+    flex-grow: 1; /* Permite que el contenedor llene el espacio uniformemente */
+}
 
-        .carta_normal1:hover .specs-overlay {
-            opacity: 1;
-        }
+.info_fabricante {
+    font-size: clamp(0.65rem, 0.7vw, 0.7rem);
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: #e58a13;
+    text-transform: uppercase;
+}
 
-        .spec-item {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 6px;
-            margin-bottom: 6px;
-            border-bottom: 1px solid #f1f5f9;
-            padding-bottom: 6px;
-        }
+.info_modelo {
+    font-size: clamp(1.1rem, 1.2vw, 1.3rem);
+    font-weight: 700;
+    margin: 4px 0 0;
+    color: #00334e;
+}
 
-        .spec-label {
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: #64748b;
-            font-weight: 600;
-        }
+.indicator {
+    width: 25px;
+    height: 3px;
+    background: #e58a13;
+    margin-top: 15px;
+    border-radius: 2px;
+    transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
 
-        .info-car {
-            padding: 20px;
-            background: #ffffff;
-        }
+.carta_normal:hover .indicator {
+    width: 100%;
+}
 
-        .info_fabricante {
-            font-size: 0.7rem;
-            font-weight: 700;
-            letter-spacing: 3px;
-            color: #e58a13;
-            text-transform: uppercase;
-        }
-
-        .info_modelo {
-            font-size: 1.3rem;
-            font-weight: 700;
-            margin: 4px 0 0;
-            color: #00334e;
-        }
-
-        .indicator {
-            width: 25px;
-            height: 3px;
-            background: #e58a13;
-            margin-top: 15px;
-            border-radius: 2px;
-            transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .carta_normal:hover .indicator {
-            width: 100%;
-        }
-
-        .carta_normal1:hover .indicator {
-            width: 100%;
-        }
-
-        .no-results {
-            grid-column: 1 / -1;
-            text-align: center;
-            padding: 40px;
-            font-family: 'Space Grotesk', sans-serif;
-            color: #999;
-            letter-spacing: 2px;
-        }
+.no-results {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 40px;
+    font-family: 'Space Grotesk', sans-serif;
+    color: #999;
+    letter-spacing: 2px;
+}
 
         /* VERSIONES PARA CELULAR Y PANTALLAS MEDIANAS / PEQUEÑAS */
         @media (max-width: 992px) {
