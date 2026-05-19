@@ -467,6 +467,59 @@ if ($modelo_id > 0 && $marca_id > 0) {
                 height: 40vh;
             }
         }
+
+        /* ---------------------------------------------------------------------------------------------------------- */
+
+        .botones-acciones {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            align-items: center;
+            margin: 20px 0;
+        }
+
+        .btn-accion {
+            padding: 12px 28px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: inherit;
+            outline: none;
+        }
+
+        .btn1 {
+            background-color: #0d3446;
+            color: #ffffff;
+            border: 2px solid #0d3446;
+            box-shadow: 0 4px 10px rgba(13, 52, 70, 0.15);
+        }
+
+        .btn1:hover {
+            background-color: #144962;
+            border-color: #144962;
+            transform: translateY(-2px);
+            /* Pequeño salto hacia arriba */
+            box-shadow: 0 6px 15px rgba(13, 52, 70, 0.25);
+        }
+
+        .btn2 {
+            background-color: transparent;
+            color: #0d3446;
+            border: 2px solid #0d3446;
+        }
+
+        .btn2:hover {
+            background-color: #0d3446;
+            color: #ffffff;
+            transform: translateY(-2px);
+        }
+
+        .btn-accion:active {
+            transform: translateY(1px);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+        }
     </style>
 
 </head>
@@ -489,7 +542,12 @@ if ($modelo_id > 0 && $marca_id > 0) {
                 </div>
             </div>
             <div class="detalles">
-                <a>a</a>
+                <a>
+                    Este <strong><?php echo htmlspecialchars($auto['marca']) . " " . ($auto['modelo']); ?></strong> es la definición de excelencia.
+                    Con solo <?php echo htmlspecialchars($auto['mileage']); ?> km, el vehículo se encuentra en estado impecable.
+                    Equipado con transmisión <?php echo htmlspecialchars($auto['transmission']); ?> y un sistema de combustible <?php echo htmlspecialchars($auto['fuel']); ?>
+                    que garantiza eficiencia y potencia. Ideal para quienes buscan un auto de la categoría <?php echo htmlspecialchars($auto['vehicle_type']); ?>.
+                </a>
             </div>
         </div>
         <div class="derecha">
@@ -588,7 +646,9 @@ if ($modelo_id > 0 && $marca_id > 0) {
             <div class="detalles3">
                 <a>Power Windows, Power Steering, ABS, Sun Roof, Auto AC</a>
             </div>
-            <div>
+            <div class="botones-acciones">
+                <button class="btn-accion btn1">HOW TO BUY</button>
+                <button class="btn-accion btn2">COTIZAR</button>
             </div>
         </div>
     </div>
