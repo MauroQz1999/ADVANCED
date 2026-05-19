@@ -22,6 +22,7 @@ $sql = "SELECT
                     a.id,
                     a.modelo_id,
                     mar.nombre AS marca,
+                    mar.id AS marca_id,
                     mar.logo AS marca_logo, 
                     md.nombre AS modelo,
                     a.first_registration,
@@ -70,6 +71,14 @@ $auto = $result->fetch_assoc();
 if (!$auto) {
     echo "El vehículo solicitado no existe.";
     exit;
+}
+
+$modelo_id = intval($auto['modelo_id']);
+$marca_id = intval($auto['marca_id']);
+
+if ($modelo_id > 0 && $marca_id > 0) {
+    $sql_vista = "INSERT INTO registro_vistas (modelo_id, marca_id) VALUES ($modelo_id, $marca_id)";
+    $conn->query($sql_vista);
 }
 
 ?>

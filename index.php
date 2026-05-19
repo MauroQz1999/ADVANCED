@@ -1455,12 +1455,10 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 
         @media (max-width: 480px) {
             .contenedor-titulo-nosotros {
-                /* Un respiro extra arriba en pantallas súper compactas */
                 margin-top: 35px;
             }
 
             .nosotros-titulo-principal {
-                /* Ajuste de seguridad para smartphones de 320px de ancho */
                 font-size: 1.65rem;
             }
         }
@@ -1508,7 +1506,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
     </section>
 
     <div class="sub-titulo">
-        <h1>Modelos Destacados</h1>
+        <h1>Modelos Recomendados</h1>
     </div>
 
     <div class="carrusel_destacados">
@@ -1601,7 +1599,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
     </div>
 
     <div class="sub-titulo">
-        <h1>Modelos Recomendados</h1>
+        <h1>Modelos Destacados</h1>
     </div>
 
     <div class="carrusel_destacados1">
@@ -1636,15 +1634,18 @@ $conn = new mysqli($servername, $username, $password, $dbname);
                     a.stock,
                     a.img AS portada, 
                     GROUP_CONCAT(DISTINCT img.ruta_img) AS galeria_fotos,
-                    GROUP_CONCAT(DISTINCT opc.nombre) AS lista_opciones
+                    GROUP_CONCAT(DISTINCT opc.nombre) AS lista_opciones,
+                    COUNT(v.id) AS total_vistas
                 FROM autos a
                 LEFT JOIN modelos md ON a.modelo_id = md.id
                 LEFT JOIN marcas mar ON md.marca_id = mar.id
                 LEFT JOIN auto_imagenes img ON a.id = img.auto_id
                 LEFT JOIN auto_opciones ao ON a.id = ao.auto_id      
-                LEFT JOIN opciones opc ON ao.opcion_id = opc.id      
-                WHERE a.destacado = 1
-                GROUP BY a.id";
+                LEFT JOIN opciones opc ON ao.opcion_id = opc.id 
+                INNER JOIN registro_vistas v ON a.modelo_id = v.modelo_id
+                GROUP BY a.id
+                ORDER BY total_vistas DESC
+                LIMIT 5";
         $result = $conn->query($sql);
 
         if ($result->num_rows > 0) {
