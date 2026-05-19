@@ -265,9 +265,11 @@ $conn->close();
    ======================================================== */
 .grid {
     display: grid;
-    /* auto-fit + minmax elástico hace que las columnas se reacomoden solas sin romper nada */
-    grid-template-columns: repeat(auto-fit, minmax(clamp(250px, 20vw, 300px), 1fr));
-    gap: clamp(15px, 2vw, 25px);
+    /* CAMBIO CLAVE: Usamos un ancho máximo fijo (vmax/px) en vez de un 1fr ilimitado */
+    grid-template-columns: repeat(auto-fill, minmax(280px, 320px));
+    
+    /* Mantiene las tarjetas separadas de forma limpia */
+    gap: 25px; 
     width: 100%;
     max-width: 1440px;
     margin: 0 auto;
