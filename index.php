@@ -351,103 +351,107 @@ $conn = new mysqli($servername, $username, $password, $dbname);
         }
 
         .specs-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.96);
-    backdrop-filter: blur(4px);
-    
-    /* Forzamos una distribución vertical perfecta */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; 
-    
-    /* Ajustamos el padding dinámicamente para que no empuje el contenido */
-    padding: clamp(12px, 3vw, 22px);
-    box-sizing: border-box;
-    
-    /* Estado inicial: oculto */
-    opacity: 0;
-    pointer-events: none; /* Evita interferencias cuando está oculto */
-    transition: opacity 0.3s ease;
-    z-index: 10;
-}
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(4px);
 
-/* Activadores del Hover: Asegura que se muestre en ambas clases de tarjetas */
-.carta_normal:hover .specs-overlay,
-.carta_normal1:hover .specs-overlay {
-    opacity: 1;
-    pointer-events: auto; /* Permite hacer clic en el botón negro al mostrarse */
-}
+            /* Forzamos una distribución vertical perfecta */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
 
-/* Contenedor interno para agrupar las filas de datos */
-.specs-overlay-lista {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: clamp(4px, 1.2vw, 10px); /* Separación elástica entre filas */
-}
+            /* Ajustamos el padding dinámicamente para que no empuje el contenido */
+            padding: clamp(12px, 3vw, 22px);
+            box-sizing: border-box;
 
-.spec-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid #f1f5f9;
-    padding-bottom: 5px;
-    margin: 0;
-    width: 100%;
-}
+            /* Estado inicial: oculto */
+            opacity: 0;
+            pointer-events: none;
+            /* Evita interferencias cuando está oculto */
+            transition: opacity 0.3s ease;
+            z-index: 10;
+        }
 
-.spec-label {
-    font-size: 0.68rem;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    color: #64748b;
-    font-weight: 600;
-    flex-shrink: 0;
-}
+        /* Activadores del Hover: Asegura que se muestre en ambas clases de tarjetas */
+        .carta_normal:hover .specs-overlay,
+        .carta_normal1:hover .specs-overlay {
+            opacity: 1;
+            pointer-events: auto;
+            /* Permite hacer clic en el botón negro al mostrarse */
+        }
 
-/* El valor de la derecha (Año, Transmisión, etc.) */
-.spec-item > span:last-child {
-    font-size: clamp(0.7rem, 0.8vw, 0.8rem);
-    color: #0d3446;
-    font-weight: 600;
-    text-align: right;
-    max-width: 65%;
-    
-    /* Si el nombre del motor u otro dato es muy largo, se corta con (...) elegantemente */
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
+        /* Contenedor interno para agrupar las filas de datos */
+        .specs-overlay-lista {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: clamp(4px, 1.2vw, 10px);
+            /* Separación elástica entre filas */
+        }
 
-/* ========================================================
+        .spec-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #f1f5f9;
+            padding-bottom: 5px;
+            margin: 0;
+            width: 100%;
+        }
+
+        .spec-label {
+            font-size: 0.68rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #64748b;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+
+        /* El valor de la derecha (Año, Transmisión, etc.) */
+        .spec-item>span:last-child {
+            font-size: clamp(0.7rem, 0.8vw, 0.8rem);
+            color: #0d3446;
+            font-weight: 600;
+            text-align: right;
+            max-width: 65%;
+
+            /* Si el nombre del motor u otro dato es muy largo, se corta con (...) elegantemente */
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        /* ========================================================
    EL BOTÓN NEGRO ("VER DETALLES") REUBICADO AL FONDO
    ======================================================== */
-.specs-overlay .boton-negro,
-.specs-overlay div[style*="background: black"],
-.specs-overlay a[style*="background: black"] {
-    width: 100%;
-    height: clamp(32px, 3.5vw, 40px); /* Altura elástica y estilizada */
-    background-color: #000000 !important;
-    color: #ffffff !important;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-transform: uppercase;
-    font-size: 0.7rem;
-    letter-spacing: 1.5px;
-    font-weight: 700;
-    border-radius: 6px;
-    text-decoration: none;
-    
-    /* Empuja el botón magnéticamente abajo del todo, respetando los datos */
-    margin-top: auto; 
-    box-sizing: border-box;
-    cursor: pointer;
-}
+        .specs-overlay .boton-negro,
+        .specs-overlay div[style*="background: black"],
+        .specs-overlay a[style*="background: black"] {
+            width: 100%;
+            height: clamp(32px, 3.5vw, 40px);
+            /* Altura elástica y estilizada */
+            background-color: #000000 !important;
+            color: #ffffff !important;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-transform: uppercase;
+            font-size: 0.7rem;
+            letter-spacing: 1.5px;
+            font-weight: 700;
+            border-radius: 6px;
+            text-decoration: none;
+
+            /* Empuja el botón magnéticamente abajo del todo, respetando los datos */
+            margin-top: auto;
+            box-sizing: border-box;
+            cursor: pointer;
+        }
 
         .info-car {
             padding: clamp(15px, 1.5vw, 20px);

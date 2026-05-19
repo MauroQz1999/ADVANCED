@@ -283,7 +283,7 @@ if (!$auto) {
    ======================================================== */
         .subtitulo_destacado {
             width: 100%;
-            max-width: 1440px;
+            max-width: 1800px;
             margin: 40px auto 15px auto;
             display: flex;
             flex-direction: row;
@@ -303,7 +303,7 @@ if (!$auto) {
         .carrusel_destacados,
         .carrusel_destacados1 {
             width: 100%;
-            max-width: 1440px;
+            max-width: 1800px;
             margin: 0 auto;
             display: flex;
             flex-direction: row;
