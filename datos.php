@@ -491,6 +491,7 @@ if ($modelo_id > 0 && $marca_id > 0) {
         }
 
         .btn1 {
+            text-decoration: none;
             background-color: #0d3446;
             color: #ffffff;
             border: 2px solid #0d3446;
@@ -505,6 +506,7 @@ if ($modelo_id > 0 && $marca_id > 0) {
         }
 
         .btn2 {
+            text-decoration: none;
             background-color: transparent;
             color: #0d3446;
             border: 2px solid #0d3446;
@@ -647,8 +649,8 @@ if ($modelo_id > 0 && $marca_id > 0) {
                 <a>Power Windows, Power Steering, ABS, Sun Roof, Auto AC</a>
             </div>
             <div class="botones-acciones">
-                <a class="btn-accion btn2" href="how_to_buy.php">HOW TO BUY</a>
-                <a class="btn-accion btn1" href="https://wa.me/51978631055?text=Hola%20Advance%20Sound%20Center,%20solicito%20información%20sobre%20el%20<?php echo htmlspecialchars($auto['marca']); ?>%20<?php echo htmlspecialchars($auto['modelo']); ?>%20de%20<?php echo htmlspecialchars($auto['mileage']); ?>%20Km%20,%20<?php echo htmlspecialchars($auto['color']); ?>%20,%20<?php echo htmlspecialchars($auto['transmission']); ?>%20y%20la%20edición%20<?php echo htmlspecialchars($auto['rango']); ?>." target="_blank">COTIZAR</a>
+                <a class="btn-accion btn1" href="how_to_buy.php">HOW TO BUY</a>
+                <a class="btn-accion btn2" href="https://wa.me/51978631055?text=Hola%20Advance%20Sound%20Center,%20solicito%20información%20sobre%20el%20<?php echo htmlspecialchars($auto['marca']); ?>%20<?php echo htmlspecialchars($auto['modelo']); ?>%20de%20<?php echo htmlspecialchars($auto['mileage']); ?>%20Km%20,%20<?php echo htmlspecialchars($auto['color']); ?>%20,%20<?php echo htmlspecialchars($auto['transmission']); ?>%20y%20la%20edición%20<?php echo htmlspecialchars($auto['rango']); ?>." target="_blank">COTIZAR</a>
             </div>
         </div>
     </div>
