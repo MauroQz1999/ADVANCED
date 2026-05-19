@@ -1817,20 +1817,18 @@ $conn = new mysqli($servername, $username, $password, $dbname);
                         if ($result->num_rows > 0) {
                             while ($row = $result->fetch_assoc()) {
                         ?>
-
-                                <div class="mini-carta-auto" onclick="window.location.href='datos.php?id=<?php echo $row['id']; ?>'">
+                                <div class="mini-carta-auto">
                                     <div class="mini-img">
-                                        <img class="ban-img" src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=800" alt="Car">
-                                        <span class="badge-subasta">USS Tokyo</span>
+                                        <img class="ban-img" src="<?php echo htmlspecialchars($row['portada']); ?>" alt="Car">
+                                        <span class="badge-subasta"><?php echo htmlspecialchars($row['vehicle_type']); ?></span>
                                     </div>
                                     <div class="mini-info">
-                                        <span class="mini-marca">NISSAN</span>
-                                        <h4>Skyline GT-R R34</h4>
-                                        <p>2002 • 84,000 km • Manual</p>
-                                        <a href="#" class="btn-mini-detalles">Detalles</a>
+                                        <span class="mini-marca"><?php echo htmlspecialchars($row['marca']); ?></span>
+                                        <h4><?php echo htmlspecialchars($row['modelo']); ?></h4>
+                                        <p><?php echo htmlspecialchars($row['first_registration']); ?> • <?php echo htmlspecialchars($row['mileage']); ?> km • <?php echo htmlspecialchars($row['transmission']); ?></p>
+                                        <a href="#" class="btn-mini-detalles" onclick="window.location.href='datos.php?id=<?php echo $row['id']; ?>'">Detalles</a>
                                     </div>
                                 </div>
-
                         <?php
                             }
                         } else {
