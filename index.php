@@ -615,7 +615,6 @@ $conn = new mysqli($servername, $username, $password, $dbname);
     display: flex;
     justify-content: center;
     box-sizing: border-box;
-    background-color: #ffffff;
 }
 
 .contenedor-mega {
