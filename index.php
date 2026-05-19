@@ -1769,76 +1769,74 @@ $conn = new mysqli($servername, $username, $password, $dbname);
                 <div id="tab-subastas" class="tab-panel active">
                     <div class="grid-mosaico">
                         <div class="mini-carta-auto">
-                            <div class="mini-img">
-                                <img class="ban-img" src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=800" alt="Car">
-                                <span class="badge-subasta">USS Tokyo</span>
-                            </div>
-                            <div class="mini-info">
-                                <span class="mini-marca">NISSAN</span>
-                                <h4>Skyline GT-R R34</h4>
-                                <p>2002 • 84,000 km • Manual</p>
-                                <a href="#" class="btn-mini-detalles">Detalles</a>
-                            </div>
-                        </div>
-                        <div class="mini-carta-auto">
-                            <div class="mini-img">
-                                <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?q=80&w=500" alt="Toyota Hilux">
-                                <span class="badge-subasta">TAA Kansai</span>
-                            </div>
-                            <div class="mini-info">
-                                <span class="mini-marca">TOYOTA</span>
-                                <h4>Hilux Revo 4x4</h4>
-                                <p>2020 • 45,000 km • Auto</p>
-                                <a href="#" class="btn-mini-detalles">Detalles</a>
-                            </div>
-                        </div>
-                        <div class="mini-carta-auto">
-                            <div class="mini-img">
-                                <img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?q=80&w=500" alt="BMW">
-                                <span class="badge-subasta">JAA</span>
-                            </div>
-                            <div class="mini-info">
-                                <span class="mini-marca">BMW</span>
-                                <h4>M3 Competition</h4>
-                                <p>2018 • 62,000 km • DCT</p>
-                                <a href="#" class="btn-mini-detalles">Detalles</a>
-                            </div>
-                        </div>
-                        <div class="mini-carta-auto">
-                            <div class="mini-img">
-                                <img src="https://images.unsplash.com/photo-1606016159991-dfe4f2746ad5?q=80&w=500" alt="Subaru">
-                                <span class="badge-subasta">USS Yokohama</span>
-                            </div>
-                            <div class="mini-info">
-                                <span class="mini-marca">SUBARU</span>
-                                <h4>Impreza WRX Sti</h4>
-                                <p>2015 • 90,000 km • AWD</p>
-                                <a href="#" class="btn-mini-detalles">Detalles</a>
-                            </div>
-                        </div>
-                        <div class="mini-carta-auto">
-                            <div class="mini-img">
-                                <img src="https://images.unsplash.com/photo-1619767886558-efdc259cde1a?q=80&w=500" alt="Suzuki">
-                                <span class="badge-subasta">JU Gifu</span>
-                            </div>
-                            <div class="mini-info">
-                                <span class="mini-marca">SUZUKI</span>
-                                <h4>Jimny Sierra</h4>
-                                <p>2021 • 15,000 km • 4x4</p>
-                                <a href="#" class="btn-mini-detalles">Detalles</a>
-                            </div>
-                        </div>
-                        <div class="mini-carta-auto">
-                            <div class="mini-img">
-                                <img src="https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?q=80&w=500" alt="Toyota Probox">
-                                <span class="badge-subasta">CAA Chubu</span>
-                            </div>
-                            <div class="mini-info">
-                                <span class="mini-marca">TOYOTA</span>
-                                <h4>Probox Van</h4>
-                                <p>2017 • 110,000 km • FWD</p>
-                                <a href="#" class="btn-mini-detalles">Detalles</a>
-                            </div>
+
+                            <?php
+                            $sql = "SELECT 
+                                    a.id,
+                                    a.modelo_id,
+                                    mar.nombre AS marca,
+                                    mar.logo AS marca_logo, 
+                                    md.nombre AS modelo,
+                                    a.first_registration,
+                                    a.rango,
+                                    a.engine_type,
+                                    a.transmission,
+                                    a.fuel,
+                                    a.capacity,
+                                    a.color,
+                                    a.chassis_no,
+                                    a.manufacture_date,
+                                    a.type_code,
+                                    a.displacement,
+                                    a.turbo,
+                                    a.drive,
+                                    a.steering_wheel,
+                                    a.mileage,
+                                    a.vehicle_type,
+                                    a.precio,          
+                                    a.estado,          
+                                    a.driver_airbag,
+                                    a.passenger_airbag,
+                                    a.destacado,
+                                    a.stock,
+                                    a.img AS portada, 
+                                    GROUP_CONCAT(DISTINCT img.ruta_img) AS galeria_fotos,
+                                    GROUP_CONCAT(DISTINCT opc.nombre) AS lista_opciones,
+                                    COUNT(v.id) AS total_vistas
+                                FROM autos a
+                                LEFT JOIN modelos md ON a.modelo_id = md.id
+                                LEFT JOIN marcas mar ON md.marca_id = mar.id
+                                LEFT JOIN auto_imagenes img ON a.id = img.auto_id
+                                LEFT JOIN auto_opciones ao ON a.id = ao.auto_id      
+                                LEFT JOIN opciones opc ON ao.opcion_id = opc.id 
+                                INNER JOIN registro_vistas v ON a.modelo_id = v.modelo_id
+                                GROUP BY a.id
+                                ORDER BY total_vistas DESC
+                                LIMIT 5";
+                            $result = $conn->query($sql);
+
+                            if ($result->num_rows > 0) {
+                                while ($row = $result->fetch_assoc()) {
+                            ?>
+
+                                    <div class="mini-img" onclick="window.location.href='datos.php?id=<?php echo $row['id']; ?>'">
+                                        <img class="ban-img" src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=800" alt="Car">
+                                        <span class="badge-subasta">USS Tokyo</span>
+                                    </div>
+                                    <div class="mini-info">
+                                        <span class="mini-marca">NISSAN</span>
+                                        <h4>Skyline GT-R R34</h4>
+                                        <p>2002 • 84,000 km • Manual</p>
+                                        <a href="#" class="btn-mini-detalles">Detalles</a>
+                                    </div>
+
+                            <?php
+                                }
+                            } else {
+                                echo "<p>No hay vehículos disponibles en este momento.</p>";
+                            }
+                            ?>
+
                         </div>
                     </div>
                 </div>
