@@ -86,403 +86,411 @@ if (!$auto) {
     <style>
         /* -------------------------------------------------------------------------------------------------------------- */
 
-/* ========================================================
+        /* ========================================================
    ESTRUCTURA PRINCIPAL (VISTA DETALLE)
    ======================================================== */
-.contenedor {
-    width: 100%;
-    height: auto;
-    display: flex;
-    flex-direction: row;
-    box-sizing: border-box;
-}
+        .contenedor {
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-direction: row;
+            box-sizing: border-box;
+        }
 
-/* Columna Izquierda: Contenido Visual y Descriptivo */
-.izquierda {
-    flex: 1.4;
-    width: 100%;
-    min-height: 85vh; /* Cambiado dvh a vh para máxima compatibilidad */
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    background-color: #ffffff;
-    align-items: center;
-    border-bottom: 1px solid #f0f0f0;
-    box-sizing: border-box;
-}
+        /* Columna Izquierda: Contenido Visual y Descriptivo */
+        .izquierda {
+            flex: 1.4;
+            width: 100%;
+            min-height: 85vh;
+            /* Cambiado dvh a vh para máxima compatibilidad */
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            background-color: #ffffff;
+            align-items: center;
+            border-bottom: 1px solid #f0f0f0;
+            box-sizing: border-box;
+        }
 
-/* Columna Derecha: Bloque de Información Fija */
-.derecha {
-    background: #ffffff;
-    flex: 1;
-    min-height: 85vh;
-    padding: clamp(15px, 3vw, 30px);
-    border-left: 1px solid #eee;
-    border-bottom: 1px solid #f0f0f0;
-    box-sizing: border-box;
-}
+        /* Columna Derecha: Bloque de Información Fija */
+        .derecha {
+            background: #ffffff;
+            flex: 1;
+            min-height: 85vh;
+            padding: clamp(15px, 3vw, 30px);
+            border-left: 1px solid #eee;
+            border-bottom: 1px solid #f0f0f0;
+            box-sizing: border-box;
+        }
 
-/* ========================================================
+        /* ========================================================
    COMPONENTES DE LA COLUMNA IZQUIERDA (IMÁGENES Y TEXTOS)
    ======================================================== */
-.img {
-    margin-top: 2%;
-    width: 96%;
-    height: clamp(350px, 50vh, 600px); /* Altura elástica controlada */
-    border: 1px solid #eee;
-    border-radius: 12px;
-    overflow: hidden;
-    box-sizing: border-box;
-}
+        .img {
+            margin-top: 2%;
+            width: 96%;
+            height: clamp(350px, 50vh, 600px);
+            /* Altura elástica controlada */
+            border: 1px solid #eee;
+            border-radius: 12px;
+            overflow: hidden;
+            box-sizing: border-box;
+        }
 
-.carrusel {
-    width: 96%;
-    margin-top: 15px;
-    min-height: 120px;
-    border: 1px solid #eee;
-    border-radius: 8px;
-    box-sizing: border-box;
-}
+        .carrusel {
+            width: 96%;
+            margin-top: 15px;
+            min-height: 120px;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            box-sizing: border-box;
+        }
 
-.marco_descripcion {
-    width: 96%;
-    margin-top: 2%;
-    box-sizing: border-box;
-}
+        .marco_descripcion {
+            width: 96%;
+            margin-top: 2%;
+            box-sizing: border-box;
+        }
 
-.detalles {
-    width: 96%;
-    margin-top: 1%;
-    margin-bottom: 2%;
-    font-size: clamp(13px, 1vw, 15px);
-    line-height: 1.6;
-    color: #4a5568;
-    background: #f8fafc;
-    padding: clamp(15px, 2vw, 25px);
-    border-radius: 12px;
-    border-left: 4px solid #e58a13; /* Color de acento naranja consecuente con tu marca */
-    overflow-wrap: break-word;
-    box-sizing: border-box;
-}
+        .detalles {
+            width: 96%;
+            margin-top: 1%;
+            margin-bottom: 2%;
+            font-size: clamp(13px, 1vw, 15px);
+            line-height: 1.6;
+            color: #4a5568;
+            background: #f8fafc;
+            padding: clamp(15px, 2vw, 25px);
+            border-radius: 12px;
+            border-left: 4px solid #e58a13;
+            /* Color de acento naranja consecuente con tu marca */
+            overflow-wrap: break-word;
+            box-sizing: border-box;
+        }
 
-/* ========================================================
+        /* ========================================================
    TEXTOS Y CABECERAS DE LA COLUMNA DERECHA
    ======================================================== */
-.titulo {
-    width: 100%;
-    margin-top: 10px;
-    display: flex;
-    flex-direction: row;
-    align-items: baseline;
-    flex-wrap: wrap; /* Evita que el año rompa el layout si el nombre es largo */
-}
+        .titulo {
+            width: 100%;
+            margin-top: 10px;
+            display: flex;
+            flex-direction: row;
+            align-items: baseline;
+            flex-wrap: wrap;
+            /* Evita que el año rompa el layout si el nombre es largo */
+        }
 
-.titulo h1 {
-    font-size: clamp(24px, 2.5vw, 32px);
-    font-weight: 700;
-    text-transform: uppercase;
-    margin: 0;
-    color: #00334e;
-}
+        .titulo h1 {
+            font-size: clamp(24px, 2.5vw, 32px);
+            font-weight: 700;
+            text-transform: uppercase;
+            margin: 0;
+            color: #00334e;
+        }
 
-.titulo a {
-    font-size: clamp(20px, 2vw, 28px);
-    font-weight: 300;
-    margin-left: 10px;
-    color: #64748b;
-    text-decoration: none;
-}
+        .titulo a {
+            font-size: clamp(20px, 2vw, 28px);
+            font-weight: 300;
+            margin-left: 10px;
+            color: #64748b;
+            text-decoration: none;
+        }
 
-.subtitulo {
-    width: 100%;
-    margin-top: 20px;
-    margin-bottom: 10px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
+        .subtitulo {
+            width: 100%;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
 
-.subtitulo h2 {
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    margin: 0;
-    text-transform: uppercase;
-    color: #00334e;
-}
+        .subtitulo h2 {
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin: 0;
+            text-transform: uppercase;
+            color: #00334e;
+        }
 
-.barra {
-    background-color: #e58a13; /* Ajustado al naranja corporativo de las tarjetas */
-    width: 4px;
-    height: 20px;
-    margin-right: 12px;
-    border-radius: 2px;
-}
+        .barra {
+            background-color: #e58a13;
+            /* Ajustado al naranja corporativo de las tarjetas */
+            width: 4px;
+            height: 20px;
+            margin-right: 12px;
+            border-radius: 2px;
+        }
 
-/* ========================================================
+        /* ========================================================
    REJILLAS DE ESPECIFICACIONES TÉCNICAS (.detalles1 y .detalles2 unificadas)
    ======================================================== */
-.detalles1, .detalles2 {
-    width: 100%;
-    gap: 0 20px;
-    padding: 5px 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Auto-adaptable si el espacio se reduce */
-}
+        .detalles1,
+        .detalles2 {
+            width: 100%;
+            gap: 0 20px;
+            padding: 5px 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            /* Auto-adaptable si el espacio se reduce */
+        }
 
-.detalles1 > div, .detalles2 > div {
-    padding: 10px 0;
-    border-bottom: 1px solid #f1f5f9;
-}
+        .detalles1>div,
+        .detalles2>div {
+            padding: 10px 0;
+            border-bottom: 1px solid #f1f5f9;
+        }
 
-.detalles1 h2, .detalles2 h2 {
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    color: #64748b;
-    font-weight: 600;
-    margin: 0 0 4px 0;
-}
+        .detalles1 h2,
+        .detalles2 h2 {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #64748b;
+            font-weight: 600;
+            margin: 0 0 4px 0;
+        }
 
-.detalles1 a, .detalles2 a {
-    font-size: 15px;
-    color: #0d3446;
-    font-weight: 600;
-    text-decoration: none;
-    display: block;
-}
+        .detalles1 a,
+        .detalles2 a {
+            font-size: 15px;
+            color: #0d3446;
+            font-weight: 600;
+            text-decoration: none;
+            display: block;
+        }
 
-/* Bloque horizontal simple (Precios o estados destacados) */
-.detalles3 {
-    width: 100%;
-    padding: 15px 0;
-    display: flex;
-    align-items: center;
-    border-bottom: 1px solid #f1f5f9;
-}
+        /* Bloque horizontal simple (Precios o estados destacados) */
+        .detalles3 {
+            width: 100%;
+            padding: 15px 0;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid #f1f5f9;
+        }
 
-.detalles3 a {
-    font-size: clamp(18px, 1.8vw, 22px);
-    color: #e58a13;
-    font-weight: 700;
-    text-decoration: none;
-}
+        .detalles3 a {
+            font-size: clamp(18px, 1.8vw, 22px);
+            color: #e58a13;
+            font-weight: 700;
+            text-decoration: none;
+        }
 
-/* ========================================================
+        /* ========================================================
    SECCIONES INFERIORES: MODELOS DESTACADOS (CARRUSELES)
    ======================================================== */
-.subtitulo_destacado {
-    width: 90%;
-    max-width: 1440px;
-    margin: 40px auto 15px auto;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
+        .subtitulo_destacado {
+            width: 100%;
+            max-width: 1440px;
+            margin: 40px auto 15px auto;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
 
-.subtitulo_destacado h2 {
-    font-size: 14px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    margin: 0;
-    text-transform: uppercase;
-    color: #00334e;
-}
+        .subtitulo_destacado h2 {
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin: 0;
+            text-transform: uppercase;
+            color: #00334e;
+        }
 
-/* Contenedores de Carrusel limpios sin barras de scroll visibles */
-.carrusel_destacados, .carrusel_destacados1 {
-    width: 90%;
-    max-width: 1440px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    gap: 25px;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    padding-bottom: 20px;
-    scrollbar-width: none; /* Oculta scroll en Firefox */
-}
+        /* Contenedores de Carrusel limpios sin barras de scroll visibles */
+        .carrusel_destacados,
+        .carrusel_destacados1 {
+            width: 100%;
+            max-width: 1440px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            gap: 25px;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            padding-bottom: 20px;
+            scrollbar-width: none;
+            /* Oculta scroll en Firefox */
+        }
 
-.carrusel_destacados::-webkit-scrollbar, 
-.carrusel_destacados1::-webkit-scrollbar {
-    display: none; /* Oculta scroll en Chrome/Safari */
-}
+        .carrusel_destacados::-webkit-scrollbar,
+        .carrusel_destacados1::-webkit-scrollbar {
+            display: none;
+            /* Oculta scroll en Chrome/Safari */
+        }
 
-/* Tarjeta Normal del Carrusel */
-.carta_normal, .carta_normal1 {
-    width: 300px;
-    flex-shrink: 0;
-    background-color: #ffffff;
-    margin-bottom: 5px;
-    border: 1px solid rgba(13, 52, 70, 0.12);
-    border-radius: 16px;
-    overflow: hidden;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s ease, border-color 0.3s ease;
-}
+        /* Tarjeta Normal del Carrusel */
+        .carta_normal,
+        .carta_normal1 {
+            width: 300px;
+            flex-shrink: 0;
+            background-color: #ffffff;
+            margin-bottom: 5px;
+            border: 1px solid rgba(13, 52, 70, 0.12);
+            border-radius: 16px;
+            overflow: hidden;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s ease, border-color 0.3s ease;
+        }
 
-.carta_normal:hover, .carta_normal1:hover {
-    transform: translateY(-6px);
-    border-color: rgba(13, 52, 70, 0.3);
-    box-shadow: 0 20px 45px rgba(13, 52, 70, 0.08);
-    cursor: pointer;
-}
+        .carta_normal:hover,
+        .carta_normal1:hover {
+            transform: translateY(-6px);
+            border-color: rgba(13, 52, 70, 0.3);
+            box-shadow: 0 20px 45px rgba(13, 52, 70, 0.08);
+            cursor: pointer;
+        }
 
-/* Contenedor de Imagen Interno de Tarjeta */
-.contenedor_img {
-    position: relative;
-    height: 200px;
-    overflow: hidden;
-    background-color: #f4f6f9;
-}
+        /* Contenedor de Imagen Interno de Tarjeta */
+        .contenedor_img {
+            position: relative;
+            height: 200px;
+            overflow: hidden;
+            background-color: #f4f6f9;
+        }
 
-.car-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-}
+        .car-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
 
-.carta_normal:hover .car-img, 
-.carta_normal1:hover .car-img {
-    transform: scale(1.08);
-}
+        .carta_normal:hover .car-img,
+        .carta_normal1:hover .car-img {
+            transform: scale(1.08);
+        }
 
-/* Specs Overlay interno de tarjeta */
-.specs-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.96);
-    backdrop-filter: blur(4px);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 20px;
-    box-sizing: border-box;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s ease;
-    z-index: 10;
-}
+        /* Specs Overlay interno de tarjeta */
+        .specs-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(4px);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 20px;
+            box-sizing: border-box;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+            z-index: 10;
+        }
 
-.carta_normal:hover .specs-overlay, 
-.carta_normal1:hover .specs-overlay {
-    opacity: 1;
-    pointer-events: auto;
-}
+        .carta_normal:hover .specs-overlay,
+        .carta_normal1:hover .specs-overlay {
+            opacity: 1;
+            pointer-events: auto;
+        }
 
-.spec-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid #f1f5f9;
-    padding-bottom: 4px;
-}
+        .spec-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #f1f5f9;
+            padding-bottom: 4px;
+        }
 
-.spec-label {
-    font-size: 0.68rem;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    color: #64748b;
-    font-weight: 600;
-}
+        .spec-label {
+            font-size: 0.68rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #64748b;
+            font-weight: 600;
+        }
 
-.spec-item > span:last-child {
-    font-size: 0.75rem;
-    color: #0d3446;
-    font-weight: 600;
-    max-width: 65%;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
+        .spec-item>span:last-child {
+            font-size: 0.75rem;
+            color: #0d3446;
+            font-weight: 600;
+            max-width: 65%;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
 
-/* Botón de acción dentro del overlay */
-.specs-overlay .boton-negro,
-.specs-overlay div[style*="background: black"],
-.specs-overlay a[style*="background: black"] {
-    width: 100%;
-    height: 36px;
-    background-color: #000000 !important;
-    color: #ffffff !important;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-transform: uppercase;
-    font-size: 0.7rem;
-    letter-spacing: 1.5px;
-    font-weight: 700;
-    border-radius: 6px;
-    text-decoration: none;
-    margin-top: auto;
-    box-sizing: border-box;
-}
+        /* Botón de acción dentro del overlay */
+        .specs-overlay .boton-negro,
+        .specs-overlay div[style*="background: black"],
+        .specs-overlay a[style*="background: black"] {
+            width: 100%;
+            height: 36px;
+            background-color: #000000 !important;
+            color: #ffffff !important;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-transform: uppercase;
+            font-size: 0.7rem;
+            letter-spacing: 1.5px;
+            font-weight: 700;
+            border-radius: 6px;
+            text-decoration: none;
+            margin-top: auto;
+            box-sizing: border-box;
+        }
 
-/* Textos inferiores de la Tarjeta */
-.info-car {
-    padding: 20px;
-    background: #ffffff;
-}
+        /* Textos inferiores de la Tarjeta */
+        .info-car {
+            padding: 20px;
+            background: #ffffff;
+        }
 
-.info_fabricante {
-    font-size: 0.7rem;
-    font-weight: 700;
-    letter-spacing: 3px;
-    color: #e58a13;
-    text-transform: uppercase;
-}
+        .info_fabricante {
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            color: #e58a13;
+            text-transform: uppercase;
+        }
 
-.info_modelo {
-    font-size: 1.2rem;
-    font-weight: 700;
-    margin: 4px 0 0;
-    color: #00334e;
-}
+        .info_modelo {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin: 4px 0 0;
+            color: #00334e;
+        }
 
-.indicator {
-    width: 25px;
-    height: 3px;
-    background: #e58a13;
-    margin-top: 15px;
-    border-radius: 2px;
-    transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-}
+        .indicator {
+            width: 25px;
+            height: 3px;
+            background: #e58a13;
+            margin-top: 15px;
+            border-radius: 2px;
+            transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
 
-.carta_normal:hover .indicator, 
-.carta_normal1:hover .indicator {
-    width: 100%;
-}
+        .carta_normal:hover .indicator,
+        .carta_normal1:hover .indicator {
+            width: 100%;
+        }
 
-/* ========================================================
-   PIE DE PÁGINA (FOOTER) Y MEDIA QUERIES (MÓVIL)
-   ======================================================== */
-.final {
-    width: 100%;
-    min-height: 10vh;
-    background: #070707;
-    margin-top: 40px;
-}
+        /* Transformación a layout vertical para pantallas medianas/pequeñas (Tablets y Móviles) */
+        @media (max-width: 992px) {
+            .contenedor {
+                flex-direction: column;
+            }
 
-/* Transformación a layout vertical para pantallas medianas/pequeñas (Tablets y Móviles) */
-@media (max-width: 992px) {
-    .contenedor {
-        flex-direction: column;
-    }
-    .derecha {
-        border-left: none;
-        border-top: 1px solid #eee;
-        padding: 30px 20px;
-    }
-    .img {
-        height: 40vh; /* Se reduce el tamaño del marco de foto para que no ocupe toda la pantalla del móvil */
-    }
-}
+            .derecha {
+                border-left: none;
+                border-top: 1px solid #eee;
+                padding: 30px 20px;
+            }
+
+            .img {
+                height: 40vh;
+                /* Se reduce el tamaño del marco de foto para que no ocupe toda la pantalla del móvil */
+            }
+        }
     </style>
 
 </head>
@@ -704,7 +712,6 @@ if (!$auto) {
         }
         ?>
     </div>
-    <div class="final"></div>
 
     <script>
         window.onload = function() {
