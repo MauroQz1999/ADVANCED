@@ -908,186 +908,247 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 
         /* -------------------------------------------------------------------------------------------------------------- */
 
-        .seccion-soporte-calculo {
-            width: 100%;
-            padding: 20px 0 60px 0;
-            display: flex;
-            justify-content: center;
-        }
+        /* ========================================================
+   SECCIÓN GENERAL DE SOPORTE Y CALCULADORA
+   ======================================================== */
+.seccion-soporte-calculo {
+    width: 100%;
+    /* Padding vertical fluido para dar aire en PC y no exagerar en móvil */
+    padding: clamp(30px, 5vw, 60px) 0;
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    background-color: #f8fafc; /* Un fondo sutil para diferenciar los bloques blancos */
+}
 
-        .contenedor-soporte {
-            width: 75%;
-            max-width: 1400px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-        }
+.contenedor-soporte {
+    width: clamp(85%, 75vw, 90%); /* Ancho dinámico y seguro */
+    max-width: 1400px;
+    display: grid;
+    /* Rejilla inteligente que pasa a una sola columna si no hay espacio */
+    grid-template-columns: repeat(auto-fit, minmax(clamp(300px, 45vw, 600px), 1fr));
+    gap: clamp(20px, 4vw, 50px);
+    box-sizing: border-box;
+}
 
-        .bloque-calculadora,
-        .bloque-faq {
-            background-color: #ffffff;
-            border: 1px solid rgba(13, 52, 70, 0.08);
-            border-radius: 16px;
-            padding: 40px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.01);
-        }
+/* ========================================================
+   BLOQUES INTERNOS (CALCULADORA Y FAQ)
+   ======================================================== */
+.bloque-calculadora,
+.bloque-faq {
+    background-color: #ffffff;
+    border: 1px solid rgba(13, 52, 70, 0.08);
+    border-radius: 16px;
+    padding: clamp(20px, 3vw, 40px); /* Espaciado interno elástico */
+    box-shadow: 0 10px 30px rgba(13, 52, 70, 0.02);
+    box-sizing: border-box;
+    height: fit-content; /* Evita que un bloque se estire artificialmente por el otro */
+}
 
-        .bloque-calculadora h3,
-        .bloque-faq h3 {
-            font-size: 1.4rem;
-            color: #0d3446;
-            font-weight: 700;
-            margin-bottom: 15px;
-        }
+.bloque-calculadora h3,
+.bloque-faq h3 {
+    font-size: clamp(1.2rem, 1.5vw, 1.4rem);
+    color: #0d3446;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
 
-        .calc-p {
-            color: #64748b;
-            font-size: 0.9rem;
-            margin-bottom: 25px;
-            line-height: 1.5;
-        }
+.calc-p {
+    color: #64748b;
+    font-size: clamp(0.85rem, 0.9vw, 0.9rem);
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
 
-        .form-calculadora {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
+/* ========================================================
+   FORMULARIO Y CAMPOS DE LA CALCULADORA
+   ======================================================== */
+.form-calculadora {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
 
-        .campo-calc {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
+.campo-calc {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
 
-        .campo-calc label {
-            font-size: 0.85rem;
-            font-weight: 700;
-            color: #334155;
-        }
+.campo-calc label {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #334155;
+}
 
-        .campo-calc select {
-            padding: 12px;
-            border-radius: 8px;
-            border: 1px solid rgba(13, 52, 70, 0.15);
-            font-size: 0.9rem;
-            color: #0d3446;
-            outline: none;
-            font-family: 'Outfit', sans-serif;
-            background-color: #f8fafc;
-        }
+.campo-calc select,
+.campo-calc input { /* Añadido input por si cambias selects por campos de texto */
+    width: 100%;
+    padding: 12px clamp(10px, 1.5vw, 16px);
+    border-radius: 8px;
+    border: 1px solid rgba(13, 52, 70, 0.15);
+    font-size: 0.9rem;
+    color: #0d3446;
+    outline: none;
+    font-family: 'Outfit', sans-serif;
+    background-color: #f8fafc;
+    box-sizing: border-box;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
 
-        .btn-calcular {
-            background-color: #0d3446;
-            color: #ffffff;
-            border: none;
-            padding: 14px;
-            font-size: 0.95rem;
-            font-weight: 700;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            font-family: 'Outfit', sans-serif;
-        }
+.campo-calc select:focus,
+.campo-calc input:focus {
+    border-color: #0d3446;
+    box-shadow: 0 0 0 3px rgba(13, 52, 70, 0.05);
+}
 
-        .btn-calcular:hover {
-            background-color: #e58a13;
-        }
+.btn-calcular {
+    width: 100%;
+    background-color: #0d3446;
+    color: #ffffff;
+    border: none;
+    padding: 14px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    font-family: 'Outfit', sans-serif;
+    box-sizing: border-box;
+}
 
-        .resultado-caja {
-            margin-top: 25px;
-            padding: 20px;
-            background-color: #f8fafc;
-            border-radius: 8px;
-            border-left: 4px solid #e58a13;
-            display: flex;
-            flex-direction: column;
-            gap: 4px;
-        }
+.btn-calcular:hover {
+    background-color: #e58a13;
+}
 
-        .resultado-caja span {
-            font-size: 0.8rem;
-            color: #64748b;
-            font-weight: 600;
-        }
+.btn-calcular:active {
+    transform: scale(0.98);
+}
 
-        .resultado-caja strong {
-            font-size: 1.6rem;
-            color: #0d3446;
-            font-weight: 800;
-        }
+/* Bloque de resultados de la cotización */
+.resultado-caja {
+    margin-top: 25px;
+    padding: clamp(15px, 2vw, 20px);
+    background-color: #f8fafc;
+    border-radius: 8px;
+    border-left: 4px solid #e58a13;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    box-sizing: border-box;
+}
 
-        .resultado-caja small {
-            font-size: 0.72rem;
-            color: #94a3b8;
-            margin-top: 5px;
-        }
+.resultado-caja span {
+    font-size: 0.8rem;
+    color: #64748b;
+    font-weight: 600;
+}
 
-        .faq-item {
-            border-bottom: 1px solid rgba(13, 52, 70, 0.08);
-            padding: 15px 0;
-        }
+.resultado-caja strong {
+    font-size: clamp(1.3rem, 1.8vw, 1.6rem);
+    color: #0d3446;
+    font-weight: 800;
+}
 
-        .faq-pregunta {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            cursor: pointer;
-        }
+.resultado-caja small {
+    font-size: 0.72rem;
+    color: #94a3b8;
+    margin-top: 5px;
+    line-height: 1.4;
+}
 
-        .faq-pregunta h4 {
-            font-size: 0.98rem;
-            color: #334155;
-            font-weight: 600;
-            transition: color 0.3s;
-        }
+/* ========================================================
+   SISTEMA DE PREGUNTAS FRECUENTES (FAQ)
+   ======================================================== */
+.faq-item {
+    border-bottom: 1px solid rgba(13, 52, 70, 0.08);
+    padding: 15px 0;
+    box-sizing: border-box;
+}
 
-        .faq-item:hover .faq-pregunta h4 {
-            color: #e58a13;
-        }
+.faq-pregunta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px; /* Evita que el texto largo choque directo contra el icono */
+    cursor: pointer;
+    user-select: none;
+}
 
-        .faq-icono {
-            font-size: 1.2rem;
-            color: #64748b;
-            font-weight: 700;
-            transition: transform 0.3s;
-        }
+.faq-pregunta h4 {
+    font-size: clamp(0.9rem, 1vw, 0.98rem);
+    color: #334155;
+    font-weight: 600;
+    margin: 0;
+    transition: color 0.3s;
+    line-height: 1.4;
+}
 
-        .faq-respuesta {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s cubic-bezier(0, 1, 0, 1);
-        }
+.faq-item:hover .faq-pregunta h4 {
+    color: #e58a13;
+}
 
-        .faq-respuesta p {
-            color: #64748b;
-            font-size: 0.88rem;
-            line-height: 1.6;
-            padding-top: 10px;
-        }
+.faq-icono {
+    font-size: 1.2rem;
+    color: #64748b;
+    font-weight: 700;
+    transition: transform 0.3s, color 0.3s;
+    flex-shrink: 0; /* Impide que el signo '+' se aplaste con textos largos */
+}
 
-        .faq-item.active .faq-respuesta {
-            max-height: 300px;
-            transition: max-height 0.3s cubic-bezier(1, 0, 1, 0);
-        }
+/* Lógica de apertura responsiva para móviles */
+.faq-respuesta {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
 
-        .faq-item.active .faq-icono {
-            transform: rotate(45deg);
-            color: #e58a13;
-        }
+.faq-respuesta p {
+    color: #64748b;
+    font-size: clamp(0.82rem, 0.88rem, 0.88rem);
+    line-height: 1.6;
+    padding-top: 10px;
+    margin: 0;
+}
 
-        @media (max-width: 992px) {
-            .contenedor-soporte {
-                grid-template-columns: 1fr;
-                width: 90%;
-                gap: 30px;
-            }
+/* Estados activos */
+.faq-item.active .faq-respuesta {
+    /* Usamos max-height amplio pero controlado para que calcule bien en móvil */
+    max-height: 400px; 
+}
 
-            .bloque-calculadora,
-            .bloque-faq {
-                padding: 25px;
-            }
-        }
+.faq-item.active .faq-icono {
+    transform: rotate(45deg); /* Transforma el '+' en una 'X' de cierre */
+    color: #e58a13;
+}
 
+/* ========================================================
+   MEDIAS QUERIES / AJUSTES EXCLUSIVOS DE MÓVIL
+   ======================================================== */
+@media (max-width: 480px) {
+    .seccion-soporte-calculo {
+        padding: 20px 0;
+    }
+
+    .contenedor-soporte {
+        width: 92%; /* Exprime el ancho horizontal de los celulares */
+        gap: 20px;
+    }
+
+    .bloque-calculadora,
+    .bloque-faq {
+        border-radius: 12px; /* Esquinas ligeramente más sutiles en pantallas enanas */
+    }
+    
+    .faq-pregunta {
+        align-items: flex-start; /* En pantallas diminutas alinea el icono arriba por si el título ocupa 3 líneas */
+    }
+    
+    .faq-icono {
+        margin-top: 2px;
+    }
+}
         /* -------------------------------------------------------------------------------------------------------------- */
         .banner_pilares {
             margin-top: 50px;
