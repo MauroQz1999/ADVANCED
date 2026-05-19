@@ -2004,7 +2004,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
     </section>
 
     <div class="contenedor-titulo-nosotros">
-        <span class="nosotros-pre-titulo">ADVANCED SOUND CENTER</span>
+        <span class="nosotros-pre-titulo">ADVANCED SOUTH CENTRAL</span>
         <h1 class="nosotros-titulo-principal">Nuestra Operación en Japón</h1>
         <div class="nosotros-linea-decorativa"></div>
     </div>

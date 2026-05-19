@@ -599,9 +599,6 @@ if ($modelo_id > 0 && $marca_id > 0) {
     <div class="carrusel_destacados">
 
         <?php
-
-        $v_type = $conn->real_escape_string($auto['vehicle_type']);
-
         $sql = "SELECT 
                     a.id,
                     a.modelo_id,
@@ -639,14 +636,14 @@ if ($modelo_id > 0 && $marca_id > 0) {
                 LEFT JOIN auto_imagenes img ON a.id = img.auto_id
                 LEFT JOIN auto_opciones ao ON a.id = ao.auto_id      
                 LEFT JOIN opciones opc ON ao.opcion_id = opc.id      
-                WHERE a.vehicle_type = '$v_type' AND a.id != $id
+                WHERE a.destacado = 1
                 GROUP BY a.id";
         $result = $conn->query($sql);
 
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
         ?>
-                <div class="carta_normal" onclick="window.location.href='datos.php?id=${id}'">
+                <div class="carta_normal" onclick="window.location.href='datos.php?id=<?php echo $row['id']; ?>'">
                     <div class="contenedor_img">
                         <img class="car-img" src="<?php echo htmlspecialchars($row['portada']); ?>" alt="Car">
 
