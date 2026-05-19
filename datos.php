@@ -468,7 +468,8 @@ if ($modelo_id > 0 && $marca_id > 0) {
             }
         }
 
-        /* ---------------------------------------------------------------------------------------------------------- */
+        /* -------------------------------------------------------------------------------------------------------------- */
+
 
         .botones-acciones {
             display: flex;
@@ -500,7 +501,6 @@ if ($modelo_id > 0 && $marca_id > 0) {
             background-color: #144962;
             border-color: #144962;
             transform: translateY(-2px);
-            /* Pequeño salto hacia arriba */
             box-shadow: 0 6px 15px rgba(13, 52, 70, 0.25);
         }
 
@@ -647,8 +647,8 @@ if ($modelo_id > 0 && $marca_id > 0) {
                 <a>Power Windows, Power Steering, ABS, Sun Roof, Auto AC</a>
             </div>
             <div class="botones-acciones">
-                <button class="btn-accion btn1">HOW TO BUY</button>
-                <button class="btn-accion btn2">COTIZAR</button>
+                <a class="btn-accion btn2" href="how_to_buy.php">HOW TO BUY</a>
+                <a class="btn-accion btn1" href="https://wa.me/51978631055?text=Hola%20Advance%20Sound%20Center,%20solicito%20información%20sobre%20el%20<?php echo htmlspecialchars($auto['marca']); ?>%20<?php echo htmlspecialchars($auto['modelo']); ?>%20de%20<?php echo htmlspecialchars($auto['mileage']); ?>%20Km%20,%20<?php echo htmlspecialchars($auto['color']); ?>%20,%20<?php echo htmlspecialchars($auto['transmission']); ?>%20y%20la%20edición%20<?php echo htmlspecialchars($auto['rango']); ?>." target="_blank">COTIZAR</a>
             </div>
         </div>
     </div>
