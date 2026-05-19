@@ -253,7 +253,6 @@ $conn = new mysqli($servername, $username, $password, $dbname);
             }
 
             .carta_logo img {
-                filter: brightness(0) saturate(100%) invert(20%) sepia(20%) saturate(1000%) hue-rotate(180deg);
                 opacity: 0.6;
                 width: auto;
                 height: auto;
