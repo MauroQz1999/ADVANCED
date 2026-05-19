@@ -606,549 +606,604 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 
         /* -------------------------------------------------------------------------------------------------------------- */
 
-        .seccion-mega-inventario {
-            width: 100%;
-            padding: 20px 0 40px 0;
-            display: flex;
-            justify-content: center;
-        }
+       /* ========================================================
+   SECCIÓN GENERAL - MEGA INVENTARIO
+   ======================================================== */
+.seccion-mega-inventario {
+    width: 100%;
+    padding: clamp(30px, 5vw, 60px) 0;
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    background-color: #ffffff;
+}
 
-        .contenedor-mega {
-            width: 75%;
-            max-width: 1400px;
-        }
+.contenedor-mega {
+    width: clamp(85%, 75vw, 90%);
+    max-width: 1400px;
+    box-sizing: border-box;
+}
 
-        .tabs-navegacion {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-bottom: 35px;
-            border-bottom: 2px solid rgba(13, 52, 70, 0.06);
-            padding-bottom: 15px;
-        }
+/* ========================================================
+   SISTEMA DE PESTAÑAS (TABS NAVEGACIÓN)
+   ======================================================== */
+.tabs-navegacion {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: clamp(25px, 4vw, 35px);
+    border-bottom: 2px solid rgba(13, 52, 70, 0.06);
+    padding-bottom: 15px;
+    box-sizing: border-box;
+    /* Comportamiento móvil optimizado por defecto */
+    overflow-x: auto;
+    white-space: nowrap;
+    scrollbar-width: none; /* Firefox */
+    -webkit-overflow-scrolling: touch;
+}
 
-        .tab-btn {
-            background: none;
-            border: none;
-            font-size: 1rem;
-            font-weight: 700;
-            color: #64748b;
-            padding: 10px 24px;
-            cursor: pointer;
-            position: relative;
-            transition: color 0.3s ease;
-            font-family: 'Outfit', sans-serif;
-        }
+.tabs-navegacion::-webkit-scrollbar {
+    display: none; /* Chrome, Safari y Edge */
+}
 
-        .tab-btn:hover {
-            color: #0d3446;
-        }
+.tab-btn {
+    background: none;
+    border: none;
+    font-size: clamp(0.9rem, 1.1vw, 1rem);
+    font-weight: 700;
+    color: #64748b;
+    padding: 10px clamp(16px, 2vw, 24px);
+    cursor: pointer;
+    position: relative;
+    transition: color 0.3s ease;
+    font-family: 'Outfit', sans-serif;
+    flex-shrink: 0; /* Evita que los botones colapsen en scroll horizontal */
+}
 
-        .tab-btn.active {
-            color: #0d3446;
-        }
+.tab-btn:hover,
+.tab-btn.active {
+    color: #0d3446;
+}
 
-        .tab-btn.active::after {
-            content: '';
-            position: absolute;
-            bottom: -17px;
-            left: 0;
-            width: 100%;
-            height: 3px;
-            background-color: #e58a13;
-        }
+.tab-btn.active::after {
+    content: '';
+    position: absolute;
+    bottom: -17px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #e58a13;
+}
 
-        .tab-badge {
-            background-color: #ef4444;
-            color: #ffffff;
-            font-size: 0.65rem;
-            padding: 2px 6px;
-            border-radius: 4px;
-            margin-left: 5px;
-            vertical-align: middle;
-        }
+.tab-badge {
+    background-color: #ef4444;
+    color: #ffffff;
+    font-size: 0.65rem;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-left: 6px;
+    vertical-align: middle;
+}
 
-        .tab-panel {
-            display: none;
-            opacity: 0;
-            transition: opacity 0.4s ease;
-        }
+/* Paneles de contenido */
+.tab-panel {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
 
-        .tab-panel.active {
-            display: block;
-            opacity: 1;
-        }
+.tab-panel.active {
+    display: block;
+    opacity: 1;
+}
 
-        .grid-mosaico {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-        }
+/* ========================================================
+   REJILLAS COMPONENTES (MOSAICOS Y PROPÓSITOS)
+   ======================================================== */
+.grid-mosaico,
+.grid-proposito {
+    display: grid;
+    /* Cambiado a repeat auto-fit para flexibilidad total */
+    grid-template-columns: repeat(auto-fit, minmax(clamp(280px, 25vw, 380px), 1fr));
+    gap: 25px;
+    box-sizing: border-box;
+}
 
-        .grid-proposito {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-        }
+/* Tarjeta Propósito */
+.tarjeta-proposito {
+    height: clamp(250px, 35vh, 300px);
+    border-radius: 16px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(13, 52, 70, 0.04);
+    box-sizing: border-box;
+}
 
-        .tarjeta-proposito {
-            height: 280px;
-            border-radius: 16px;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-        }
+.tarjeta-proposito img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
 
-        .tarjeta-proposito img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
+.tarjeta-proposito:hover img {
+    transform: scale(1.06);
+}
 
-        .capa-proposito {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to top, rgba(13, 52, 70, 0.95) 30%, rgba(13, 52, 70, 0.2));
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            padding: 25px;
-        }
+.capa-proposito {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(13, 52, 70, 0.95) 30%, rgba(13, 52, 70, 0.3) 70%, transparent);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 25px;
+    box-sizing: border-box;
+}
 
-        .capa-proposito h3 {
-            color: #ffffff;
-            font-size: 1.3rem;
-            margin-bottom: 8px;
-        }
+.capa-proposito h3 {
+    color: #ffffff;
+    font-size: clamp(1.1rem, 1.3vw, 1.3rem);
+    margin: 0 0 8px 0;
+    font-weight: 700;
+}
 
-        .capa-proposito p {
-            color: #cbd5e1;
-            font-size: 0.85rem;
-            line-height: 1.4;
-            margin-bottom: 15px;
-        }
+.capa-proposito p {
+    color: #cbd5e1;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    margin: 0 0 15px 0;
+}
 
-        .capa-proposito a {
-            color: #e58a13;
-            text-decoration: none;
-            font-size: 0.85rem;
-            font-weight: 700;
-        }
+.capa-proposito a {
+    color: #e58a13;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 700;
+    transition: color 0.3s;
+}
 
-        .tarjeta-proposito:hover img {
-            transform: scale(1.05);
-        }
+.capa-proposito a:hover {
+    color: #ffffff;
+}
 
-        .galeria-puerto {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            grid-template-rows: repeat(2, 180px);
-            gap: 20px;
-        }
+/* ========================================================
+   GALERÍA PUERTO
+   ======================================================== */
+.galeria-puerto {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 180px);
+    gap: 20px;
+    box-sizing: border-box;
+}
 
-        .foto-galeria {
-            position: relative;
-            border-radius: 16px;
-            overflow: hidden;
-        }
+.foto-galeria {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    box-sizing: border-box;
+}
 
-        .foto-galeria.grande {
-            grid-row: span 2;
-        }
+.foto-galeria.grande {
+    grid-row: span 2;
+}
 
-        .foto-galeria img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+.foto-galeria img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 
-        .info-foto {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background: rgba(13, 52, 70, 0.8);
-            backdrop-filter: blur(4px);
-            color: #ffffff;
-            font-size: 0.8rem;
-            font-weight: 600;
-            padding: 12px 20px;
-        }
+.info-foto {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(13, 52, 70, 0.85);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    color: #ffffff;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 12px 20px;
+    box-sizing: border-box;
+}
 
-        .mini-carta-auto {
-            background-color: #ffffff;
-            border: 1px solid rgba(13, 52, 70, 0.08);
-            border-radius: 12px;
-            display: flex;
-            align-items: stretch;
-            overflow: hidden;
-            height: 140px;
-            transition: all 0.3s;
-        }
+/* ========================================================
+   MINI CARDS DE AUTOS (VISTA DE LISTADO MINI)
+   ======================================================== */
+.mini-carta-auto {
+    background-color: #ffffff;
+    border: 1px solid rgba(13, 52, 70, 0.08);
+    border-radius: 12px;
+    display: flex;
+    align-items: stretch;
+    overflow: hidden;
+    height: 140px;
+    box-sizing: border-box;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
 
-        .mini-carta-auto:hover {
-            transform: translateY(-3px);
-            border-color: rgba(13, 52, 70, 0.2);
-            box-shadow: 0 10px 25px rgba(13, 52, 70, 0.06);
-        }
+.mini-carta-auto:hover {
+    transform: translateY(-4px);
+    border-color: rgba(13, 52, 70, 0.2);
+    box-shadow: 0 12px 30px rgba(13, 52, 70, 0.06);
+}
 
-        .mini-img {
-            flex: 0 0 50%;
-            max-width: 160px;
-            min-width: 110px;
-            position: relative;
-            height: 100%;
-        }
+.mini-img {
+    flex: 0 0 40%; /* Ajustado el porcentaje para dar más aire a los datos */
+    max-width: 160px;
+    min-width: 110px;
+    position: relative;
+    height: 100%;
+}
 
-        .mini-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center;
-            display: block;
-        }
+.mini-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
 
-        .badge-subasta {
-            position: absolute;
-            bottom: 8px;
-            left: 8px;
-            background-color: rgba(13, 52, 70, 0.85);
-            color: #ffffff;
-            font-size: 0.6rem;
-            font-weight: 700;
-            padding: 3px 8px;
-            border-radius: 4px;
-        }
+.badge-subasta {
+    position: absolute;
+    bottom: 8px;
+    left: 8px;
+    background-color: rgba(13, 52, 70, 0.9);
+    color: #ffffff;
+    font-size: 0.6rem;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 4px;
+}
 
-        .mini-info {
-            width: 60%;
-            padding: 15px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
+.mini-info {
+    flex: 1;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+    min-width: 0; /* Clave: Previene que truncados de texto rompan el flex */
+}
 
-        .mini-marca {
-            font-size: 0.65rem;
-            font-weight: 800;
-            color: #e58a13;
-            letter-spacing: 1.5px;
-        }
+.mini-marca {
+    font-size: 0.65rem;
+    font-weight: 800;
+    color: #e58a13;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
 
-        .mini-info h4 {
-            font-size: 0.95rem;
-            color: #0d3446;
-            font-weight: 700;
-            margin: 2px 0;
-        }
+.mini-info h4 {
+    font-size: 0.95rem;
+    color: #0d3446;
+    font-weight: 700;
+    margin: 2px 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Corta textos excesivamente largos con tres puntos (...) */
+}
 
-        .mini-info p {
-            color: #64748b;
-            font-size: 0.75rem;
-        }
+.mini-info p {
+    color: #64748b;
+    font-size: 0.75rem;
+    margin: 0;
+}
 
-        .btn-mini-detalles {
-            align-self: flex-start;
-            text-decoration: none;
-            font-size: 0.75rem;
-            font-weight: 700;
-            color: #0d3446;
-            background-color: #f1f5f9;
-            padding: 5px 14px;
-            border-radius: 6px;
-        }
+.btn-mini-detalles {
+    align-self: flex-start;
+    text-decoration: none;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #0d3446;
+    background-color: #f1f5f9;
+    padding: 6px 14px;
+    border-radius: 6px;
+    transition: background-color 0.2s, color 0.2s;
+}
 
-        .mini-carta-auto:hover .btn-mini-detalles {
-            background-color: #0d3446;
-            color: #ffffff;
-        }
+.mini-carta-auto:hover .btn-mini-detalles {
+    background-color: #0d3446;
+    color: #ffffff;
+}
 
-        @media (max-width: 1024px) {
+/* ========================================================
+   MEDIA QUERIES (ADAPTACIÓN TABLETS Y MÓVILES)
+   ======================================================== */
+@media (max-width: 1024px) {
+    .galeria-puerto {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
 
-            .grid-mosaico,
-            .grid-proposito {
-                grid-template-columns: repeat(2, 1fr);
-            }
+    .foto-galeria.grande,
+    .foto-galeria {
+        grid-row: auto;
+        height: 220px;
+    }
+}
 
-            .galeria-puerto {
-                grid-template-columns: 1fr;
-                grid-template-rows: auto;
-            }
+@media (max-width: 768px) {
+    .contenedor-mega {
+        width: 92%;
+    }
 
-            .foto-galeria.grande {
-                grid-row: auto;
-                height: 250px;
-            }
+    /* En vez de apilar las pestañas como lista vertical, hacemos scroll horizontal táctil */
+    .tabs-navegacion {
+        justify-content: flex-start; 
+        padding-left: 5px;
+        border-bottom: 1px solid rgba(13, 52, 70, 0.1);
+    }
 
-            .foto-galeria {
-                height: 200px;
-            }
-        }
+    /* Bajamos un pelo la línea decorativa para evitar colisiones */
+    .tab-btn.active::after {
+        bottom: -16px;
+        height: 2px;
+    }
+}
 
-        @media (max-width: 768px) {
-            .contenedor-mega {
-                width: 90%;
-            }
-
-            .tabs-navegacion {
-                flex-direction: column;
-                gap: 5px;
-            }
-
-            .tab-btn.active::after {
-                display: none;
-            }
-
-            .grid-mosaico,
-            .grid-proposito {
-                grid-template-columns: 1fr;
-            }
-        }
+@media (max-width: 480px) {
+    /* Optimización estricta de las minicartas para que quepan en pantallas de 360px de ancho */
+    .mini-carta-auto {
+        height: 125px; /* Ligeramente más bajas */
+    }
+    
+    .mini-info {
+        padding: 10px;
+    }
+    
+    .mini-info h4 {
+        font-size: 0.85rem;
+    }
+    
+    .btn-mini-detalles {
+        padding: 4px 10px;
+        font-size: 0.7rem;
+    }
+}
 
         /* -------------------------------------------------------------------------------------------------------------- */
 
         /* ========================================================
    SECCIÓN GENERAL DE SOPORTE Y CALCULADORA
    ======================================================== */
-.seccion-soporte-calculo {
-    width: 100%;
-    /* Padding vertical fluido para dar aire en PC y no exagerar en móvil */
-    padding: clamp(30px, 5vw, 60px) 0;
-    display: flex;
-    justify-content: center;
-    box-sizing: border-box;
-    background-color: #f8fafc; /* Un fondo sutil para diferenciar los bloques blancos */
-}
+        .seccion-soporte-calculo {
+            width: 100%;
+            padding: clamp(30px, 5vw, 60px) 0;
+            display: flex;
+            justify-content: center;
+            box-sizing: border-box;
+            background-color: #f8fafc;
+        }
 
-.contenedor-soporte {
-    width: clamp(85%, 75vw, 90%); /* Ancho dinámico y seguro */
-    max-width: 1400px;
-    display: grid;
-    /* Rejilla inteligente que pasa a una sola columna si no hay espacio */
-    grid-template-columns: repeat(auto-fit, minmax(clamp(300px, 45vw, 600px), 1fr));
-    gap: clamp(20px, 4vw, 50px);
-    box-sizing: border-box;
-}
+        .contenedor-soporte {
+            width: clamp(85%, 75vw, 90%);
+            max-width: 1400px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(clamp(300px, 45vw, 600px), 1fr));
+            gap: clamp(20px, 4vw, 50px);
+            box-sizing: border-box;
+        }
 
-/* ========================================================
+        /* ========================================================
    BLOQUES INTERNOS (CALCULADORA Y FAQ)
    ======================================================== */
-.bloque-calculadora,
-.bloque-faq {
-    background-color: #ffffff;
-    border: 1px solid rgba(13, 52, 70, 0.08);
-    border-radius: 16px;
-    padding: clamp(20px, 3vw, 40px); /* Espaciado interno elástico */
-    box-shadow: 0 10px 30px rgba(13, 52, 70, 0.02);
-    box-sizing: border-box;
-    height: fit-content; /* Evita que un bloque se estire artificialmente por el otro */
-}
+        .bloque-calculadora,
+        .bloque-faq {
+            background-color: #ffffff;
+            border: 1px solid rgba(13, 52, 70, 0.08);
+            border-radius: 16px;
+            padding: clamp(20px, 3vw, 40px);
+            /* Espaciado interno elástico */
+            box-shadow: 0 10px 30px rgba(13, 52, 70, 0.02);
+            box-sizing: border-box;
+            height: fit-content;
+        }
 
-.bloque-calculadora h3,
-.bloque-faq h3 {
-    font-size: clamp(1.2rem, 1.5vw, 1.4rem);
-    color: #0d3446;
-    font-weight: 700;
-    margin-top: 0;
-    margin-bottom: 15px;
-}
+        .bloque-calculadora h3,
+        .bloque-faq h3 {
+            font-size: clamp(1.2rem, 1.5vw, 1.4rem);
+            color: #0d3446;
+            font-weight: 700;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
 
-.calc-p {
-    color: #64748b;
-    font-size: clamp(0.85rem, 0.9vw, 0.9rem);
-    margin-bottom: 25px;
-    line-height: 1.6;
-}
+        .calc-p {
+            color: #64748b;
+            font-size: clamp(0.85rem, 0.9vw, 0.9rem);
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
 
-/* ========================================================
+        /* ========================================================
    FORMULARIO Y CAMPOS DE LA CALCULADORA
    ======================================================== */
-.form-calculadora {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
+        .form-calculadora {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
 
-.campo-calc {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
+        .campo-calc {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
 
-.campo-calc label {
-    font-size: 0.85rem;
-    font-weight: 700;
-    color: #334155;
-}
+        .campo-calc label {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #334155;
+        }
 
-.campo-calc select,
-.campo-calc input { /* Añadido input por si cambias selects por campos de texto */
-    width: 100%;
-    padding: 12px clamp(10px, 1.5vw, 16px);
-    border-radius: 8px;
-    border: 1px solid rgba(13, 52, 70, 0.15);
-    font-size: 0.9rem;
-    color: #0d3446;
-    outline: none;
-    font-family: 'Outfit', sans-serif;
-    background-color: #f8fafc;
-    box-sizing: border-box;
-    transition: border-color 0.3s, box-shadow 0.3s;
-}
+        .campo-calc select,
+        .campo-calc input {
+            width: 100%;
+            padding: 12px clamp(10px, 1.5vw, 16px);
+            border-radius: 8px;
+            border: 1px solid rgba(13, 52, 70, 0.15);
+            font-size: 0.9rem;
+            color: #0d3446;
+            outline: none;
+            font-family: 'Outfit', sans-serif;
+            background-color: #f8fafc;
+            box-sizing: border-box;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
 
-.campo-calc select:focus,
-.campo-calc input:focus {
-    border-color: #0d3446;
-    box-shadow: 0 0 0 3px rgba(13, 52, 70, 0.05);
-}
+        .campo-calc select:focus,
+        .campo-calc input:focus {
+            border-color: #0d3446;
+            box-shadow: 0 0 0 3px rgba(13, 52, 70, 0.05);
+        }
 
-.btn-calcular {
-    width: 100%;
-    background-color: #0d3446;
-    color: #ffffff;
-    border: none;
-    padding: 14px;
-    font-size: 0.95rem;
-    font-weight: 700;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s;
-    font-family: 'Outfit', sans-serif;
-    box-sizing: border-box;
-}
+        .btn-calcular {
+            width: 100%;
+            background-color: #0d3446;
+            color: #ffffff;
+            border: none;
+            padding: 14px;
+            font-size: 0.95rem;
+            font-weight: 700;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+            font-family: 'Outfit', sans-serif;
+            box-sizing: border-box;
+        }
 
-.btn-calcular:hover {
-    background-color: #e58a13;
-}
+        .btn-calcular:hover {
+            background-color: #e58a13;
+        }
 
-.btn-calcular:active {
-    transform: scale(0.98);
-}
+        .btn-calcular:active {
+            transform: scale(0.98);
+        }
 
-/* Bloque de resultados de la cotización */
-.resultado-caja {
-    margin-top: 25px;
-    padding: clamp(15px, 2vw, 20px);
-    background-color: #f8fafc;
-    border-radius: 8px;
-    border-left: 4px solid #e58a13;
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    box-sizing: border-box;
-}
+        .resultado-caja {
+            margin-top: 25px;
+            padding: clamp(15px, 2vw, 20px);
+            background-color: #f8fafc;
+            border-radius: 8px;
+            border-left: 4px solid #e58a13;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            box-sizing: border-box;
+        }
 
-.resultado-caja span {
-    font-size: 0.8rem;
-    color: #64748b;
-    font-weight: 600;
-}
+        .resultado-caja span {
+            font-size: 0.8rem;
+            color: #64748b;
+            font-weight: 600;
+        }
 
-.resultado-caja strong {
-    font-size: clamp(1.3rem, 1.8vw, 1.6rem);
-    color: #0d3446;
-    font-weight: 800;
-}
+        .resultado-caja strong {
+            font-size: clamp(1.3rem, 1.8vw, 1.6rem);
+            color: #0d3446;
+            font-weight: 800;
+        }
 
-.resultado-caja small {
-    font-size: 0.72rem;
-    color: #94a3b8;
-    margin-top: 5px;
-    line-height: 1.4;
-}
+        .resultado-caja small {
+            font-size: 0.72rem;
+            color: #94a3b8;
+            margin-top: 5px;
+            line-height: 1.4;
+        }
 
-/* ========================================================
+        /* ========================================================
    SISTEMA DE PREGUNTAS FRECUENTES (FAQ)
    ======================================================== */
-.faq-item {
-    border-bottom: 1px solid rgba(13, 52, 70, 0.08);
-    padding: 15px 0;
-    box-sizing: border-box;
-}
+        .faq-item {
+            border-bottom: 1px solid rgba(13, 52, 70, 0.08);
+            padding: 15px 0;
+            box-sizing: border-box;
+        }
 
-.faq-pregunta {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 15px; /* Evita que el texto largo choque directo contra el icono */
-    cursor: pointer;
-    user-select: none;
-}
+        .faq-pregunta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            cursor: pointer;
+            user-select: none;
+        }
 
-.faq-pregunta h4 {
-    font-size: clamp(0.9rem, 1vw, 0.98rem);
-    color: #334155;
-    font-weight: 600;
-    margin: 0;
-    transition: color 0.3s;
-    line-height: 1.4;
-}
+        .faq-pregunta h4 {
+            font-size: clamp(0.9rem, 1vw, 0.98rem);
+            color: #334155;
+            font-weight: 600;
+            margin: 0;
+            transition: color 0.3s;
+            line-height: 1.4;
+        }
 
-.faq-item:hover .faq-pregunta h4 {
-    color: #e58a13;
-}
+        .faq-item:hover .faq-pregunta h4 {
+            color: #e58a13;
+        }
 
-.faq-icono {
-    font-size: 1.2rem;
-    color: #64748b;
-    font-weight: 700;
-    transition: transform 0.3s, color 0.3s;
-    flex-shrink: 0; /* Impide que el signo '+' se aplaste con textos largos */
-}
+        .faq-icono {
+            font-size: 1.2rem;
+            color: #64748b;
+            font-weight: 700;
+            transition: transform 0.3s, color 0.3s;
+            flex-shrink: 0;
+        }
 
-/* Lógica de apertura responsiva para móviles */
-.faq-respuesta {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-}
+        .faq-respuesta {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        }
 
-.faq-respuesta p {
-    color: #64748b;
-    font-size: clamp(0.82rem, 0.88rem, 0.88rem);
-    line-height: 1.6;
-    padding-top: 10px;
-    margin: 0;
-}
+        .faq-respuesta p {
+            color: #64748b;
+            font-size: clamp(0.82rem, 0.88rem, 0.88rem);
+            line-height: 1.6;
+            padding-top: 10px;
+            margin: 0;
+        }
 
-/* Estados activos */
-.faq-item.active .faq-respuesta {
-    /* Usamos max-height amplio pero controlado para que calcule bien en móvil */
-    max-height: 400px; 
-}
+        .faq-item.active .faq-respuesta {
+            max-height: 400px;
+        }
 
-.faq-item.active .faq-icono {
-    transform: rotate(45deg); /* Transforma el '+' en una 'X' de cierre */
-    color: #e58a13;
-}
+        .faq-item.active .faq-icono {
+            transform: rotate(45deg);
+            color: #e58a13;
+        }
 
-/* ========================================================
+        /* ========================================================
    MEDIAS QUERIES / AJUSTES EXCLUSIVOS DE MÓVIL
    ======================================================== */
-@media (max-width: 480px) {
-    .seccion-soporte-calculo {
-        padding: 20px 0;
-    }
+        @media (max-width: 480px) {
+            .seccion-soporte-calculo {
+                padding: 20px 0;
+            }
 
-    .contenedor-soporte {
-        width: 92%; /* Exprime el ancho horizontal de los celulares */
-        gap: 20px;
-    }
+            .contenedor-soporte {
+                width: 92%;
+                gap: 20px;
+            }
 
-    .bloque-calculadora,
-    .bloque-faq {
-        border-radius: 12px; /* Esquinas ligeramente más sutiles en pantallas enanas */
-    }
-    
-    .faq-pregunta {
-        align-items: flex-start; /* En pantallas diminutas alinea el icono arriba por si el título ocupa 3 líneas */
-    }
-    
-    .faq-icono {
-        margin-top: 2px;
-    }
-}
+            .bloque-calculadora,
+            .bloque-faq {
+                border-radius: 12px;
+            }
+
+            .faq-pregunta {
+                align-items: flex-start;
+            }
+
+            .faq-icono {
+                margin-top: 2px;
+            }
+        }
+
         /* -------------------------------------------------------------------------------------------------------------- */
         .banner_pilares {
             margin-top: 50px;
