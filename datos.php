@@ -86,9 +86,6 @@ if (!$auto) {
     <style>
         /* -------------------------------------------------------------------------------------------------------------- */
 
-        /* ========================================================
-   ESTRUCTURA PRINCIPAL (VISTA DETALLE)
-   ======================================================== */
         .contenedor {
             width: 100%;
             height: auto;
@@ -97,12 +94,10 @@ if (!$auto) {
             box-sizing: border-box;
         }
 
-        /* Columna Izquierda: Contenido Visual y Descriptivo */
         .izquierda {
             flex: 1.4;
             width: 100%;
             min-height: 85vh;
-            /* Cambiado dvh a vh para máxima compatibilidad */
             height: auto;
             display: flex;
             flex-direction: column;
@@ -112,7 +107,6 @@ if (!$auto) {
             box-sizing: border-box;
         }
 
-        /* Columna Derecha: Bloque de Información Fija */
         .derecha {
             background: #ffffff;
             flex: 1;
@@ -123,9 +117,6 @@ if (!$auto) {
             box-sizing: border-box;
         }
 
-        /* ========================================================
-   COMPONENTES DE LA COLUMNA IZQUIERDA (IMÁGENES Y TEXTOS)
-   ======================================================== */
         .img {
             margin-top: 2%;
             width: 96%;
@@ -163,14 +154,10 @@ if (!$auto) {
             padding: clamp(15px, 2vw, 25px);
             border-radius: 12px;
             border-left: 4px solid #e58a13;
-            /* Color de acento naranja consecuente con tu marca */
             overflow-wrap: break-word;
             box-sizing: border-box;
         }
 
-        /* ========================================================
-   TEXTOS Y CABECERAS DE LA COLUMNA DERECHA
-   ======================================================== */
         .titulo {
             width: 100%;
             margin-top: 10px;
@@ -178,7 +165,6 @@ if (!$auto) {
             flex-direction: row;
             align-items: baseline;
             flex-wrap: wrap;
-            /* Evita que el año rompa el layout si el nombre es largo */
         }
 
         .titulo h1 {
@@ -217,16 +203,12 @@ if (!$auto) {
 
         .barra {
             background-color: #e58a13;
-            /* Ajustado al naranja corporativo de las tarjetas */
             width: 4px;
             height: 20px;
             margin-right: 12px;
             border-radius: 2px;
         }
 
-        /* ========================================================
-   REJILLAS DE ESPECIFICACIONES TÉCNICAS (.detalles1 y .detalles2 unificadas)
-   ======================================================== */
         .detalles1,
         .detalles2 {
             width: 100%;
@@ -234,7 +216,6 @@ if (!$auto) {
             padding: 5px 0;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            /* Auto-adaptable si el espacio se reduce */
         }
 
         .detalles1>div,
@@ -262,7 +243,6 @@ if (!$auto) {
             display: block;
         }
 
-        /* Bloque horizontal simple (Precios o estados destacados) */
         .detalles3 {
             width: 100%;
             padding: 15px 0;
@@ -278,9 +258,6 @@ if (!$auto) {
             text-decoration: none;
         }
 
-        /* ========================================================
-   SECCIONES INFERIORES: MODELOS DESTACADOS (CARRUSELES)
-   ======================================================== */
         .subtitulo_destacado {
             width: 100%;
             max-width: 1800px;
@@ -299,7 +276,6 @@ if (!$auto) {
             color: #00334e;
         }
 
-        /* Contenedores de Carrusel limpios sin barras de scroll visibles */
         .carrusel_destacados,
         .carrusel_destacados1 {
             width: 100%;
@@ -313,16 +289,13 @@ if (!$auto) {
             scroll-behavior: smooth;
             padding-bottom: 20px;
             scrollbar-width: none;
-            /* Oculta scroll en Firefox */
         }
 
         .carrusel_destacados::-webkit-scrollbar,
         .carrusel_destacados1::-webkit-scrollbar {
             display: none;
-            /* Oculta scroll en Chrome/Safari */
         }
 
-        /* Tarjeta Normal del Carrusel */
         .carta_normal,
         .carta_normal1 {
             width: 300px;
@@ -346,7 +319,6 @@ if (!$auto) {
             cursor: pointer;
         }
 
-        /* Contenedor de Imagen Interno de Tarjeta */
         .contenedor_img {
             position: relative;
             height: 200px;
@@ -366,7 +338,6 @@ if (!$auto) {
             transform: scale(1.08);
         }
 
-        /* Specs Overlay interno de tarjeta */
         .specs-overlay {
             position: absolute;
             top: 0;
@@ -418,7 +389,6 @@ if (!$auto) {
             text-overflow: ellipsis;
         }
 
-        /* Botón de acción dentro del overlay */
         .specs-overlay .boton-negro,
         .specs-overlay div[style*="background: black"],
         .specs-overlay a[style*="background: black"] {
@@ -439,7 +409,6 @@ if (!$auto) {
             box-sizing: border-box;
         }
 
-        /* Textos inferiores de la Tarjeta */
         .info-car {
             padding: 20px;
             background: #ffffff;
@@ -474,7 +443,6 @@ if (!$auto) {
             width: 100%;
         }
 
-        /* Transformación a layout vertical para pantallas medianas/pequeñas (Tablets y Móviles) */
         @media (max-width: 992px) {
             .contenedor {
                 flex-direction: column;
@@ -488,7 +456,6 @@ if (!$auto) {
 
             .img {
                 height: 40vh;
-                /* Se reduce el tamaño del marco de foto para que no ocupe toda la pantalla del móvil */
             }
         }
     </style>
