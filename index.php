@@ -33,7 +33,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
         .carrusel-contenedor {
             width: 90%;
             max-width: 1400px;
-            height: 480px;
+            height: clamp(380px, 34vw, 480px);
             background-color: #ffffff;
             border-radius: 24px;
             box-shadow: 0 20px 40px rgba(13, 52, 70, 0.06);
@@ -45,7 +45,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
             display: none;
             width: 100%;
             height: 100%;
-            grid-template-columns: 40% 60%;
+            grid-template-columns: 42% 58%;
         }
 
         .slide.activo {
@@ -53,7 +53,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
         }
 
         .slide-info {
-            padding: 50px 60px;
+            padding: clamp(25px, 4vw, 60px) clamp(30px, 4.5vw, 60px);
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -63,27 +63,27 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 
         .slide-info .tagline {
             color: #e58a13;
-            font-size: 0.85rem;
+            font-size: clamp(0.75rem, 0.9vw, 0.85rem);
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1.5px;
-            margin-bottom: 12px;
+            margin-bottom: clamp(6px, 1vw, 12px);
         }
 
         .slide-info h2 {
             color: #0d3446;
-            font-size: 2.3rem;
+            font-size: clamp(1.5rem, 2.4vw, 2.3rem);
             font-weight: 800;
             line-height: 1.15;
-            margin-bottom: 18px;
+            margin-bottom: clamp(10px, 1.5vw, 18px);
             text-transform: uppercase;
         }
 
         .slide-info p {
             color: #64748b;
-            font-size: 0.98rem;
-            line-height: 1.5;
-            margin-bottom: 30px;
+            font-size: clamp(0.85rem, 1vw, 0.98rem);
+            line-height: 1.4;
+            margin-bottom: clamp(15px, 2vw, 30px);
         }
 
         .slide-info .btn-cta {
@@ -91,8 +91,8 @@ $conn = new mysqli($servername, $username, $password, $dbname);
             background-color: #e58a13;
             color: #ffffff;
             text-decoration: none;
-            padding: 14px 32px;
-            font-size: 0.9rem;
+            padding: clamp(10px, 1vw, 14px) clamp(20px, 2.2vw, 32px);
+            font-size: clamp(0.8rem, 0.9vw, 0.9rem);
             font-weight: 700;
             text-transform: uppercase;
             border-radius: 8px;
@@ -130,40 +130,53 @@ $conn = new mysqli($servername, $username, $password, $dbname);
             z-index: 1;
         }
 
-        @media (max-width: 992px) {
+        @media (max-width: 680px) {
             .carrusel-contenedor {
                 height: auto;
-                min-height: 550px;
             }
 
             .slide.activo {
-                grid-template-columns: 1fr;
+                display: flex;
+                flex-direction: column-reverse;
+            }
+
+            .slide-info {
+                padding: 30px 20px;
+                text-align: center;
+                align-items: center;
+            }
+
+            .slide-info h2 {
+                font-size: 1.6rem;
+            }
+
+            .slide-info p {
+                font-size: 0.95rem;
+            }
+
+            .slide-info .btn-cta {
+                align-self: center;
             }
 
             .slide-imagen {
-                height: 250px;
+                height: 220px;
             }
 
             .slide-imagen::after {
                 width: 100%;
                 height: 40%;
-                background: linear-gradient(to bottom, #ffffff, transparent);
-            }
-
-            .slide-info {
-                padding: 40px 30px;
-            }
-
-            .slide-info h2 {
-                font-size: 1.8rem;
+                top: auto;
+                bottom: 0;
+                background: linear-gradient(to top, #ffffff, transparent);
             }
         }
 
         /* -------------------------------------------------------------------------------------------------------------- */
 
         .carrusel_logos {
-            width: 75%;
-            margin: 10px auto;
+            width: 90%;
+            max-width: 1400px;
+            margin: 20px auto;
             border-top: 1px solid rgba(13, 52, 70, 0.15);
             border-bottom: 1px solid rgba(13, 52, 70, 0.15);
             height: 90px;
@@ -179,7 +192,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
         .carta_logo {
             width: 100px;
             height: 60px;
-            margin-right: 40px;
+            margin-right: 50px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -187,7 +200,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
             cursor: pointer;
             box-sizing: border-box;
             overflow: hidden;
-            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .carta_logo img {
@@ -196,19 +209,59 @@ $conn = new mysqli($servername, $username, $password, $dbname);
             object-fit: contain;
             object-position: center;
             display: block;
-            opacity: 1;
-            transition: filter 0.3s ease, opacity 0.3s ease;
         }
 
         .carta_logo:hover {
             transform: translateY(-4px);
         }
 
-        /*
-        .carta_logo:hover img {
-             opacity: 1;
+        @media (max-width: 580px) {
+            .carrusel_logos {
+                height: 50px;
+                margin: 15px auto;
+                background-color: #ffffff;
+                position: relative;
+            }
+
+            .carrusel_logos::before,
+            .carrusel_logos::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                width: 30px;
+                height: 100%;
+                z-index: 2;
+            }
+
+            .carrusel_logos::before {
+                left: 0;
+                background: linear-gradient(to right, #ffffff, transparent);
+            }
+
+            .carrusel_logos::after {
+                right: 0;
+                background: linear-gradient(to left, #ffffff, transparent);
+            }
+
+            .carta_logo {
+                width: 50px;
+                height: 30px;
+                margin-right: 40px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .carta_logo img {
+                filter: brightness(0) saturate(100%) invert(20%) sepia(20%) saturate(1000%) hue-rotate(180deg);
+                opacity: 0.6;
+                width: auto;
+                height: auto;
+                max-width: 100%;
+                max-height: 100%;
+                object-fit: contain;
+            }
         }
-        */
 
         /* -------------------------------------------------------------------------------------------------------------- */
 
@@ -230,65 +283,38 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 
         /* -------------------------------------------------------------------------------------------------------------- */
 
-        .carrusel_destacados {
-            width: 75%;
-            margin: auto;
-            display: flex;
-            flex-direction: row;
-            justify-content: flex-start;
-            gap: 30px;
-            overflow-x: auto;
-            scroll-behavior: smooth;
-            padding-bottom: 15px;
-            scrollbar-width: none;
-        }
-
-        .carrusel_destacados::-webkit-scrollbar {
-            display: none;
-        }
-
-        .carta_normal {
-            width: 320px;
-            flex-shrink: 0;
-            background-color: #ffffff;
-            margin-top: 10px;
-            margin-bottom: 5px;
-            border: 1px solid rgba(13, 52, 70, 0.12);
-            border-radius: 16px;
-            overflow: hidden;
-            box-sizing: border-box;
-            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s ease, border-color 0.3s ease;
-        }
-
-        .carta_normal:hover {
-            transform: translateY(-6px);
-            border-color: rgba(13, 52, 70, 0.3);
-            box-shadow: 0 20px 45px rgba(13, 52, 70, 0.08);
-            cursor: pointer;
-        }
-
+        .carrusel_destacados,
         .carrusel_destacados1 {
-            width: 75%;
-            margin: auto;
+            /* Alineación idéntica al banner superior (90% de ancho) */
+            width: 90%;
+            max-width: 1400px;
+            margin: 20px auto;
             display: flex;
             flex-direction: row;
             justify-content: flex-start;
-            gap: 30px;
+            /* Separación fluida entre tarjetas */
+            gap: clamp(15px, 2vw, 30px);
             overflow-x: auto;
             scroll-behavior: smooth;
-            padding-bottom: 15px;
+            /* Espacio inferior para evitar que las sombras de las cartas se corten al hacer hover */
+            padding-bottom: 25px;
+            padding-top: 10px;
             scrollbar-width: none;
+            /* Añadimos scroll por inercia para una experiencia táctil premium en móviles y tablets */
+            -webkit-overflow-scrolling: touch;
         }
 
+        .carrusel_destacados::-webkit-scrollbar,
         .carrusel_destacados1::-webkit-scrollbar {
             display: none;
         }
 
+        .carta_normal,
         .carta_normal1 {
-            width: 320px;
+            /* Usamos clamp para que la tarjeta reduzca su ancho suavemente en pantallas chicas */
+            width: clamp(260px, 22vw, 320px);
             flex-shrink: 0;
             background-color: #ffffff;
-            margin-top: 10px;
             margin-bottom: 5px;
             border: 1px solid rgba(13, 52, 70, 0.12);
             border-radius: 16px;
@@ -297,6 +323,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
             transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s ease, border-color 0.3s ease;
         }
 
+        .carta_normal:hover,
         .carta_normal1:hover {
             transform: translateY(-6px);
             border-color: rgba(13, 52, 70, 0.3);
@@ -306,7 +333,8 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 
         .contenedor_img {
             position: relative;
-            height: 250px;
+            /* La altura de la imagen se adapta proporcionalmente al ancho de la tarjeta */
+            height: clamp(190px, 18vw, 250px);
             overflow: hidden;
             background-color: #f4f6f9;
         }
@@ -318,64 +346,117 @@ $conn = new mysqli($servername, $username, $password, $dbname);
             transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        .carta_normal:hover .car-img {
-            transform: scale(1.08);
-        }
-
+        .carta_normal:hover .car-img,
         .carta_normal1:hover .car-img {
             transform: scale(1.08);
         }
 
         .specs-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(255, 255, 255, 0.96);
-            backdrop-filter: blur(4px);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding: 30px;
-            box-sizing: border-box;
-            opacity: 0;
-            transition: opacity 0.4s ease;
-            z-index: 10;
-        }
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(4px);
+    
+    /* Forzamos una distribución vertical perfecta */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    
+    /* Ajustamos el padding dinámicamente para que no empuje el contenido */
+    padding: clamp(12px, 3vw, 22px);
+    box-sizing: border-box;
+    
+    /* Estado inicial: oculto */
+    opacity: 0;
+    pointer-events: none; /* Evita interferencias cuando está oculto */
+    transition: opacity 0.3s ease;
+    z-index: 10;
+}
 
-        .carta_normal:hover .specs-overlay {
-            opacity: 1;
-        }
+/* Activadores del Hover: Asegura que se muestre en ambas clases de tarjetas */
+.carta_normal:hover .specs-overlay,
+.carta_normal1:hover .specs-overlay {
+    opacity: 1;
+    pointer-events: auto; /* Permite hacer clic en el botón negro al mostrarse */
+}
 
-        .carta_normal1:hover .specs-overlay {
-            opacity: 1;
-        }
+/* Contenedor interno para agrupar las filas de datos */
+.specs-overlay-lista {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(4px, 1.2vw, 10px); /* Separación elástica entre filas */
+}
 
-        .spec-item {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 6px;
-            margin-bottom: 6px;
-            border-bottom: 1px solid #f1f5f9;
-            padding-bottom: 6px;
-        }
+.spec-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #f1f5f9;
+    padding-bottom: 5px;
+    margin: 0;
+    width: 100%;
+}
 
-        .spec-label {
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: #64748b;
-            font-weight: 600;
-        }
+.spec-label {
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #64748b;
+    font-weight: 600;
+    flex-shrink: 0;
+}
+
+/* El valor de la derecha (Año, Transmisión, etc.) */
+.spec-item > span:last-child {
+    font-size: clamp(0.7rem, 0.8vw, 0.8rem);
+    color: #0d3446;
+    font-weight: 600;
+    text-align: right;
+    max-width: 65%;
+    
+    /* Si el nombre del motor u otro dato es muy largo, se corta con (...) elegantemente */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* ========================================================
+   EL BOTÓN NEGRO ("VER DETALLES") REUBICADO AL FONDO
+   ======================================================== */
+.specs-overlay .boton-negro,
+.specs-overlay div[style*="background: black"],
+.specs-overlay a[style*="background: black"] {
+    width: 100%;
+    height: clamp(32px, 3.5vw, 40px); /* Altura elástica y estilizada */
+    background-color: #000000 !important;
+    color: #ffffff !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    letter-spacing: 1.5px;
+    font-weight: 700;
+    border-radius: 6px;
+    text-decoration: none;
+    
+    /* Empuja el botón magnéticamente abajo del todo, respetando los datos */
+    margin-top: auto; 
+    box-sizing: border-box;
+    cursor: pointer;
+}
 
         .info-car {
-            padding: 20px;
+            padding: clamp(15px, 1.5vw, 20px);
             background: #ffffff;
         }
 
         .info_fabricante {
-            font-size: 0.7rem;
+            font-size: clamp(0.65rem, 0.7vw, 0.7rem);
             font-weight: 700;
             letter-spacing: 3px;
             color: #e58a13;
@@ -383,7 +464,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
         }
 
         .info_modelo {
-            font-size: 1.3rem;
+            font-size: clamp(1.1rem, 1.2vw, 1.3rem);
             font-weight: 700;
             margin: 4px 0 0;
             color: #00334e;
@@ -398,12 +479,28 @@ $conn = new mysqli($servername, $username, $password, $dbname);
             transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        .carta_normal:hover .indicator {
+        .carta_normal:hover .indicator,
+        .carta_normal1:hover .indicator {
             width: 100%;
         }
 
-        .carta_normal1:hover .indicator {
-            width: 100%;
+        /* ========================================================
+   OPTIMIZACIONES EXCLUSIVAS PARA TABLETS Y MÓVILES
+   ======================================================== */
+        @media (max-width: 480px) {
+            .spec-item {
+                /* En celulares, si el texto es largo, se transforma en diseño vertical */
+                flex-direction: row;
+                justify-content: space-between;
+            }
+
+            /* Si tienes textos ultra largos en motores, este ajuste los pasa abajo limpiamente */
+            .spec-item>span:last-child {
+                max-width: 100%;
+                text-align: right;
+                font-size: 0.75rem;
+                /* Ajuste sutil de tamaño para móvil */
+            }
         }
 
         /* -------------------------------------------------------------------------------------------------------------- */
