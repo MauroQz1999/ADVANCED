@@ -284,22 +284,18 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 
         .carrusel_destacados,
         .carrusel_destacados1 {
-            /* Alineación idéntica al banner superior (90% de ancho) */
             width: 90%;
             max-width: 1400px;
             margin: 20px auto;
             display: flex;
             flex-direction: row;
             justify-content: flex-start;
-            /* Separación fluida entre tarjetas */
             gap: clamp(15px, 2vw, 30px);
             overflow-x: auto;
             scroll-behavior: smooth;
-            /* Espacio inferior para evitar que las sombras de las cartas se corten al hacer hover */
             padding-bottom: 25px;
             padding-top: 10px;
             scrollbar-width: none;
-            /* Añadimos scroll por inercia para una experiencia táctil premium en móviles y tablets */
             -webkit-overflow-scrolling: touch;
         }
 
@@ -310,7 +306,6 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 
         .carta_normal,
         .carta_normal1 {
-            /* Usamos clamp para que la tarjeta reduzca su ancho suavemente en pantallas chicas */
             width: clamp(260px, 22vw, 320px);
             flex-shrink: 0;
             background-color: #ffffff;
@@ -332,7 +327,6 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 
         .contenedor_img {
             position: relative;
-            /* La altura de la imagen se adapta proporcionalmente al ancho de la tarjeta */
             height: clamp(190px, 18vw, 250px);
             overflow: hidden;
             background-color: #f4f6f9;
@@ -358,39 +352,28 @@ $conn = new mysqli($servername, $username, $password, $dbname);
             height: 100%;
             background: rgba(255, 255, 255, 0.96);
             backdrop-filter: blur(4px);
-
-            /* Forzamos una distribución vertical perfecta */
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-
-            /* Ajustamos el padding dinámicamente para que no empuje el contenido */
             padding: clamp(12px, 3vw, 22px);
             box-sizing: border-box;
-
-            /* Estado inicial: oculto */
             opacity: 0;
             pointer-events: none;
-            /* Evita interferencias cuando está oculto */
             transition: opacity 0.3s ease;
             z-index: 10;
         }
 
-        /* Activadores del Hover: Asegura que se muestre en ambas clases de tarjetas */
         .carta_normal:hover .specs-overlay,
         .carta_normal1:hover .specs-overlay {
             opacity: 1;
             pointer-events: auto;
-            /* Permite hacer clic en el botón negro al mostrarse */
         }
 
-        /* Contenedor interno para agrupar las filas de datos */
         .specs-overlay-lista {
             width: 100%;
             display: flex;
             flex-direction: column;
             gap: clamp(4px, 1.2vw, 10px);
-            /* Separación elástica entre filas */
         }
 
         .spec-item {
@@ -412,29 +395,22 @@ $conn = new mysqli($servername, $username, $password, $dbname);
             flex-shrink: 0;
         }
 
-        /* El valor de la derecha (Año, Transmisión, etc.) */
         .spec-item>span:last-child {
             font-size: clamp(0.7rem, 0.8vw, 0.8rem);
             color: #0d3446;
             font-weight: 600;
             text-align: right;
             max-width: 65%;
-
-            /* Si el nombre del motor u otro dato es muy largo, se corta con (...) elegantemente */
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
         }
 
-        /* ========================================================
-   EL BOTÓN NEGRO ("VER DETALLES") REUBICADO AL FONDO
-   ======================================================== */
         .specs-overlay .boton-negro,
         .specs-overlay div[style*="background: black"],
         .specs-overlay a[style*="background: black"] {
             width: 100%;
             height: clamp(32px, 3.5vw, 40px);
-            /* Altura elástica y estilizada */
             background-color: #000000 !important;
             color: #ffffff !important;
             display: flex;
@@ -446,8 +422,6 @@ $conn = new mysqli($servername, $username, $password, $dbname);
             font-weight: 700;
             border-radius: 6px;
             text-decoration: none;
-
-            /* Empuja el botón magnéticamente abajo del todo, respetando los datos */
             margin-top: auto;
             box-sizing: border-box;
             cursor: pointer;
@@ -487,22 +461,16 @@ $conn = new mysqli($servername, $username, $password, $dbname);
             width: 100%;
         }
 
-        /* ========================================================
-   OPTIMIZACIONES EXCLUSIVAS PARA TABLETS Y MÓVILES
-   ======================================================== */
         @media (max-width: 480px) {
             .spec-item {
-                /* En celulares, si el texto es largo, se transforma en diseño vertical */
                 flex-direction: row;
                 justify-content: space-between;
             }
 
-            /* Si tienes textos ultra largos en motores, este ajuste los pasa abajo limpiamente */
             .spec-item>span:last-child {
                 max-width: 100%;
                 text-align: right;
                 font-size: 0.75rem;
-                /* Ajuste sutil de tamaño para móvil */
             }
         }
 
@@ -606,369 +574,342 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 
         /* -------------------------------------------------------------------------------------------------------------- */
 
-       /* ========================================================
-   SECCIÓN GENERAL - MEGA INVENTARIO
-   ======================================================== */
-.seccion-mega-inventario {
-    width: 100%;
-    padding: clamp(30px, 5vw, 60px) 0;
-    display: flex;
-    justify-content: center;
-    box-sizing: border-box;
-}
+        .seccion-mega-inventario {
+            width: 100%;
+            padding: clamp(30px, 5vw, 60px) 0;
+            display: flex;
+            justify-content: center;
+            box-sizing: border-box;
+        }
 
-.contenedor-mega {
-    width: clamp(85%, 75vw, 90%);
-    max-width: 1400px;
-    box-sizing: border-box;
-}
+        .contenedor-mega {
+            width: clamp(85%, 75vw, 90%);
+            max-width: 1400px;
+            box-sizing: border-box;
+        }
 
-/* ========================================================
-   SISTEMA DE PESTAÑAS (TABS NAVEGACIÓN)
-   ======================================================== */
-.tabs-navegacion {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-bottom: clamp(25px, 4vw, 35px);
-    border-bottom: 2px solid rgba(13, 52, 70, 0.06);
-    padding-bottom: 15px;
-    box-sizing: border-box;
-    /* Comportamiento móvil optimizado por defecto */
-    overflow-x: auto;
-    white-space: nowrap;
-    scrollbar-width: none; /* Firefox */
-    -webkit-overflow-scrolling: touch;
-}
+        .tabs-navegacion {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: clamp(25px, 4vw, 35px);
+            border-bottom: 2px solid rgba(13, 52, 70, 0.06);
+            padding-bottom: 15px;
+            box-sizing: border-box;
+            overflow-x: auto;
+            white-space: nowrap;
+            scrollbar-width: none;
+            -webkit-overflow-scrolling: touch;
+        }
 
-.tabs-navegacion::-webkit-scrollbar {
-    display: none; /* Chrome, Safari y Edge */
-}
+        .tabs-navegacion::-webkit-scrollbar {
+            display: none;
+        }
 
-.tab-btn {
-    background: none;
-    border: none;
-    font-size: clamp(0.9rem, 1.1vw, 1rem);
-    font-weight: 700;
-    color: #64748b;
-    padding: 10px clamp(16px, 2vw, 24px);
-    cursor: pointer;
-    position: relative;
-    transition: color 0.3s ease;
-    font-family: 'Outfit', sans-serif;
-    flex-shrink: 0; /* Evita que los botones colapsen en scroll horizontal */
-}
+        .tab-btn {
+            background: none;
+            border: none;
+            font-size: clamp(0.9rem, 1.1vw, 1rem);
+            font-weight: 700;
+            color: #64748b;
+            padding: 10px clamp(16px, 2vw, 24px);
+            cursor: pointer;
+            position: relative;
+            transition: color 0.3s ease;
+            font-family: 'Outfit', sans-serif;
+            flex-shrink: 0;
+        }
 
-.tab-btn:hover,
-.tab-btn.active {
-    color: #0d3446;
-}
+        .tab-btn:hover,
+        .tab-btn.active {
+            color: #0d3446;
+        }
 
-.tab-btn.active::after {
-    content: '';
-    position: absolute;
-    bottom: -17px;
-    left: 0;
-    width: 100%;
-    height: 3px;
-    background-color: #e58a13;
-}
+        .tab-btn.active::after {
+            content: '';
+            position: absolute;
+            bottom: -17px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: #e58a13;
+        }
 
-.tab-badge {
-    background-color: #ef4444;
-    color: #ffffff;
-    font-size: 0.65rem;
-    padding: 2px 6px;
-    border-radius: 4px;
-    margin-left: 6px;
-    vertical-align: middle;
-}
+        .tab-badge {
+            background-color: #ef4444;
+            color: #ffffff;
+            font-size: 0.65rem;
+            padding: 2px 6px;
+            border-radius: 4px;
+            margin-left: 6px;
+            vertical-align: middle;
+        }
 
-/* Paneles de contenido */
-.tab-panel {
-    display: none;
-    opacity: 0;
-    transition: opacity 0.4s ease;
-}
+        .tab-panel {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
 
-.tab-panel.active {
-    display: block;
-    opacity: 1;
-}
+        .tab-panel.active {
+            display: block;
+            opacity: 1;
+        }
 
-/* ========================================================
-   REJILLAS COMPONENTES (MOSAICOS Y PROPÓSITOS)
-   ======================================================== */
-.grid-mosaico,
-.grid-proposito {
-    display: grid;
-    /* Cambiado a repeat auto-fit para flexibilidad total */
-    grid-template-columns: repeat(auto-fit, minmax(clamp(280px, 25vw, 380px), 1fr));
-    gap: 25px;
-    box-sizing: border-box;
-}
+        .grid-mosaico,
+        .grid-proposito {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(clamp(280px, 25vw, 380px), 1fr));
+            gap: 25px;
+            box-sizing: border-box;
+        }
 
-/* Tarjeta Propósito */
-.tarjeta-proposito {
-    height: clamp(250px, 35vh, 300px);
-    border-radius: 16px;
-    position: relative;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(13, 52, 70, 0.04);
-    box-sizing: border-box;
-}
+        .tarjeta-proposito {
+            height: clamp(250px, 35vh, 300px);
+            border-radius: 16px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(13, 52, 70, 0.04);
+            box-sizing: border-box;
+        }
 
-.tarjeta-proposito img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-}
+        .tarjeta-proposito img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
 
-.tarjeta-proposito:hover img {
-    transform: scale(1.06);
-}
+        .tarjeta-proposito:hover img {
+            transform: scale(1.06);
+        }
 
-.capa-proposito {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to top, rgba(13, 52, 70, 0.95) 30%, rgba(13, 52, 70, 0.3) 70%, transparent);
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding: 25px;
-    box-sizing: border-box;
-}
+        .capa-proposito {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(13, 52, 70, 0.95) 30%, rgba(13, 52, 70, 0.3) 70%, transparent);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 25px;
+            box-sizing: border-box;
+        }
 
-.capa-proposito h3 {
-    color: #ffffff;
-    font-size: clamp(1.1rem, 1.3vw, 1.3rem);
-    margin: 0 0 8px 0;
-    font-weight: 700;
-}
+        .capa-proposito h3 {
+            color: #ffffff;
+            font-size: clamp(1.1rem, 1.3vw, 1.3rem);
+            margin: 0 0 8px 0;
+            font-weight: 700;
+        }
 
-.capa-proposito p {
-    color: #cbd5e1;
-    font-size: 0.85rem;
-    line-height: 1.5;
-    margin: 0 0 15px 0;
-}
+        .capa-proposito p {
+            color: #cbd5e1;
+            font-size: 0.85rem;
+            line-height: 1.5;
+            margin: 0 0 15px 0;
+        }
 
-.capa-proposito a {
-    color: #e58a13;
-    text-decoration: none;
-    font-size: 0.85rem;
-    font-weight: 700;
-    transition: color 0.3s;
-}
+        .capa-proposito a {
+            color: #e58a13;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 700;
+            transition: color 0.3s;
+        }
 
-.capa-proposito a:hover {
-    color: #ffffff;
-}
+        .capa-proposito a:hover {
+            color: #ffffff;
+        }
 
-/* ========================================================
-   GALERÍA PUERTO
-   ======================================================== */
-.galeria-puerto {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 180px);
-    gap: 20px;
-    box-sizing: border-box;
-}
+        .galeria-puerto {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 180px);
+            gap: 20px;
+            box-sizing: border-box;
+        }
 
-.foto-galeria {
-    position: relative;
-    border-radius: 16px;
-    overflow: hidden;
-    box-sizing: border-box;
-}
+        .foto-galeria {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            box-sizing: border-box;
+        }
 
-.foto-galeria.grande {
-    grid-row: span 2;
-}
+        .foto-galeria.grande {
+            grid-row: span 2;
+        }
 
-.foto-galeria img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
+        .foto-galeria img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
 
-.info-foto {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background: rgba(13, 52, 70, 0.85);
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
-    color: #ffffff;
-    font-size: 0.8rem;
-    font-weight: 600;
-    padding: 12px 20px;
-    box-sizing: border-box;
-}
+        .info-foto {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(13, 52, 70, 0.85);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+            color: #ffffff;
+            font-size: 0.8rem;
+            font-weight: 600;
+            padding: 12px 20px;
+            box-sizing: border-box;
+        }
 
-/* ========================================================
-   MINI CARDS DE AUTOS (VISTA DE LISTADO MINI)
-   ======================================================== */
-.mini-carta-auto {
-    background-color: #ffffff;
-    border: 1px solid rgba(13, 52, 70, 0.08);
-    border-radius: 12px;
-    display: flex;
-    align-items: stretch;
-    overflow: hidden;
-    height: 140px;
-    box-sizing: border-box;
-    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-}
+        .mini-carta-auto {
+            background-color: #ffffff;
+            border: 1px solid rgba(13, 52, 70, 0.08);
+            border-radius: 12px;
+            display: flex;
+            align-items: stretch;
+            overflow: hidden;
+            height: 140px;
+            box-sizing: border-box;
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+        }
 
-.mini-carta-auto:hover {
-    transform: translateY(-4px);
-    border-color: rgba(13, 52, 70, 0.2);
-    box-shadow: 0 12px 30px rgba(13, 52, 70, 0.06);
-}
+        .mini-carta-auto:hover {
+            transform: translateY(-4px);
+            border-color: rgba(13, 52, 70, 0.2);
+            box-shadow: 0 12px 30px rgba(13, 52, 70, 0.06);
+        }
 
-.mini-img {
-    flex: 0 0 40%; /* Ajustado el porcentaje para dar más aire a los datos */
-    max-width: 160px;
-    min-width: 110px;
-    position: relative;
-    height: 100%;
-}
+        .mini-img {
+            flex: 0 0 40%;
+            max-width: 160px;
+            min-width: 110px;
+            position: relative;
+            height: 100%;
+        }
 
-.mini-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    display: block;
-}
+        .mini-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+        }
 
-.badge-subasta {
-    position: absolute;
-    bottom: 8px;
-    left: 8px;
-    background-color: rgba(13, 52, 70, 0.9);
-    color: #ffffff;
-    font-size: 0.6rem;
-    font-weight: 700;
-    padding: 3px 8px;
-    border-radius: 4px;
-}
+        .badge-subasta {
+            position: absolute;
+            bottom: 8px;
+            left: 8px;
+            background-color: rgba(13, 52, 70, 0.9);
+            color: #ffffff;
+            font-size: 0.6rem;
+            font-weight: 700;
+            padding: 3px 8px;
+            border-radius: 4px;
+        }
 
-.mini-info {
-    flex: 1;
-    padding: 15px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    box-sizing: border-box;
-    min-width: 0; /* Clave: Previene que truncados de texto rompan el flex */
-}
+        .mini-info {
+            flex: 1;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-sizing: border-box;
+            min-width: 0;
+        }
 
-.mini-marca {
-    font-size: 0.65rem;
-    font-weight: 800;
-    color: #e58a13;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-}
+        .mini-marca {
+            font-size: 0.65rem;
+            font-weight: 800;
+            color: #e58a13;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
 
-.mini-info h4 {
-    font-size: 0.95rem;
-    color: #0d3446;
-    font-weight: 700;
-    margin: 2px 0;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis; /* Corta textos excesivamente largos con tres puntos (...) */
-}
+        .mini-info h4 {
+            font-size: 0.95rem;
+            color: #0d3446;
+            font-weight: 700;
+            margin: 2px 0;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
 
-.mini-info p {
-    color: #64748b;
-    font-size: 0.75rem;
-    margin: 0;
-}
+        .mini-info p {
+            color: #64748b;
+            font-size: 0.75rem;
+            margin: 0;
+        }
 
-.btn-mini-detalles {
-    align-self: flex-start;
-    text-decoration: none;
-    font-size: 0.75rem;
-    font-weight: 700;
-    color: #0d3446;
-    background-color: #f1f5f9;
-    padding: 6px 14px;
-    border-radius: 6px;
-    transition: background-color 0.2s, color 0.2s;
-}
+        .btn-mini-detalles {
+            align-self: flex-start;
+            text-decoration: none;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: #0d3446;
+            background-color: #f1f5f9;
+            padding: 6px 14px;
+            border-radius: 6px;
+            transition: background-color 0.2s, color 0.2s;
+        }
 
-.mini-carta-auto:hover .btn-mini-detalles {
-    background-color: #0d3446;
-    color: #ffffff;
-}
+        .mini-carta-auto:hover .btn-mini-detalles {
+            background-color: #0d3446;
+            color: #ffffff;
+        }
 
-/* ========================================================
-   MEDIA QUERIES (ADAPTACIÓN TABLETS Y MÓVILES)
-   ======================================================== */
-@media (max-width: 1024px) {
-    .galeria-puerto {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto;
-    }
+        @media (max-width: 1024px) {
+            .galeria-puerto {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto;
+            }
 
-    .foto-galeria.grande,
-    .foto-galeria {
-        grid-row: auto;
-        height: 220px;
-    }
-}
+            .foto-galeria.grande,
+            .foto-galeria {
+                grid-row: auto;
+                height: 220px;
+            }
+        }
 
-@media (max-width: 768px) {
-    .contenedor-mega {
-        width: 92%;
-    }
+        @media (max-width: 768px) {
+            .contenedor-mega {
+                width: 92%;
+            }
 
-    /* En vez de apilar las pestañas como lista vertical, hacemos scroll horizontal táctil */
-    .tabs-navegacion {
-        justify-content: flex-start; 
-        padding-left: 5px;
-        border-bottom: 1px solid rgba(13, 52, 70, 0.1);
-    }
+            .tabs-navegacion {
+                justify-content: flex-start;
+                padding-left: 5px;
+                border-bottom: 1px solid rgba(13, 52, 70, 0.1);
+            }
 
-    /* Bajamos un pelo la línea decorativa para evitar colisiones */
-    .tab-btn.active::after {
-        bottom: -16px;
-        height: 2px;
-    }
-}
+            .tab-btn.active::after {
+                bottom: -16px;
+                height: 2px;
+            }
+        }
 
-@media (max-width: 480px) {
-    /* Optimización estricta de las minicartas para que quepan en pantallas de 360px de ancho */
-    .mini-carta-auto {
-        height: 125px; /* Ligeramente más bajas */
-    }
-    
-    .mini-info {
-        padding: 10px;
-    }
-    
-    .mini-info h4 {
-        font-size: 0.85rem;
-    }
-    
-    .btn-mini-detalles {
-        padding: 4px 10px;
-        font-size: 0.7rem;
-    }
-}
+        @media (max-width: 480px) {
+
+            .mini-carta-auto {
+                height: 125px;
+            }
+
+            .mini-info {
+                padding: 10px;
+            }
+
+            .mini-info h4 {
+                font-size: 0.85rem;
+            }
+
+            .btn-mini-detalles {
+                padding: 4px 10px;
+                font-size: 0.7rem;
+            }
+        }
 
         /* -------------------------------------------------------------------------------------------------------------- */
 
-        /* ========================================================
-   SECCIÓN GENERAL DE SOPORTE Y CALCULADORA
-   ======================================================== */
         .seccion-soporte-calculo {
             width: 100%;
             padding: clamp(30px, 5vw, 60px) 0;
@@ -986,9 +927,6 @@ $conn = new mysqli($servername, $username, $password, $dbname);
             box-sizing: border-box;
         }
 
-        /* ========================================================
-   BLOQUES INTERNOS (CALCULADORA Y FAQ)
-   ======================================================== */
         .bloque-calculadora,
         .bloque-faq {
             background-color: #ffffff;
@@ -1017,9 +955,6 @@ $conn = new mysqli($servername, $username, $password, $dbname);
             line-height: 1.6;
         }
 
-        /* ========================================================
-   FORMULARIO Y CAMPOS DE LA CALCULADORA
-   ======================================================== */
         .form-calculadora {
             display: flex;
             flex-direction: column;
@@ -1113,9 +1048,6 @@ $conn = new mysqli($servername, $username, $password, $dbname);
             line-height: 1.4;
         }
 
-        /* ========================================================
-   SISTEMA DE PREGUNTAS FRECUENTES (FAQ)
-   ======================================================== */
         .faq-item {
             border-bottom: 1px solid rgba(13, 52, 70, 0.08);
             padding: 15px 0;
@@ -1175,9 +1107,6 @@ $conn = new mysqli($servername, $username, $password, $dbname);
             color: #e58a13;
         }
 
-        /* ========================================================
-   MEDIAS QUERIES / AJUSTES EXCLUSIVOS DE MÓVIL
-   ======================================================== */
         @media (max-width: 480px) {
             .seccion-soporte-calculo {
                 padding: 20px 0;
@@ -1345,203 +1274,194 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 
         /* -------------------------------------------------------------------------------------------------------------- */
 
-       .operacion-origen {
-    width: 100%;
-    padding: clamp(40px, 6vw, 80px) 0; /* Padding elástico */
-    display: flex;
-    justify-content: center;
-    box-sizing: border-box;
-    background-color: #ffffff;
-}
+        .operacion-origen {
+            width: 100%;
+            padding: clamp(40px, 6vw, 80px) 0;
+            display: flex;
+            justify-content: center;
+            box-sizing: border-box;
+        }
 
-.contenedor-operacion {
-    width: clamp(88%, 75vw, 90%);
-    max-width: 1500px;
-    display: flex;
-    flex-direction: column;
-    gap: clamp(40px, 7vw, 90px); /* Separación fluida entre filas */
-    box-sizing: border-box;
-}
+        .contenedor-operacion {
+            width: clamp(88%, 75vw, 90%);
+            max-width: 1500px;
+            display: flex;
+            flex-direction: column;
+            gap: clamp(40px, 7vw, 90px);
+            box-sizing: border-box;
+        }
 
-/* ========================================================
-   BLOQUES ESTRUCTURALES (ZIG-ZAG)
-   ======================================================== */
-.op-bloque {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: clamp(30px, 4vw, 60px);
-    box-sizing: border-box;
-}
+        .op-bloque {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: clamp(30px, 4vw, 60px);
+            box-sizing: border-box;
+        }
 
-.op-bloque.inverso {
-    flex-direction: row-reverse;
-}
+        .op-bloque.inverso {
+            flex-direction: row-reverse;
+        }
 
-/* Contenido de Texto */
-.op-contenido {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    box-sizing: border-box;
-}
+        .op-contenido {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            box-sizing: border-box;
+        }
 
-.op-tag {
-    font-size: 0.75rem;
-    font-weight: 700;
-    color: #e58a13;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-bottom: 8px;
-}
+        .op-tag {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: #e58a13;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
 
-.op-contenido h3 {
-    font-size: clamp(1.4rem, 2vw, 1.8rem); /* Tipografía responsiva */
-    color: #0d3446;
-    font-weight: 700;
-    margin-top: 0;
-    margin-bottom: 15px;
-    line-height: 1.3;
-}
+        .op-contenido h3 {
+            font-size: clamp(1.4rem, 2vw, 1.8rem);
+            color: #0d3446;
+            font-weight: 700;
+            margin-top: 0;
+            margin-bottom: 15px;
+            line-height: 1.3;
+        }
 
-.op-contenido p {
-    color: #64748b;
-    font-size: clamp(0.92rem, 0.98vw, 0.98rem);
-    line-height: 1.6;
-    margin-top: 0;
-    margin-bottom: 20px;
-}
+        .op-contenido p {
+            color: #64748b;
+            font-size: clamp(0.92rem, 0.98vw, 0.98rem);
+            line-height: 1.6;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
 
-/* Listas de viñetas */
-.op-lista {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
+        .op-lista {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
 
-.op-lista li {
-    color: #334155;
-    font-size: 0.9rem;
-    font-weight: 600;
-    display: flex;
-    align-items: flex-start;
-    gap: 8px; /* Por si añades iconos/checks antes del texto */
-}
+        .op-lista li {
+            color: #334155;
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+        }
 
-/* Contenedor de Imagen */
-.op-imagen {
-    flex: 1;
-    width: 100%;
-    height: clamp(260px, 35vh, 400px); /* Altura elástica balanceada */
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 15px 35px rgba(13, 52, 70, 0.05);
-    border: 1px solid rgba(13, 52, 70, 0.08);
-    box-sizing: border-box;
-}
+        .op-imagen {
+            flex: 1;
+            width: 100%;
+            height: clamp(260px, 35vh, 400px);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(13, 52, 70, 0.05);
+            border: 1px solid rgba(13, 52, 70, 0.08);
+            box-sizing: border-box;
+        }
 
-.op-imagen img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-}
+        .op-imagen img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
 
-/* Efecto Hover sutil */
-.op-bloque:hover .op-imagen img {
-    transform: scale(1.04);
-}
+        .op-bloque:hover .op-imagen img {
+            transform: scale(1.04);
+        }
 
-/* ========================================================
-   MEDIA QUERIES (TABLETS Y SMARTPHONES)
-   ======================================================== */
-@media (max-width: 992px) {
-    .op-bloque,
-    .op-bloque.inverso {
-        flex-direction: column; /* Apilado limpio en pantallas medianas */
-        gap: 30px;
-    }
+        @media (max-width: 992px) {
 
-    /* Garantizamos que en móviles el texto SIEMPRE vaya primero, 
-       sin importar si la fila tiene la clase .inverso */
-    .op-contenido {
-        order: 1; 
-    }
+            .op-bloque,
+            .op-bloque.inverso {
+                flex-direction: column;
+                gap: 30px;
+            }
 
-    .op-imagen {
-        order: 2;
-        height: 300px; /* Excelente proporción para pantallas de tablets */
-    }
-}
+            .op-contenido {
+                order: 1;
+            }
 
-@media (max-width: 480px) {
-    .contenedor-operacion {
-        width: 90%; /* Ajuste quirúrgico del ancho en teléfonos */
-    }
+            .op-imagen {
+                order: 2;
+                height: 300px;
+            }
+        }
 
-    .op-imagen {
-        height: 200px; /* Reducción de altura ideal para pantallas de celulares */
-        border-radius: 14px; /* Suavizado de esquinas acorde al espacio */
-    }
-}
+        @media (max-width: 480px) {
+            .contenedor-operacion {
+                width: 90%;
+            }
+
+            .op-imagen {
+                height: 200px;
+                border-radius: 14px;
+            }
+        }
 
         /* -------------------------------------------------------------------------------------------------------------- */
 
         .contenedor-titulo-nosotros {
             width: 100%;
             max-width: 1400px;
-            margin-top: 80px;
-            margin-bottom: 20px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: clamp(40px, 6vw, 80px);
+            margin-bottom: clamp(15px, 2vw, 25px);
             display: flex;
             flex-direction: column;
             align-items: center;
             text-align: center;
-            padding: 0 20px;
+            padding: 0 clamp(16px, 4vw, 30px);
+            box-sizing: border-box;
         }
 
         .nosotros-pre-titulo {
-            font-size: 0.8rem;
+            font-size: clamp(0.7rem, 0.8vw, 0.8rem);
             font-weight: 800;
             color: #e58a13;
             text-transform: uppercase;
-            letter-spacing: 4px;
+            letter-spacing: clamp(2px, 0.3vw, 4px);
             margin-bottom: 8px;
+            line-height: 1.2;
         }
 
         .nosotros-titulo-principal {
-            font-size: 2.8rem;
+            font-size: clamp(1.8rem, 3.5vw, 2.8rem);
             font-weight: 900;
             color: #0d3446;
-            letter-spacing: -1px;
-            line-height: 1.1;
+            letter-spacing: -0.5px;
+            line-height: 1.15;
             text-transform: uppercase;
+            margin: 0;
             position: relative;
+            word-wrap: break-word;
         }
 
         .nosotros-linea-decorativa {
-            width: 60px;
+            width: clamp(45px, 5vw, 60px);
             height: 4px;
             background-color: #e58a13;
             border-radius: 2px;
-            margin-top: 15px;
+            margin-top: clamp(12px, 1.5vw, 18px);
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 480px) {
             .contenedor-titulo-nosotros {
-                margin-top: 50px;
+                /* Un respiro extra arriba en pantallas súper compactas */
+                margin-top: 35px;
             }
 
             .nosotros-titulo-principal {
-                font-size: 2rem;
-            }
-
-            .nosotros-pre-titulo {
-                font-size: 0.7rem;
-                letter-spacing: 2px;
+                /* Ajuste de seguridad para smartphones de 320px de ancho */
+                font-size: 1.65rem;
             }
         }
     </style>
