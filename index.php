@@ -1345,119 +1345,149 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 
         /* -------------------------------------------------------------------------------------------------------------- */
 
-        .operacion-origen {
-            width: 100%;
-            padding: 40px 0;
-            display: flex;
-            justify-content: center;
-        }
+       .operacion-origen {
+    width: 100%;
+    padding: clamp(40px, 6vw, 80px) 0; /* Padding elástico */
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    background-color: #ffffff;
+}
 
-        .contenedor-operacion {
-            width: 90%;
-            max-width: 1500px;
-            display: flex;
-            flex-direction: column;
-            gap: 80px;
-        }
+.contenedor-operacion {
+    width: clamp(88%, 75vw, 90%);
+    max-width: 1500px;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(40px, 7vw, 90px); /* Separación fluida entre filas */
+    box-sizing: border-box;
+}
 
-        .op-bloque {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 60px;
-        }
+/* ========================================================
+   BLOQUES ESTRUCTURALES (ZIG-ZAG)
+   ======================================================== */
+.op-bloque {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: clamp(30px, 4vw, 60px);
+    box-sizing: border-box;
+}
 
-        .op-bloque.inverso {
-            flex-direction: row-reverse;
-        }
+.op-bloque.inverso {
+    flex-direction: row-reverse;
+}
 
-        .op-contenido {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-        }
+/* Contenido de Texto */
+.op-contenido {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
 
-        .op-tag {
-            font-size: 0.75rem;
-            font-weight: 700;
-            color: #e58a13;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 8px;
-        }
+.op-tag {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #e58a13;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+}
 
-        .op-contenido h3 {
-            font-size: 1.8rem;
-            color: #0d3446;
-            font-weight: 700;
-            margin-bottom: 15px;
-            line-height: 1.3;
-        }
+.op-contenido h3 {
+    font-size: clamp(1.4rem, 2vw, 1.8rem); /* Tipografía responsiva */
+    color: #0d3446;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 15px;
+    line-height: 1.3;
+}
 
-        .op-contenido p {
-            color: #64748b;
-            font-size: 0.98rem;
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
+.op-contenido p {
+    color: #64748b;
+    font-size: clamp(0.92rem, 0.98vw, 0.98rem);
+    line-height: 1.6;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
 
-        .op-lista {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
+/* Listas de viñetas */
+.op-lista {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
 
-        .op-lista li {
-            color: #334155;
-            font-size: 0.9rem;
-            font-weight: 600;
-        }
+.op-lista li {
+    color: #334155;
+    font-size: 0.9rem;
+    font-weight: 600;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px; /* Por si añades iconos/checks antes del texto */
+}
 
-        .op-imagen {
-            flex: 1;
-            height: 380px;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 15px 35px rgba(13, 52, 70, 0.06);
-            border: 1px solid rgba(13, 52, 70, 0.08);
-        }
+/* Contenedor de Imagen */
+.op-imagen {
+    flex: 1;
+    width: 100%;
+    height: clamp(260px, 35vh, 400px); /* Altura elástica balanceada */
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(13, 52, 70, 0.05);
+    border: 1px solid rgba(13, 52, 70, 0.08);
+    box-sizing: border-box;
+}
 
-        .op-imagen img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
+.op-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
 
-        .op-bloque:hover .op-imagen img {
-            transform: scale(1.03);
-        }
+/* Efecto Hover sutil */
+.op-bloque:hover .op-imagen img {
+    transform: scale(1.04);
+}
 
-        /* --- RESPONSIVE --- */
-        @media (max-width: 992px) {
-            .contenedor-operacion {
-                width: 90%;
-                gap: 50px;
-            }
+/* ========================================================
+   MEDIA QUERIES (TABLETS Y SMARTPHONES)
+   ======================================================== */
+@media (max-width: 992px) {
+    .op-bloque,
+    .op-bloque.inverso {
+        flex-direction: column; /* Apilado limpio en pantallas medianas */
+        gap: 30px;
+    }
 
-            .op-bloque,
-            .op-bloque.inverso {
-                flex-direction: column !important;
-                gap: 25px;
-            }
+    /* Garantizamos que en móviles el texto SIEMPRE vaya primero, 
+       sin importar si la fila tiene la clase .inverso */
+    .op-contenido {
+        order: 1; 
+    }
 
-            .op-imagen {
-                width: 100%;
-                height: 250px;
-            }
+    .op-imagen {
+        order: 2;
+        height: 300px; /* Excelente proporción para pantallas de tablets */
+    }
+}
 
-            .op-contenido h3 {
-                font-size: 1.4rem;
-            }
-        }
+@media (max-width: 480px) {
+    .contenedor-operacion {
+        width: 90%; /* Ajuste quirúrgico del ancho en teléfonos */
+    }
+
+    .op-imagen {
+        height: 200px; /* Reducción de altura ideal para pantallas de celulares */
+        border-radius: 14px; /* Suavizado de esquinas acorde al espacio */
+    }
+}
 
         /* -------------------------------------------------------------------------------------------------------------- */
 
