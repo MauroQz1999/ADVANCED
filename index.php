@@ -1718,7 +1718,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
                         $posicion = 1;
                         while ($row = $result->fetch_assoc()) {
                     ?>
-                            <a href="#" class="btn-top-item" onclick="window.location.href='inventario.php?marca=<?php echo urlencode($row['marca']); ?>'">
+                            <a class="btn-top-item" onclick="window.location.href='inventario.php?marca=<?php echo urlencode($row['marca']); ?>'">
                                 <?php echo htmlspecialchars($row['marca']); ?>
                                 <span class="rank">
                                     #<?php echo $posicion; ?>
@@ -1785,7 +1785,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
                         $posicion = 1;
                         while ($row = $result->fetch_assoc()) {
                     ?>
-                            <a href="#" class="btn-top-item" onclick="window.location.href='inventario.php?modelo=<?php echo urlencode($row['modelo']); ?>'">
+                            <a class="btn-top-item" onclick="window.location.href='inventario.php?modelo=<?php echo urlencode($row['modelo']); ?>'">
                                 <?php echo htmlspecialchars($row['modelo']); ?>
                                 <span class="rank">
                                     #<?php echo $posicion; ?>
