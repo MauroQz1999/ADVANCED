@@ -90,7 +90,6 @@
             display: flex;
             justify-content: center;
             box-sizing: border-box;
-            background-color: #ffffff;
         }
 
         .contenedor-operacion {
@@ -257,8 +256,7 @@
 
     <div class="service-contenido">
         <h3>Advise the best shipping methods</h3>
-        <p>We advise the best shipping methods to suit your needs, either RO/RO, Containerised Cargo, or shipped LCL.</p>
-        <p>We provide a range of ocean freight and logistics services for all your import and export requirements to any country.</p>
+        <p>We advise the best shipping methods to suit your needs, either RO/RO, Containerised Cargo, or shipped LCL. We provide a range of ocean freight and logistics services for all your import and export requirements to any country.</p>
     </div>
 
     <div class="service1-imagen">
@@ -271,8 +269,7 @@
 
     <div class="service-contenido">
         <h3>Arrange Shipment</h3>
-        <p>We offer a one-stop package service which provides you with a range of quick and reliable shipping services to</p>
-        <p>suit your vehicle or cargo, your timetable and budget.</p>
+        <p>We offer a one-stop package service which provides you with a range of quick and reliable shipping services to suit your vehicle or cargo, your timetable and budget.</p>
     </div>
 
     <div class="contenedor-titulo-nosotros">
@@ -281,11 +278,7 @@
 
     <div class="service-contenido">
         <h3>Cooperative companies in japan and all over the world</h3>
-        <p>Kanaloa Shipping Co.,Ltd has partner companies in Japan, Australia and New Zealand and also access to a</p>
-        <p>network of agencies all over the world. This way we can provide a smooth and fast service for booking shipings,</p>
-        <p>preparing documents, vehicle inspections and maintenance before the vehicle departs.</p>
-        <p>Our yards are located at all the main ports in Japan, Australia and New Zeleand, so we are always in control of</p>
-        <p>your shipment and ensure the process is smooth.</p>
+        <p>Kanaloa Shipping Co.,Ltd has partner companies in Japan, Australia and New Zealand and also access to a network of agencies all over the world. This way we can provide a smooth and fast service for booking shipings, preparing documents, vehicle inspections and maintenance before the vehicle departs. Our yards are located at all the main ports in Japan, Australia and New Zeleand, so we are always in control of your shipment and ensure the process is smooth.</p>
     </div>
 
     <div class="contenedor-titulo-nosotros">
@@ -294,8 +287,7 @@
 
     <div class="service-contenido">
         <h3>Various services</h3>
-        <p>We can provide various services to meet your needs and budget. With our many years of experience and</p>
-        <p>knowledge, nothing is too big of a job for us to help you with.</p>
+        <p>We can provide various services to meet your needs and budget. With our many years of experience and knowledge, nothing is too big of a job for us to help you with.</p>
     </div>
 
     <section class="operacion-origen">

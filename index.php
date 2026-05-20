@@ -1704,22 +1704,100 @@ $conn = new mysqli($servername, $username, $password, $dbname);
             <div class="columna-top">
                 <h3>Top Marcas</h3>
                 <div class="grupo-botones-top">
-                    <a href="#" class="btn-top-item">Toyota <span class="rank">#1</span></a>
-                    <a href="#" class="btn-top-item">Nissan <span class="rank">#2</span></a>
-                    <a href="#" class="btn-top-item">Honda <span class="rank">#3</span></a>
-                    <a href="#" class="btn-top-item">Suzuki <span class="rank">#4</span></a>
-                    <a href="#" class="btn-top-item">Mitsubishi <span class="rank">#5</span></a>
+
+                    <?php
+                    $sql = "SELECT m.nombre AS marca, COUNT(r.id) AS total_vistas 
+                                FROM registro_vistas r
+                                INNER JOIN marcas m ON r.marca_id = m.id
+                                GROUP BY r.marca_id
+                                ORDER BY total_vistas DESC
+                                LIMIT 5";
+                    $result = $conn->query($sql);
+
+                    if ($result->num_rows > 0) {
+                        $posicion = 1;
+                        while ($row = $result->fetch_assoc()) {
+                    ?>
+                            <a href="#" class="btn-top-item" onclick="window.location.href='inventario.php?marca=<?php echo urlencode($row['marca']); ?>'">
+                                <?php echo htmlspecialchars($row['marca']); ?>
+                                <span class="rank">
+                                    #<?php echo $posicion; ?>
+                                </span>
+                            </a>
+                    <?php
+                            $posicion++;
+                        }
+                    } else {
+                        echo "<p>No hay vehículos disponibles en este momento.</p>";
+                    }
+                    ?>
                 </div>
             </div>
 
             <div class="columna-top">
                 <h3>Modelos Más Vendidos</h3>
                 <div class="grupo-botones-top">
-                    <a href="#" class="btn-top-item">Toyota Hilux <span class="rank">#1</span></a>
-                    <a href="#" class="btn-top-item">Nissan Caravan <span class="rank">#2</span></a>
-                    <a href="#" class="btn-top-item">Toyota Probox <span class="rank">#3</span></a>
-                    <a href="#" class="btn-top-item">Suzuki Hi jet <span class="rank">#4</span></a>
-                    <a href="#" class="btn-top-item">Subaru Impreza <span class="rank">#5</span></a>
+                    <?php
+                    $sql = "SELECT 
+                                    a.id,
+                                    a.modelo_id,
+                                    mar.nombre AS marca,
+                                    mar.logo AS marca_logo, 
+                                    md.nombre AS modelo,
+                                    a.first_registration,
+                                    a.rango,
+                                    a.engine_type,
+                                    a.transmission,
+                                    a.fuel,
+                                    a.capacity,
+                                    a.color,
+                                    a.chassis_no,
+                                    a.manufacture_date,
+                                    a.type_code,
+                                    a.displacement,
+                                    a.turbo,
+                                    a.drive,
+                                    a.steering_wheel,
+                                    a.mileage,
+                                    a.vehicle_type,
+                                    a.precio,          
+                                    a.estado,          
+                                    a.driver_airbag,
+                                    a.passenger_airbag,
+                                    a.destacado,
+                                    a.stock,
+                                    a.img AS portada, 
+                                    GROUP_CONCAT(DISTINCT img.ruta_img) AS galeria_fotos,
+                                    GROUP_CONCAT(DISTINCT opc.nombre) AS lista_opciones,
+                                    COUNT(v.id) AS total_vistas
+                                FROM autos a
+                                LEFT JOIN modelos md ON a.modelo_id = md.id
+                                LEFT JOIN marcas mar ON md.marca_id = mar.id
+                                LEFT JOIN auto_imagenes img ON a.id = img.auto_id
+                                LEFT JOIN auto_opciones ao ON a.id = ao.auto_id      
+                                LEFT JOIN opciones opc ON ao.opcion_id = opc.id 
+                                INNER JOIN registro_vistas v ON a.modelo_id = v.modelo_id
+                                GROUP BY a.id
+                                ORDER BY total_vistas DESC
+                                LIMIT 5";
+                    $result = $conn->query($sql);
+                    if ($result->num_rows > 0) {
+                        $posicion = 1;
+                        while ($row = $result->fetch_assoc()) {
+                    ?>
+                            <a href="#" class="btn-top-item" onclick="window.location.href='inventario.php?modelo=<?php echo urlencode($row['modelo']); ?>'">
+                                <?php echo htmlspecialchars($row['modelo']); ?>
+                                <span class="rank">
+                                    #<?php echo $posicion; ?>
+                                </span>
+                            </a>
+                    <?php
+                            $posicion++;
+                        }
+                    } else {
+                        echo "<p>No hay vehículos disponibles en este momento.</p>";
+                    }
+                    ?>
                 </div>
             </div>
 

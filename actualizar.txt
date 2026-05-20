@@ -1,3 +1,4 @@
+cd C:\xampp\htdocs\ADVANCE
 git add .
 git commit -m "Modificado el diseño de las vistas de productos"
 git push origin main
