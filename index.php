@@ -1702,7 +1702,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
         <div class="contenedor-tops">
 
             <div class="columna-top">
-                <h3>Top Marcas</h3>
+                <h3>Topp Marcas</h3>
                 <div class="grupo-botones-top">
 
                     <?php
