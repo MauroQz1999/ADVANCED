@@ -3,10 +3,10 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-$servername = "mysql.railway.internal";
+$servername = "localhost";
 $username = "root";
-$password = "XGdcltEeQVjbsOjfHJmqpWnmQZqUqrOq";
-$dbname = "railway";
+$password = "1234";
+$dbname = "autos";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 

@@ -257,9 +257,7 @@
 
         <div class="service-contenido">
             <h3>Choose Vehicle & Send Inquiry</h3>
-            <p>Search your required car from high quality Japanese used vehicles ready to</p>
-            <p>export at fair prices in our stock list. Check all photos and complete vehicle</p>
-            <p>details, specifications and inspection sheet to know actual vehicle condition.</p>
+            <p>Search your required car from high quality Japanese used vehicles ready to export at fair prices in our stock list.  Check all photos and complete vehicle details, specifications and inspection sheet to know actual vehicle condition.</p>
         </div>
 
         <div class="service1-imagen">
@@ -285,10 +283,7 @@
 
         <div class="service-contenido">
             <h3>Complete the payment</h3>
-            <p>Please complete the payment by Bank Telegraphic Transfer from any bank not</p>
-            <p>later than the Paying Due Date specified in the Proforma Invoice. When you</p>
-            <p>have completed the payment, please send us the copy of Telegraphic Transfer</p>
-            <p>copy via fax or e-mail as proof of payment.</p>
+            <p>Please complete the payment by Bank Telegraphic Transfer from any bank not later than the Paying Due Date specified in the Proforma Invoice. When you have completed the payment, please send us the copy of Telegraphic Transfer copy via fax or e-mail as proof of payment.</p>
         </div>
 
         <div class="service1-imagen">
@@ -314,10 +309,7 @@
 
         <div class="service-contenido">
             <h3>Receive Your Vehicle</h3>
-            <p>Once you receive the documents, please contact your local customs agent for</p>
-            <P>customs clearance at least one week prior to the actual arrival date of vessel.</P>
-            <P>As per customs agent, you can pick up your car at the port. Car registration is</P>
-            <P>different each country, therefore please ask your local authority.</P>
+            <p>Once you receive the documents, please contact your local customs agent for customs clearance at least one week prior to the actual arrival date of vessel. As per customs agent, you can pick up your car at the port. Car registration is different each country, therefore please ask your local authority.</P>
         </div>
 
         <div class="service1-imagen">

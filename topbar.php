@@ -504,7 +504,7 @@
         <div class="cont-mintopbar">
             <ul class="mini-links">
                 <li><a href="#">Countries</a></li>
-                <li><a href="servicios.php">Services</a></li>
+                <li><a href="how_to_buy.php">How To Buy</a></li>
                 <li><a href="servicios.php">Services</a></li>
                 <li><a href="#">About Us</a></li>
             </ul>
