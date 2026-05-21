@@ -1972,7 +1972,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
         <div class="contenedor-soporte">
 
             <div class="bloque-calculadora">
-                <h3>Cotizador de Envío Estimado</h3>
+                <h3>Cotizador de Envío Estimadooooo</h3>
                 <p class="calc-p">Calcula el costo aproximado de logística y flete marítimo desde Japón hasta tu región.</p>
 
                 <form class="form-calculadora" onsubmit="calcularFlete(event)">

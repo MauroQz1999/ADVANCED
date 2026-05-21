@@ -3,6 +3,18 @@ git add .
 git commit -m "Modificado el diseño de las vistas de productos"
 git push origin main
 
+ssh root@5.78.218.251
+rm -rf /var/www/html/* /var/www/html/.* 2>/dev/null
+git clone https://github.com/MauroQz1999/ADVANCED.git /var/www/html
+
+# Cambiar el dueño de los archivos a Apache
+chown -R www-data:www-data /var/www/html
+
+# Dar permisos correctos de lectura y ejecución
+chmod -R 755 /var/www/html
+
+# Asegurar que Git reconozca la carpeta como segura para el sistema
+git config --system --add safe.directory /var/www/html
 
 
 TRUNCATE TABLE registro_vistas;
