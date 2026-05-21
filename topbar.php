@@ -540,7 +540,7 @@
                         <span class="flecha-abajo">▼</span>
                     </button>
                     <ul class="lista-redes">
-                        <li><a href="https://wa.me/51978631055?text=Hola%20Advance%20Sound%20Center,%20solicito%20información%20sobre%20el%20catálogo%20de%20autos." class="red-link wsp" target="_blank">WhatsApp</a></li>
+                        <li><a href="https://wa.me/51978631055?text=Hola%20Advance%20South%20Central,%20solicito%20información%20sobre%20el%20catálogo%20de%20autos." class="red-link wsp" target="_blank">WhatsApp</a></li>
                         <li><a href="#" class="red-link fb" target="_blank">Facebook</a></li>
                         <li><a href="#" class="red-link tk" target="_blank">TikTok</a></li>
                         <li><a href="https://instagram.com/advancedsouthcentral" class="red-link insta" target="_blank">Instagram</a></li>

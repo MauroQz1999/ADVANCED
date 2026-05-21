@@ -650,7 +650,7 @@ if ($modelo_id > 0 && $marca_id > 0) {
             </div>
             <div class="botones-acciones">
                 <a class="btn-accion btn1" href="how_to_buy.php">HOW TO BUY</a>
-                <a class="btn-accion btn2" href="https://wa.me/51978631055?text=Hola%20Advance%20Sound%20Center,%20solicito%20información%20sobre%20el%20<?php echo htmlspecialchars($auto['marca']); ?>%20<?php echo htmlspecialchars($auto['modelo']); ?>%20de%20<?php echo htmlspecialchars($auto['mileage']); ?>%20Km%20,%20<?php echo htmlspecialchars($auto['color']); ?>%20,%20<?php echo htmlspecialchars($auto['transmission']); ?>%20y%20la%20edición%20<?php echo htmlspecialchars($auto['rango']); ?>." target="_blank">COTIZAR</a>
+                <a class="btn-accion btn2" href="https://wa.me/51978631055?text=Hola%20Advance%20Advance%20South%20Central,%20solicito%20información%20sobre%20el%20<?php echo htmlspecialchars($auto['marca']); ?>%20<?php echo htmlspecialchars($auto['modelo']); ?>%20de%20<?php echo htmlspecialchars($auto['mileage']); ?>%20Km%20,%20<?php echo htmlspecialchars($auto['color']); ?>%20,%20<?php echo htmlspecialchars($auto['transmission']); ?>%20y%20la%20edición%20<?php echo htmlspecialchars($auto['rango']); ?>." target="_blank">COTIZAR</a>
             </div>
         </div>
     </div>
