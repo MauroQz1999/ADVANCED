@@ -2046,36 +2046,36 @@ $conn = new mysqli($servername, $username, $password, $dbname);
     <section class="banner_pilares">
         <div class="pilar">
             <div class="texpilar">
-                <span class="pilar-tag">Control de Calidad</span>
-                <h3 class="pilar-titulo">Inspección Rigurosa en Patios de Subasta</h3>
-                <p class="pilar-descripcion">Asistimos físicamente a las terminales y casas de subastas en Japón para realizar una verificación técnica exhaustiva de cada unidad antes de realizar cualquier oferta de compra.</p>
+                <span class="pilar-tag" data-i18n="index_subtitulo20">Control de Calidad</span>
+                <h3 class="pilar-titulo" data-i18n="index_subtitulo21">Inspección Rigurosa en Patios de Subasta</h3>
+                <p class="pilar-descripcion" data-i18n="index_subtitulo22">Asistimos físicamente a las terminales y casas de subastas en Japón para realizar una verificación técnica exhaustiva de cada unidad antes de realizar cualquier oferta de compra.</p>
                 <ul class="pilar-lista">
-                    <li><span class="pilar-check">✓</span> Verificación de estado de motor y transmisión.</li>
-                    <li><span class="pilar-check">✓</span> Certificación de kilometraje real sin alteraciones.</li>
+                    <li data-i18n="index_subtitulo23"><span class="pilar-check">✓</span> Verificación de estado de motor y transmisión.</li>
+                    <li data-i18n="index_subtitulo24"><span class="pilar-check">✓</span> Certificación de kilometraje real sin alteraciones.</li>
                 </ul>
             </div>
         </div>
 
         <div class="pilar">
             <div class="texpilar">
-                <span class="pilar-tag">Gestión Documental</span>
-                <h3 class="pilar-titulo">Logística de Exportación y Trámites</h3>
-                <p class="pilar-descripcion">Nos encargamos de todo el complejo proceso administrativo aduanero dentro de Japón. Aseguramos el despacho rápido y reservamos espacios prioritarios en buques de carga.</p>
+                <span class="pilar-tag" data-i18n="index_subtitulo25">Gestión Documental</span>
+                <h3 class="pilar-titulo" data-i18n="index_subtitulo26">Logística de Exportación y Trámites</h3>
+                <p class="pilar-descripcion" data-i18n="index_subtitulo27">Nos encargamos de todo el complejo proceso administrativo aduanero dentro de Japón. Aseguramos el despacho rápido y reservamos espacios prioritarios en buques de carga.</p>
                 <ul class="pilar-lista">
-                    <li><span class="pilar-check">✓</span> Gestión completa de títulos de exportación (Export Certificate).</li>
-                    <li><span class="pilar-check">✓</span> Coordinación terrestre hacia los principales puertos.</li>
+                    <li data-i18n="index_subtitulo28"><span class="pilar-check">✓</span> Gestión completa de títulos de exportación (Export Certificate).</li>
+                    <li data-i18n="index_subtitulo29"><span class="pilar-check">✓</span> Coordinación terrestre hacia los principales puertos.</li>
                 </ul>
             </div>
         </div>
 
         <div class="pilar">
             <div class="texpilar">
-                <span class="pilar-tag">Soporte y Entrega</span>
-                <h3 class="pilar-titulo">Embarque e Integridad Asegurada</h3>
-                <p class="pilar-descripcion">Supervisamos la estiba y el trincado de los vehículos en racks profesionales dentro del contenedor, garantizando la máxima protección y un tracking constante hasta tu puerto local.</p>
+                <span class="pilar-tag" data-i18n="index_subtitulo30">Soporte y Entrega</span>
+                <h3 class="pilar-titulo" data-i18n="index_subtitulo31">Embarque e Integridad Asegurada</h3>
+                <p class="pilar-descripcion" data-i18n="index_subtitulo32">Supervisamos la estiba y el trincado de los vehículos en racks profesionales dentro del contenedor, garantizando la máxima protección y un tracking constante hasta tu puerto local.</p>
                 <ul class="pilar-lista">
-                    <li><span class="pilar-check">✓</span> Reportes fotográficos detallados pre-embarque.</li>
-                    <li><span class="pilar-check">✓</span> Envío prioritario y seguro de documentación por DHL.</li>
+                    <li data-i18n="index_subtitulo33"><span class="pilar-check">✓</span> Reportes fotográficos detallados pre-embarque.</li>
+                    <li data-i18n="index_subtitulo34"><span class="pilar-check">✓</span> Envío prioritario y seguro de documentación por DHL.</li>
                 </ul>
             </div>
         </div>
