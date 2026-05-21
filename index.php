@@ -1702,7 +1702,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
         <div class="contenedor-tops">
 
             <div class="columna-top">
-                <h3>Topp Marcas</h3>
+                <h3>Top Marcas</h3>
                 <div class="grupo-botones-top">
 
                     <?php
@@ -1718,7 +1718,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
                         $posicion = 1;
                         while ($row = $result->fetch_assoc()) {
                     ?>
-                            <a class="btn-top-item" onclick="window.location.href='inventario.php?marca=<?php echo urlencode($row['marca']); ?>'">
+                            <a href="#" class="btn-top-item" onclick="window.location.href='inventario.php?marca=<?php echo urlencode($row['marca']); ?>'">
                                 <?php echo htmlspecialchars($row['marca']); ?>
                                 <span class="rank">
                                     #<?php echo $posicion; ?>
@@ -1785,7 +1785,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
                         $posicion = 1;
                         while ($row = $result->fetch_assoc()) {
                     ?>
-                            <a class="btn-top-item" onclick="window.location.href='inventario.php?modelo=<?php echo urlencode($row['modelo']); ?>'">
+                            <a href="#" class="btn-top-item" onclick="window.location.href='inventario.php?modelo=<?php echo urlencode($row['modelo']); ?>'">
                                 <?php echo htmlspecialchars($row['modelo']); ?>
                                 <span class="rank">
                                     #<?php echo $posicion; ?>
