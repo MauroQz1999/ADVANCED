@@ -2,8 +2,10 @@ cd C:\xampp\htdocs\ADVANCE
 git add .
 git commit -m "Modificado el diseño de las vistas de productos"
 git push origin main
+cd C:\Users\quiro
 
 ssh root@5.78.218.251
+=z9/E+L_Wv+w
 rm -rf /var/www/html/* /var/www/html/.* 2>/dev/null
 git clone https://github.com/MauroQz1999/ADVANCED.git /var/www/html
 
