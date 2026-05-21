@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -86,7 +86,7 @@
 
         .operacion-origen {
             width: 100%;
-            padding: clamp(40px, 6vw, 80px) 0;
+            padding: clamp(20px, 4vw, 40px) 0 clamp(40px, 6vw, 80px) 0;
             display: flex;
             justify-content: center;
             box-sizing: border-box;
@@ -248,7 +248,6 @@
             }
         }
     </style>
-
 </head>
 
 <body>
@@ -256,133 +255,63 @@
     <?php include 'topbar.php'; ?>
 
     <div class="contenedor-titulo-nosotros">
-        <h1 class="nosotros-titulo-principal">OUR SERVICE</h1>
+        <span class="nosotros-pre-titulo">Who We Are</span>
+        <h1 class="nosotros-titulo-principal">ABOUT US</h1>
         <div class="nosotros-linea-decorativa"></div>
-    </div>
-
-    <div class="contenedor-titulo-nosotros">
-        <span class="nosotros-pre-titulo">Service 1</span>
-    </div>
-
-    <div class="service-contenido">
-        <h3>Advise the best shipping methods</h3>
-        <p>We advise the best shipping methods to suit your needs, either RO/RO, Containerised Cargo, or shipped LCL. We provide a range of ocean freight and logistics services for all your import and export requirements to any country.</p>
-    </div>
-
-    <div class="service1-imagen">
-        <img src="img/3.jpeg" alt="">
-    </div>
-
-    <div class="contenedor-titulo-nosotros">
-        <span class="nosotros-pre-titulo">Service 2</span>
-    </div>
-
-    <div class="service-contenido">
-        <h3>Arrange Shipment</h3>
-        <p>We offer a one-stop package service which provides you with a range of quick and reliable shipping services to suit your vehicle or cargo, your timetable and budget.</p>
-    </div>
-
-    <div class="contenedor-titulo-nosotros">
-        <span class="nosotros-pre-titulo">Service 3</span>
-    </div>
-
-    <div class="service-contenido">
-        <h3>Cooperative companies in japan and all over the world</h3>
-        <p>Kanaloa Shipping Co.,Ltd has partner companies in Japan, Australia and New Zealand and also access to a network of agencies all over the world. This way we can provide a smooth and fast service for booking shipings, preparing documents, vehicle inspections and maintenance before the vehicle departs. Our yards are located at all the main ports in Japan, Australia and New Zeleand, so we are always in control of your shipment and ensure the process is smooth.</p>
-    </div>
-
-    <div class="contenedor-titulo-nosotros">
-        <span class="nosotros-pre-titulo">Service 4</span>
-    </div>
-
-    <div class="service-contenido">
-        <h3>Various services</h3>
-        <p>We can provide various services to meet your needs and budget. With our many years of experience and knowledge, nothing is too big of a job for us to help you with.</p>
     </div>
 
     <section class="operacion-origen">
         <div class="contenedor-operacion">
+
             <div class="op-bloque">
                 <div class="op-contenido">
-                    <h3>Inland transport service</h3>
-                    <p>We provide reliable inland transport services, moving your vehicles and assets from auction sites to designated yards. Our focus is safety, efficiency, and on-time delivery. We handle all the logistics to ensure a hassle-free process. Trust us for dependable transportation solutions tailored to your business needs.</p>
+                    <span class="op-tag">Since 2000</span>
+                    <h3>ADVANCED SOUTH CENTRAL</h3>
+                    <p><strong>ADVANCED SOUTH CENTRAL</strong> (Licence Number 542660501200), was established in 2000 and is one of the fastest growing international car exporters in Japan.</p>
+                    <p>We offer new or used CARS and MACHINERY according to your specifications at a very competitive price. If you already have a Japanese vehicle, we can also assist you in locating hard to find specialized PARTS.</p>
                 </div>
                 <div class="op-imagen">
-                    <img src="img/01.jpg" alt="">
+                    <!-- Reemplaza con tu imagen corporativa o de stock -->
+                    <img src="img/about-1.jpg" alt="Advanced South Central Office">
                 </div>
             </div>
+
             <div class="op-bloque inverso">
                 <div class="op-contenido">
-                    <h3>Storage yards</h3>
-                    <p>We provide secure storage services at multiple yards strategically located near major ports. Our facilities offer safe, efficient, and accessible space for your cargo and vehicles. Count on us for flexible warehousing solutions designed to optimize your logistics and streamline your supply chain operations.</p>
+                    <span class="op-tag">Live Auctions</span>
+                    <h3>Car & Machinery Auction Market</h3>
+                    <p>Allow us to be the conduit between you and the vast CAR and MACHINERY AUCTION MARKET in Japan. We have staff that attends a number of auctions on a daily basis. Tell us what kind of vehicle you are looking for and leave the searching up to us.</p>
+                    <p>For those who have difficulty in finding CAR and MACHINERY PARTS, we can supply you with used or rebuilt parts. Provide us with your cars specifications and we can easily locate the parts you need.</p>
                 </div>
                 <div class="op-imagen">
-                    <img src="img/02.jpg" alt="">
+                    <img src="img/about-2.jpg" alt="Japanese Car Auction">
                 </div>
             </div>
+
             <div class="op-bloque">
                 <div class="op-contenido">
-                    <h3>Photo service</h3>
-                    <p>We provide high-quality photo services upon request to document the condition of your cargo. Our team captures detailed images during inspection, loading, or storage. This ensures full transparency, giving you complete peace of mind and accurate visual records for your logistics and inventory management.</p>
+                    <span class="op-tag">Global Logistics</span>
+                    <h3>Worldwide Shipping & Shipping Rates</h3>
+                    <p>Exporting to most countries around the world, ADVANCED SOUTH CENTRAL has helped many people in finding the unique Japanese vehicle that they desire.</p>
+                    <p>Your vehicle will be safely dispatched in containers. The final price is <strong>4,600 USD per container</strong> (charge and packing included). The freight is prepaid. In the case of shipments to Peru and Chile it can be by collect.</p>
+
+                    <ul class="op-lista">
+                        <li>Safe container dispatch</li>
+                        <li>Prepaid freight worldwide</li>
+                        <li>Collect option available for Peru and Chile</li>
+                    </ul>
                 </div>
                 <div class="op-imagen">
-                    <img src="img/03.jpg" alt="">
+                    <img src="img/about-3.jpg" alt="Shipping Containers">
                 </div>
             </div>
-            <div class="op-bloque inverso">
-                <div class="op-contenido">
-                    <h3>Maintenance and repair service</h3>
-                    <p>We offer a fully equipped auto workshop and qualified staff to handle all maintenance and repair work, tailored to your requirements and budget. From routine servicing to major repairs, we ensure top-quality results. Additionally, professional car cleaning services are available to keep your vehicles in pristine condition.</p>
-                </div>
-                <div class="op-imagen">
-                    <img src="img/04.jpg" alt="">
-                </div>
-            </div>
-            <div class="op-bloque">
-                <div class="op-contenido">
-                    <h3>Pre-Cleaning Service</h3>
-                    <p>We provide official, customs-approved pre-cleaning services in Japan for vehicles bound for Australia and New Zealand. Our specialized process ensures full compliance with strict biosecurity regulations. Trust our team to deliver thorough cleaning, preventing delays and ensuring a smooth, hassle-free customs clearance for your cargo.</p>
-                </div>
-                <div class="op-imagen">
-                    <img src="img/05.jpg" alt="">
-                </div>
-            </div>
-            <div class="op-bloque inverso">
-                <div class="op-contenido">
-                    <h3>Quarantine inspection service</h3>
-                    <p>We provide comprehensive quarantine inspection services compliant with international standards, including DAFF and MAF regulations. Our expert team ensures your cargo meets the strict biosecurity requirements of different destination countries. Trust us to handle all inspections efficiently, minimizing risks and preventing costly delays at customs.</p>
-                </div>
-                <div class="op-imagen">
-                    <img src="img/06.jpg" alt="">
-                </div>
-            </div>
-            <div class="op-bloque">
-                <div class="op-contenido">
-                    <h3>Pre-shipment Inspection/ certificate issue</h3>
-                    <p>We arrange comprehensive pre-shipment inspections and issue official certificates to meet the strict regulatory requirements of different destination countries. Partnering with accredited agencies like JAAI, EAA, JEVIC, and QISJ, we ensure your cargo is fully compliant. Trust us to handle your documentation and prevent customs delays.</p>
-                </div>
-                <div class="op-imagen">
-                    <img src="img/07.jpg" alt="">
-                </div>
-            </div>
-            <div class="op-bloque inverso">
-                <div class="op-contenido">
-                    <h3>Vanning</h3>
-                    <p>Our highly experienced vanning staff ensures your vehicles and cargo are loaded quickly, safely, and securely. Utilizing professional techniques and equipment, we maximize container space while preventing any transit damage. Trust our efficient team to handle your loading needs with the highest standards of safety and care.</p>
-                </div>
-                <div class="op-imagen">
-                    <img src="img/08.jpg" alt="">
-                </div>
-            </div>
+
         </div>
     </section>
 
     <div class="service-contenido" style="margin-top: 20px; margin-bottom: 60px;">
         <h3>Let ADVANCED SOUTH CENTRAL help find the perfect car for you!</h3>
     </div>
-
-    <script>
-    </script>
 
 </body>
 

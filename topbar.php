@@ -503,10 +503,10 @@
     <nav class="min-topbar">
         <div class="cont-mintopbar">
             <ul class="mini-links">
-                <li><a href="#">Countries</a></li>
-                <li><a href="how_to_buy.php">How To Buy</a></li>
-                <li><a href="servicios.php">Services</a></li>
-                <li><a href="#">About Us</a></li>
+                <li><a href="#" data-i18n="min_top1">Países</a></li>
+                <li><a href="how_to_buy.php" data-i18n="min_top2">Cómo comprar</a></li>
+                <li><a href="servicios.php" data-i18n="min_top3">Servicios</a></li>
+                <li><a href="aboutus.php" data-i18n="min_top4">Sobre nosotros</a></li>
             </ul>
         </div>
     </nav>
@@ -523,16 +523,16 @@
             </a>
             <div class="cont-central" id="menuCentral">
                 <ul class="menu-principal">
-                    <li><a href="inventario.php">Catalog</a></li>
-                    <li><a href="inventario.php">Catalog</a></li>
-                    <li><a href="inventario.php">Catalog</a></li>
+                    <li><a href="inventario.php" data-i18n="top1">Catalogo</a></li>
+                    <li><a href="inventario.php" data-i18n="top2">Catalogo</a></li>
+                    <li><a href="inventario.php" data-i18n="top3">Catalogo</a></li>
                 </ul>
             </div>
             <div class="cont-derecho">
-                <div class="selector-idioma">
-                    <span class="idioma-opcion">ES</span>
+                <div class="selector-idioma" id="language-selector">
+                    <span class="idioma-activo" data-lang="es">ES</span>
                     <span class="divisor">|</span>
-                    <a href="#" class="idioma-activo">EN</a>
+                    <a href="javascript:void(0);" class="idioma-opcion" data-lang="en">EN</a>
                 </div>
                 <div class="menu-redes">
                     <button class="btn-contacto">
@@ -577,6 +577,82 @@
                     }
                 });
             }
+        });
+
+        /* --------------------------------------------------------------------------------------------- */
+
+        let currentLang = localStorage.getItem('language') || 'es';
+
+        // 1. Cargar el archivo JSON
+        async function loadTranslations(lang) {
+            try {
+                const response = await fetch(`lang/${lang}.json`);
+                return await response.json();
+            } catch (error) {
+                console.error("Error cargando el idioma:", error);
+            }
+        }
+
+        // 2. Aplicar la traducción y actualizar los estilos del botón
+        async function translatePage(lang) {
+            const translations = await loadTranslations(lang);
+            if (!translations) return;
+
+            // Traducir todos los elementos con data-i18n
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (translations[key]) {
+                    element.textContent = translations[key];
+                }
+            });
+
+            // Cambiar el atributo lang del documento
+            document.documentElement.lang = lang;
+
+            // Actualizar visualmente tu selector de idioma
+            updateSelectorUI(lang);
+        }
+
+        // 3. Función para cambiar las clases de tu HTML (intercambiar ES y EN)
+        function updateSelectorUI(lang) {
+            const selector = document.getElementById('language-selector');
+            if (!selector) return;
+
+            // Limpiamos el contenedor para redibujarlo con el orden correcto
+            if (lang === 'es') {
+                selector.innerHTML = `
+            <span class="idioma-activo" data-lang="es">ES</span>
+            <span class="divisor">|</span>
+            <a href="javascript:void(0);" class="idioma-opcion" data-lang="en">EN</a>
+        `;
+            } else {
+                selector.innerHTML = `
+            <a href="javascript:void(0);" class="idioma-opcion" data-lang="es">ES</a>
+            <span class="divisor">|</span>
+            <span class="idioma-activa" class="idioma-activo" data-lang="en">EN</span>
+        `;
+            }
+
+            // Volver a escuchar los clics en el nuevo enlace generado
+            addSelectorEvent();
+        }
+
+        // 4. Escuchar el clic en la opción que no está activa
+        function addSelectorEvent() {
+            const opcionCambio = document.querySelector('.idioma-opcion');
+            if (opcionCambio) {
+                opcionCambio.addEventListener('click', () => {
+                    const targetLang = opcionCambio.getAttribute('data-lang');
+                    currentLang = targetLang;
+                    localStorage.setItem('language', currentLang);
+                    translatePage(currentLang);
+                });
+            }
+        }
+
+        // Iniciar el script al cargar la página
+        document.addEventListener('DOMContentLoaded', () => {
+            translatePage(currentLang);
         });
     </script>
 </body>

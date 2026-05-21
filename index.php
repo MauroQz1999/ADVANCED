@@ -1506,7 +1506,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
     </section>
 
     <div class="sub-titulo">
-        <h1>Modelos Recomendados</h1>
+        <h1 data-i18n="index_subtitulo1">Modelos Recomendados</h1>
     </div>
 
     <div class="carrusel_destacados">
@@ -1599,7 +1599,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
     </div>
 
     <div class="sub-titulo">
-        <h1>Modelos Destacados</h1>
+        <h1 data-i18n="index_subtitulo2">Modelos Destacados</h1>
     </div>
 
     <div class="carrusel_destacados1">
@@ -1695,7 +1695,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
     </div>
 
     <div class="sub-titulo" style="margin-top: 20px;">
-        <h1>Lo más solicitado del mercado</h1>
+        <h1 data-i18n="index_subtitulo3">Lo más solicitado del mercado</h1>
     </div>
 
     <section class="seccion-tops">
@@ -1827,7 +1827,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
     </section>
 
     <div class="sub-titulo" style="margin-top: 20px;">
-        <h1>Explora Nuestro Stock y Operaciones</h1>
+        <h1 data-i18n="index_subtitulo4">Explora Nuestro Stock y Operaciones</h1>
     </div>
 
     <section class="seccion-mega-inventario">
@@ -1965,7 +1965,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
     </section>
 
     <div class="sub-titulo" style="margin-top: 20px;">
-        <h1>Herramientas y Soporte</h1>
+        <h1 data-i18n="index_subtitulo5">Herramientas y Soporte</h1>
     </div>
 
     <section class="seccion-soporte-calculo">
@@ -2083,7 +2083,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 
     <div class="contenedor-titulo-nosotros">
         <span class="nosotros-pre-titulo">ADVANCED SOUTH CENTRAL</span>
-        <h1 class="nosotros-titulo-principal">Nuestra Operación en Japón</h1>
+        <h1 class="nosotros-titulo-principal" data-i18n="index_titulo1">Nuestra Operación en Japón</h1>
         <div class="nosotros-linea-decorativa"></div>
     </div>
 
@@ -2091,12 +2091,12 @@ $conn = new mysqli($servername, $username, $password, $dbname);
         <div class="contenedor-operacion">
             <div class="op-bloque">
                 <div class="op-contenido">
-                    <span class="op-tag">Presencia en Subastas</span>
-                    <h3>Acceso Directo a las Subastas más Grandes de Japón</h3>
-                    <p>Monitoreamos en tiempo real las principales plataformas de subastas japonesas (como USS, JAA y TAA). Esto nos permite filtrar miles de opciones diariamente para encontrar exactamente los modelos con mejor relación calidad-precio para nuestros clientes.</p>
+                    <span class="op-tag" data-i18n="index_subtitulo6">Presencia en Subastas</span>
+                    <h3 data-i18n="index_txt_1">Acceso Directo a las Subastas más Grandes de Japón</h3>
+                    <p data-i18n="index_txt_2">Monitoreamos en tiempo real las principales plataformas de subastas japonesas (como USS, JAA y TAA). Esto nos permite filtrar miles de opciones diariamente para encontrar exactamente los modelos con mejor relación calidad-precio para nuestros clientes.</p>
                     <ul class="op-lista">
-                        <li>✓ Filtros por año, millaje y condición de subasta.</li>
-                        <li>✓ Acceso a vehículos de reventa exclusiva en el mercado japonés.</li>
+                        <li data-i18n="index_txt_3">✓ Filtros por año, millaje y condición de subasta.</li>
+                        <li data-i18n="index_txt_4">✓ Acceso a vehículos de reventa exclusiva en el mercado japonés.</li>
                     </ul>
                 </div>
                 <div class="op-imagen">
@@ -2105,12 +2105,12 @@ $conn = new mysqli($servername, $username, $password, $dbname);
             </div>
             <div class="op-bloque inverso">
                 <div class="op-contenido">
-                    <span class="op-tag">Control de Calidad</span>
-                    <h3>Inspección Rigurosa y Verificación de Motores</h3>
-                    <p>No compramos a ciegas. Nuestro personal calificado en Japón asiste físicamente a los patios para revisar el motor, la transmisión, el chasis y verificar que no existan problemas ocultos u oxidación por el clima costero.</p>
+                    <span class="op-tag" data-i18n="index_subtitulo7">Control de Calidad</span>
+                    <h3 data-i18n="index_txt_5">Inspección Rigurosa y Verificación de Motores</h3>
+                    <p data-i18n="index_txt_6">No compramos a ciegas. Nuestro personal calificado en Japón asiste físicamente a los patios para revisar el motor, la transmisión, el chasis y verificar que no existan problemas ocultos u oxidación por el clima costero.</p>
                     <ul class="op-lista">
-                        <li>✓ Revisión exhaustiva por mecánicos expertos en el sitio.</li>
-                        <li>✓ Certificación de kilometraje real antes del embarque.</li>
+                        <li data-i18n="index_txt_7">✓ Revisión exhaustiva por mecánicos expertos en el sitio.</li>
+                        <li data-i18n="index_txt_8">✓ Certificación de kilometraje real antes del embarque.</li>
                     </ul>
                 </div>
                 <div class="op-imagen">
@@ -2119,12 +2119,12 @@ $conn = new mysqli($servername, $username, $password, $dbname);
             </div>
             <div class="op-bloque">
                 <div class="op-contenido">
-                    <span class="op-tag">Logística de Exportación</span>
-                    <h3>Preparación de Cargamento y Logística Portuaria</h3>
-                    <p>Una vez adquiridos, coordinamos el traslado interno hacia los puertos principales de embarque. Nos encargamos del desarme selectivo (si es necesario para repuestos), la consolidación de contenedores o el abordaje seguro en buques especializados Ro-Ro.</p>
+                    <span class="op-tag" data-i18n="index_subtitulo8">Logística de Exportación</span>
+                    <h3 data-i18n="index_txt_9">Preparación de Cargamento y Logística Portuaria</h3>
+                    <p data-i18n="index_txt_10">Una vez adquiridos, coordinamos el traslado interno hacia los puertos principales de embarque. Nos encargamos del desarme selectivo (si es necesario para repuestos), la consolidación de contenedores o el abordaje seguro en buques especializados Ro-Ro.</p>
                     <ul class="op-lista">
-                        <li>✓ Manejo seguro de la carga en terminales portuarias.</li>
-                        <li>✓ Despacho aduanero de exportación totalmente garantizado.</li>
+                        <li data-i18n="index_txt_11">✓ Manejo seguro de la carga en terminales portuarias.</li>
+                        <li data-i18n="index_txt_12">✓ Despacho aduanero de exportación totalmente garantizado.</li>
                     </ul>
                 </div>
                 <div class="op-imagen">
@@ -2133,12 +2133,12 @@ $conn = new mysqli($servername, $username, $password, $dbname);
             </div>
             <div class="op-bloque inverso">
                 <div class="op-contenido">
-                    <span class="op-tag">Carga y Logística</span>
-                    <h3>Maximización de Espacio y Embarque Seguro</h3>
-                    <p>No solo enviamos autos; optimizamos cada contenedor utilizando sistemas de racks profesionales. Esto nos permite consolidar varios vehículos de manera fija y segura, reduciendo drásticamente los costos de flete marítimo para nuestros clientes sin arriesgar la integridad física de las unidades.</p>
+                    <span class="op-tag" data-i18n="index_subtitulo9">Carga y Logística</span>
+                    <h3 data-i18n="index_txt_13">Maximización de Espacio y Embarque Seguro</h3>
+                    <p data-i18n="index_txt_14">No solo enviamos autos; optimizamos cada contenedor utilizando sistemas de racks profesionales. Esto nos permite consolidar varios vehículos de manera fija y segura, reduciendo drásticamente los costos de flete marítimo para nuestros clientes sin arriesgar la integridad física de las unidades.</p>
                     <ul class="op-lista">
-                        <li>✓ Trincado profesional y distribución de peso certificada.</li>
-                        <li>✓ Despacho aduanero y exportación directa desde puertos principales.</li>
+                        <li data-i18n="index_txt_15">✓ Trincado profesional y distribución de peso certificada.</li>
+                        <li data-i18n="index_txt_16">✓ Despacho aduanero y exportación directa desde puertos principales.</li>
                     </ul>
                 </div>
                 <div class="op-imagen">
@@ -2149,8 +2149,8 @@ $conn = new mysqli($servername, $username, $password, $dbname);
     </section>
 
     <div class="contenedor-titulo-nosotros">
-        <span class="nosotros-pre-titulo">Nuestra Trayectoria</span>
-        <h1 class="nosotros-titulo-principal">SOBRE NOSOTROS</h1>
+        <span class="nosotros-pre-titulo" data-i18n="index_subtitulo10">Nuestra Trayectoria</span>
+        <h1 class="nosotros-titulo-principal" data-i18n="index_titulo2">SOBRE NOSOTROS</h1>
         <div class="nosotros-linea-decorativa"></div>
     </div>
 
@@ -2162,12 +2162,12 @@ $conn = new mysqli($servername, $username, $password, $dbname);
             </div>
 
             <div style="flex: 1; min-width: 300px; display: flex; flex-direction: column; justify-content: center;">
-                <span style="font-size: 0.75rem; font-weight: 700; color: #e58a13; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px;">¿Quiénes Somos?</span>
-                <h2 style="font-size: 1.8rem; color: #0d3446; font-weight: 700; margin-bottom: 20px; line-height: 1.3;">Conectando el Mercado Automotriz de Japón con el Mundo</h2>
-                <p style="color: #64748b; font-size: 0.95rem; line-height: 1.6; margin-bottom: 25px;">
+                <span style="font-size: 0.75rem; font-weight: 700; color: #e58a13; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px;" data-i18n="index_subtitulo11">¿Quiénes Somos?</span>
+                <h2 style="font-size: 1.8rem; color: #0d3446; font-weight: 700; margin-bottom: 20px; line-height: 1.3;" data-i18n="index_txt_17">Conectando el Mercado Automotriz de Japón con el Mundo</h2>
+                <p style="color: #64748b; font-size: 0.95rem; line-height: 1.6; margin-bottom: 25px;" data-i18n="index_txt_18">
                     En <strong>Advance Sound Center</strong>, nos especializamos en la selección, inspección y exportación de vehículos JDM, comerciales y particulares directo desde las subastas niponas. Con años de experiencia en logística portuaria, aseguramos un proceso transparente, legal y seguro para que recibas tu auto sin complicaciones en tu país de origen.
                 </p>
-                <a href="nosotros.php" style="align-self: flex-start; text-decoration: none; background-color: #0d3446; color: #ffffff; padding: 12px 28px; font-size: 0.9rem; font-weight: 700; border-radius: 8px; transition: background-color 0.3s;" onmouseover="this.style.backgroundColor='#e58a13'" onmouseout="this.style.backgroundColor='#0d3446'">
+                <a href="nosotros.php" style="align-self: flex-start; text-decoration: none; background-color: #0d3446; color: #ffffff; padding: 12px 28px; font-size: 0.9rem; font-weight: 700; border-radius: 8px; transition: background-color 0.3s;" onmouseover="this.style.backgroundColor='#e58a13'" onmouseout="this.style.backgroundColor='#0d3446'" data-i18n="index_txt_19">
                     Conoce Nuestra Historia →
                 </a>
             </div>
