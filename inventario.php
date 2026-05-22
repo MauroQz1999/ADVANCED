@@ -639,7 +639,7 @@ $conn->close();
                                 <span class="spec-label">Status</span>
                                 <span>${car.estado}</span>
                             </div>
-                            <button style="margin-top: 0px; background: #000; color: #fff; border: none; padding: 12px; cursor: pointer; font-family: 'Outfit'; font-weight: 600; letter-spacing: 2px;">VER DETALLES</button>
+                            <button style="margin-top: 0px; background: #000; color: #fff; border: none; padding: 12px; cursor: pointer; font-family: 'Outfit'; font-weight: 600; letter-spacing: 2px;" data-i18n="index_subtitulo40">VER DETALLES</button>
                         </div>
 
                     </div>
