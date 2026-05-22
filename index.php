@@ -220,7 +220,6 @@ $conn = new mysqli($servername, $username, $password, $dbname);
             .carrusel_logos {
                 height: 50px;
                 margin: 15px auto;
-                background-color: #ffffff;
                 position: relative;
             }
 
