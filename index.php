@@ -1473,6 +1473,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 
     <section class="hero-banner">
         <div class="carrusel-contenedor">
+
             <div class="slide activo">
                 <div class="slide-info">
                     <span class="tagline" data-i18n="index_banner1">Logística y Exportación Global</span>
@@ -1484,6 +1485,19 @@ $conn = new mysqli($servername, $username, $password, $dbname);
                     <img src="./puerto.jpeg" alt="Embarque de autos Advance Sound Center">
                 </div>
             </div>
+
+            <div class="slide">
+                <div class="slide-info">
+                    <span class="tagline" data-i18n="index_banner5">Subastas en Vivo</span>
+                    <h2 data-i18n="index_banner6">Acceso directo a más de 100 subastas semanales</h2>
+                    <p data-i18n="index_banner7">Inscríbete con nosotros y oferta en tiempo real por vehículos revisados por inspectores certificados.</p>
+                    <a href="contacto.php" class="btn-cta" data-i18n="index_banner8">Contactar un Agente</a>
+                </div>
+                <div class="slide-imagen">
+                    <img src="./subasta.jpeg" alt="Subastas de autos en Japón">
+                </div>
+            </div>
+
         </div>
     </section>
 
@@ -1803,7 +1817,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
                 </div>
             </div>
 
-           <div class="columna-top">
+            <div class="columna-top">
                 <h3 data-i18n="index_subtitulo43">Por Categoría</h3>
                 <div class="grupo-botones-top">
                     <a href="inventario.php" class="btn-top-item">Deportivos JDM <span class="rank">★</span></a>
@@ -1836,7 +1850,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
         <div class="contenedor-mega">
             <div class="tabs-navegacion">
                 <button class="tab-btn active" onclick="cambiarPestaña(event, 'tab-subastas')" data-i18n="index_subtitulo45">
-                    Más Vendidos    
+                    Más Vendidos
                 </button>
                 <button class="tab-btn" onclick="cambiarPestaña(event, 'tab-proposito')" data-i18n="index_subtitulo46">
                     Explorar por Tipo
@@ -2404,6 +2418,21 @@ $conn = new mysqli($servername, $username, $password, $dbname);
         }
 
         /*-----*/
+
+        document.addEventListener("DOMContentLoaded", function() {
+            const slides = document.querySelectorAll('.hero-banner .slide');
+            let currentIndex = 0;
+            const intervaloTiempo = 10000; // 10 segundos
+
+            function cambiarSlide() {
+                slides[currentIndex].classList.remove('activo');
+                // Si hay 4 slides, la operación matemática hace: (0+1)%4 = 1, (1+1)%4 = 2, (2+1)%4 = 3, (3+1)%4 = 0
+                currentIndex = (currentIndex + 1) % slides.length;
+                slides[currentIndex].classList.add('activo');
+            }
+
+            setInterval(cambiarSlide, intervaloTiempo);
+        });
     </script>
 
 </body>
