@@ -16,6 +16,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 <html lang="es">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Advanced South Central</title>
@@ -1413,7 +1414,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
             max-width: 1400px;
             margin-left: auto;
             margin-right: auto;
-            margin-top: clamp(40px, 6vw, 80px);
+            margin-top: clamp(40px, 6vw, 10px);
             margin-bottom: clamp(15px, 2vw, 25px);
             display: flex;
             flex-direction: column;
@@ -1463,6 +1464,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
             }
         }
     </style>
+
 </head>
 
 <body>
@@ -1473,10 +1475,10 @@ $conn = new mysqli($servername, $username, $password, $dbname);
         <div class="carrusel-contenedor">
             <div class="slide activo">
                 <div class="slide-info">
-                    <span class="tagline">Logística y Exportación Global</span>
-                    <h2>Encontrando tu siguiente auto japonés desde el puerto</h2>
-                    <p>Expertos en la exportación de vehículos. Tu socio confiable con acceso directo a las principales subastas y embarques de Japón.</p>
-                    <a href="#" class="btn-cta">Ver Inventario Disponible</a>
+                    <span class="tagline" data-i18n="index_banner1">Logística y Exportación Global</span>
+                    <h2 data-i18n="index_banner2">Encontrando tu siguiente auto japonés desde el puerto</h2>
+                    <p data-i18n="index_banner3">Expertos en la exportación de vehículos. Tu socio confiable con acceso directo a las principales subastas y embarques de Japón.</p>
+                    <a href="inventario.php" class="btn-cta" data-i18n="index_banner4">Ver Inventario Disponible</a>
                 </div>
                 <div class="slide-imagen">
                     <img src="./puerto.jpeg" alt="Embarque de autos Advance Sound Center">
@@ -1561,26 +1563,26 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 
                         <div class="specs-overlay">
                             <div class="spec-item">
-                                <span class="spec-label">Precio</span>
+                                <span class="spec-label" data-i18n="index_subtitulo35">Precio</span>
                                 <span><?php echo htmlspecialchars($row['precio']); ?></span>
                             </div>
                             <div class="spec-item">
-                                <span class="spec-label">Año</span>
+                                <span class="spec-label" data-i18n="index_subtitulo36">Año</span>
                                 <span><?php echo htmlspecialchars($row['first_registration']); ?></span>
                             </div>
                             <div class="spec-item">
-                                <span class="spec-label">Transmision</span>
+                                <span class="spec-label" data-i18n="index_subtitulo37">Transmision</span>
                                 <span><?php echo htmlspecialchars($row['transmission']); ?></span>
                             </div>
                             <div class="spec-item">
-                                <span class="spec-label">Motor</span>
+                                <span class="spec-label" data-i18n="index_subtitulo38">Motor</span>
                                 <span><?php echo htmlspecialchars($row['engine_type']); ?></span>
                             </div>
                             <div class="spec-item">
-                                <span class="spec-label">Status</span>
+                                <span class="spec-label" data-i18n="index_subtitulo39">Status</span>
                                 <span><?php echo htmlspecialchars($row['estado']); ?></span>
                             </div>
-                            <button style="margin-top: 0px; background: #000; color: #fff; border: none; padding: 12px; cursor: pointer; font-family: 'Outfit'; font-weight: 600; letter-spacing: 2px;">VER DETALLES</button>
+                            <button style="margin-top: 0px; background: #000; color: #fff; border: none; padding: 12px; cursor: pointer; font-family: 'Outfit'; font-weight: 600; letter-spacing: 2px;" data-i18n="index_subtitulo40">VER DETALLES</button>
                         </div>
 
                     </div>
@@ -1657,26 +1659,26 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 
                         <div class="specs-overlay">
                             <div class="spec-item">
-                                <span class="spec-label">Precio</span>
+                                <span class="spec-label" data-i18n="index_subtitulo35">Precio</span>
                                 <span><?php echo htmlspecialchars($row['precio']); ?></span>
                             </div>
                             <div class="spec-item">
-                                <span class="spec-label">Año</span>
+                                <span class="spec-label" data-i18n="index_subtitulo36">Año</span>
                                 <span><?php echo htmlspecialchars($row['first_registration']); ?></span>
                             </div>
                             <div class="spec-item">
-                                <span class="spec-label">Transmision</span>
+                                <span class="spec-label" data-i18n="index_subtitulo37">Transmision</span>
                                 <span><?php echo htmlspecialchars($row['transmission']); ?></span>
                             </div>
                             <div class="spec-item">
-                                <span class="spec-label">Motor</span>
+                                <span class="spec-label" data-i18n="index_subtitulo38">Motor</span>
                                 <span><?php echo htmlspecialchars($row['engine_type']); ?></span>
                             </div>
                             <div class="spec-item">
-                                <span class="spec-label">Status</span>
+                                <span class="spec-label" data-i18n="index_subtitulo39">Status</span>
                                 <span><?php echo htmlspecialchars($row['estado']); ?></span>
                             </div>
-                            <button style="margin-top: 0px; background: #000; color: #fff; border: none; padding: 12px; cursor: pointer; font-family: 'Outfit'; font-weight: 600; letter-spacing: 2px;">VER DETALLES</button>
+                            <button style="margin-top: 0px; background: #000; color: #fff; border: none; padding: 12px; cursor: pointer; font-family: 'Outfit'; font-weight: 600; letter-spacing: 2px;" data-i18n="index_subtitulo40">VER DETALLES</button>
                         </div>
 
                     </div>
@@ -1702,7 +1704,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
         <div class="contenedor-tops">
 
             <div class="columna-top">
-                <h3>Top Marcas</h3>
+                <h3 data-i18n="index_subtitulo41">Top Marcas</h3>
                 <div class="grupo-botones-top">
 
                     <?php
@@ -1735,7 +1737,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
             </div>
 
             <div class="columna-top">
-                <h3>Modelos Más Vendidos</h3>
+                <h3 data-i18n="index_subtitulo42">Modelos Más Vendidos</h3>
                 <div class="grupo-botones-top">
                     <?php
                     $sql = "SELECT 
@@ -1801,25 +1803,25 @@ $conn = new mysqli($servername, $username, $password, $dbname);
                 </div>
             </div>
 
-            <div class="columna-top">
-                <h3>Por Categoría</h3>
+           <div class="columna-top">
+                <h3 data-i18n="index_subtitulo43">Por Categoría</h3>
                 <div class="grupo-botones-top">
-                    <a href="#" class="btn-top-item">Deportivos JDM <span class="rank">★</span></a>
-                    <a href="#" class="btn-top-item">Camionetas SUV <span class="rank">★</span></a>
-                    <a href="#" class="btn-top-item">Vehículos Comerciales <span class="rank">★</span></a>
-                    <a href="#" class="btn-top-item">Sedanes / Hatchback <span class="rank">★</span></a>
-                    <a href="#" class="btn-top-item">Maquinaria Pesada <span class="rank">★</span></a>
+                    <a href="inventario.php" class="btn-top-item">Deportivos JDM <span class="rank">★</span></a>
+                    <a href="inventario" class="btn-top-item">Camionetas SUV <span class="rank">★</span></a>
+                    <a href="inventario" class="btn-top-item">Vehículos Comerciales <span class="rank">★</span></a>
+                    <a href="inventario" class="btn-top-item">Sedanes / Hatchback <span class="rank">★</span></a>
+                    <a href="inventario" class="btn-top-item">Maquinaria Pesada <span class="rank">★</span></a>
                 </div>
             </div>
 
             <div class="columna-top">
-                <h3>Servicios Especiales</h3>
+                <h3 data-i18n="index_subtitulo44">Servicios Especiales</h3>
                 <div class="grupo-botones-top">
-                    <a href="#" class="btn-top-item">Desarme para Repuestos</a>
-                    <a href="#" class="btn-top-item">Compra Directa USS</a>
-                    <a href="#" class="btn-top-item">Contenedores Completos</a>
-                    <a href="#" class="btn-top-item">Envío RO-RO Seguro</a>
-                    <a href="#" class="btn-top-item">Inspección Pre-Embarque</a>
+                    <a href="servicios.php" class="btn-top-item" data-i18n="index_ser1">Transporte interior</a>
+                    <a href="servicios.php" class="btn-top-item" data-i18n="index_ser2">Mantenimiento y reparación</a>
+                    <a href="servicios.php" class="btn-top-item" data-i18n="index_ser3">Inspección previa al envío</a>
+                    <a href="servicios.php" class="btn-top-item" data-i18n="index_ser4">Emisión de certificado</a>
+                    <a href="servicios.php" class="btn-top-item" data-i18n="index_ser5">Vanning</a>
                 </div>
             </div>
 
@@ -1833,13 +1835,13 @@ $conn = new mysqli($servername, $username, $password, $dbname);
     <section class="seccion-mega-inventario">
         <div class="contenedor-mega">
             <div class="tabs-navegacion">
-                <button class="tab-btn active" onclick="cambiarPestaña(event, 'tab-subastas')">
-                    Más Vendidos <span class="tab-badge">Live</span>
+                <button class="tab-btn active" onclick="cambiarPestaña(event, 'tab-subastas')" data-i18n="index_subtitulo45">
+                    Más Vendidos    
                 </button>
-                <button class="tab-btn" onclick="cambiarPestaña(event, 'tab-proposito')">
+                <button class="tab-btn" onclick="cambiarPestaña(event, 'tab-proposito')" data-i18n="index_subtitulo46">
                     Explorar por Tipo
                 </button>
-                <button class="tab-btn" onclick="cambiarPestaña(event, 'tab-puerto')">
+                <button class="tab-btn" onclick="cambiarPestaña(event, 'tab-puerto')" data-i18n="index_subtitulo47">
                     Operaciones
                 </button>
             </div>
@@ -1904,7 +1906,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
                                         <span class="mini-marca"><?php echo htmlspecialchars($row['marca']); ?></span>
                                         <h4><?php echo htmlspecialchars($row['modelo']); ?></h4>
                                         <p><?php echo htmlspecialchars($row['first_registration']); ?> • <?php echo htmlspecialchars($row['mileage']); ?> km • <?php echo htmlspecialchars($row['transmission']); ?></p>
-                                        <a href="#" class="btn-mini-detalles" onclick="window.location.href='datos.php?id=<?php echo $row['id']; ?>'">Detalles</a>
+                                        <a href="#" class="btn-mini-detalles" onclick="window.location.href='datos.php?id=<?php echo $row['id']; ?>'" data-i18n="index_subtitulo63">Detalles</a>
                                     </div>
                                 </div>
                         <?php
@@ -1921,25 +1923,25 @@ $conn = new mysqli($servername, $username, $password, $dbname);
                         <div class="tarjeta-proposito">
                             <img src="https://images.unsplash.com/photo-1616422285623-13ff0162193c?q=80&w=600" alt="Deportivos JDM">
                             <div class="capa-proposito">
-                                <h3>Deportivos JDM</h3>
-                                <p>Iconos de la ingeniería japonesa: Skylines, Supra, Evos y Civic Type R.</p>
-                                <a href="#">Ver Categoría →</a>
+                                <h3 data-i18n="index_subtitulo68">Deportivos JDM</h3>
+                                <p data-i18n="index_subtitulo69">Iconos de la ingeniería japonesa: Skylines, Supra, Evos y Civic Type R.</p>
+                                <a href="inventario.php" data-i18n="index_subtitulo70">Ver Categoría →</a>
                             </div>
                         </div>
                         <div class="tarjeta-proposito">
                             <img src="https://images.unsplash.com/photo-1516515429572-bf32372f2409?q=80&w=600" alt="Vehículos Comerciales">
                             <div class="capa-proposito">
-                                <h3>Comerciales y Vans</h3>
-                                <p>Furgonetas, camionetas de trabajo pesado y camionetas Toyota Probox/Hiace.</p>
-                                <a href="#">Ver Categoría →</a>
+                                <h3 data-i18n="index_subtitulo71">Comerciales y Vans</h3>
+                                <p data-i18n="index_subtitulo72">Furgonetas, camionetas de trabajo pesado y camionetas Toyota Probox/Hiace.</p>
+                                <a href="inventario.php" data-i18n="index_subtitulo73">Ver Categoría →</a>
                             </div>
                         </div>
                         <div class="tarjeta-proposito">
                             <img src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?q=80&w=600" alt="SUVs Familiares">
                             <div class="capa-proposito">
-                                <h3>SUVs & Familiares</h3>
-                                <p>Vehículos cómodos y de gran despeje para terrenos difíciles o viajes.</p>
-                                <a href="#">Ver Categoría →</a>
+                                <h3 data-i18n="index_subtitulo74">SUVs & Familiares</h3>
+                                <p data-i18n="index_subtitulo75">Vehículos cómodos y de gran despeje para terrenos difíciles o viajes.</p>
+                                <a href="inventario.php" data-i18n="index_subtitulo76">Ver Categoría →</a>
                             </div>
                         </div>
                     </div>
@@ -1948,15 +1950,15 @@ $conn = new mysqli($servername, $username, $password, $dbname);
                     <div class="galeria-puerto">
                         <div class="foto-galeria grande">
                             <img src="img/consolidacion.jpeg" alt="Logística real en contenedores">
-                            <div class="info-foto">Consolidación en Contenedores - Puerto de ""</div>
+                            <div class="info-foto" data-i18n="index_subtitulo77">Consolidación en Contenedores - Puerto de ""</div>
                         </div>
                         <div class="foto-galeria">
                             <img src="img/embarque.jpeg" alt="Patios puerto">
-                            <div class="info-foto">Unidades listas para embarque ""</div>
+                            <div class="info-foto" data-i18n="index_subtitulo78">Unidades listas para embarque ""</div>
                         </div>
                         <div class="foto-galeria">
                             <img src="img/chasis.jpeg" alt="Inspeccion puerto">
-                            <div class="info-foto">Inspección de chasis previa a la estiba</div>
+                            <div class="info-foto" data-i18n="index_subtitulo79">Inspección de chasis previa a la estiba</div>
                         </div>
                     </div>
                 </div>
@@ -1972,12 +1974,12 @@ $conn = new mysqli($servername, $username, $password, $dbname);
         <div class="contenedor-soporte">
 
             <div class="bloque-calculadora">
-                <h3>Cotizador de Envío Estimado</h3>
-                <p class="calc-p">Calcula el costo aproximado de logística y flete marítimo desde Japón hasta tu región.</p>
+                <h3 data-i18n="index_subtitulo49">Cotizador de Envío Estimado</h3>
+                <p class="calc-p" data-i18n="index_subtitulo50">Calcula el costo aproximado de logística y flete marítimo desde Japón hasta tu región.</p>
 
                 <form class="form-calculadora" onsubmit="calcularFlete(event)">
                     <div class="campo-calc">
-                        <label>Categoría del Vehículo</label>
+                        <label data-i18n="index_subtitulo51">Categoría del Vehículo</label>
                         <select id="calc-tipo">
                             <option value="1200">Sedán / Compacto / JDM</option>
                             <option value="1600">SUV / Familiar / Pick-up</option>
@@ -1986,7 +1988,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
                     </div>
 
                     <div class="campo-calc">
-                        <label>Puerto de Destino</label>
+                        <label data-i18n="index_subtitulo52">Puerto de Destino</label>
                         <select id="calc-puerto">
                             <option value="400">Puerto de Callao (Perú) +$400</option>
                             <option value="350">Puerto de Iquique (Chile) +$350</option>
@@ -1995,46 +1997,46 @@ $conn = new mysqli($servername, $username, $password, $dbname);
                         </select>
                     </div>
 
-                    <button type="submit" class="btn-calcular">Calcular Costo Logístico</button>
+                    <button type="submit" class="btn-calcular" data-i18n="index_subtitulo53">Calcular Costo Logístico</button>
                 </form>
 
                 <div id="resultado-calculo" class="resultado-caja">
-                    <span>Costo Marítimo Estimado:</span>
+                    <span data-i18n="index_subtitulo54">Costo Marítimo Estimado:</span>
                     <strong id="monto-flete">$0.00 USD</strong>
-                    <small>*Nota: No incluye el valor del vehículo en subasta ni impuestos locales de aduana.</small>
+                    <small data-i18n="index_subtitulo55">*Nota: No incluye el valor del vehículo en subasta ni impuestos locales de aduana.</small>
                 </div>
             </div>
 
             <div class="bloque-faq">
-                <h3>Preguntas Frecuentes</h3>
+                <h3 data-i18n="index_subtitulo56">Preguntas Frecuentes</h3>
 
                 <div class="faq-item">
                     <div class="faq-pregunta" onclick="toggleFaq(this)">
-                        <h4>¿Cuánto tiempo tarda en llegar el vehículo?</h4>
+                        <h4 data-i18n="index_subtitulo57">¿Cuánto tiempo tarda en llegar el vehículo?</h4>
                         <span class="faq-icono">+</span>
                     </div>
                     <div class="faq-respuesta">
-                        <p>El tránsito marítimo promedio desde los puertos de Japón (Yokohama/Kobe) hasta Latinoamérica dura entre 35 y 45 días, dependiendo de las escalas del buque y la ruta de la naviera.</p>
+                        <p data-i18n="index_subtitulo58">El tránsito marítimo promedio desde los puertos de Japón (Yokohama/Kobe) hasta Latinoamérica dura entre 35 y 45 días, dependiendo de las escalas del buque y la ruta de la naviera.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <div class="faq-pregunta" onclick="toggleFaq(this)">
-                        <h4>¿Qué documentos recibo para registrar el auto?</h4>
+                        <h4 data-i18n="index_subtitulo59">¿Qué documentos recibo para registrar el auto?</h4>
                         <span class="faq-icono">+</span>
                     </div>
                     <div class="faq-respuesta">
-                        <p>Te enviamos por mensajería prioritaria (DHL) el Certificado de Exportación Original emitido en Japón, la Factura Comercial (Commercial Invoice) y el conocimiento de embarque (Bill of Lading - B/L).</p>
+                        <p data-i18n="index_subtitulo60">Te enviamos por mensajería prioritaria (DHL) el Certificado de Exportación Original emitido en Japón, la Factura Comercial (Commercial Invoice) y el conocimiento de embarque (Bill of Lading - B/L).</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <div class="faq-pregunta" onclick="toggleFaq(this)">
-                        <h4>¿Cuáles son los métodos de pago aceptados?</h4>
+                        <h4 data-i18n="index_subtitulo61">¿Cuáles son los métodos de pago aceptados?</h4>
                         <span class="faq-icono">+</span>
                     </div>
                     <div class="faq-respuesta">
-                        <p>Trabajamos mediante Transferencia Bancaria Internacional (Telegraphic Transfer - T/T) directamente a nuestras cuentas corporativas en Japón, garantizando la máxima seguridad legal en la transacción.</p>
+                        <p data-i18n="index_subtitulo62">Trabajamos mediante Transferencia Bancaria Internacional (Telegraphic Transfer - T/T) directamente a nuestras cuentas corporativas en Japón, garantizando la máxima seguridad legal en la transacción.</p>
                     </div>
                 </div>
 
@@ -2050,8 +2052,22 @@ $conn = new mysqli($servername, $username, $password, $dbname);
                 <h3 class="pilar-titulo" data-i18n="index_subtitulo21">Inspección Rigurosa en Patios de Subasta</h3>
                 <p class="pilar-descripcion" data-i18n="index_subtitulo22">Asistimos físicamente a las terminales y casas de subastas en Japón para realizar una verificación técnica exhaustiva de cada unidad antes de realizar cualquier oferta de compra.</p>
                 <ul class="pilar-lista">
-                    <li data-i18n="index_subtitulo23"><span class="pilar-check">✓</span> Verificación de estado de motor y transmisión.</li>
-                    <li data-i18n="index_subtitulo24"><span class="pilar-check">✓</span> Certificación de kilometraje real sin alteraciones.</li>
+                    <li>
+                        <span class="pilar-check">
+                            ✓
+                        </span>
+                        <a data-i18n="index_subtitulo23">
+                            Verificación de estado de motor y transmisión.
+                        </a>
+                    </li>
+                    <li>
+                        <span class="pilar-check">
+                            ✓
+                        </span>
+                        <a data-i18n="index_subtitulo24">
+                            Certificación de kilometraje real sin alteraciones.
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -2062,8 +2078,22 @@ $conn = new mysqli($servername, $username, $password, $dbname);
                 <h3 class="pilar-titulo" data-i18n="index_subtitulo26">Logística de Exportación y Trámites</h3>
                 <p class="pilar-descripcion" data-i18n="index_subtitulo27">Nos encargamos de todo el complejo proceso administrativo aduanero dentro de Japón. Aseguramos el despacho rápido y reservamos espacios prioritarios en buques de carga.</p>
                 <ul class="pilar-lista">
-                    <li data-i18n="index_subtitulo28"><span class="pilar-check">✓</span> Gestión completa de títulos de exportación (Export Certificate).</li>
-                    <li data-i18n="index_subtitulo29"><span class="pilar-check">✓</span> Coordinación terrestre hacia los principales puertos.</li>
+                    <li>
+                        <span class="pilar-check">
+                            ✓
+                        </span>
+                        <a data-i18n="index_subtitulo28">
+                            Gestión completa de títulos de exportación (Export Certificate).
+                        </a>
+                    </li>
+                    <li>
+                        <span class="pilar-check">
+                            ✓
+                        </span>
+                        <a data-i18n="index_subtitulo29">
+                            Coordinación terrestre hacia los principales puertos.
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -2074,8 +2104,22 @@ $conn = new mysqli($servername, $username, $password, $dbname);
                 <h3 class="pilar-titulo" data-i18n="index_subtitulo31">Embarque e Integridad Asegurada</h3>
                 <p class="pilar-descripcion" data-i18n="index_subtitulo32">Supervisamos la estiba y el trincado de los vehículos en racks profesionales dentro del contenedor, garantizando la máxima protección y un tracking constante hasta tu puerto local.</p>
                 <ul class="pilar-lista">
-                    <li data-i18n="index_subtitulo33"><span class="pilar-check">✓</span> Reportes fotográficos detallados pre-embarque.</li>
-                    <li data-i18n="index_subtitulo34"><span class="pilar-check">✓</span> Envío prioritario y seguro de documentación por DHL.</li>
+                    <li>
+                        <span class="pilar-check">
+                            ✓
+                        </span>
+                        <a data-i18n="index_subtitulo33">
+                            Reportes fotográficos detallados pre-embarque.
+                        </a>
+                    </li>
+                    <li>
+                        <span class="pilar-check">
+                            ✓
+                        </span>
+                        <a data-i18n="index_subtitulo34">
+                            Envío prioritario y seguro de documentación por DHL.
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -2095,8 +2139,16 @@ $conn = new mysqli($servername, $username, $password, $dbname);
                     <h3 data-i18n="index_txt_1">Acceso Directo a las Subastas más Grandes de Japón</h3>
                     <p data-i18n="index_txt_2">Monitoreamos en tiempo real las principales plataformas de subastas japonesas (como USS, JAA y TAA). Esto nos permite filtrar miles de opciones diariamente para encontrar exactamente los modelos con mejor relación calidad-precio para nuestros clientes.</p>
                     <ul class="op-lista">
-                        <li data-i18n="index_txt_3">✓ Filtros por año, millaje y condición de subasta.</li>
-                        <li data-i18n="index_txt_4">✓ Acceso a vehículos de reventa exclusiva en el mercado japonés.</li>
+                        <li data-i18n="index_txt_3">
+                            <span class="pilar-check">
+                                ✓
+                            </span>Filtros por año, millaje y condición de subasta.
+                        </li>
+                        <li data-i18n="index_txt_4">
+                            <span class="pilar-check">
+                                ✓
+                            </span>Acceso a vehículos de reventa exclusiva en el mercado japonés.
+                        </li>
                     </ul>
                 </div>
                 <div class="op-imagen">
@@ -2109,8 +2161,18 @@ $conn = new mysqli($servername, $username, $password, $dbname);
                     <h3 data-i18n="index_txt_5">Inspección Rigurosa y Verificación de Motores</h3>
                     <p data-i18n="index_txt_6">No compramos a ciegas. Nuestro personal calificado en Japón asiste físicamente a los patios para revisar el motor, la transmisión, el chasis y verificar que no existan problemas ocultos u oxidación por el clima costero.</p>
                     <ul class="op-lista">
-                        <li data-i18n="index_txt_7">✓ Revisión exhaustiva por mecánicos expertos en el sitio.</li>
-                        <li data-i18n="index_txt_8">✓ Certificación de kilometraje real antes del embarque.</li>
+                        <li data-i18n="index_txt_7">
+                            <span class="pilar-check">
+                                ✓
+                            </span>
+                            evisión exhaustiva por mecánicos expertos en el sitio.
+                        </li>
+                        <li data-i18n="index_txt_8">
+                            <span class="pilar-check">
+                                ✓
+                            </span>
+                            Certificación de kilometraje real antes del embarque.
+                        </li>
                     </ul>
                 </div>
                 <div class="op-imagen">
@@ -2123,8 +2185,18 @@ $conn = new mysqli($servername, $username, $password, $dbname);
                     <h3 data-i18n="index_txt_9">Preparación de Cargamento y Logística Portuaria</h3>
                     <p data-i18n="index_txt_10">Una vez adquiridos, coordinamos el traslado interno hacia los puertos principales de embarque. Nos encargamos del desarme selectivo (si es necesario para repuestos), la consolidación de contenedores o el abordaje seguro en buques especializados Ro-Ro.</p>
                     <ul class="op-lista">
-                        <li data-i18n="index_txt_11">✓ Manejo seguro de la carga en terminales portuarias.</li>
-                        <li data-i18n="index_txt_12">✓ Despacho aduanero de exportación totalmente garantizado.</li>
+                        <li data-i18n="index_txt_11">
+                            <span class="pilar-check">
+                                ✓
+                            </span>
+                            Manejo seguro de la carga en terminales portuarias.
+                        </li>
+                        <li data-i18n="index_txt_12">
+                            <span class="pilar-check">
+                                ✓
+                            </span>
+                            Despacho aduanero de exportación totalmente garantizado.
+                        </li>
                     </ul>
                 </div>
                 <div class="op-imagen">
@@ -2137,8 +2209,18 @@ $conn = new mysqli($servername, $username, $password, $dbname);
                     <h3 data-i18n="index_txt_13">Maximización de Espacio y Embarque Seguro</h3>
                     <p data-i18n="index_txt_14">No solo enviamos autos; optimizamos cada contenedor utilizando sistemas de racks profesionales. Esto nos permite consolidar varios vehículos de manera fija y segura, reduciendo drásticamente los costos de flete marítimo para nuestros clientes sin arriesgar la integridad física de las unidades.</p>
                     <ul class="op-lista">
-                        <li data-i18n="index_txt_15">✓ Trincado profesional y distribución de peso certificada.</li>
-                        <li data-i18n="index_txt_16">✓ Despacho aduanero y exportación directa desde puertos principales.</li>
+                        <li data-i18n="index_txt_15">
+                            <span class="pilar-check">
+                                ✓
+                            </span>
+                            Trincado profesional y distribución de peso certificada.
+                        </li>
+                        <li data-i18n="index_txt_16">
+                            <span class="pilar-check">
+                                ✓
+                            </span>
+                            Despacho aduanero y exportación directa desde puertos principales.
+                        </li>
                     </ul>
                 </div>
                 <div class="op-imagen">
@@ -2167,7 +2249,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
                 <p style="color: #64748b; font-size: 0.95rem; line-height: 1.6; margin-bottom: 25px;" data-i18n="index_txt_18">
                     En <strong>Advance Sound Center</strong>, nos especializamos en la selección, inspección y exportación de vehículos JDM, comerciales y particulares directo desde las subastas niponas. Con años de experiencia en logística portuaria, aseguramos un proceso transparente, legal y seguro para que recibas tu auto sin complicaciones en tu país de origen.
                 </p>
-                <a href="nosotros.php" style="align-self: flex-start; text-decoration: none; background-color: #0d3446; color: #ffffff; padding: 12px 28px; font-size: 0.9rem; font-weight: 700; border-radius: 8px; transition: background-color 0.3s;" onmouseover="this.style.backgroundColor='#e58a13'" onmouseout="this.style.backgroundColor='#0d3446'" data-i18n="index_txt_19">
+                <a href="aboutus.php" style="align-self: flex-start; text-decoration: none; background-color: #0d3446; color: #ffffff; padding: 12px 28px; font-size: 0.9rem; font-weight: 700; border-radius: 8px; transition: background-color 0.3s;" onmouseover="this.style.backgroundColor='#e58a13'" onmouseout="this.style.backgroundColor='#0d3446'" data-i18n="index_txt_19">
                     Conoce Nuestra Historia →
                 </a>
             </div>

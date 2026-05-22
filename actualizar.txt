@@ -6,6 +6,7 @@ cd C:\Users\quiro
 
 ssh root@5.78.218.251
 =z9/E+L_Wv+w
+
 rm -rf /var/www/html/* /var/www/html/.* 2>/dev/null
 git clone https://github.com/MauroQz1999/ADVANCED.git /var/www/html
 
@@ -17,6 +18,11 @@ chmod -R 755 /var/www/html
 
 # Asegurar que Git reconozca la carpeta como segura para el sistema
 git config --system --add safe.directory /var/www/html
+
+
+
+
+/* data-i18n="" */
 
 
 TRUNCATE TABLE registro_vistas;

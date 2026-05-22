@@ -255,8 +255,8 @@
     <?php include 'topbar.php'; ?>
 
     <div class="contenedor-titulo-nosotros">
-        <span class="nosotros-pre-titulo">Who We Are</span>
-        <h1 class="nosotros-titulo-principal">ABOUT US</h1>
+        <span class="nosotros-pre-titulo" data-i18n="nosotros_text1">Who We Are</span>
+        <h1 class="nosotros-titulo-principal" data-i18n="nosotros_text2">ABOUT US</h1>
         <div class="nosotros-linea-decorativa"></div>
     </div>
 
@@ -265,23 +265,22 @@
 
             <div class="op-bloque">
                 <div class="op-contenido">
-                    <span class="op-tag">Since 2000</span>
-                    <h3>ADVANCED SOUTH CENTRAL</h3>
-                    <p><strong>ADVANCED SOUTH CENTRAL</strong> (Licence Number 542660501200), was established in 2000 and is one of the fastest growing international car exporters in Japan.</p>
-                    <p>We offer new or used CARS and MACHINERY according to your specifications at a very competitive price. If you already have a Japanese vehicle, we can also assist you in locating hard to find specialized PARTS.</p>
+                    <span class="op-tag" data-i18n="nosotros_text3">Since 2000</span>
+                    <h3 data-i18n="nosotros_text4">ADVANCED SOUTH CENTRAL</h3>
+                    <p data-i18n="nosotros_text5">(Licence Number 542660501200), was established in 2000 and is one of the fastest growing international car exporters in Japan.</p>
+                    <p data-i18n="nosotros_text6">We offer new or used CARS and MACHINERY according to your specifications at a very competitive price. If you already have a Japanese vehicle, we can also assist you in locating hard to find specialized PARTS.</p>
                 </div>
                 <div class="op-imagen">
-                    <!-- Reemplaza con tu imagen corporativa o de stock -->
                     <img src="img/about-1.jpg" alt="Advanced South Central Office">
                 </div>
             </div>
 
             <div class="op-bloque inverso">
                 <div class="op-contenido">
-                    <span class="op-tag">Live Auctions</span>
-                    <h3>Car & Machinery Auction Market</h3>
-                    <p>Allow us to be the conduit between you and the vast CAR and MACHINERY AUCTION MARKET in Japan. We have staff that attends a number of auctions on a daily basis. Tell us what kind of vehicle you are looking for and leave the searching up to us.</p>
-                    <p>For those who have difficulty in finding CAR and MACHINERY PARTS, we can supply you with used or rebuilt parts. Provide us with your cars specifications and we can easily locate the parts you need.</p>
+                    <span class="op-tag" data-i18n="nosotros_text7">Live Auctions</span>
+                    <h3 data-i18n="nosotros_text8">Car & Machinery Auction Market</h3>
+                    <p data-i18n="nosotros_text9">Allow us to be the conduit between you and the vast CAR and MACHINERY AUCTION MARKET in Japan. We have staff that attends a number of auctions on a daily basis. Tell us what kind of vehicle you are looking for and leave the searching up to us.</p>
+                    <p data-i18n="nosotros_text10">For those who have difficulty in finding CAR and MACHINERY PARTS, we can supply you with used or rebuilt parts. Provide us with your cars specifications and we can easily locate the parts you need.</p>
                 </div>
                 <div class="op-imagen">
                     <img src="img/about-2.jpg" alt="Japanese Car Auction">
@@ -290,15 +289,15 @@
 
             <div class="op-bloque">
                 <div class="op-contenido">
-                    <span class="op-tag">Global Logistics</span>
-                    <h3>Worldwide Shipping & Shipping Rates</h3>
-                    <p>Exporting to most countries around the world, ADVANCED SOUTH CENTRAL has helped many people in finding the unique Japanese vehicle that they desire.</p>
-                    <p>Your vehicle will be safely dispatched in containers. The final price is <strong>4,600 USD per container</strong> (charge and packing included). The freight is prepaid. In the case of shipments to Peru and Chile it can be by collect.</p>
+                    <span class="op-tag" data-i18n="nosotros_text11">Global Logistics</span>
+                    <h3 data-i18n="nosotros_text12">Worldwide Shipping & Shipping Rates</h3>
+                    <p data-i18n="nosotros_text13">Exporting to most countries around the world, ADVANCED SOUTH CENTRAL has helped many people in finding the unique Japanese vehicle that they desire.</p>
+                    <p data-i18n="nosotros_text14">Your vehicle will be safely dispatched in containers. The final price is 4,600 USD per container (charge and packing included). The freight is prepaid. In the case of shipments to Peru and Chile it can be by collect.</p>
 
                     <ul class="op-lista">
-                        <li>Safe container dispatch</li>
-                        <li>Prepaid freight worldwide</li>
-                        <li>Collect option available for Peru and Chile</li>
+                        <li data-i18n="nosotros_text15">Safe container dispatch</li>
+                        <li data-i18n="nosotros_text16">Prepaid freight worldwide</li>
+                        <li data-i18n="nosotros_text17">Collect option available for Peru and Chile</li>
                     </ul>
                 </div>
                 <div class="op-imagen">
@@ -310,7 +309,7 @@
     </section>
 
     <div class="service-contenido" style="margin-top: 20px; margin-bottom: 60px;">
-        <h3>Let ADVANCED SOUTH CENTRAL help find the perfect car for you!</h3>
+        <h3 data-i18n="nosotros_text18">Let ADVANCED SOUTH CENTRAL help find the perfect car for you!</h3>
     </div>
 
 </body>

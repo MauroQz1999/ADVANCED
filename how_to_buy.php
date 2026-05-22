@@ -257,17 +257,17 @@
      <?php include 'topbar.php'; ?>
 
      <div class="contenedor-titulo-nosotros">
-         <h1 class="nosotros-titulo-principal">HOW TO BUY</h1>
+         <h1 class="nosotros-titulo-principal" data-i18n="buy_text1">HOW TO BUY</h1>
          <div class="nosotros-linea-decorativa"></div>
      </div>
 
      <div class="contenedor-titulo-nosotros">
-         <span class="nosotros-pre-titulo">Step 1</span>
+         <span class="nosotros-pre-titulo" data-i18n="buy_text2">Step 1</span>
      </div>
 
      <div class="service-contenido">
-         <h3>Choose Vehicle & Send Inquiry</h3>
-         <p>Search your required car from high quality Japanese used vehicles ready to export at fair prices in our stock list. Check all photos and complete vehicle details, specifications and inspection sheet to know actual vehicle condition.</p>
+         <h3 data-i18n="buy_text3">Choose Vehicle & Send Inquiry</h3>
+         <p data-i18n="buy_text4">Search your required car from high quality Japanese used vehicles ready to export at fair prices in our stock list. Check all photos and complete vehicle details, specifications and inspection sheet to know actual vehicle condition.</p>
      </div>
 
      <div class="service1-imagen">
@@ -275,12 +275,12 @@
      </div>
 
      <div class="contenedor-titulo-nosotros">
-         <span class="nosotros-pre-titulo">Step 2</span>
+         <span class="nosotros-pre-titulo" data-i18n="buy_text5">Step 2</span>
      </div>
 
      <div class="service-contenido">
-         <h3>Get Free Quote</h3>
-         <p>We will send you Free Quote for the vehicle you are interested to buy.</p>
+         <h3 data-i18n="buy_text6">Get Free Quote</h3>
+         <p data-i18n="buy_text7">We will send you Free Quote for the vehicle you are interested to buy.</p>
      </div>
 
      <div class="service1-imagen">
@@ -288,12 +288,12 @@
      </div>
 
      <div class="contenedor-titulo-nosotros">
-         <span class="nosotros-pre-titulo">Step 3</span>
+         <span class="nosotros-pre-titulo" data-i18n="buy_text8">Step 3</span>
      </div>
 
      <div class="service-contenido">
-         <h3>Complete the payment</h3>
-         <p>Please complete the payment by Bank Telegraphic Transfer from any bank not later than the Paying Due Date specified in the Proforma Invoice. When you have completed the payment, please send us the copy of Telegraphic Transfer copy via fax or e-mail as proof of payment.</p>
+         <h3 data-i18n="buy_text9">Complete the payment</h3>
+         <p data-i18n="buy_text10">Please complete the payment by Bank Telegraphic Transfer from any bank not later than the Paying Due Date specified in the Proforma Invoice. When you have completed the payment, please send us the copy of Telegraphic Transfer copy via fax or e-mail as proof of payment.</p>
      </div>
 
      <div class="service1-imagen">
@@ -301,12 +301,12 @@
      </div>
 
      <div class="contenedor-titulo-nosotros">
-         <span class="nosotros-pre-titulo">Step 4</span>
+         <span class="nosotros-pre-titulo" data-i18n="buy_text11">Step 4</span>
      </div>
 
      <div class="service-contenido">
-         <h3>Shipping & Documents</h3>
-         <p>We will arrange for latest shipment and send all required documents.</p>
+         <h3 data-i18n="buy_text12">Shipping & Documents</h3>
+         <p data-i18n="buy_text13">We will arrange for latest shipment and send all required documents.</p>
      </div>
 
      <div class="service1-imagen">
@@ -314,12 +314,12 @@
      </div>
 
      <div class="contenedor-titulo-nosotros">
-         <span class="nosotros-pre-titulo">Step 5</span>
+         <span class="nosotros-pre-titulo" data-i18n="buy_text14">Step 5</span>
      </div>
 
      <div class="service-contenido">
-         <h3>Receive Your Vehicle</h3>
-         <p>Once you receive the documents, please contact your local customs agent for customs clearance at least one week prior to the actual arrival date of vessel. As per customs agent, you can pick up your car at the port. Car registration is different each country, therefore please ask your local authority.</P>
+         <h3 data-i18n="buy_text15">Receive Your Vehicle</h3>
+         <p data-i18n="buy_text16">Once you receive the documents, please contact your local customs agent for customs clearance at least one week prior to the actual arrival date of vessel. As per customs agent, you can pick up your car at the port. Car registration is different each country, therefore please ask your local authority.</P>
      </div>
 
      <div class="service1-imagen">
@@ -327,7 +327,7 @@
      </div>
 
      <div class="service-contenido" style="margin-top: 20px; margin-bottom: 60px;">
-        <h3>Let ADVANCED SOUTH CENTRAL help find the perfect car for you!</h3>
+        <h3 data-i18n="buy_text17">Let ADVANCED SOUTH CENTRAL help find the perfect car for you!</h3>
     </div>
 
      <script>
