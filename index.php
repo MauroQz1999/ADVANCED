@@ -1486,7 +1486,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
                 </div>
             </div>
 
-            <div class="slide">
+            <!-- <div class="slide">
                 <div class="slide-info">
                     <span class="tagline" data-i18n="index_banner5">Subastas en Vivo</span>
                     <h2 data-i18n="index_banner6">Acceso directo a más de 100 subastas semanales</h2>
@@ -1496,7 +1496,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
                 <div class="slide-imagen">
                     <img src="./subasta.jpeg" alt="Subastas de autos en Japón">
                 </div>
-            </div>
+            </div> -->
 
         </div>
     </section>
@@ -2151,7 +2151,8 @@ $conn = new mysqli($servername, $username, $password, $dbname);
                 <div class="op-contenido">
                     <span class="op-tag" data-i18n="index_subtitulo6">Presencia en Subastas</span>
                     <h3 data-i18n="index_txt_1">Acceso Directo a las Subastas más Grandes de Japón</h3>
-                    <p data-i18n="index_txt_2">Monitoreamos en tiempo real las principales plataformas de subastas japonesas (como USS, JAA y TAA). Esto nos permite filtrar miles de opciones diariamente para encontrar exactamente los modelos con mejor relación calidad-precio para nuestros clientes.</p>
+                    <p data-i18n="index_txt_2">Venta de maquinaria, camiones y carros seminuevos en oficina y de la subasta. Conducimos a las mejores AUCTIONS : USS, ARAI,  CAA, TAA, HONDA, JU AICHI. Y también, puedes apostar en ASNET, la mayor plataforma de distribución de coches usados ​​de Japón.</p>
+                    <p data-i18n="index_txt_2.5">Dónde podrá usted verificar in situ la hoja de ruta del vehículo.</p>
                     <ul class="op-lista">
                         <li data-i18n="index_txt_3">
                             <span class="pilar-check">
@@ -2173,7 +2174,8 @@ $conn = new mysqli($servername, $username, $password, $dbname);
                 <div class="op-contenido">
                     <span class="op-tag" data-i18n="index_subtitulo7">Control de Calidad</span>
                     <h3 data-i18n="index_txt_5">Inspección Rigurosa y Verificación de Motores</h3>
-                    <p data-i18n="index_txt_6">No compramos a ciegas. Nuestro personal calificado en Japón asiste físicamente a los patios para revisar el motor, la transmisión, el chasis y verificar que no existan problemas ocultos u oxidación por el clima costero.</p>
+                    <p data-i18n="index_txt_6">Nuestro personal calificado asiste físicamente a los patios para revisar el motor, la transmisión, el chasis y verificar que no existan problemas ocultos u oxidación por el clima costero.</p>
+                    <p data-i18n="index_txt_6.5">Advanced South Central para la venta sólo compra sus vehículos de las AUCTIONS : donde; además, encontrarás toda la información sobre tu próximo auto; garantizando : su kilometraje, si tuvo un solo dueño y si fue accidentado.</p>
                     <ul class="op-lista">
                         <li data-i18n="index_txt_7">
                             <span class="pilar-check">
@@ -2197,7 +2199,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
                 <div class="op-contenido">
                     <span class="op-tag" data-i18n="index_subtitulo8">Logística de Exportación</span>
                     <h3 data-i18n="index_txt_9">Preparación de Cargamento y Logística Portuaria</h3>
-                    <p data-i18n="index_txt_10">Una vez adquiridos, coordinamos el traslado interno hacia los puertos principales de embarque. Nos encargamos del desarme selectivo (si es necesario para repuestos), la consolidación de contenedores o el abordaje seguro en buques especializados Ro-Ro.</p>
+                    <p data-i18n="index_txt_10">Una vez adquiridos, coordinamos el traslado interno hacia los puertos principales de embarque ( Roll-on/Roll-off o Ro-Ro para mercancías que tienen ruedas ). Y/ o al local de VANNING ( proceso de carga de mercancías o carga en un contenedor marítimo); donde nuestro experimentado personal de transporte cargará sus vehículos o mercancías de forma rápida, segura y sin ningún problema. Para luego, internar el vehículo o contenedor; previa solicitud de booking number.</p>
                     <ul class="op-lista">
                         <li data-i18n="index_txt_11">
                             <span class="pilar-check">
