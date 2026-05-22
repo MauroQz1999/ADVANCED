@@ -19,11 +19,11 @@ chmod -R 755 /var/www/html
 # Asegurar que Git reconozca la carpeta como segura para el sistema
 git config --system --add safe.directory /var/www/html
 
+mysql -u root -p
 
+1234
 
-
-/* data-i18n="" */
-
+USE autos;
 
 TRUNCATE TABLE registro_vistas;
 

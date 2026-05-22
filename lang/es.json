@@ -127,6 +127,11 @@
   "index_ser4": "Emisión de certificado",
   "index_ser5": "Vanning",
 
+  "index_alert1": "No hay vehículos disponibles en este momento.",
+  "index_alert2": "No hay vehículos disponibles en este momento.",
+  "index_alert3": "No hay vehículos disponibles en este momento.",
+  "index_alert4": "No hay vehículos disponibles en este momento.",
+
   "buy_text1": "CÓMO COMPRAR",
   "buy_text2": "Paso 1",
   "buy_text3": "Seleccione el vehículo y envíe su consulta.",

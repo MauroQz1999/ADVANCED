@@ -1705,7 +1705,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
         <?php
             }
         } else {
-            echo "<p>No hay vehículos disponibles en este momento.</p>";
+            echo "<p data-i18n='index_alert1'>No hay vehículos disponibles en este momento.</p>";
         }
         ?>
     </div>
@@ -1744,7 +1744,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
                             $posicion++;
                         }
                     } else {
-                        echo "<p>No hay vehículos disponibles en este momento.</p>";
+                        echo "<p data-i18n='index_alert2'>No hay vehículos disponibles en este momento.</p>";
                     }
                     ?>
                 </div>
@@ -1811,7 +1811,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
                             $posicion++;
                         }
                     } else {
-                        echo "<p>No hay vehículos disponibles en este momento.</p>";
+                        echo "<p data-i18n='index_alert3'>No hay vehículos disponibles en este momento.</p>";
                     }
                     ?>
                 </div>
@@ -1926,7 +1926,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
                         <?php
                             }
                         } else {
-                            echo "<p>No hay vehículos disponibles en este momento.</p>";
+                            echo "<p data-i18n='index_alert4'>No hay vehículos disponibles en este momento.</p>";
                         }
                         ?>
 

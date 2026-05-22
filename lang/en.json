@@ -128,6 +128,11 @@
   "index_ser4" : "Certificate issuance",
   "index_ser5" : "Vanning",
 
+  "index_alert1": "There are no vehicles available at this time.",
+  "index_alert2": "There are no vehicles available at this time.",
+  "index_alert3": "There are no vehicles available at this time.",
+  "index_alert4": "There are no vehicles available at this time.",
+
   "buy_text1": "HOW TO BUY",
   "buy_text2": "Step 1",
   "buy_text3": "Choose Vehicle & Send Inquiry",
