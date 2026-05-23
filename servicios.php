@@ -317,7 +317,7 @@
                     <p data-i18n="ser_text17">We provide secure storage services at multiple yards strategically located near major ports. Our facilities offer safe, efficient, and accessible space for your cargo and vehicles. Count on us for flexible warehousing solutions designed to optimize your logistics and streamline your supply chain operations.</p>
                 </div>
                 <div class="op-imagen">
-                    <img src="img/02.jpg" alt="">
+                    <img src="img/02.jpeg" alt="">
                 </div>
             </div>
             <div class="op-bloque">
