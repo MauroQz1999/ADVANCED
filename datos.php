@@ -540,7 +540,7 @@ if ($modelo_id > 0 && $marca_id > 0) {
             <div class="marco_descripcion">
                 <div class="subtitulo">
                     <div class="barra"></div>
-                    <h2>DESCRIPTION</h2>
+                    <h2 data-i18n="dat_text24">DESCRIPTION</h2>
                 </div>
             </div>
             <div class="detalles">
@@ -559,95 +559,95 @@ if ($modelo_id > 0 && $marca_id > 0) {
             </div>
             <div class="subtitulo">
                 <div class="barra"></div>
-                <h2>GENERAL CHARACTERISTICS</h2>
+                <h2 data-i18n="dat_text1">GENERAL CHARACTERISTICS</h2>
             </div>
             <div class="detalles1">
                 <div>
-                    <h2>First registration</h2>
+                    <h2 data-i18n="dat_text2">First registration</h2>
                     <a><?php echo htmlspecialchars($auto['first_registration']); ?></a>
                 </div>
                 <div>
-                    <h2>Grade</h2>
+                    <h2 data-i18n="dat_text3">Grade</h2>
                     <a><?php echo htmlspecialchars($auto['rango']); ?></a>
                 </div>
                 <div>
-                    <h2>Engine type</h2>
+                    <h2 data-i18n="dat_text4">Engine type</h2>
                     <a><?php echo htmlspecialchars($auto['engine_type']); ?></a>
                 </div>
                 <div>
-                    <h2>Transmission</h2>
+                    <h2 data-i18n="dat_text5">Transmission</h2>
                     <a><?php echo htmlspecialchars($auto['transmission']); ?></a>
                 </div>
                 <div>
-                    <h2>Fuel</h2>
+                    <h2 data-i18n="dat_text6">Fuel</h2>
                     <a><?php echo htmlspecialchars($auto['fuel']); ?></a>
                 </div>
                 <div>
-                    <h2>Capacity</h2>
+                    <h2 data-i18n="dat_text7">Capacity</h2>
                     <a><?php echo htmlspecialchars($auto['capacity']); ?></a>
                 </div>
                 <div>
-                    <h2>Color</h2>
+                    <h2 data-i18n="dat_text8">Color</h2>
                     <a><?php echo htmlspecialchars($auto['color']); ?></a>
                 </div>
                 <div>
-                    <h2>Chassis No</h2>
+                    <h2 data-i18n="dat_text9">Chassis No</h2>
                     <a><?php echo htmlspecialchars($auto['chassis_no']); ?></a>
                 </div>
                 <div>
-                    <h2>Manufacture date</h2>
+                    <h2 data-i18n="dat_text10">Manufacture date</h2>
                     <a><?php echo htmlspecialchars($auto['manufacture_date'] ?? ''); ?></a>
                 </div>
                 <div>
-                    <h2>Type</h2>
+                    <h2 data-i18n="dat_text11">Type</h2>
                     <a><?php echo htmlspecialchars($auto['type_code']); ?></a>
                 </div>
                 <div>
-                    <h2>Dispalcement</h2>
+                    <h2 data-i18n="dat_text12">Dispalcement</h2>
                     <a><?php echo htmlspecialchars($auto['displacement']); ?></a>
                 </div>
                 <div>
-                    <h2>Turbo</h2>
+                    <h2 data-i18n="dat_text13">Turbo</h2>
                     <a><?php echo htmlspecialchars($auto['turbo']); ?></a>
                 </div>
                 <div>
-                    <h2>Drive</h2>
+                    <h2 data-i18n="dat_text14">Drive</h2>
                     <a><?php echo htmlspecialchars($auto['drive']); ?></a>
                 </div>
                 <div>
-                    <h2>Steering Wheel</h2>
+                    <h2 data-i18n="dat_text15">Steering Wheel</h2>
                     <a><?php echo htmlspecialchars($auto['steering_wheel']); ?></a>
                 </div>
                 <div>
-                    <h2>Mileage</h2>
+                    <h2 data-i18n="dat_text16">Mileage</h2>
                     <a><?php echo htmlspecialchars($auto['mileage']); ?></a>
                 </div>
                 <div>
-                    <h2>Vehicle Type</h2>
+                    <h2 data-i18n="dat_text17">Vehicle Type</h2>
                     <a><?php echo htmlspecialchars($auto['vehicle_type']); ?></a>
                 </div>
                 <div>
-                    <h2>Precio</h2>
+                    <h2 data-i18n="dat_text18">Precio</h2>
                     <a><?php echo htmlspecialchars($auto['precio']); ?></a>
                 </div>
             </div>
             <div class="subtitulo">
                 <div class="barra"></div>
-                <h2>AIR BAGS</h2>
+                <h2 data-i18n="dat_text19">AIR BAGS</h2>
             </div>
             <div class="detalles2">
                 <div>
-                    <h2>Driver</h2>
+                    <h2 data-i18n="dat_text20">Driver</h2>
                     <a><?php echo htmlspecialchars($auto['driver_airbag']); ?></a>
                 </div>
                 <div>
-                    <h2>Passenger</h2>
+                    <h2 data-i18n="dat_text21">Passenger</h2>
                     <a><?php echo htmlspecialchars($auto['passenger_airbag']); ?></a>
                 </div>
             </div>
             <div class="subtitulo">
                 <div class="barra"></div>
-                <h2>OPTIONS</h2>
+                <h2 data-i18n="dat_text22">OPTIONS</h2>
             </div>
             <div class="detalles3">
                 <a>Power Windows, Power Steering, ABS, Sun Roof, Auto AC</a>
@@ -660,7 +660,7 @@ if ($modelo_id > 0 && $marca_id > 0) {
     </div>
     <div class="subtitulo_destacado">
         <div class="barra"></div>
-        <h2>RECOMMENDED MODELS</h2>
+        <h2 data-i18n="dat_text23">RECOMMENDED MODELS</h2>
     </div>
     <div class="carrusel_destacados">
 
