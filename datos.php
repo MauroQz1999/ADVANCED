@@ -540,7 +540,7 @@ if ($modelo_id > 0 && $marca_id > 0) {
             <div class="marco_descripcion">
                 <div class="subtitulo">
                     <div class="barra"></div>
-                    <h2>GENERAL CHARACTERISTICS</h2>
+                    <h2>DESCRIPTION</h2>
                 </div>
             </div>
             <div class="detalles">
@@ -626,6 +626,10 @@ if ($modelo_id > 0 && $marca_id > 0) {
                     <h2>Vehicle Type</h2>
                     <a><?php echo htmlspecialchars($auto['vehicle_type']); ?></a>
                 </div>
+                <div>
+                    <h2>Precio</h2>
+                    <a><?php echo htmlspecialchars($auto['precio']); ?></a>
+                </div>
             </div>
             <div class="subtitulo">
                 <div class="barra"></div>
@@ -656,7 +660,7 @@ if ($modelo_id > 0 && $marca_id > 0) {
     </div>
     <div class="subtitulo_destacado">
         <div class="barra"></div>
-        <h2>GENERAL CHARACTERISTICS</h2>
+        <h2>RECOMMENDED MODELS</h2>
     </div>
     <div class="carrusel_destacados">
 
