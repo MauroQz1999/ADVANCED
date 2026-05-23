@@ -295,6 +295,10 @@
         <p data-i18n="ser_text10">Kanaloa Shipping Co.,Ltd has partner companies in Japan, Australia and New Zealand and also access to a network of agencies all over the world. This way we can provide a smooth and fast service for booking shipings, preparing documents, vehicle inspections and maintenance before the vehicle departs. Our yards are located at all the main ports in Japan, Australia and New Zeleand, so we are always in control of your shipment and ensure the process is smooth.</p>
     </div>
 
+    <div class="service1-imagen">
+        <img src="img/service3.png" alt="">
+    </div>
+
     <div class="contenedor-titulo-nosotros">
         <span class="nosotros-pre-titulo" data-i18n="ser_text11">Service 4</span>
     </div>

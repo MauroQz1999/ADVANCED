@@ -2215,7 +2215,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
                     </ul>
                 </div>
                 <div class="op-imagen">
-                    <img src="img/barco-maquinaria.jpeg" alt="Embarque de vehículos en puerto japonés">
+                    <img src="img/barco-maquinaria.png" alt="Embarque de vehículos en puerto japonés">
                 </div>
             </div>
             <div class="op-bloque inverso">
