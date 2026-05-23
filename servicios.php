@@ -379,7 +379,7 @@
                     <p data-i18n="ser_text29">Our highly experienced vanning staff ensures your vehicles and cargo are loaded quickly, safely, and securely. Utilizing professional techniques and equipment, we maximize container space while preventing any transit damage. Trust our efficient team to handle your loading needs with the highest standards of safety and care.</p>
                 </div>
                 <div class="op-imagen">
-                    <img src="img/08.jpg" alt="">
+                    <img src="img/08.png" alt="">
                 </div>
             </div>
         </div>
