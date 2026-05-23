@@ -1485,7 +1485,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
                 </div>
             </div>
 
-            <!-- <div class="slide">
+            <div class="slide">
                 <div class="slide-info">
                     <span class="tagline" data-i18n="index_banner5">Subastas en Vivo</span>
                     <h2 data-i18n="index_banner6">Acceso directo a más de 100 subastas semanales</h2>
@@ -1495,7 +1495,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
                 <div class="slide-imagen">
                     <img src="./subasta.jpeg" alt="Subastas de autos en Japón">
                 </div>
-            </div> -->
+            </div>
 
         </div>
     </section>
