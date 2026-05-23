@@ -2239,7 +2239,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
                     </ul>
                 </div>
                 <div class="op-imagen">
-                    <img src="img/contenedores.jpeg" alt="Contenedores en Japón">
+                    <img src="img/contenedores.png" alt="Contenedores en Japón">
                 </div>
             </div>
         </div>
