@@ -308,7 +308,7 @@
                     <p data-i18n="ser_text15">We provide reliable inland transport services, moving your vehicles and assets from auction sites to designated yards. Our focus is safety, efficiency, and on-time delivery. We handle all the logistics to ensure a hassle-free process. Trust us for dependable transportation solutions tailored to your business needs.</p>
                 </div>
                 <div class="op-imagen">
-                    <img src="img/01.jpeg" alt="">
+                    <img src="img/01.jpg" alt="">
                 </div>
             </div>
             <div class="op-bloque inverso">
