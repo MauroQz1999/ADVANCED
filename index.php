@@ -2191,7 +2191,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
                     </ul>
                 </div>
                 <div class="op-imagen">
-                    <img src="img/inspeccion-motor.jpeg" alt="Inspección de motor en Japón">
+                    <img src="img/inspeccion-motor.png" alt="Inspección de motor en Japón">
                 </div>
             </div>
             <div class="op-bloque">
