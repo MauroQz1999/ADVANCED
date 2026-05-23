@@ -282,6 +282,10 @@
         <p data-i18n="ser_text7">We offer a one-stop package service which provides you with a range of quick and reliable shipping services to suit your vehicle or cargo, your timetable and budget.</p>
     </div>
 
+    <div class="service1-imagen">
+        <img src="img/shipment.png" alt="">
+    </div>
+
     <div class="contenedor-titulo-nosotros">
         <span class="nosotros-pre-titulo" data-i18n="ser_text8">Service 3</span>
     </div>
