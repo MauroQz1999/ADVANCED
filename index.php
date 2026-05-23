@@ -1476,7 +1476,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
             <div class="slide activo">
                 <div class="slide-info">
                     <span class="tagline" data-i18n="index_banner1">Logística y Exportación Global</span>
-                    <h2 data-i18n="index_banner2">Encontrando tu siguiente auto japonés desde el puerto</h2>
+                    <h2 data-i18n="index_banner2">Desde las auctions de Japon directamente al mundo</h2>
                     <p data-i18n="index_banner3">Expertos en la exportación de vehículos. Tu socio confiable con acceso directo a las principales subastas y embarques de Japón.</p>
                     <a href="inventario.php" class="btn-cta" data-i18n="index_banner4">Ver Inventario Disponible</a>
                 </div>
