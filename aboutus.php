@@ -271,7 +271,7 @@
                     <p data-i18n="nosotros_text6">We offer new or used CARS and MACHINERY according to your specifications at a very competitive price. If you already have a Japanese vehicle, we can also assist you in locating hard to find specialized PARTS.</p>
                 </div>
                 <div class="op-imagen">
-                    <img src="img/about-1.jpg" alt="Advanced South Central Office">
+                    <img src="img/about-1.png" alt="Advanced South Central Office">
                 </div>
             </div>
 
@@ -283,7 +283,7 @@
                     <p data-i18n="nosotros_text10">For those who have difficulty in finding CAR and MACHINERY PARTS, we can supply you with used or rebuilt parts. Provide us with your cars specifications and we can easily locate the parts you need.</p>
                 </div>
                 <div class="op-imagen">
-                    <img src="img/about-2.jpg" alt="Japanese Car Auction">
+                    <img src="img/about-2.jpeg" alt="Japanese Car Auction">
                 </div>
             </div>
 
@@ -301,7 +301,7 @@
                     </ul>
                 </div>
                 <div class="op-imagen">
-                    <img src="img/about-3.jpg" alt="Shipping Containers">
+                    <img src="img/about-3.png" alt="Shipping Containers">
                 </div>
             </div>
 
