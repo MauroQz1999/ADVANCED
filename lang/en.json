@@ -201,6 +201,7 @@
   "nosotros_text17": "Collect option available for Peru and Chile",
   "nosotros_text18": "Let ADVANCED SOUTH CENTRAL help find the perfect car for you!",
 
+<<<<<<< HEAD
   "dat_text1": "GENERAL CHARACTERISTICS",
   "dat_text2": "First registration",   
   "dat_text3": "Grade", 
@@ -227,6 +228,32 @@
   "dat_text22": "OPTIONS",
   "dat_text23": "RECOMMENDED MODELS",
   "dat_text24": "DESCRIPTION",
+=======
+  "dat_text1": "",
+  "dat_text2": "",
+  "dat_text3": "",
+  "dat_text4": "",
+  "dat_text5": "",
+  "dat_text6": "",
+  "dat_text7": "",
+  "dat_text8": "",
+  "dat_text9": "",
+  "dat_text10": "",
+  "dat_text11": "",
+  "dat_text12": "",
+  "dat_text13": "",
+  "dat_text14": "",
+  "dat_text15": "",
+  "dat_text16": "",
+  "dat_text17": "",
+  "dat_text18": "",
+  "dat_text19": "",
+  "dat_text20": "",
+  "dat_text21": "",
+  "dat_text22": "",
+  "dat_text23": "",
+  "dat_text24": "",
+>>>>>>> 1d8b027f9e1084e11a01c8cb27086027ab0a17c9
 
   "": ""
 }

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/ADVANCE/configuracion/conexion.php'; ?>
 
 <?php
@@ -40,6 +41,64 @@ $sql = "SELECT
         LEFT JOIN marca mar ON a.id_marca = mar.id_marca
         LEFT JOIN modelo md ON a.id_modelo = md.id_modelo
         GROUP BY a.id_auto";
+=======
+<?php
+
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+$servername = "localhost";
+$username = "root";
+$password = "1234";
+$dbname = "autos";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+if ($conn->connect_error) {
+    die("<h3 style='color:red; padding:20px;'>Error de Conexión a la Base de Datos: " . $conn->connect_error . "</h3>");
+}
+
+$conn->set_charset("utf8");
+
+$sql = "SELECT 
+            a.id,
+            a.modelo_id,
+            mar.nombre AS marca,
+            mar.logo AS marca_logo, 
+            md.nombre AS modelo,
+            a.first_registration,
+            a.rango,
+            a.engine_type,
+            a.transmission,
+            a.fuel,
+            a.capacity,
+            a.color,
+            a.chassis_no,
+            a.manufacture_date,
+            a.type_code,
+            a.displacement,
+            a.turbo,
+            a.drive,
+            a.steering_wheel,
+            a.mileage,
+            a.vehicle_type,
+            a.precio,          
+            a.estado,          
+            a.driver_airbag,
+            a.passenger_airbag,
+            a.destacado,
+            a.stock,
+            a.img AS portada, 
+            GROUP_CONCAT(DISTINCT img.ruta_img) AS galeria_fotos,
+            GROUP_CONCAT(DISTINCT opc.nombre) AS lista_opciones
+        FROM autos a
+        LEFT JOIN modelos md ON a.modelo_id = md.id
+        LEFT JOIN marcas mar ON md.marca_id = mar.id
+        LEFT JOIN auto_imagenes img ON a.id = img.auto_id
+        LEFT JOIN auto_opciones ao ON a.id = ao.auto_id      
+        LEFT JOIN opciones opc ON ao.opcion_id = opc.id      
+        GROUP BY a.id";
+>>>>>>> 1d8b027f9e1084e11a01c8cb27086027ab0a17c9
 
 $result = $conn->query($sql);
 
@@ -56,23 +115,39 @@ $autos = [];
 
 if ($mysql_rows_count > 0) {
     while ($fila = $result->fetch_assoc()) {
+<<<<<<< HEAD
 
         $autos[] = [
             "id" => $fila['id'],
             "modelo_id" => $fila['id_modelo'],
             "marca" => $fila['marca'],
             "marca_logo" => null, // No definido en el SELECT original
+=======
+        $fotos_array = $fila['galeria_fotos'] ? explode(',', $fila['galeria_fotos']) : [];
+        $opciones_array = $fila['lista_opciones'] ? explode(',', $fila['lista_opciones']) : [];
+
+        $autos[] = [
+            "id" => (int)$fila['id'],
+            "modelo_id" => (int)$fila['modelo_id'],
+            "marca" => $fila['marca'],
+            "marca_logo" => $fila['marca_logo'],
+>>>>>>> 1d8b027f9e1084e11a01c8cb27086027ab0a17c9
             "modelo" => $fila['modelo'],
             "first_registration" => $fila['first_registration'],
             "rango" => $fila['rango'],
             "engine_type" => $fila['engine_type'],
             "transmission" => $fila['transmission'],
             "fuel" => $fila['fuel'],
+<<<<<<< HEAD
             "capacity" => $fila['capacidad'],
+=======
+            "capacity" => (int)$fila['capacity'],
+>>>>>>> 1d8b027f9e1084e11a01c8cb27086027ab0a17c9
             "color" => $fila['color'],
             "chassis_no" => $fila['chassis_no'],
             "manufacture_date" => $fila['manufacture_date'],
             "type_code" => $fila['type_code'],
+<<<<<<< HEAD
             "displacement" => $fila['displacement'],
             "turbo" => $fila['turbo'],
             "drive" => $fila['drive'],
@@ -88,6 +163,23 @@ if ($mysql_rows_count > 0) {
             "destacado" => $fila['destacado'],
             "stock" => $fila['stock'],
             "img" => $fila['portada'],
+=======
+            "displacement" => (int)$fila['displacement'],
+            "turbo" => $fila['turbo'],
+            "drive" => $fila['drive'],
+            "steering_wheel" => $fila['steering_wheel'],
+            "mileage" => (int)$fila['mileage'],
+            "vehicle_type" => $fila['vehicle_type'],
+            "precio" => (int)$fila['precio'],
+            "estado" => $fila['estado'],
+            "driver_airbag" => (int)$fila['driver_airbag'],
+            "passenger_airbag" => (int)$fila['passenger_airbag'],
+            "destacado" => (int)$fila['destacado'],
+            "stock" => (int)$fila['stock'],
+            "img" => $fila['portada'],
+            "imagenes" => $fotos_array,
+            "options" => $opciones_array
+>>>>>>> 1d8b027f9e1084e11a01c8cb27086027ab0a17c9
         ];
     }
 }
@@ -514,7 +606,11 @@ $conn->close();
             "marca", "modelo", "first_registration", "rango", "engine_type", "transmission",
             "fuel", "capacity", "color", "chassis_no",
             "manufacture_date", "type_code", "displacement", "turbo",
+<<<<<<< HEAD
             "drive", "steering_wheel", "mileage", "horometro", "peso", "vehicle_type"
+=======
+            "drive", "steering_wheel", "mileage", "vehicle_type"
+>>>>>>> 1d8b027f9e1084e11a01c8cb27086027ab0a17c9
         ];
 
         function init() {

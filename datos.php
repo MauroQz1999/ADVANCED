@@ -1,7 +1,22 @@
+<<<<<<< HEAD
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/ADVANCE/configuracion/conexion.php'; ?>
 
 <?php
 
+=======
+<?php
+
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+$servername = "localhost";
+$username = "root";
+$password = "1234";
+$dbname = "autos";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+>>>>>>> 1d8b027f9e1084e11a01c8cb27086027ab0a17c9
 if (!isset($_GET['id']) || empty($_GET['id'])) {
     header("Location: nuevo.php");
     exit;
@@ -11,6 +26,7 @@ $id = intval($_GET['id']);
 
 // Usamos LEFT JOIN para mayor seguridad y alias claros
 $sql = "SELECT 
+<<<<<<< HEAD
             a.id_auto AS id,
             a.id_modelo,
             mar.nombre_marca AS marca,
@@ -47,6 +63,47 @@ $sql = "SELECT
         LEFT JOIN modelo md ON a.id_modelo = md.id_modelo
         WHERE a.id_auto = $id
         GROUP BY a.id_auto";
+=======
+                    a.id,
+                    a.modelo_id,
+                    mar.nombre AS marca,
+                    mar.id AS marca_id,
+                    mar.logo AS marca_logo, 
+                    md.nombre AS modelo,
+                    a.first_registration,
+                    a.rango,
+                    a.engine_type,
+                    a.transmission,
+                    a.fuel,
+                    a.capacity,
+                    a.color,
+                    a.chassis_no,
+                    a.manufacture_date,
+                    a.type_code,
+                    a.displacement,
+                    a.turbo,
+                    a.drive,
+                    a.steering_wheel,
+                    a.mileage,
+                    a.vehicle_type,
+                    a.precio,          
+                    a.estado,          
+                    a.driver_airbag,
+                    a.passenger_airbag,
+                    a.destacado,
+                    a.stock,
+                    a.img AS portada, 
+                    GROUP_CONCAT(DISTINCT img.ruta_img) AS galeria_fotos,
+                    GROUP_CONCAT(DISTINCT opc.nombre) AS lista_opciones
+                FROM autos a
+                LEFT JOIN modelos md ON a.modelo_id = md.id
+                LEFT JOIN marcas mar ON md.marca_id = mar.id
+                LEFT JOIN auto_imagenes img ON a.id = img.auto_id
+                LEFT JOIN auto_opciones ao ON a.id = ao.auto_id      
+                LEFT JOIN opciones opc ON ao.opcion_id = opc.id
+                WHERE a.id = $id
+                GROUP BY a.id";
+>>>>>>> 1d8b027f9e1084e11a01c8cb27086027ab0a17c9
 
 $result = $conn->query($sql);
 
@@ -62,6 +119,7 @@ if (!$auto) {
     exit;
 }
 
+<<<<<<< HEAD
 $id_modelo = $auto['id_modelo'];
 $id_marca = $auto['marca_id'];
 
@@ -81,6 +139,16 @@ if (!empty($id_modelo) && !empty($id_marca)) {
 
     $stmt->close();
 }
+=======
+$modelo_id = intval($auto['modelo_id']);
+$marca_id = intval($auto['marca_id']);
+
+if ($modelo_id > 0 && $marca_id > 0) {
+    $sql_vista = "INSERT INTO registro_vistas (modelo_id, marca_id) VALUES ($modelo_id, $marca_id)";
+    $conn->query($sql_vista);
+}
+
+>>>>>>> 1d8b027f9e1084e11a01c8cb27086027ab0a17c9
 ?>
 
 <!DOCTYPE html>
@@ -584,7 +652,11 @@ if (!empty($id_modelo) && !empty($id_marca)) {
                 </div>
                 <div>
                     <h2 data-i18n="dat_text7">Capacity</h2>
+<<<<<<< HEAD
                     <a><?php echo htmlspecialchars($auto['capacidad']); ?></a>
+=======
+                    <a><?php echo htmlspecialchars($auto['capacity']); ?></a>
+>>>>>>> 1d8b027f9e1084e11a01c8cb27086027ab0a17c9
                 </div>
                 <div>
                     <h2 data-i18n="dat_text8">Color</h2>
@@ -599,7 +671,11 @@ if (!empty($id_modelo) && !empty($id_marca)) {
                     <a><?php echo htmlspecialchars($auto['manufacture_date'] ?? ''); ?></a>
                 </div>
                 <div>
+<<<<<<< HEAD
                     <h2 data-i18n="dat_text11">Homologation</h2>
+=======
+                    <h2 data-i18n="dat_text11">Type</h2>
+>>>>>>> 1d8b027f9e1084e11a01c8cb27086027ab0a17c9
                     <a><?php echo htmlspecialchars($auto['type_code']); ?></a>
                 </div>
                 <div>
@@ -623,6 +699,7 @@ if (!empty($id_modelo) && !empty($id_marca)) {
                     <a><?php echo htmlspecialchars($auto['mileage']); ?></a>
                 </div>
                 <div>
+<<<<<<< HEAD
                     <h2 data-i18n="dat_text16.1">Horometer</h2>
                     <a><?php echo htmlspecialchars($auto['horometro']); ?></a>
                 </div>
@@ -631,6 +708,8 @@ if (!empty($id_modelo) && !empty($id_marca)) {
                     <a><?php echo htmlspecialchars($auto['peso']); ?></a>
                 </div>
                 <div>
+=======
+>>>>>>> 1d8b027f9e1084e11a01c8cb27086027ab0a17c9
                     <h2 data-i18n="dat_text17">Vehicle Type</h2>
                     <a><?php echo htmlspecialchars($auto['vehicle_type']); ?></a>
                 </div>
@@ -673,6 +752,7 @@ if (!empty($id_modelo) && !empty($id_marca)) {
     <div class="carrusel_destacados">
 
         <?php
+<<<<<<< HEAD
         $sql1 = "SELECT 
                     a.id_auto AS id,
                     a.id_modelo,
@@ -712,6 +792,48 @@ if (!empty($id_modelo) && !empty($id_marca)) {
                 GROUP BY a.id_auto";
 
         $result = $conn->query($sql1);
+=======
+        $sql = "SELECT 
+                    a.id,
+                    a.modelo_id,
+                    mar.nombre AS marca,
+                    mar.logo AS marca_logo, 
+                    md.nombre AS modelo,
+                    a.first_registration,
+                    a.rango,
+                    a.engine_type,
+                    a.transmission,
+                    a.fuel,
+                    a.capacity,
+                    a.color,
+                    a.chassis_no,
+                    a.manufacture_date,
+                    a.type_code,
+                    a.displacement,
+                    a.turbo,
+                    a.drive,
+                    a.steering_wheel,
+                    a.mileage,
+                    a.vehicle_type,
+                    a.precio,          
+                    a.estado,          
+                    a.driver_airbag,
+                    a.passenger_airbag,
+                    a.destacado,
+                    a.stock,
+                    a.img AS portada, 
+                    GROUP_CONCAT(DISTINCT img.ruta_img) AS galeria_fotos,
+                    GROUP_CONCAT(DISTINCT opc.nombre) AS lista_opciones
+                FROM autos a
+                LEFT JOIN modelos md ON a.modelo_id = md.id
+                LEFT JOIN marcas mar ON md.marca_id = mar.id
+                LEFT JOIN auto_imagenes img ON a.id = img.auto_id
+                LEFT JOIN auto_opciones ao ON a.id = ao.auto_id      
+                LEFT JOIN opciones opc ON ao.opcion_id = opc.id      
+                WHERE a.destacado = 1
+                GROUP BY a.id";
+        $result = $conn->query($sql);
+>>>>>>> 1d8b027f9e1084e11a01c8cb27086027ab0a17c9
 
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
@@ -769,6 +891,7 @@ if (!empty($id_modelo) && !empty($id_marca)) {
                 const itemsAutos = carruselAutos.querySelectorAll('.carta_normal');
 
                 if (carruselAutos.scrollWidth > carruselAutos.offsetWidth) {
+<<<<<<< HEAD
                     // 1. Clonar para el efecto infinito
                     itemsAutos.forEach(item => {
                         carruselAutos.appendChild(item.cloneNode(true));
@@ -809,6 +932,30 @@ if (!empty($id_modelo) && !empty($id_marca)) {
                     carruselAutos.addEventListener('mouseleave', endInteraction);
                     carruselAutos.addEventListener('touchend', endInteraction);
 
+=======
+
+                    itemsAutos.forEach(item => {
+                        const clon = item.cloneNode(true);
+                        carruselAutos.appendChild(clon);
+                    });
+
+                    let scrollPos = 0;
+                    const velocidad = 0.4;
+
+                    carruselAutos.style.scrollBehavior = 'auto';
+
+                    function animarContinuo() {
+                        scrollPos += velocidad;
+
+                        if (scrollPos >= carruselAutos.scrollWidth / 2) {
+                            scrollPos = 0;
+                        }
+
+                        carruselAutos.scrollLeft = scrollPos;
+                        requestAnimationFrame(animarContinuo);
+                    }
+
+>>>>>>> 1d8b027f9e1084e11a01c8cb27086027ab0a17c9
                     animarContinuo();
                 } else {
                     carruselAutos.style.justifyContent = 'center';
