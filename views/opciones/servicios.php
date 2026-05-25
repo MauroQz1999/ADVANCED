@@ -253,7 +253,7 @@
 
 <body>
 
-    <?php include 'topbar.php'; ?>
+    <?php include dirname(__DIR__, 2) . '/views/topbar/topbar.php'; ?>
 
     <div class="contenedor-titulo-nosotros">
         <h1 class="nosotros-titulo-principal" data-i18n="ser_text1">OUR SERVICE</h1>
@@ -270,7 +270,7 @@
     </div>
 
     <div class="service1-imagen">
-        <img src="img/3.jpeg" alt="">
+        <img src="../../img/3.jpeg" alt="">
     </div>
 
     <div class="contenedor-titulo-nosotros">
@@ -283,7 +283,7 @@
     </div>
 
     <div class="service1-imagen">
-        <img src="img/shipment.png" alt="">
+        <img src="../../img/shipment.png" alt="">
     </div>
 
     <div class="contenedor-titulo-nosotros">
@@ -296,7 +296,7 @@
     </div>
 
     <div class="service1-imagen">
-        <img src="img/service3.png" alt="">
+        <img src="../../img/service3.png" alt="">
     </div>
 
     <div class="contenedor-titulo-nosotros">
@@ -316,7 +316,7 @@
                     <p data-i18n="ser_text15">We provide reliable inland transport services, moving your vehicles and assets from auction sites to designated yards. Our focus is safety, efficiency, and on-time delivery. We handle all the logistics to ensure a hassle-free process. Trust us for dependable transportation solutions tailored to your business needs.</p>
                 </div>
                 <div class="op-imagen">
-                    <img src="img/01.jpg" alt="">
+                    <img src="../../img/01.jpg" alt="">
                 </div>
             </div>
             <div class="op-bloque inverso">
@@ -325,7 +325,7 @@
                     <p data-i18n="ser_text17">We provide secure storage services at multiple yards strategically located near major ports. Our facilities offer safe, efficient, and accessible space for your cargo and vehicles. Count on us for flexible warehousing solutions designed to optimize your logistics and streamline your supply chain operations.</p>
                 </div>
                 <div class="op-imagen">
-                    <img src="img/02.jpeg" alt="">
+                    <img src="../../img/02.jpeg" alt="">
                 </div>
             </div>
             <div class="op-bloque">
@@ -334,7 +334,7 @@
                     <p data-i18n="ser_text19">We provide high-quality photo services upon request to document the condition of your cargo. Our team captures detailed images during inspection, loading, or storage. This ensures full transparency, giving you complete peace of mind and accurate visual records for your logistics and inventory management.</p>
                 </div>
                 <div class="op-imagen">
-                    <img src="img/03.jpg" alt="">
+                    <img src="../../img/03.jpg" alt="">
                 </div>
             </div>
             <div class="op-bloque inverso">
@@ -343,7 +343,7 @@
                     <p data-i18n="ser_text21">We offer a fully equipped auto workshop and qualified staff to handle all maintenance and repair work, tailored to your requirements and budget. From routine servicing to major repairs, we ensure top-quality results. Additionally, professional car cleaning services are available to keep your vehicles in pristine condition.</p>
                 </div>
                 <div class="op-imagen">
-                    <img src="img/04.jpg" alt="">
+                    <img src="../../img/04.jpg" alt="">
                 </div>
             </div>
             <div class="op-bloque">
@@ -352,7 +352,7 @@
                     <p data-i18n="ser_text23">We provide official, customs-approved pre-cleaning services in Japan for vehicles bound for Australia and New Zealand. Our specialized process ensures full compliance with strict biosecurity regulations. Trust our team to deliver thorough cleaning, preventing delays and ensuring a smooth, hassle-free customs clearance for your cargo.</p>
                 </div>
                 <div class="op-imagen">
-                    <img src="img/05.jpg" alt="">
+                    <img src="../../img/05.jpg" alt="">
                 </div>
             </div>
             <div class="op-bloque inverso">
@@ -361,7 +361,7 @@
                     <p data-i18n="ser_text25">We provide comprehensive quarantine inspection services compliant with international standards, including DAFF and MAF regulations. Our expert team ensures your cargo meets the strict biosecurity requirements of different destination countries. Trust us to handle all inspections efficiently, minimizing risks and preventing costly delays at customs.</p>
                 </div>
                 <div class="op-imagen">
-                    <img src="img/06.jpg" alt="">
+                    <img src="../../img/06.jpg" alt="">
                 </div>
             </div>
             <div class="op-bloque">
@@ -370,7 +370,7 @@
                     <p data-i18n="ser_text27">We arrange comprehensive pre-shipment inspections and issue official certificates to meet the strict regulatory requirements of different destination countries. Partnering with accredited agencies like JAAI, EAA, JEVIC, and QISJ, we ensure your cargo is fully compliant. Trust us to handle your documentation and prevent customs delays.</p>
                 </div>
                 <div class="op-imagen">
-                    <img src="img/07.jpg" alt="">
+                    <img src="../../img/07.jpg" alt="">
                 </div>
             </div>
             <div class="op-bloque inverso">
@@ -379,7 +379,7 @@
                     <p data-i18n="ser_text29">Our highly experienced vanning staff ensures your vehicles and cargo are loaded quickly, safely, and securely. Utilizing professional techniques and equipment, we maximize container space while preventing any transit damage. Trust our efficient team to handle your loading needs with the highest standards of safety and care.</p>
                 </div>
                 <div class="op-imagen">
-                    <img src="img/08.png" alt="">
+                    <img src="../../img/08.png" alt="">
                 </div>
             </div>
         </div>

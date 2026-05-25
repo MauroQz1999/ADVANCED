@@ -91,7 +91,7 @@
              justify-content: center;
              box-sizing: border-box;
              background-color: #ffffff;
-            background-color: #ffffff;
+             background-color: #ffffff;
          }
 
          .contenedor-operacion {
@@ -149,11 +149,11 @@
          }
 
          .op-lista li::before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: #e58a13;
-        }
+             content: "✓";
+             position: absolute;
+             left: 0;
+             color: #e58a13;
+         }
 
          .op-lista {
              list-style: none;
@@ -169,7 +169,7 @@
              font-size: 0.9rem;
              font-weight: 600;
              position: relative;
-            padding-left: 20px;
+             padding-left: 20px;
          }
 
          .op-imagen {
@@ -254,7 +254,7 @@
 
  <body>
 
-     <?php include 'topbar.php'; ?>
+     <?php include dirname(__DIR__, 2) . '/views/topbar/topbar.php'; ?>
 
      <div class="contenedor-titulo-nosotros">
          <h1 class="nosotros-titulo-principal" data-i18n="buy_text1">HOW TO BUY</h1>
@@ -327,8 +327,8 @@
      </div>
 
      <div class="service-contenido" style="margin-top: 20px; margin-bottom: 60px;">
-        <h3 data-i18n="buy_text17">Let ADVANCED SOUTH CENTRAL help find the perfect car for you!</h3>
-    </div>
+         <h3 data-i18n="buy_text17">Let ADVANCED SOUTH CENTRAL help find the perfect car for you!</h3>
+     </div>
 
      <script>
      </script>

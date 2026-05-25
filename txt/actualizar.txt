@@ -24,23 +24,3 @@ git config --system --add safe.directory /var/www/html
 mysql -u root -p
 
 1234
-
-USE autos;
-
-TRUNCATE TABLE registro_vistas;
-
-
-SELECT m.nombre, COUNT(r.id) AS total_vistas 
-FROM registro_vistas r
-INNER JOIN marcas m ON r.marca_id = m.id
-GROUP BY r.marca_id
-ORDER BY total_vistas DESC
-LIMIT 5;
-
-SELECT md.nombre AS modelo, mar.nombre AS marca, COUNT(r.id) AS total_vistas 
-    FROM registro_vistas r
-    INNER JOIN modelos md ON r.modelo_id = md.id
-    INNER JOIN marcas mar ON md.marca_id = mar.id
-    GROUP BY r.modelo_id
-    ORDER BY total_vistas DESC
-    LIMIT 5;

@@ -1,3 +1,0 @@
-# Ignorar configuraciones locales o carpetas innecesarias
-.DS_Store
-Thumbs.db

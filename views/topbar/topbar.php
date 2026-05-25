@@ -504,18 +504,18 @@
         <div class="cont-mintopbar">
             <ul class="mini-links">
                 <li><a href="#" data-i18n="min_top1">Países</a></li>
-                <li><a href="how_to_buy.php" data-i18n="min_top2">Cómo comprar</a></li>
-                <li><a href="servicios.php" data-i18n="min_top3">Servicios</a></li>
-                <li><a href="aboutus.php" data-i18n="min_top4">Sobre nosotros</a></li>
-                <li><a href="inventario.php" data-i18n="top1">Catalogo</a></li>
+                <li><a href="../../views/opciones/how_to_buy.php" data-i18n="min_top2">Cómo comprar</a></li>
+                <li><a href="../../views/opciones/servicios.php" data-i18n="min_top3">Servicios</a></li>
+                <li><a href="../../views/opciones/aboutus.php" data-i18n="min_top4">Sobre nosotros</a></li>
+                <li><a href="../../views/principal/inventario.php" data-i18n="top1">Catalogo</a></li>
             </ul>
         </div>
     </nav>
     <nav class="topbar">
         <div class="cont-topbar">
-            <a href="index.php" class="cont-izquierdo">
+            <a href="../../index.php" class="cont-izquierdo">
                 <div class="logo">
-                    <img src="logo.png" alt="Logo Advance Sound Center">
+                    <img src="../../img/logo.png" alt="Logo Advance Sound Center">
                 </div>
                 <div class="logo-titulo">
                     <h1>ADVANCED SOUTH CENTRAL</h1>
