@@ -1,5 +1,5 @@
 
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/ADVANCE/configuracion/conexion.php'; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/configuracion/conexion.php'; ?>
 
 <?php
 

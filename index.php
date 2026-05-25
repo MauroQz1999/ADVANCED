@@ -1,6 +1,6 @@
 
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/ADVANCE/configuracion/conexion.php'; ?>
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/ADVANCE/models/general_model.php'; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/configuracion/conexion.php'; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/models/general_model.php'; ?>
 
 <!DOCTYPE html>
 <html lang="es">
@@ -1499,7 +1499,7 @@
 
 <body>
 
-    <?php include $_SERVER['DOCUMENT_ROOT'] . '/ADVANCE/vistas/topbar/topbar.php'; ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . '/vistas/topbar/topbar.php'; ?>
 
     <section class="hero-banner">
         <div class="carrusel-contenedor">
@@ -1985,11 +1985,7 @@
                 <div class="op-contenido">
                     <span class="op-tag" data-i18n="index_subtitulo6">Presencia en Subastas</span>
                     <h3 data-i18n="index_txt_1">Acceso Directo a las Subastas más Grandes de Japón</h3>
-<<<<<<< HEAD
                     <p data-i18n="index_txt_2">Venta de maquinaria, camiones y carros seminuevos en oficina y de la subasta. Conducimos a las mejores AUCTIONS : USS, ARAI, CAA, TAA, HONDA, JU AICHI. Y también, puedes apostar en ASNET, la mayor plataforma de distribución de coches usados ​​de Japón.</p>
-=======
-                    <p data-i18n="index_txt_2">Venta de maquinaria, camiones y carros seminuevos en oficina y de la subasta. Conducimos a las mejores AUCTIONS : USS, ARAI,  CAA, TAA, HONDA, JU AICHI. Y también, puedes apostar en ASNET, la mayor plataforma de distribución de coches usados ​​de Japón.</p>
->>>>>>> 1d8b027f9e1084e11a01c8cb27086027ab0a17c9
                     <p data-i18n="index_txt_2.5">Dónde podrá usted verificar in situ la hoja de ruta del vehículo.</p>
                     <ul class="op-lista">
                         <li data-i18n="index_txt_3">
