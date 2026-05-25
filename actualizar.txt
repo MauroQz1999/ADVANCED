@@ -1,7 +1,9 @@
 cd C:\xampp\htdocs\ADVANCE
 git add .
 git commit -m "Modificado el diseño de las vistas de productos"
+git pull origin main
 git push origin main
+
 cd C:\Users\quiro
 
 ssh root@5.78.218.251
@@ -23,8 +25,6 @@ mysql -u root -p
 
 1234
 
-<<<<<<< HEAD
-=======
 USE autos;
 
 TRUNCATE TABLE registro_vistas;
@@ -44,4 +44,3 @@ SELECT md.nombre AS modelo, mar.nombre AS marca, COUNT(r.id) AS total_vistas
     GROUP BY r.modelo_id
     ORDER BY total_vistas DESC
     LIMIT 5;
->>>>>>> 1d8b027f9e1084e11a01c8cb27086027ab0a17c9

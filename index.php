@@ -1,21 +1,6 @@
-<<<<<<< HEAD
+
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/ADVANCE/configuracion/conexion.php'; ?>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/ADVANCE/models/general_model.php'; ?>
-=======
-<?php
-
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-
-$servername = "localhost";
-$username = "root";
-$password = "1234";
-$dbname = "autos";
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-?>
->>>>>>> 1d8b027f9e1084e11a01c8cb27086027ab0a17c9
 
 <!DOCTYPE html>
 <html lang="es">
@@ -136,7 +121,6 @@ $conn = new mysqli($servername, $username, $password, $dbname);
             z-index: 1;
         }
 
-<<<<<<< HEAD
         .indicator_banner {
             width: 100%;
             height: 4px;
@@ -165,8 +149,6 @@ $conn = new mysqli($servername, $username, $password, $dbname);
             }
         }
 
-=======
->>>>>>> 1d8b027f9e1084e11a01c8cb27086027ab0a17c9
         @media (max-width: 680px) {
             .carrusel-contenedor {
                 height: auto;
@@ -221,7 +203,6 @@ $conn = new mysqli($servername, $username, $password, $dbname);
             flex-direction: row;
             align-items: center;
             justify-content: flex-start;
-<<<<<<< HEAD
             position: relative;
             box-sizing: border-box;
             overflow-x: auto;
@@ -231,11 +212,6 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 
         .carrusel_logos::-webkit-scrollbar {
             display: none;
-=======
-            overflow: hidden;
-            position: relative;
-            box-sizing: border-box;
->>>>>>> 1d8b027f9e1084e11a01c8cb27086027ab0a17c9
         }
 
         .carta_logo {
@@ -250,10 +226,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
             box-sizing: border-box;
             overflow: hidden;
             transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-<<<<<<< HEAD
             pointer-events: auto;
-=======
->>>>>>> 1d8b027f9e1084e11a01c8cb27086027ab0a17c9
         }
 
         .carta_logo img {
@@ -262,10 +235,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
             object-fit: contain;
             object-position: center;
             display: block;
-<<<<<<< HEAD
             pointer-events: none;
-=======
->>>>>>> 1d8b027f9e1084e11a01c8cb27086027ab0a17c9
         }
 
         .carta_logo:hover {
@@ -347,22 +317,15 @@ $conn = new mysqli($servername, $username, $password, $dbname);
             flex-direction: row;
             justify-content: flex-start;
             gap: clamp(15px, 2vw, 30px);
-<<<<<<< HEAD
-=======
-            overflow-x: auto;
-            scroll-behavior: smooth;
->>>>>>> 1d8b027f9e1084e11a01c8cb27086027ab0a17c9
             padding-bottom: 25px;
             padding-top: 10px;
             scrollbar-width: none;
             -webkit-overflow-scrolling: touch;
-<<<<<<< HEAD
             overflow-x: auto;
             touch-action: pan-x;
             -webkit-overflow-scrolling: touch;
             user-select: none;
-=======
->>>>>>> 1d8b027f9e1084e11a01c8cb27086027ab0a17c9
+
         }
 
         .carrusel_destacados::-webkit-scrollbar,
@@ -381,10 +344,8 @@ $conn = new mysqli($servername, $username, $password, $dbname);
             overflow: hidden;
             box-sizing: border-box;
             transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s ease, border-color 0.3s ease;
-<<<<<<< HEAD
             pointer-events: auto;
-=======
->>>>>>> 1d8b027f9e1084e11a01c8cb27086027ab0a17c9
+
         }
 
         .carta_normal:hover,
@@ -1538,11 +1499,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 
 <body>
 
-<<<<<<< HEAD
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/ADVANCE/vistas/topbar/topbar.php'; ?>
-=======
-    <?php include 'topbar.php'; ?>
->>>>>>> 1d8b027f9e1084e11a01c8cb27086027ab0a17c9
 
     <section class="hero-banner">
         <div class="carrusel-contenedor">
@@ -1553,10 +1510,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
                     <h2 data-i18n="index_banner2">Desde las auctions de Japon directamente al mundo</h2>
                     <p data-i18n="index_banner3">Expertos en la exportación de vehículos. Tu socio confiable con acceso directo a las principales subastas y embarques de Japón.</p>
                     <a href="inventario.php" class="btn-cta" data-i18n="index_banner4">Ver Inventario Disponible</a>
-<<<<<<< HEAD
                     <div class="indicator_banner"></div>
-=======
->>>>>>> 1d8b027f9e1084e11a01c8cb27086027ab0a17c9
                 </div>
                 <div class="slide-imagen">
                     <img src="./puerto.jpeg" alt="Embarque de autos Advance Sound Center">
@@ -1569,26 +1523,18 @@ $conn = new mysqli($servername, $username, $password, $dbname);
                     <h2 data-i18n="index_banner6">Acceso directo a más de 100 subastas semanales</h2>
                     <p data-i18n="index_banner7">Inscríbete con nosotros y oferta en tiempo real por vehículos revisados por inspectores certificados.</p>
                     <a href="contacto.php" class="btn-cta" data-i18n="index_banner8">Contactar un Agente</a>
-<<<<<<< HEAD
                     <div class="indicator_banner"></div>
                 </div>
                 <div class="slide-imagen">
                     <img src="./gemini.png" alt="Subastas de autos en Japón">
                 </div>
             </div>
-=======
-                </div>
-                <div class="slide-imagen">
-                    <img src="./subasta.jpeg" alt="Subastas de autos en Japón">
-                </div>
-            </div>
 
->>>>>>> 1d8b027f9e1084e11a01c8cb27086027ab0a17c9
         </div>
     </section>
 
     <section class="carrusel_logos">
-<<<<<<< HEAD
+
         <?php if ($logo->num_rows > 0) : ?>
             <?php while ($row = $logo->fetch_assoc()) : ?>
 
@@ -1598,25 +1544,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 
             <?php endwhile; ?>
         <?php endif; ?>
-=======
-        <?php
-        $sql = "SELECT * 
-                FROM marcas";
-        $result = $conn->query($sql);
 
-        if ($result->num_rows > 0) {
-            while ($row = $result->fetch_assoc()) {
-        ?>
-                <div class="carta_logo" onclick="window.location.href='inventario.php?marca=<?php echo urlencode($row['nombre']); ?>'">
-                    <img src="<?php echo htmlspecialchars($row['logo']); ?>" alt="Car">
-                </div>
-        <?php
-            }
-        } else {
-            echo "<p>No hay vehículos disponibles en este momento.</p>";
-        }
-        ?>
->>>>>>> 1d8b027f9e1084e11a01c8cb27086027ab0a17c9
     </section>
 
     <div class="sub-titulo">
@@ -1624,58 +1552,9 @@ $conn = new mysqli($servername, $username, $password, $dbname);
     </div>
 
     <div class="carrusel_destacados">
-<<<<<<< HEAD
 
         <?php if ($recomendado->num_rows > 0) : ?>
             <?php while ($row = $recomendado->fetch_assoc()) : ?>
-
-=======
-        <?php
-        $sql = "SELECT 
-                    a.id,
-                    a.modelo_id,
-                    mar.nombre AS marca,
-                    mar.logo AS marca_logo, 
-                    md.nombre AS modelo,
-                    a.first_registration,
-                    a.rango,
-                    a.engine_type,
-                    a.transmission,
-                    a.fuel,
-                    a.capacity,
-                    a.color,
-                    a.chassis_no,
-                    a.manufacture_date,
-                    a.type_code,
-                    a.displacement,
-                    a.turbo,
-                    a.drive,
-                    a.steering_wheel,
-                    a.mileage,
-                    a.vehicle_type,
-                    a.precio,          
-                    a.estado,          
-                    a.driver_airbag,
-                    a.passenger_airbag,
-                    a.destacado,
-                    a.stock,
-                    a.img AS portada, 
-                    GROUP_CONCAT(DISTINCT img.ruta_img) AS galeria_fotos,
-                    GROUP_CONCAT(DISTINCT opc.nombre) AS lista_opciones
-                FROM autos a
-                LEFT JOIN modelos md ON a.modelo_id = md.id
-                LEFT JOIN marcas mar ON md.marca_id = mar.id
-                LEFT JOIN auto_imagenes img ON a.id = img.auto_id
-                LEFT JOIN auto_opciones ao ON a.id = ao.auto_id      
-                LEFT JOIN opciones opc ON ao.opcion_id = opc.id      
-                WHERE a.destacado = 1
-                GROUP BY a.id";
-        $result = $conn->query($sql);
-
-        if ($result->num_rows > 0) {
-            while ($row = $result->fetch_assoc()) {
-        ?>
->>>>>>> 1d8b027f9e1084e11a01c8cb27086027ab0a17c9
                 <div class="carta_normal" onclick="window.location.href='datos.php?id=<?php echo $row['id']; ?>'">
                     <div class="contenedor_img">
                         <img class="car-img" src="<?php echo htmlspecialchars($row['portada']); ?>" alt="Car">
@@ -1711,19 +1590,10 @@ $conn = new mysqli($servername, $username, $password, $dbname);
                         <div class="indicator"></div>
                     </div>
                 </div>
-<<<<<<< HEAD
 
             <?php endwhile; ?>
         <?php endif; ?>
 
-=======
-        <?php
-            }
-        } else {
-            echo "<p>No hay vehículos disponibles en este momento.</p>";
-        }
-        ?>
->>>>>>> 1d8b027f9e1084e11a01c8cb27086027ab0a17c9
     </div>
 
     <div class="sub-titulo">
@@ -1731,61 +1601,10 @@ $conn = new mysqli($servername, $username, $password, $dbname);
     </div>
 
     <div class="carrusel_destacados1">
-<<<<<<< HEAD
 
         <?php if ($destacado->num_rows > 0) : ?>
             <?php while ($row = $destacado->fetch_assoc()) : ?>
 
-=======
-        <?php
-        $sql = "SELECT 
-                    a.id,
-                    a.modelo_id,
-                    mar.nombre AS marca,
-                    mar.logo AS marca_logo, 
-                    md.nombre AS modelo,
-                    a.first_registration,
-                    a.rango,
-                    a.engine_type,
-                    a.transmission,
-                    a.fuel,
-                    a.capacity,
-                    a.color,
-                    a.chassis_no,
-                    a.manufacture_date,
-                    a.type_code,
-                    a.displacement,
-                    a.turbo,
-                    a.drive,
-                    a.steering_wheel,
-                    a.mileage,
-                    a.vehicle_type,
-                    a.precio,          
-                    a.estado,          
-                    a.driver_airbag,
-                    a.passenger_airbag,
-                    a.destacado,
-                    a.stock,
-                    a.img AS portada, 
-                    GROUP_CONCAT(DISTINCT img.ruta_img) AS galeria_fotos,
-                    GROUP_CONCAT(DISTINCT opc.nombre) AS lista_opciones,
-                    COUNT(v.id) AS total_vistas
-                FROM autos a
-                LEFT JOIN modelos md ON a.modelo_id = md.id
-                LEFT JOIN marcas mar ON md.marca_id = mar.id
-                LEFT JOIN auto_imagenes img ON a.id = img.auto_id
-                LEFT JOIN auto_opciones ao ON a.id = ao.auto_id      
-                LEFT JOIN opciones opc ON ao.opcion_id = opc.id 
-                INNER JOIN registro_vistas v ON a.modelo_id = v.modelo_id
-                GROUP BY a.id
-                ORDER BY total_vistas DESC
-                LIMIT 5";
-        $result = $conn->query($sql);
-
-        if ($result->num_rows > 0) {
-            while ($row = $result->fetch_assoc()) {
-        ?>
->>>>>>> 1d8b027f9e1084e11a01c8cb27086027ab0a17c9
                 <div class="carta_normal1" onclick="window.location.href='datos.php?id=<?php echo $row['id']; ?>'">
                     <div class="contenedor_img">
                         <img class="car-img" src="<?php echo htmlspecialchars($row['portada']); ?>" alt="Car">
@@ -1821,19 +1640,10 @@ $conn = new mysqli($servername, $username, $password, $dbname);
                         <div class="indicator"></div>
                     </div>
                 </div>
-<<<<<<< HEAD
 
             <?php endwhile; ?>
         <?php endif; ?>
 
-=======
-        <?php
-            }
-        } else {
-            echo "<p data-i18n='index_alert1'>No hay vehículos disponibles en este momento.</p>";
-        }
-        ?>
->>>>>>> 1d8b027f9e1084e11a01c8cb27086027ab0a17c9
     </div>
 
     <div class="sub-titulo" style="margin-top: 20px;">
@@ -1848,126 +1658,44 @@ $conn = new mysqli($servername, $username, $password, $dbname);
                 <div class="grupo-botones-top">
 
                     <?php
-<<<<<<< HEAD
+
                     $posicion = 1;
                     if ($marcas->num_rows > 0) : ?>
                         <?php while ($row = $marcas->fetch_assoc()) : ?>
 
-=======
-                    $sql = "SELECT m.nombre AS marca, COUNT(r.id) AS total_vistas 
-                                FROM registro_vistas r
-                                INNER JOIN marcas m ON r.marca_id = m.id
-                                GROUP BY r.marca_id
-                                ORDER BY total_vistas DESC
-                                LIMIT 5";
-                    $result = $conn->query($sql);
-
-                    if ($result->num_rows > 0) {
-                        $posicion = 1;
-                        while ($row = $result->fetch_assoc()) {
-                    ?>
->>>>>>> 1d8b027f9e1084e11a01c8cb27086027ab0a17c9
                             <a href="#" class="btn-top-item" onclick="window.location.href='inventario.php?marca=<?php echo urlencode($row['marca']); ?>'">
                                 <?php echo htmlspecialchars($row['marca']); ?>
                                 <span class="rank">
                                     #<?php echo $posicion; ?>
                                 </span>
                             </a>
-<<<<<<< HEAD
 
                             <?php
                             $posicion++;
                             ?>
                         <?php endwhile; ?>
                     <?php endif; ?>
-=======
-                    <?php
-                            $posicion++;
-                        }
-                    } else {
-                        echo "<p data-i18n='index_alert2'>No hay vehículos disponibles en este momento.</p>";
-                    }
-                    ?>
->>>>>>> 1d8b027f9e1084e11a01c8cb27086027ab0a17c9
+
                 </div>
             </div>
 
             <div class="columna-top">
                 <h3 data-i18n="index_subtitulo42">Modelos Más Vendidos</h3>
                 <div class="grupo-botones-top">
-<<<<<<< HEAD
 
                     <?php if ($modelos->num_rows > 0) : ?>
                         <?php while ($row = $modelos->fetch_assoc()) : ?>
 
-=======
-                    <?php
-                    $sql = "SELECT 
-                                    a.id,
-                                    a.modelo_id,
-                                    mar.nombre AS marca,
-                                    mar.logo AS marca_logo, 
-                                    md.nombre AS modelo,
-                                    a.first_registration,
-                                    a.rango,
-                                    a.engine_type,
-                                    a.transmission,
-                                    a.fuel,
-                                    a.capacity,
-                                    a.color,
-                                    a.chassis_no,
-                                    a.manufacture_date,
-                                    a.type_code,
-                                    a.displacement,
-                                    a.turbo,
-                                    a.drive,
-                                    a.steering_wheel,
-                                    a.mileage,
-                                    a.vehicle_type,
-                                    a.precio,          
-                                    a.estado,          
-                                    a.driver_airbag,
-                                    a.passenger_airbag,
-                                    a.destacado,
-                                    a.stock,
-                                    a.img AS portada, 
-                                    GROUP_CONCAT(DISTINCT img.ruta_img) AS galeria_fotos,
-                                    GROUP_CONCAT(DISTINCT opc.nombre) AS lista_opciones,
-                                    COUNT(v.id) AS total_vistas
-                                FROM autos a
-                                LEFT JOIN modelos md ON a.modelo_id = md.id
-                                LEFT JOIN marcas mar ON md.marca_id = mar.id
-                                LEFT JOIN auto_imagenes img ON a.id = img.auto_id
-                                LEFT JOIN auto_opciones ao ON a.id = ao.auto_id      
-                                LEFT JOIN opciones opc ON ao.opcion_id = opc.id 
-                                INNER JOIN registro_vistas v ON a.modelo_id = v.modelo_id
-                                GROUP BY a.id
-                                ORDER BY total_vistas DESC
-                                LIMIT 5";
-                    $result = $conn->query($sql);
-                    if ($result->num_rows > 0) {
-                        $posicion = 1;
-                        while ($row = $result->fetch_assoc()) {
-                    ?>
->>>>>>> 1d8b027f9e1084e11a01c8cb27086027ab0a17c9
                             <a href="#" class="btn-top-item" onclick="window.location.href='inventario.php?modelo=<?php echo urlencode($row['modelo']); ?>'">
                                 <?php echo htmlspecialchars($row['modelo']); ?>
                                 <span class="rank">
                                     #<?php echo $posicion; ?>
                                 </span>
                             </a>
-<<<<<<< HEAD
+
                         <?php endwhile; ?>
                     <?php endif; ?>
-=======
-                    <?php
-                            $posicion++;
-                        }
-                    } else {
-                        echo "<p data-i18n='index_alert3'>No hay vehículos disponibles en este momento.</p>";
-                    }
-                    ?>
->>>>>>> 1d8b027f9e1084e11a01c8cb27086027ab0a17c9
+
                 </div>
             </div>
 
@@ -2017,60 +1745,9 @@ $conn = new mysqli($servername, $username, $password, $dbname);
                 <div id="tab-subastas" class="tab-panel active">
                     <div class="grid-mosaico">
 
-<<<<<<< HEAD
                         <?php if ($vendidos->num_rows > 0) : ?>
                             <?php while ($row = $vendidos->fetch_assoc()) : ?>
 
-=======
-                        <?php
-                        $sql = "SELECT 
-                                    a.id,
-                                    a.modelo_id,
-                                    mar.nombre AS marca,
-                                    mar.logo AS marca_logo, 
-                                    md.nombre AS modelo,
-                                    a.first_registration,
-                                    a.rango,
-                                    a.engine_type,
-                                    a.transmission,
-                                    a.fuel,
-                                    a.capacity,
-                                    a.color,
-                                    a.chassis_no,
-                                    a.manufacture_date,
-                                    a.type_code,
-                                    a.displacement,
-                                    a.turbo,
-                                    a.drive,
-                                    a.steering_wheel,
-                                    a.mileage,
-                                    a.vehicle_type,
-                                    a.precio,          
-                                    a.estado,          
-                                    a.driver_airbag,
-                                    a.passenger_airbag,
-                                    a.destacado,
-                                    a.stock,
-                                    a.img AS portada, 
-                                    GROUP_CONCAT(DISTINCT img.ruta_img) AS galeria_fotos,
-                                    GROUP_CONCAT(DISTINCT opc.nombre) AS lista_opciones,
-                                    COUNT(v.id) AS total_vistas
-                                FROM autos a
-                                LEFT JOIN modelos md ON a.modelo_id = md.id
-                                LEFT JOIN marcas mar ON md.marca_id = mar.id
-                                LEFT JOIN auto_imagenes img ON a.id = img.auto_id
-                                LEFT JOIN auto_opciones ao ON a.id = ao.auto_id      
-                                LEFT JOIN opciones opc ON ao.opcion_id = opc.id 
-                                INNER JOIN registro_vistas v ON a.modelo_id = v.modelo_id
-                                GROUP BY a.id
-                                ORDER BY total_vistas DESC
-                                LIMIT 6";
-                        $result = $conn->query($sql);
-
-                        if ($result->num_rows > 0) {
-                            while ($row = $result->fetch_assoc()) {
-                        ?>
->>>>>>> 1d8b027f9e1084e11a01c8cb27086027ab0a17c9
                                 <div class="mini-carta-auto">
                                     <div class="mini-img">
                                         <img class="ban-img" src="<?php echo htmlspecialchars($row['portada']); ?>" alt="Car">
@@ -2083,18 +1760,9 @@ $conn = new mysqli($servername, $username, $password, $dbname);
                                         <a href="#" class="btn-mini-detalles" onclick="window.location.href='datos.php?id=<?php echo $row['id']; ?>'" data-i18n="index_subtitulo63">Detalles</a>
                                     </div>
                                 </div>
-<<<<<<< HEAD
 
                             <?php endwhile; ?>
                         <?php endif; ?>
-=======
-                        <?php
-                            }
-                        } else {
-                            echo "<p data-i18n='index_alert4'>No hay vehículos disponibles en este momento.</p>";
-                        }
-                        ?>
->>>>>>> 1d8b027f9e1084e11a01c8cb27086027ab0a17c9
 
                     </div>
                 </div>
@@ -2485,7 +2153,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
             const sliderMarcas = document.querySelector('.carrusel_logos');
 
             if (sliderMarcas) {
-<<<<<<< HEAD
+
                 // Clonado para efecto infinito
                 const itemsMarcas = sliderMarcas.querySelectorAll('.carta_logo');
                 itemsMarcas.forEach(item => sliderMarcas.appendChild(item.cloneNode(true)));
@@ -2539,37 +2207,6 @@ $conn = new mysqli($servername, $username, $password, $dbname);
                 });
 
                 animar();
-=======
-                const itemsMarcas = sliderMarcas.querySelectorAll('.carta_logo');
-
-                if (sliderMarcas.scrollWidth > sliderMarcas.offsetWidth) {
-
-                    itemsMarcas.forEach(item => {
-                        const clon = item.cloneNode(true);
-                        sliderMarcas.appendChild(clon);
-                    });
-
-                    let scrollPos = 0;
-                    const velocidad = 0.8;
-
-                    sliderMarcas.style.scrollBehavior = 'auto';
-
-                    function animarContinuo() {
-                        scrollPos += velocidad;
-
-                        if (scrollPos >= sliderMarcas.scrollWidth / 2) {
-                            scrollPos = 0;
-                        }
-
-                        sliderMarcas.scrollLeft = scrollPos;
-                        requestAnimationFrame(animarContinuo);
-                    }
-
-                    animarContinuo();
-                } else {
-                    sliderMarcas.style.justifyContent = 'center';
-                }
->>>>>>> 1d8b027f9e1084e11a01c8cb27086027ab0a17c9
             }
         };
 
@@ -2580,7 +2217,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
             const itemsAutos = carruselAutos.querySelectorAll('.carta_normal');
 
             if (carruselAutos.scrollWidth > carruselAutos.offsetWidth) {
-<<<<<<< HEAD
+
                 // 1. Clonar para el efecto infinito
                 itemsAutos.forEach(item => {
                     carruselAutos.appendChild(item.cloneNode(true));
@@ -2621,30 +2258,6 @@ $conn = new mysqli($servername, $username, $password, $dbname);
                 carruselAutos.addEventListener('mouseleave', endInteraction);
                 carruselAutos.addEventListener('touchend', endInteraction);
 
-=======
-
-                itemsAutos.forEach(item => {
-                    const clon = item.cloneNode(true);
-                    carruselAutos.appendChild(clon);
-                });
-
-                let scrollPos = 0;
-                const velocidad = 0.4;
-
-                carruselAutos.style.scrollBehavior = 'auto';
-
-                function animarContinuo() {
-                    scrollPos += velocidad;
-
-                    if (scrollPos >= carruselAutos.scrollWidth / 2) {
-                        scrollPos = 0;
-                    }
-
-                    carruselAutos.scrollLeft = scrollPos;
-                    requestAnimationFrame(animarContinuo);
-                }
-
->>>>>>> 1d8b027f9e1084e11a01c8cb27086027ab0a17c9
                 animarContinuo();
             } else {
                 carruselAutos.style.justifyContent = 'center';
@@ -2659,7 +2272,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
             const itemsAutos = carruselAutos1.querySelectorAll('.carta_normal1');
 
             if (carruselAutos1.scrollWidth > carruselAutos1.offsetWidth) {
-<<<<<<< HEAD
+
                 // 1. Clonar para el efecto infinito
                 itemsAutos.forEach(item => {
                     carruselAutos1.appendChild(item.cloneNode(true));
@@ -2700,30 +2313,6 @@ $conn = new mysqli($servername, $username, $password, $dbname);
                 carruselAutos1.addEventListener('mouseleave', endInteraction);
                 carruselAutos1.addEventListener('touchend', endInteraction);
 
-=======
-
-                itemsAutos.forEach(item => {
-                    const clon = item.cloneNode(true);
-                    carruselAutos1.appendChild(clon);
-                });
-
-                let scrollPos = 0;
-                const velocidad = 0.4;
-
-                carruselAutos1.style.scrollBehavior = 'auto';
-
-                function animarContinuo() {
-                    scrollPos += velocidad;
-
-                    if (scrollPos >= carruselAutos1.scrollWidth / 2) {
-                        scrollPos = 0;
-                    }
-
-                    carruselAutos1.scrollLeft = scrollPos;
-                    requestAnimationFrame(animarContinuo);
-                }
-
->>>>>>> 1d8b027f9e1084e11a01c8cb27086027ab0a17c9
                 animarContinuo();
             } else {
                 carruselAutos1.style.justifyContent = 'center';
@@ -2747,7 +2336,6 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 
             setInterval(cambiarSlide, intervaloTiempo);
         });
-<<<<<<< HEAD
 
         /*-----*/
 
@@ -2767,8 +2355,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
         setInterval(cambiarSlide, 10000);
 
         iniciarAnimacionBarra(slides[0]);
-=======
->>>>>>> 1d8b027f9e1084e11a01c8cb27086027ab0a17c9
+
     </script>
 
 </body>
