@@ -1,0 +1,77 @@
+
+DROP DATABASE auts;
+
+CREATE DATABASE IF NOT EXISTS auts;
+USE auts;
+
+-- 1. Tabla de Marcas
+CREATE TABLE marca (
+    id_marca VARCHAR(50) PRIMARY KEY,
+    nombre_marca VARCHAR(100) NOT NULL,
+    ruta VARCHAR(255)
+);
+
+-- 2. Tabla de Modelos (relacionada con marca)
+CREATE TABLE modelo (
+    id_modelo VARCHAR(50) PRIMARY KEY,
+    id_marca VARCHAR(50),
+    nombre_modelo VARCHAR(100) NOT NULL,
+    ruta VARCHAR(255),
+    FOREIGN KEY (id_marca) REFERENCES marca(id_marca)
+);
+
+-- 3. Tabla principal 'general'
+CREATE TABLE general (
+    id_auto VARCHAR(50) PRIMARY KEY,
+    id_marca VARCHAR(50),
+    id_modelo VARCHAR(50),
+    registro VARCHAR(100),
+    grado VARCHAR(50),
+    motor VARCHAR(100),
+    transmision VARCHAR(100),
+    combustible VARCHAR(50),
+    capacidad VARCHAR(50),
+    color VARCHAR(50),
+    n_chasis VARCHAR(100),
+    fabricacion VARCHAR(50),
+    homologacion VARCHAR(100),
+    cilindrada VARCHAR(50),
+    turbo VARCHAR(50),
+    traccion VARCHAR(50),
+    volante VARCHAR(50),
+    millaje VARCHAR(50),
+    horometro VARCHAR(50),
+    peso VARCHAR(50),
+    tipo VARCHAR(50),
+    conductor VARCHAR(100),
+    pasajero VARCHAR(100),
+    ruta VARCHAR(255),
+    detalles VARCHAR(500),
+    stock VARCHAR(50),
+    precio VARCHAR(50),
+    estado VARCHAR(255),
+    destacado VARCHAR(255),
+    FOREIGN KEY (id_marca) REFERENCES marca(id_marca),
+    FOREIGN KEY (id_modelo) REFERENCES modelo(id_modelo)
+);
+
+-- 4. Tabla registro 'vistas' 
+CREATE TABLE registro_vistas (
+    id_vista INT AUTO_INCREMENT PRIMARY KEY,
+    id_marca VARCHAR(50),
+    id_modelo VARCHAR(50),
+    fecha_vista VARCHAR(50),
+    FOREIGN KEY (id_marca) REFERENCES marca(id_marca),
+    FOREIGN KEY (id_modelo) REFERENCES modelo(id_modelo)
+);
+
+/* - LIMPIAR PRUEBA DE DATOS - */ 
+
+USE auts;
+
+SET FOREIGN_KEY_CHECKS = 0; 
+DELETE FROM registro_vistas;
+DELETE FROM general;
+DELETE FROM modelo;
+DELETE FROM marca;
+SET FOREIGN_KEY_CHECKS = 1;
